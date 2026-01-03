@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-01-02T23:39:48.940249+00:00",
+  "imf_sdmx_base": "https://dataservices.imf.org/REST/SDMX_JSON.svc",
+  "dots_flow_id": "DOTS",
+  "ref_area_codelist_id": "CL_REF_AREA",
+  "files": {
+    "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\data\\processed\\meta\\node_index.csv": "f5e8c5d3a2d2c14500c0aa52f279ae34719dbb1ead13b1d9718b9918feac1dda",
+    "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\data\\processed\\meta\\rosetta_codes.csv": "23698238404095b723e30da0b1a9016168a9031ebfc0a3a6cf419e7920aa8c47",
+    "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\data\\processed\\meta\\imf_unmatched.csv": "c69c02384ea47c6b408204477767bde421fbbf5f74f76145c6e14830091b9b8d",
+    "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\overrides\\imf_ref_area_overrides.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cached_structures": {
+    "Dataflow.json": "1b8e3987d9bf54086ac737d58c51d8430f25c3308a90338dbabdc26a6a57a9f6",
+    "DataStructure_DOTS.json": "d17848c2f29c0c9b25c61ecf3f42c01134e3aabac37f4235d252db485edae079",
+    "CodeList_CL_REF_AREA.json": "61290cde96511129c42f3e38f0d811ec672cbfdd793f3a563ff5ed727c9962b5"
+  }
+}

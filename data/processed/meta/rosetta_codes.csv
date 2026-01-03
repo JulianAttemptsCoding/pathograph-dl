@@ -1,0 +1,195 @@
+iso3,iso2,name,imf_ref_area,imf_ref_area_name,comtrade_reporter_code,twn_partner_code,twn_partner_name,notes
+AFG,AF,Afghanistan,AF,Afghanistan,,,,matched_by_code_iso2
+AGO,AO,Angola,AO,Angola,,,,matched_by_code_iso2
+ALB,AL,Albania,AL,Albania,,,,matched_by_code_iso2
+AND,AD,Andorra,AD,Andorra,,,,matched_by_code_iso2
+ARE,AE,United Arab Emirates,AE,United Arab Emirates,,,,matched_by_code_iso2
+ARG,AR,Argentina,AR,Argentina,,,,matched_by_code_iso2
+ARM,AM,Armenia,AM,Armenia,,,,matched_by_code_iso2
+ATG,AG,Antigua and Barbuda,AG,Antigua and Barbuda,,,,matched_by_code_iso2
+AUS,AU,Australia,AU,Australia,,,,matched_by_code_iso2
+AUT,AT,Austria,AT,Austria,,,,matched_by_code_iso2
+AZE,AZ,Azerbaijan,AZ,Azerbaijan,,,,matched_by_code_iso2
+BDI,BI,Burundi,BI,Burundi,,,,matched_by_code_iso2
+BEL,BE,Belgium,BE,Belgium,,,,matched_by_code_iso2
+BEN,BJ,Benin,BJ,Benin,,,,matched_by_code_iso2
+BFA,BF,Burkina Faso,BF,Burkina Faso,,,,matched_by_code_iso2
+BGD,BD,Bangladesh,BD,Bangladesh,,,,matched_by_code_iso2
+BGR,BG,Bulgaria,BG,Bulgaria,,,,matched_by_code_iso2
+BHR,BH,Bahrain,BH,Bahrain,,,,matched_by_code_iso2
+BHS,BS,Bahamas,BS,Bahamas,,,,matched_by_code_iso2
+BIH,BA,Bosnia and Herzegovina,BA,Bosnia and Herzegovina,,,,matched_by_code_iso2
+BLR,BY,Belarus,BY,Belarus,,,,matched_by_code_iso2
+BLZ,BZ,Belize,BZ,Belize,,,,matched_by_code_iso2
+BOL,BO,"Bolivia, Plurinational State of",BO,Bolivia,,,,matched_by_code_iso2
+BRA,BR,Brazil,BR,Brazil,,,,matched_by_code_iso2
+BRB,BB,Barbados,BB,Barbados,,,,matched_by_code_iso2
+BRN,BN,Brunei Darussalam,BN,Brunei Darussalam,,,,matched_by_code_iso2
+BTN,BT,Bhutan,BT,Bhutan,,,,matched_by_code_iso2
+BWA,BW,Botswana,BW,Botswana,,,,matched_by_code_iso2
+CAF,CF,Central African Republic,CF,Central African Republic,,,,matched_by_code_iso2
+CAN,CA,Canada,CA,Canada,,,,matched_by_code_iso2
+CHE,CH,Switzerland,CH,Switzerland,,,,matched_by_code_iso2
+CHL,CL,Chile,CL,Chile,,,,matched_by_code_iso2
+CHN,CN,China,CN,China,,,,matched_by_code_iso2
+CIV,CI,Côte d'Ivoire,CI,Cote d`Ivoire,,,,matched_by_code_iso2
+CMR,CM,Cameroon,CM,Cameroon,,,,matched_by_code_iso2
+COD,CD,"Congo, The Democratic Republic of the",CD,"Congo, the Democratic Republic of the",,,,matched_by_code_iso2
+COG,CG,Congo,CG,Congo,,,,matched_by_code_iso2
+COL,CO,Colombia,CO,Colombia,,,,matched_by_code_iso2
+COM,KM,Comoros,KM,Comoros,,,,matched_by_code_iso2
+CPV,CV,Cabo Verde,CV,Cape Verde,,,,matched_by_code_iso2
+CRI,CR,Costa Rica,CR,Costa Rica,,,,matched_by_code_iso2
+CUB,CU,Cuba,CU,Cuba,,,,matched_by_code_iso2
+CYP,CY,Cyprus,CY,Cyprus,,,,matched_by_code_iso2
+CZE,CZ,Czechia,CZ,Czech Republic,,,,matched_by_code_iso2
+DEU,DE,Germany,DE,Germany,,,,matched_by_code_iso2
+DJI,DJ,Djibouti,DJ,Djibouti,,,,matched_by_code_iso2
+DMA,DM,Dominica,DM,Dominica,,,,matched_by_code_iso2
+DNK,DK,Denmark,DK,Denmark,,,,matched_by_code_iso2
+DOM,DO,Dominican Republic,DO,Dominican Republic,,,,matched_by_code_iso2
+DZA,DZ,Algeria,DZ,Algeria,,,,matched_by_code_iso2
+ECU,EC,Ecuador,EC,Ecuador,,,,matched_by_code_iso2
+EGY,EG,Egypt,EG,Egypt,,,,matched_by_code_iso2
+ERI,ER,Eritrea,ER,Eritrea,,,,matched_by_code_iso2
+ESP,ES,Spain,ES,Spain,,,,matched_by_code_iso2
+EST,EE,Estonia,EE,Estonia,,,,matched_by_code_iso2
+ETH,ET,Ethiopia,ET,Ethiopia,,,,matched_by_code_iso2
+FIN,FI,Finland,FI,Finland,,,,matched_by_code_iso2
+FJI,FJ,Fiji,FJ,Fiji,,,,matched_by_code_iso2
+FRA,FR,France,FR,France,,,,matched_by_code_iso2
+FSM,FM,"Micronesia, Federated States of",FM,"Micronesia, Federated States of",,,,matched_by_code_iso2
+GAB,GA,Gabon,GA,Gabon,,,,matched_by_code_iso2
+GBR,GB,United Kingdom,GB,United Kingdom,,,,matched_by_code_iso2
+GEO,GE,Georgia,GE,Georgia,,,,matched_by_code_iso2
+GHA,GH,Ghana,GH,Ghana,,,,matched_by_code_iso2
+GIN,GN,Guinea,GN,Guinea,,,,matched_by_code_iso2
+GMB,GM,Gambia,GM,Gambia,,,,matched_by_code_iso2
+GNB,GW,Guinea-Bissau,GW,Guinea-Bissau,,,,matched_by_code_iso2
+GNQ,GQ,Equatorial Guinea,GQ,Equatorial Guinea,,,,matched_by_code_iso2
+GRC,GR,Greece,GR,Greece,,,,matched_by_code_iso2
+GRD,GD,Grenada,GD,Grenada,,,,matched_by_code_iso2
+GTM,GT,Guatemala,GT,Guatemala,,,,matched_by_code_iso2
+GUY,GY,Guyana,GY,Guyana,,,,matched_by_code_iso2
+HND,HN,Honduras,HN,Honduras,,,,matched_by_code_iso2
+HRV,HR,Croatia,HR,Croatia,,,,matched_by_code_iso2
+HTI,HT,Haiti,HT,Haiti,,,,matched_by_code_iso2
+HUN,HU,Hungary,HU,Hungary,,,,matched_by_code_iso2
+IDN,ID,Indonesia,ID,Indonesia,,,,matched_by_code_iso2
+IND,IN,India,IN,India,,,,matched_by_code_iso2
+IRL,IE,Ireland,IE,Ireland,,,,matched_by_code_iso2
+IRN,IR,"Iran, Islamic Republic of",IR,"Iran, Islamic Republic of",,,,matched_by_code_iso2
+IRQ,IQ,Iraq,IQ,Iraq,,,,matched_by_code_iso2
+ISL,IS,Iceland,IS,Iceland,,,,matched_by_code_iso2
+ISR,IL,Israel,IL,Israel,,,,matched_by_code_iso2
+ITA,IT,Italy,IT,Italy,,,,matched_by_code_iso2
+JAM,JM,Jamaica,JM,Jamaica,,,,matched_by_code_iso2
+JOR,JO,Jordan,JO,Jordan,,,,matched_by_code_iso2
+JPN,JP,Japan,JP,Japan,,,,matched_by_code_iso2
+KAZ,KZ,Kazakhstan,KZ,Kazakhstan,,,,matched_by_code_iso2
+KEN,KE,Kenya,KE,Kenya,,,,matched_by_code_iso2
+KGZ,KG,Kyrgyzstan,KG,Kyrgyzstan,,,,matched_by_code_iso2
+KHM,KH,Cambodia,KH,Cambodia,,,,matched_by_code_iso2
+KIR,KI,Kiribati,KI,Kiribati,,,,matched_by_code_iso2
+KNA,KN,Saint Kitts and Nevis,KN,Saint Kitts and Nevis,,,,matched_by_code_iso2
+KOR,KR,"Korea, Republic of",KR,"Korea, Republic of",,,,matched_by_code_iso2
+KWT,KW,Kuwait,KW,Kuwait,,,,matched_by_code_iso2
+LAO,LA,Lao People's Democratic Republic,LA,Lao People`s Democratic Republic,,,,matched_by_code_iso2
+LBN,LB,Lebanon,LB,Lebanon,,,,matched_by_code_iso2
+LBR,LR,Liberia,LR,Liberia,,,,matched_by_code_iso2
+LBY,LY,Libya,LY,Libya,,,,matched_by_code_iso2
+LCA,LC,Saint Lucia,LC,Saint Lucia,,,,matched_by_code_iso2
+LIE,LI,Liechtenstein,LI,Liechtenstein,,,,matched_by_code_iso2
+LKA,LK,Sri Lanka,LK,Sri Lanka,,,,matched_by_code_iso2
+LSO,LS,Lesotho,LS,Lesotho,,,,matched_by_code_iso2
+LTU,LT,Lithuania,LT,Lithuania,,,,matched_by_code_iso2
+LUX,LU,Luxembourg,LU,Luxembourg,,,,matched_by_code_iso2
+LVA,LV,Latvia,LV,Latvia,,,,matched_by_code_iso2
+MAR,MA,Morocco,MA,Morocco,,,,matched_by_code_iso2
+MCO,MC,Monaco,MC,Monaco,,,,matched_by_code_iso2
+MDA,MD,"Moldova, Republic of",MD,"Moldova, Republic of",,,,matched_by_code_iso2
+MDG,MG,Madagascar,MG,Madagascar,,,,matched_by_code_iso2
+MDV,MV,Maldives,MV,Maldives,,,,matched_by_code_iso2
+MEX,MX,Mexico,MX,Mexico,,,,matched_by_code_iso2
+MHL,MH,Marshall Islands,MH,Marshall islands,,,,matched_by_code_iso2
+MKD,MK,North Macedonia,MK,North Macedonia,,,,matched_by_code_iso2
+MLI,ML,Mali,ML,Mali,,,,matched_by_code_iso2
+MLT,MT,Malta,MT,Malta,,,,matched_by_code_iso2
+MMR,MM,Myanmar,MM,Myanmar,,,,matched_by_code_iso2
+MNE,ME,Montenegro,ME,Montenegro,,,,matched_by_code_iso2
+MNG,MN,Mongolia,MN,Mongolia,,,,matched_by_code_iso2
+MOZ,MZ,Mozambique,MZ,Mozambique,,,,matched_by_code_iso2
+MRT,MR,Mauritania,MR,Mauritania,,,,matched_by_code_iso2
+MUS,MU,Mauritius,MU,Mauritius,,,,matched_by_code_iso2
+MWI,MW,Malawi,MW,Malawi,,,,matched_by_code_iso2
+MYS,MY,Malaysia,MY,Malaysia,,,,matched_by_code_iso2
+NAM,NA,Namibia,NA,Namibia,,,,matched_by_code_iso2
+NER,NE,Niger,NE,Niger,,,,matched_by_code_iso2
+NGA,NG,Nigeria,NG,Nigeria,,,,matched_by_code_iso2
+NIC,NI,Nicaragua,NI,Nicaragua,,,,matched_by_code_iso2
+NLD,NL,Netherlands,NL,Netherlands,,,,matched_by_code_iso2
+NOR,NO,Norway,NO,Norway,,,,matched_by_code_iso2
+NPL,NP,Nepal,NP,Nepal,,,,matched_by_code_iso2
+NRU,NR,Nauru,NR,Nauru,,,,matched_by_code_iso2
+NZL,NZ,New Zealand,NZ,New Zealand,,,,matched_by_code_iso2
+OMN,OM,Oman,OM,Oman,,,,matched_by_code_iso2
+PAK,PK,Pakistan,PK,Pakistan,,,,matched_by_code_iso2
+PAN,PA,Panama,PA,Panama,,,,matched_by_code_iso2
+PER,PE,Peru,PE,Peru,,,,matched_by_code_iso2
+PHL,PH,Philippines,PH,Philippines,,,,matched_by_code_iso2
+PLW,PW,Palau,PW,Palau,,,,matched_by_code_iso2
+PNG,PG,Papua New Guinea,PG,Papua New Guinea,,,,matched_by_code_iso2
+POL,PL,Poland,PL,Poland,,,,matched_by_code_iso2
+PRK,KP,"Korea, Democratic People's Republic of",KP,"Korea, Democratic People`s Republic of",,,,matched_by_code_iso2
+PRT,PT,Portugal,PT,Portugal,,,,matched_by_code_iso2
+PRY,PY,Paraguay,PY,Paraguay,,,,matched_by_code_iso2
+QAT,QA,Qatar,QA,Qatar,,,,matched_by_code_iso2
+ROU,RO,Romania,RO,Romania,,,,matched_by_code_iso2
+RUS,RU,Russian Federation,RU,Russian Federation,,,,matched_by_code_iso2
+RWA,RW,Rwanda,RW,Rwanda,,,,matched_by_code_iso2
+SAU,SA,Saudi Arabia,SA,Saudi Arabia,,,,matched_by_code_iso2
+SDN,SD,Sudan,SD,Sudan,,,,matched_by_code_iso2
+SEN,SN,Senegal,SN,Senegal,,,,matched_by_code_iso2
+SGP,SG,Singapore,SG,Singapore,,,,matched_by_code_iso2
+SLB,SB,Solomon Islands,SB,Solomon Islands,,,,matched_by_code_iso2
+SLE,SL,Sierra Leone,SL,Sierra Leone,,,,matched_by_code_iso2
+SLV,SV,El Salvador,SV,El Salvador,,,,matched_by_code_iso2
+SMR,SM,San Marino,SM,San Marino,,,,matched_by_code_iso2
+SOM,SO,Somalia,SO,Somalia,,,,matched_by_code_iso2
+SRB,RS,Serbia,RS,Serbia,,,,matched_by_code_iso2
+SSD,SS,South Sudan,SS,South Sudan,,,,matched_by_code_iso2
+STP,ST,Sao Tome and Principe,ST,Sao Tome and Principe,,,,matched_by_code_iso2
+SUR,SR,Suriname,SR,Suriname,,,,matched_by_code_iso2
+SVK,SK,Slovakia,SK,Slovakia,,,,matched_by_code_iso2
+SVN,SI,Slovenia,SI,Slovenia,,,,matched_by_code_iso2
+SWE,SE,Sweden,SE,Sweden,,,,matched_by_code_iso2
+SWZ,SZ,Eswatini,SZ,"Eswatini, Kingdom of",,,,matched_by_code_iso2
+SYC,SC,Seychelles,SC,Seychelles,,,,matched_by_code_iso2
+SYR,SY,Syrian Arab Republic,SY,Syrian Arab Republic,,,,matched_by_code_iso2
+TCD,TD,Chad,TD,Chad,,,,matched_by_code_iso2
+TGO,TG,Togo,TG,Togo,,,,matched_by_code_iso2
+THA,TH,Thailand,TH,Thailand,,,,matched_by_code_iso2
+TJK,TJ,Tajikistan,TJ,Tajikistan,,,,matched_by_code_iso2
+TKM,TM,Turkmenistan,TM,Turkmenistan,,,,matched_by_code_iso2
+TLS,TL,Timor-Leste,TL,Timor-Leste,,,,matched_by_code_iso2
+TON,TO,Tonga,TO,Tonga,,,,matched_by_code_iso2
+TTO,TT,Trinidad and Tobago,TT,Trinidad and Tobago,,,,matched_by_code_iso2
+TUN,TN,Tunisia,TN,Tunisia,,,,matched_by_code_iso2
+TUR,TR,Türkiye,TR,Türkiye,,,,matched_by_code_iso2
+TUV,TV,Tuvalu,TV,Tuvalu,,,,matched_by_code_iso2
+TWN,TW,"Taiwan, Province of China",TW,"Taiwan, Province of China",,,,matched_by_code_iso2
+TZA,TZ,"Tanzania, United Republic of",TZ,"Tanzania, United Republic of",,,,matched_by_code_iso2
+UGA,UG,Uganda,UG,Uganda,,,,matched_by_code_iso2
+UKR,UA,Ukraine,UA,Ukraine,,,,matched_by_code_iso2
+URY,UY,Uruguay,UY,Uruguay,,,,matched_by_code_iso2
+USA,US,United States,US,United States,,,,matched_by_code_iso2
+UZB,UZ,Uzbekistan,UZ,Uzbekistan,,,,matched_by_code_iso2
+VCT,VC,Saint Vincent and the Grenadines,VC,Saint Vincent and the Grenadines,,,,matched_by_code_iso2
+VEN,VE,"Venezuela, Bolivarian Republic of",VE,"Venezuela, Bolivarian Republic",,,,matched_by_code_iso2
+VNM,VN,Viet Nam,VN,Viet Nam,,,,matched_by_code_iso2
+VUT,VU,Vanuatu,VU,Vanuatu,,,,matched_by_code_iso2
+WSM,WS,Samoa,WS,Samoa,,,,matched_by_code_iso2
+YEM,YE,Yemen,YE,Yemen,,,,matched_by_code_iso2
+ZAF,ZA,South Africa,ZA,South Africa,,,,matched_by_code_iso2
+ZMB,ZM,Zambia,ZM,Zambia,,,,matched_by_code_iso2
+ZWE,ZW,Zimbabwe,ZW,Zimbabwe,,,,matched_by_code_iso2

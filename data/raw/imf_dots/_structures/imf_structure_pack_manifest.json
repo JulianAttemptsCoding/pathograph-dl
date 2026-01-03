@@ -1,0 +1,12 @@
+{
+  "created_at_utc": "2026-01-02T23:56:00.702224Z",
+  "base_url": "https://sdmxcentral.imf.org/sdmx/v2",
+  "dots_flow_id": "DOTS",
+  "dsd_id_used": "ECOFIN_DSD",
+  "ref_area_codelist_id": "CL_FREQ",
+  "files": {
+    "Dataflow.json": "1b8e3987d9bf54086ac737d58c51d8430f25c3308a90338dbabdc26a6a57a9f6",
+    "DataStructure_DOTS.json": "d17848c2f29c0c9b25c61ecf3f42c01134e3aabac37f4235d252db485edae079",
+    "CodeList_CL_FREQ.json": "142bdc98dd0f8b42d1315d614493be681890f1077a1af59feab76e7996d633fa"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-01-01T18:09:42.910404",
+  "url": "https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/dataflow/all",
+  "status_code": 200,
+  "headers": {
+    "set-cookie": "JSESSIONID=874BFF51A1EE392139B33B968F97F44D; Path=/; Secure; HttpOnly, 31f6526d02c8da12a5917dc065c770e5=cd4e1c51cdde2fc4ccccfc5b3f4b1f7b; path=/; HttpOnly; Secure; SameSite=None",
+    "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept,Accept-Language",
+    "content-disposition": "inline; filename=\"STRUCTURE.xml\"",
+    "etag": "7a2d1a19479a722a",
+    "content-encoding": "gzip",
+    "strict-transport-security": "max-age=31536000 ; includeSubDomains",
+    "x-xss-protection": "1; mode=block",
+    "x-frame-options": "DENY",
+    "x-content-type-options": "nosniff",
+    "content-type": "application/xml;charset=UTF-8",
+    "transfer-encoding": "chunked",
+    "date": "Fri, 02 Jan 2026 02:09:42 GMT",
+    "cache-control": "private"
+  },
+  "response_preview": "<?xml version='1.0' encoding='UTF-8'?><mes:Structure xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xml=\"http://www.w3.org/XML/1998/namespace\" xmlns:mes=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message\" xmlns:str=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure\" xmlns:com=\"http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common\"><mes:Header><mes:ID>IREF197869</mes:ID><mes:Test>false</mes:Test><mes:Prepared>2026-01-02T02:09:42Z</mes:Prepared><mes:Sender id=\"IMF"
+}

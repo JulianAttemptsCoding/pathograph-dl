@@ -1,0 +1,1189 @@
+{
+  "created_at_utc": "2026-01-03T03:01:56.595263Z",
+  "params": {
+    "base_url": "https://sdmxcentral.imf.org/sdmx/v2",
+    "flow_id": "DOTS",
+    "start_period": "2024-01",
+    "end_period": "2024-03",
+    "indicators": "TXG_FOB_USD,TMG_CIF_USD",
+    "data_domain": "DOTS",
+    "freq": "M",
+    "out_dir": "data/raw/imf_dots/downloads",
+    "rosetta_path": "data/processed/meta/rosetta_codes.csv",
+    "dsd_order_path": "data/raw/imf_dots/_structures/dsd_dimension_order.json",
+    "mock": true
+  },
+  "dimension_order": [
+    "DATA_DOMAIN",
+    "REF_AREA",
+    "INDICATOR",
+    "COUNTERPART_AREA",
+    "FREQ"
+  ],
+  "downloads": [
+    {
+      "reporter": "AD",
+      "file": "dots_AD_2024-01_2024-03_b19aae2a.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AD.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AE",
+      "file": "dots_AE_2024-01_2024-03_a4f83131.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AF",
+      "file": "dots_AF_2024-01_2024-03_c67dd104.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AF.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AG",
+      "file": "dots_AG_2024-01_2024-03_828a4f3b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AL",
+      "file": "dots_AL_2024-01_2024-03_21c039a6.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AL.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AM",
+      "file": "dots_AM_2024-01_2024-03_5eb277e2.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AO",
+      "file": "dots_AO_2024-01_2024-03_097fe901.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AR",
+      "file": "dots_AR_2024-01_2024-03_70e6a694.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AT",
+      "file": "dots_AT_2024-01_2024-03_d3fdaab7.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AU",
+      "file": "dots_AU_2024-01_2024-03_c6df5640.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AU.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "AZ",
+      "file": "dots_AZ_2024-01_2024-03_b456b167.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.AZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BA",
+      "file": "dots_BA_2024-01_2024-03_b7b1b568.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BB",
+      "file": "dots_BB_2024-01_2024-03_6980eff1.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BB.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BD",
+      "file": "dots_BD_2024-01_2024-03_5088c28c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BD.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BE",
+      "file": "dots_BE_2024-01_2024-03_9be18c50.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BF",
+      "file": "dots_BF_2024-01_2024-03_32b345cd.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BF.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BG",
+      "file": "dots_BG_2024-01_2024-03_314dddb0.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BH",
+      "file": "dots_BH_2024-01_2024-03_f415ad65.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BH.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BI",
+      "file": "dots_BI_2024-01_2024-03_0e69cf59.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BI.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BJ",
+      "file": "dots_BJ_2024-01_2024-03_5a14f129.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BJ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BN",
+      "file": "dots_BN_2024-01_2024-03_edcd148e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BO",
+      "file": "dots_BO_2024-01_2024-03_e5bb2ac8.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BR",
+      "file": "dots_BR_2024-01_2024-03_19028b44.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BS",
+      "file": "dots_BS_2024-01_2024-03_17f9abf5.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BS.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BT",
+      "file": "dots_BT_2024-01_2024-03_285a9582.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BW",
+      "file": "dots_BW_2024-01_2024-03_c513da67.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BY",
+      "file": "dots_BY_2024-01_2024-03_aa8c8c4b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "BZ",
+      "file": "dots_BZ_2024-01_2024-03_a756051e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.BZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CA",
+      "file": "dots_CA_2024-01_2024-03_f9c1586f.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CD",
+      "file": "dots_CD_2024-01_2024-03_44be7d56.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CD.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CF",
+      "file": "dots_CF_2024-01_2024-03_9cd14257.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CF.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CG",
+      "file": "dots_CG_2024-01_2024-03_3f3152f3.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CH",
+      "file": "dots_CH_2024-01_2024-03_c22a6423.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CH.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CI",
+      "file": "dots_CI_2024-01_2024-03_dec83ac2.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CI.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CL",
+      "file": "dots_CL_2024-01_2024-03_a1057b3f.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CL.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CM",
+      "file": "dots_CM_2024-01_2024-03_3d780646.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CN",
+      "file": "dots_CN_2024-01_2024-03_d1c46ac8.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CO",
+      "file": "dots_CO_2024-01_2024-03_90998455.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CR",
+      "file": "dots_CR_2024-01_2024-03_80b3fb4d.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CU",
+      "file": "dots_CU_2024-01_2024-03_e1cbc9b2.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CU.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CV",
+      "file": "dots_CV_2024-01_2024-03_8eae8ddb.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CV.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CY",
+      "file": "dots_CY_2024-01_2024-03_3a117b71.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "CZ",
+      "file": "dots_CZ_2024-01_2024-03_9edeac0e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.CZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "DE",
+      "file": "dots_DE_2024-01_2024-03_a5edd8ed.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.DE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "DJ",
+      "file": "dots_DJ_2024-01_2024-03_c44468be.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.DJ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "DK",
+      "file": "dots_DK_2024-01_2024-03_61781f0b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.DK.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "DM",
+      "file": "dots_DM_2024-01_2024-03_ca45d3aa.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.DM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "DO",
+      "file": "dots_DO_2024-01_2024-03_aa61a37b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.DO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "DZ",
+      "file": "dots_DZ_2024-01_2024-03_5b698919.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.DZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "EC",
+      "file": "dots_EC_2024-01_2024-03_8a7532c5.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.EC.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "EE",
+      "file": "dots_EE_2024-01_2024-03_554b511c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.EE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "EG",
+      "file": "dots_EG_2024-01_2024-03_8b91f37e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.EG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ER",
+      "file": "dots_ER_2024-01_2024-03_aed1b66b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ER.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ES",
+      "file": "dots_ES_2024-01_2024-03_eb0edebd.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ES.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ET",
+      "file": "dots_ET_2024-01_2024-03_e5c5bb57.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ET.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "FI",
+      "file": "dots_FI_2024-01_2024-03_3660031b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.FI.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "FJ",
+      "file": "dots_FJ_2024-01_2024-03_68053cc2.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.FJ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "FM",
+      "file": "dots_FM_2024-01_2024-03_226f1a99.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.FM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "FR",
+      "file": "dots_FR_2024-01_2024-03_d2f4bfef.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.FR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GA",
+      "file": "dots_GA_2024-01_2024-03_4e1823e0.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GB",
+      "file": "dots_GB_2024-01_2024-03_d0f1e047.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GB.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GD",
+      "file": "dots_GD_2024-01_2024-03_ff4e68df.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GD.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GE",
+      "file": "dots_GE_2024-01_2024-03_14081b0b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GH",
+      "file": "dots_GH_2024-01_2024-03_c82c6b46.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GH.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GM",
+      "file": "dots_GM_2024-01_2024-03_ab80d3db.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GN",
+      "file": "dots_GN_2024-01_2024-03_beb90710.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GQ",
+      "file": "dots_GQ_2024-01_2024-03_273cc600.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GQ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GR",
+      "file": "dots_GR_2024-01_2024-03_068abe8b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GT",
+      "file": "dots_GT_2024-01_2024-03_83c8018e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GW",
+      "file": "dots_GW_2024-01_2024-03_84401e16.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "GY",
+      "file": "dots_GY_2024-01_2024-03_f968c136.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.GY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "HN",
+      "file": "dots_HN_2024-01_2024-03_2ba21a05.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.HN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "HR",
+      "file": "dots_HR_2024-01_2024-03_65af6223.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.HR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "HT",
+      "file": "dots_HT_2024-01_2024-03_c5d5d0bd.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.HT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "HU",
+      "file": "dots_HU_2024-01_2024-03_6afe2644.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.HU.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ID",
+      "file": "dots_ID_2024-01_2024-03_8e7e74be.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ID.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "IE",
+      "file": "dots_IE_2024-01_2024-03_9fe4e370.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.IE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "IL",
+      "file": "dots_IL_2024-01_2024-03_90aa1e87.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.IL.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "IN",
+      "file": "dots_IN_2024-01_2024-03_e9ff0af1.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.IN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "IQ",
+      "file": "dots_IQ_2024-01_2024-03_9cad2f20.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.IQ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "IR",
+      "file": "dots_IR_2024-01_2024-03_bc88ef86.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.IR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "IS",
+      "file": "dots_IS_2024-01_2024-03_891f4acb.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.IS.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "IT",
+      "file": "dots_IT_2024-01_2024-03_49402d9e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.IT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "JM",
+      "file": "dots_JM_2024-01_2024-03_bcb73ffe.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.JM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "JO",
+      "file": "dots_JO_2024-01_2024-03_01c7cce5.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.JO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "JP",
+      "file": "dots_JP_2024-01_2024-03_1c895236.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.JP.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KE",
+      "file": "dots_KE_2024-01_2024-03_8df0b76d.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KG",
+      "file": "dots_KG_2024-01_2024-03_98ba148e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KH",
+      "file": "dots_KH_2024-01_2024-03_947c0122.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KH.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KI",
+      "file": "dots_KI_2024-01_2024-03_0958a766.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KI.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KM",
+      "file": "dots_KM_2024-01_2024-03_44e8e6bf.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KN",
+      "file": "dots_KN_2024-01_2024-03_eb98218e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KP",
+      "file": "dots_KP_2024-01_2024-03_4f60f371.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KP.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KR",
+      "file": "dots_KR_2024-01_2024-03_d1c859fd.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KW",
+      "file": "dots_KW_2024-01_2024-03_2dc577c8.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "KZ",
+      "file": "dots_KZ_2024-01_2024-03_65f62e91.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.KZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LA",
+      "file": "dots_LA_2024-01_2024-03_d7df6c9b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LB",
+      "file": "dots_LB_2024-01_2024-03_db7ffcf6.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LB.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LC",
+      "file": "dots_LC_2024-01_2024-03_7880dfb9.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LC.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LI",
+      "file": "dots_LI_2024-01_2024-03_3bce2857.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LI.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LK",
+      "file": "dots_LK_2024-01_2024-03_436dc847.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LK.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LR",
+      "file": "dots_LR_2024-01_2024-03_0ba72f7c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LS",
+      "file": "dots_LS_2024-01_2024-03_893f65d0.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LS.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LT",
+      "file": "dots_LT_2024-01_2024-03_6c025346.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LU",
+      "file": "dots_LU_2024-01_2024-03_c2ec0c8e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LU.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LV",
+      "file": "dots_LV_2024-01_2024-03_70619634.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LV.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "LY",
+      "file": "dots_LY_2024-01_2024-03_ce571403.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.LY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MA",
+      "file": "dots_MA_2024-01_2024-03_2f559389.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MC",
+      "file": "dots_MC_2024-01_2024-03_4c45f233.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MC.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MD",
+      "file": "dots_MD_2024-01_2024-03_5ac6f142.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MD.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ME",
+      "file": "dots_ME_2024-01_2024-03_08207c1c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ME.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MG",
+      "file": "dots_MG_2024-01_2024-03_35eab3d4.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MH",
+      "file": "dots_MH_2024-01_2024-03_e909cae0.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MH.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MK",
+      "file": "dots_MK_2024-01_2024-03_caab00c3.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MK.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ML",
+      "file": "dots_ML_2024-01_2024-03_bce61e7e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ML.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MM",
+      "file": "dots_MM_2024-01_2024-03_d085400e.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MN",
+      "file": "dots_MN_2024-01_2024-03_e37461dc.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MR",
+      "file": "dots_MR_2024-01_2024-03_939fbf09.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MT",
+      "file": "dots_MT_2024-01_2024-03_b2f2eeef.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MU",
+      "file": "dots_MU_2024-01_2024-03_10f3345c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MU.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MV",
+      "file": "dots_MV_2024-01_2024-03_d2611025.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MV.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MW",
+      "file": "dots_MW_2024-01_2024-03_01306da2.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MX",
+      "file": "dots_MX_2024-01_2024-03_f06548cd.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MX.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MY",
+      "file": "dots_MY_2024-01_2024-03_a7ac609a.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "MZ",
+      "file": "dots_MZ_2024-01_2024-03_8f93cea5.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.MZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NA",
+      "file": "dots_NA_2024-01_2024-03_d305bc1f.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NE",
+      "file": "dots_NE_2024-01_2024-03_2cbd7479.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NG",
+      "file": "dots_NG_2024-01_2024-03_e9ecd95a.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NI",
+      "file": "dots_NI_2024-01_2024-03_5ab8df28.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NI.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NL",
+      "file": "dots_NL_2024-01_2024-03_b4e82622.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NL.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NO",
+      "file": "dots_NO_2024-01_2024-03_ea147f90.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NP",
+      "file": "dots_NP_2024-01_2024-03_8c573d31.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NP.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NR",
+      "file": "dots_NR_2024-01_2024-03_be099133.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "NZ",
+      "file": "dots_NZ_2024-01_2024-03_d4caaa4b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.NZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "OM",
+      "file": "dots_OM_2024-01_2024-03_2c42d750.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.OM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PA",
+      "file": "dots_PA_2024-01_2024-03_a41d6551.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PE",
+      "file": "dots_PE_2024-01_2024-03_170113bc.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PG",
+      "file": "dots_PG_2024-01_2024-03_43b33f22.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PH",
+      "file": "dots_PH_2024-01_2024-03_47701164.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PH.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PK",
+      "file": "dots_PK_2024-01_2024-03_48e5f246.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PK.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PL",
+      "file": "dots_PL_2024-01_2024-03_698c79fa.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PL.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PT",
+      "file": "dots_PT_2024-01_2024-03_7fcce908.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PW",
+      "file": "dots_PW_2024-01_2024-03_d9eb3d99.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "PY",
+      "file": "dots_PY_2024-01_2024-03_153d7930.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.PY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "QA",
+      "file": "dots_QA_2024-01_2024-03_db70438d.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.QA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "RO",
+      "file": "dots_RO_2024-01_2024-03_4e2c83ee.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.RO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "RS",
+      "file": "dots_RS_2024-01_2024-03_9e8a1e0c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.RS.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "RU",
+      "file": "dots_RU_2024-01_2024-03_c7ef8af2.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.RU.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "RW",
+      "file": "dots_RW_2024-01_2024-03_4044c9f4.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.RW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SA",
+      "file": "dots_SA_2024-01_2024-03_a462a10f.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SB",
+      "file": "dots_SB_2024-01_2024-03_78b6128f.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SB.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SC",
+      "file": "dots_SC_2024-01_2024-03_6260ed0d.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SC.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SD",
+      "file": "dots_SD_2024-01_2024-03_52dd31a2.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SD.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SE",
+      "file": "dots_SE_2024-01_2024-03_4bc2ca86.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SG",
+      "file": "dots_SG_2024-01_2024-03_c9235b3a.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SI",
+      "file": "dots_SI_2024-01_2024-03_b057d62a.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SI.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SK",
+      "file": "dots_SK_2024-01_2024-03_dbe2a3c5.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SK.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SL",
+      "file": "dots_SL_2024-01_2024-03_cf80573c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SL.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SM",
+      "file": "dots_SM_2024-01_2024-03_b42bd0ee.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SN",
+      "file": "dots_SN_2024-01_2024-03_5424e8d1.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SO",
+      "file": "dots_SO_2024-01_2024-03_e953f335.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SR",
+      "file": "dots_SR_2024-01_2024-03_885e2205.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SS",
+      "file": "dots_SS_2024-01_2024-03_783e7a52.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SS.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ST",
+      "file": "dots_ST_2024-01_2024-03_82320580.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ST.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SV",
+      "file": "dots_SV_2024-01_2024-03_4939dbca.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SV.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SY",
+      "file": "dots_SY_2024-01_2024-03_b5e67efd.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "SZ",
+      "file": "dots_SZ_2024-01_2024-03_f193a9a6.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.SZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TD",
+      "file": "dots_TD_2024-01_2024-03_f14b6600.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TD.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TG",
+      "file": "dots_TG_2024-01_2024-03_5e95a5f3.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TH",
+      "file": "dots_TH_2024-01_2024-03_151bcc26.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TH.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TJ",
+      "file": "dots_TJ_2024-01_2024-03_6a4c0d9f.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TJ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TL",
+      "file": "dots_TL_2024-01_2024-03_84ae898c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TL.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TM",
+      "file": "dots_TM_2024-01_2024-03_13ee4a8b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TN",
+      "file": "dots_TN_2024-01_2024-03_1938dd10.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TO",
+      "file": "dots_TO_2024-01_2024-03_dbc5b9c8.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TO.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TR",
+      "file": "dots_TR_2024-01_2024-03_63e46ba4.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TR.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TT",
+      "file": "dots_TT_2024-01_2024-03_189d9ac5.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TT.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TV",
+      "file": "dots_TV_2024-01_2024-03_02ea17e7.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TV.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TW",
+      "file": "dots_TW_2024-01_2024-03_c0c98937.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "TZ",
+      "file": "dots_TZ_2024-01_2024-03_d6906b05.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.TZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "UA",
+      "file": "dots_UA_2024-01_2024-03_10a49e14.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.UA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "UG",
+      "file": "dots_UG_2024-01_2024-03_9cf9f0e3.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.UG.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "US",
+      "file": "dots_US_2024-01_2024-03_4c1e182f.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.US.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "UY",
+      "file": "dots_UY_2024-01_2024-03_ef30968c.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.UY.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "UZ",
+      "file": "dots_UZ_2024-01_2024-03_27e99544.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.UZ.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "VC",
+      "file": "dots_VC_2024-01_2024-03_dc133eb3.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.VC.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "VE",
+      "file": "dots_VE_2024-01_2024-03_dd13822b.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.VE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "VN",
+      "file": "dots_VN_2024-01_2024-03_65053f33.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.VN.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "VU",
+      "file": "dots_VU_2024-01_2024-03_563f440d.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.VU.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "WS",
+      "file": "dots_WS_2024-01_2024-03_7b9d0521.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.WS.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "YE",
+      "file": "dots_YE_2024-01_2024-03_499c6116.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.YE.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ZA",
+      "file": "dots_ZA_2024-01_2024-03_cd449304.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ZA.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ZM",
+      "file": "dots_ZM_2024-01_2024-03_26a44539.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ZM.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    },
+    {
+      "reporter": "ZW",
+      "file": "dots_ZW_2024-01_2024-03_1829cc64.json",
+      "url_queried": "https://sdmxcentral.imf.org/sdmx/v2/data/DOTS/DOTS.ZW.TXG_FOB_USD+TMG_CIF_USD..M/all?startPeriod=2024-01&endPeriod=2024-03&format=sdmx-json",
+      "status": "mocked"
+    }
+  ]
+}

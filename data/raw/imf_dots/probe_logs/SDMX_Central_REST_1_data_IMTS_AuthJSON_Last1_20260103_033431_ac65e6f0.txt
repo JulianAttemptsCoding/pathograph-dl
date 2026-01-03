@@ -1,0 +1,14 @@
+URL: https://sdmxcentral.imf.org/ws/public/sdmxapi/rest/data/IMTS/US.TXG_FOB_USD.CN.M?lastNObservations=1
+Timestamp: 20260103_033431
+Status: 501
+Headers Sent: {
+  "Accept": "application/vnd.sdmx.data+json;version=1.0.0"
+}
+----------------------------------------
+<?xml version='1.0' encoding='UTF-8'?>
+<message:Error xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:ErrorMessage code="501">
+    <com:Text>Data Queries are not implemented</com:Text>
+  </message:ErrorMessage>
+</message:Error>
+...

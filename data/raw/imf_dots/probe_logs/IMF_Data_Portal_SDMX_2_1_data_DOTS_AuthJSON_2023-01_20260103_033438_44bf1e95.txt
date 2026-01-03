@@ -1,0 +1,9 @@
+URL: https://api.imf.org/external/sdmx/2.1/data/DOTS/DOTS.US.TXG_FOB_USD+TMG_CIF_USD..M?startPeriod=2023-01&endPeriod=2023-02
+Timestamp: 20260103_033438
+Status: 404
+Headers Sent: {
+  "Accept": "application/vnd.sdmx.data+json;version=1.0.0"
+}
+----------------------------------------
+<AppExceptionDto><status>404</status><code>40400</code><message>No such dataflow found: Dataflow=all:DOTS(latest)</message><devMessage/><timestamp>2026-01-03T03:34:38.154122023</timestamp><correlationId>34185854e9b0d5208b141d01d5944902</correlationId><path>/api/v1/workspaces/default:integration/registry/sdmx/2.1/data/DOTS/DOTS.US.TXG_FOB_USD+TMG_CIF_USD..M</path><details/></AppExceptionDto>
+...

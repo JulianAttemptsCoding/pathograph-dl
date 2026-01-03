@@ -1,0 +1,195 @@
+node_id,iso3,iso2,name
+0,AFG,AF,Afghanistan
+1,AGO,AO,Angola
+2,ALB,AL,Albania
+3,AND,AD,Andorra
+4,ARE,AE,United Arab Emirates
+5,ARG,AR,Argentina
+6,ARM,AM,Armenia
+7,ATG,AG,Antigua and Barbuda
+8,AUS,AU,Australia
+9,AUT,AT,Austria
+10,AZE,AZ,Azerbaijan
+11,BDI,BI,Burundi
+12,BEL,BE,Belgium
+13,BEN,BJ,Benin
+14,BFA,BF,Burkina Faso
+15,BGD,BD,Bangladesh
+16,BGR,BG,Bulgaria
+17,BHR,BH,Bahrain
+18,BHS,BS,Bahamas
+19,BIH,BA,Bosnia and Herzegovina
+20,BLR,BY,Belarus
+21,BLZ,BZ,Belize
+22,BOL,BO,"Bolivia, Plurinational State of"
+23,BRA,BR,Brazil
+24,BRB,BB,Barbados
+25,BRN,BN,Brunei Darussalam
+26,BTN,BT,Bhutan
+27,BWA,BW,Botswana
+28,CAF,CF,Central African Republic
+29,CAN,CA,Canada
+30,CHE,CH,Switzerland
+31,CHL,CL,Chile
+32,CHN,CN,China
+33,CIV,CI,Côte d'Ivoire
+34,CMR,CM,Cameroon
+35,COD,CD,"Congo, The Democratic Republic of the"
+36,COG,CG,Congo
+37,COL,CO,Colombia
+38,COM,KM,Comoros
+39,CPV,CV,Cabo Verde
+40,CRI,CR,Costa Rica
+41,CUB,CU,Cuba
+42,CYP,CY,Cyprus
+43,CZE,CZ,Czechia
+44,DEU,DE,Germany
+45,DJI,DJ,Djibouti
+46,DMA,DM,Dominica
+47,DNK,DK,Denmark
+48,DOM,DO,Dominican Republic
+49,DZA,DZ,Algeria
+50,ECU,EC,Ecuador
+51,EGY,EG,Egypt
+52,ERI,ER,Eritrea
+53,ESP,ES,Spain
+54,EST,EE,Estonia
+55,ETH,ET,Ethiopia
+56,FIN,FI,Finland
+57,FJI,FJ,Fiji
+58,FRA,FR,France
+59,FSM,FM,"Micronesia, Federated States of"
+60,GAB,GA,Gabon
+61,GBR,GB,United Kingdom
+62,GEO,GE,Georgia
+63,GHA,GH,Ghana
+64,GIN,GN,Guinea
+65,GMB,GM,Gambia
+66,GNB,GW,Guinea-Bissau
+67,GNQ,GQ,Equatorial Guinea
+68,GRC,GR,Greece
+69,GRD,GD,Grenada
+70,GTM,GT,Guatemala
+71,GUY,GY,Guyana
+72,HND,HN,Honduras
+73,HRV,HR,Croatia
+74,HTI,HT,Haiti
+75,HUN,HU,Hungary
+76,IDN,ID,Indonesia
+77,IND,IN,India
+78,IRL,IE,Ireland
+79,IRN,IR,"Iran, Islamic Republic of"
+80,IRQ,IQ,Iraq
+81,ISL,IS,Iceland
+82,ISR,IL,Israel
+83,ITA,IT,Italy
+84,JAM,JM,Jamaica
+85,JOR,JO,Jordan
+86,JPN,JP,Japan
+87,KAZ,KZ,Kazakhstan
+88,KEN,KE,Kenya
+89,KGZ,KG,Kyrgyzstan
+90,KHM,KH,Cambodia
+91,KIR,KI,Kiribati
+92,KNA,KN,Saint Kitts and Nevis
+93,KOR,KR,"Korea, Republic of"
+94,KWT,KW,Kuwait
+95,LAO,LA,Lao People's Democratic Republic
+96,LBN,LB,Lebanon
+97,LBR,LR,Liberia
+98,LBY,LY,Libya
+99,LCA,LC,Saint Lucia
+100,LIE,LI,Liechtenstein
+101,LKA,LK,Sri Lanka
+102,LSO,LS,Lesotho
+103,LTU,LT,Lithuania
+104,LUX,LU,Luxembourg
+105,LVA,LV,Latvia
+106,MAR,MA,Morocco
+107,MCO,MC,Monaco
+108,MDA,MD,"Moldova, Republic of"
+109,MDG,MG,Madagascar
+110,MDV,MV,Maldives
+111,MEX,MX,Mexico
+112,MHL,MH,Marshall Islands
+113,MKD,MK,North Macedonia
+114,MLI,ML,Mali
+115,MLT,MT,Malta
+116,MMR,MM,Myanmar
+117,MNE,ME,Montenegro
+118,MNG,MN,Mongolia
+119,MOZ,MZ,Mozambique
+120,MRT,MR,Mauritania
+121,MUS,MU,Mauritius
+122,MWI,MW,Malawi
+123,MYS,MY,Malaysia
+124,NAM,NA,Namibia
+125,NER,NE,Niger
+126,NGA,NG,Nigeria
+127,NIC,NI,Nicaragua
+128,NLD,NL,Netherlands
+129,NOR,NO,Norway
+130,NPL,NP,Nepal
+131,NRU,NR,Nauru
+132,NZL,NZ,New Zealand
+133,OMN,OM,Oman
+134,PAK,PK,Pakistan
+135,PAN,PA,Panama
+136,PER,PE,Peru
+137,PHL,PH,Philippines
+138,PLW,PW,Palau
+139,PNG,PG,Papua New Guinea
+140,POL,PL,Poland
+141,PRK,KP,"Korea, Democratic People's Republic of"
+142,PRT,PT,Portugal
+143,PRY,PY,Paraguay
+144,QAT,QA,Qatar
+145,ROU,RO,Romania
+146,RUS,RU,Russian Federation
+147,RWA,RW,Rwanda
+148,SAU,SA,Saudi Arabia
+149,SDN,SD,Sudan
+150,SEN,SN,Senegal
+151,SGP,SG,Singapore
+152,SLB,SB,Solomon Islands
+153,SLE,SL,Sierra Leone
+154,SLV,SV,El Salvador
+155,SMR,SM,San Marino
+156,SOM,SO,Somalia
+157,SRB,RS,Serbia
+158,SSD,SS,South Sudan
+159,STP,ST,Sao Tome and Principe
+160,SUR,SR,Suriname
+161,SVK,SK,Slovakia
+162,SVN,SI,Slovenia
+163,SWE,SE,Sweden
+164,SWZ,SZ,Eswatini
+165,SYC,SC,Seychelles
+166,SYR,SY,Syrian Arab Republic
+167,TCD,TD,Chad
+168,TGO,TG,Togo
+169,THA,TH,Thailand
+170,TJK,TJ,Tajikistan
+171,TKM,TM,Turkmenistan
+172,TLS,TL,Timor-Leste
+173,TON,TO,Tonga
+174,TTO,TT,Trinidad and Tobago
+175,TUN,TN,Tunisia
+176,TUR,TR,Türkiye
+177,TUV,TV,Tuvalu
+178,TWN,TW,"Taiwan, Province of China"
+179,TZA,TZ,"Tanzania, United Republic of"
+180,UGA,UG,Uganda
+181,UKR,UA,Ukraine
+182,URY,UY,Uruguay
+183,USA,US,United States
+184,UZB,UZ,Uzbekistan
+185,VCT,VC,Saint Vincent and the Grenadines
+186,VEN,VE,"Venezuela, Bolivarian Republic of"
+187,VNM,VN,Viet Nam
+188,VUT,VU,Vanuatu
+189,WSM,WS,Samoa
+190,YEM,YE,Yemen
+191,ZAF,ZA,South Africa
+192,ZMB,ZM,Zambia
+193,ZWE,ZW,Zimbabwe

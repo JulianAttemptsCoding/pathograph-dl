@@ -1,0 +1,9 @@
+URL: https://api.imf.org/external/sdmx/2.1/data/IMTS/M.US.W00.TXG_FOB_USD?startPeriod=2024-01&endPeriod=2024-02&format=sdmx-json
+Timestamp: 20260103_032314
+Status: 400
+Headers Sent: {
+  "Accept": "application/json"
+}
+----------------------------------------
+{"status":400,"code":40000,"message":"com.fasterxml.jackson.core.JsonGenerationException: Current context not Object but Array","devMessage":null,"timestamp":"2026-01-03T03:23:14.544373Z","correlationId":"893926a1ba2e0095aea5d9b31263060c","path":"/api/v1/workspaces/default:integration/registry/sdmx/2.1/data/IMTS/M.US.W00.TXG_FOB_USD","details":{}}
+...

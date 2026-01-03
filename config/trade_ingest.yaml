@@ -1,0 +1,9 @@
+imf:
+  sdmx_base_url: "https://dataservices.imf.org/REST/SDMX_JSON.svc"
+  # Optional: if DOTS discovery fails, set this explicitly (example):
+  # dots_flow_id: "DOT"
+  # Optional: help discovery by hint string
+  dots_dataflow_hint: "DOTS"
+entities:
+  n_nodes: 194
+

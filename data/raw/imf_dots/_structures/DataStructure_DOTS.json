@@ -1,0 +1,294 @@
+{
+  "structure": {
+    "datastructures": {
+      "datastructure": [
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "datastructure",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+            }
+          ],
+          "id": "ECOFIN_DSD",
+          "name": "ECOFIN Data Structure Definition",
+          "names": {
+            "en": "ECOFIN Data Structure Definition"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "dataStructureComponents": {
+            "attributeList": {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "attributedescriptor",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.AttributeDescriptor=IMF:ECOFIN_DSD(1.0).AttributeDescriptor"
+                }
+              ],
+              "id": "AttributeDescriptor",
+              "attributes": [
+                {
+                  "assignmentStatus": "Conditional",
+                  "attributeRelationship": {
+                    "none": {}
+                  },
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dataattribute",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=IMF:ECOFIN_DSD(1.0).COMMENT"
+                    }
+                  ],
+                  "id": "COMMENT",
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).COMMENT"
+                },
+                {
+                  "assignmentStatus": "Conditional",
+                  "attributeRelationship": {
+                    "dimensions": [
+                      "DATA_DOMAIN",
+                      "REF_AREA",
+                      "INDICATOR",
+                      "COUNTERPART_AREA",
+                      "FREQ"
+                    ]
+                  },
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dataattribute",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=IMF:ECOFIN_DSD(1.0).BASE_PER"
+                    }
+                  ],
+                  "id": "BASE_PER",
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).BASE_PER"
+                },
+                {
+                  "assignmentStatus": "Mandatory",
+                  "attributeRelationship": {
+                    "dimensions": [
+                      "DATA_DOMAIN",
+                      "REF_AREA",
+                      "INDICATOR",
+                      "COUNTERPART_AREA",
+                      "FREQ"
+                    ]
+                  },
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dataattribute",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=IMF:ECOFIN_DSD(1.0).UNIT_MULT"
+                    }
+                  ],
+                  "id": "UNIT_MULT",
+                  "localRepresentation": {
+                    "textFormat": {
+                      "textType": "String"
+                    },
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_UNIT_MULT(1.1)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).UNIT_MULT"
+                },
+                {
+                  "assignmentStatus": "Conditional",
+                  "attributeRelationship": {
+                    "primaryMeasure": "OBS_VALUE"
+                  },
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dataattribute",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=IMF:ECOFIN_DSD(1.0).OBS_STATUS"
+                    }
+                  ],
+                  "id": "OBS_STATUS",
+                  "localRepresentation": {
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_OBS_STATUS(1.0)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).OBS_STATUS"
+                },
+                {
+                  "assignmentStatus": "Conditional",
+                  "attributeRelationship": {
+                    "dimensions": [
+                      "DATA_DOMAIN",
+                      "REF_AREA",
+                      "INDICATOR",
+                      "COUNTERPART_AREA",
+                      "FREQ"
+                    ]
+                  },
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dataattribute",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=IMF:ECOFIN_DSD(1.0).TIME_FORMAT"
+                    }
+                  ],
+                  "id": "TIME_FORMAT",
+                  "localRepresentation": {
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_TIME_FORMAT(1.0)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).TIME_FORMAT"
+                }
+              ]
+            },
+            "dimensionList": {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "dimensiondescriptor",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.DimensionDescriptor=IMF:ECOFIN_DSD(1.0).DimensionDescriptor"
+                }
+              ],
+              "id": "DimensionDescriptor",
+              "dimensions": [
+                {
+                  "position": 1,
+                  "type": "Dimension",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dimension",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=IMF:ECOFIN_DSD(1.0).DATA_DOMAIN"
+                    }
+                  ],
+                  "id": "DATA_DOMAIN",
+                  "localRepresentation": {
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_DATADOMAIN(1.0)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).DATA_DOMAIN"
+                },
+                {
+                  "position": 2,
+                  "type": "Dimension",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dimension",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=IMF:ECOFIN_DSD(1.0).REF_AREA"
+                    }
+                  ],
+                  "id": "REF_AREA",
+                  "localRepresentation": {
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_REF_AREA(1.0)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).REF_AREA"
+                },
+                {
+                  "position": 3,
+                  "type": "Dimension",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dimension",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=IMF:ECOFIN_DSD(1.0).INDICATOR"
+                    }
+                  ],
+                  "id": "INDICATOR",
+                  "localRepresentation": {
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_INDICATOR(1.0)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).INDICATOR"
+                },
+                {
+                  "position": 4,
+                  "type": "Dimension",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dimension",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=IMF:ECOFIN_DSD(1.0).COUNTERPART_AREA"
+                    }
+                  ],
+                  "id": "COUNTERPART_AREA",
+                  "localRepresentation": {
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_REF_AREA(1.0)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=IMF:ECOFIN_CONCEPTS(1.0).COUNTERPART_AREA"
+                },
+                {
+                  "position": 5,
+                  "type": "Dimension",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "dimension",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=IMF:ECOFIN_DSD(1.0).FREQ"
+                    }
+                  ],
+                  "id": "FREQ",
+                  "localRepresentation": {
+                    "enumeration": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=SDMX:CL_FREQ(1.0)"
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).FREQ"
+                }
+              ],
+              "timeDimensions": [
+                {
+                  "position": 6,
+                  "type": "TimeDimension",
+                  "links": [
+                    {
+                      "rel": "self",
+                      "type": "timedimension",
+                      "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                      "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=IMF:ECOFIN_DSD(1.0).TIME_PERIOD"
+                    }
+                  ],
+                  "id": "TIME_PERIOD",
+                  "localRepresentation": {
+                    "textFormat": {
+                      "textType": "ObservationalTimePeriod"
+                    }
+                  },
+                  "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).TIME_PERIOD"
+                }
+              ]
+            },
+            "measureList": {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "measuredescriptor",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.MeasureDescriptor=IMF:ECOFIN_DSD(1.0).MeasureDescriptor"
+                }
+              ],
+              "id": "MeasureDescriptor",
+              "primaryMeasure": {
+                "links": [
+                  {
+                    "rel": "self",
+                    "type": "primarymeasure",
+                    "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                    "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Measure=IMF:ECOFIN_DSD(1.0).OBS_VALUE"
+                  }
+                ],
+                "id": "OBS_VALUE",
+                "conceptIdentity": "urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=SDMX:CROSS_DOMAIN_CONCEPTS(1.0).OBS_VALUE"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

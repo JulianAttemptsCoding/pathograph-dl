@@ -1,0 +1,22 @@
+{
+  "project_name": "PathoGraph-DL",
+  "spec_version": "v1.1",
+  "build_timestamp": "PLACEHOLDER",
+  "build_commit_hash": "PLACEHOLDER",
+  "total_countries": 194,
+  "time_range": {
+    "start": "1950-01",
+    "end": "PLACEHOLDER",
+    "total_months": "PLACEHOLDER"
+  },
+  "tensor_shape": "[T, 194, 194, 4]",
+  "data_sources": [
+    "IMF DOTS via SDMX JSON",
+    "Taiwan MOF/Customs",
+    "UN Comtrade (optional)"
+  ],
+  "version_control": {
+    "config_file": "config/trade_ingest.yaml",
+    "spec_doc": "docs/spec_trade_ingestion_v1.1.md"
+  }
+}

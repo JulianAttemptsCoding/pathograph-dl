@@ -1,0 +1,1051 @@
+{
+  "structure": {
+    "codelists": {
+      "codelist": [
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "codelist",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Codelist=IMF:CL_DATADOMAIN(1.0)"
+            }
+          ],
+          "id": "CL_DATADOMAIN",
+          "name": "Data Domain",
+          "names": {
+            "en": "Data Domain"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "isPartial": false,
+          "codes": [
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).BOP5"
+                }
+              ],
+              "id": "BOP5",
+              "name": "Balance of Payments (BPM5)",
+              "names": {
+                "en": "Balance of Payments (BPM5)"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).BOP6"
+                }
+              ],
+              "id": "BOP6",
+              "name": "Balance of Payments (BPM6)",
+              "names": {
+                "en": "Balance of Payments (BPM6)"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).IIP5"
+                }
+              ],
+              "id": "IIP5",
+              "name": "International Investment Position (BPM5)",
+              "names": {
+                "en": "International Investment Position (BPM5)"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).IIP6"
+                }
+              ],
+              "id": "IIP6",
+              "name": "International Investment Position (BPM6)",
+              "names": {
+                "en": "International Investment Position (BPM6)"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).1PI"
+                }
+              ],
+              "id": "1PI",
+              "name": "Coordinated Portfolio Investment Survey",
+              "names": {
+                "en": "Coordinated Portfolio Investment Survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).1DI"
+                }
+              ],
+              "id": "1DI",
+              "name": "Coordinated Direct Investment Survey",
+              "names": {
+                "en": "Coordinated Direct Investment Survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).RTD"
+                }
+              ],
+              "id": "RTD",
+              "name": "Reserves Template",
+              "names": {
+                "en": "Reserves Template"
+              },
+              "description": "Reserves Template",
+              "descriptions": {
+                "en": "Reserves Template"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).DOTS"
+                }
+              ],
+              "id": "DOTS",
+              "name": "Direction of Trade Statistics",
+              "names": {
+                "en": "Direction of Trade Statistics"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FSD"
+                }
+              ],
+              "id": "FSD",
+              "name": "FSI: Data Report Form",
+              "names": {
+                "en": "FSI: Data Report Form"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FS1"
+                }
+              ],
+              "id": "FS1",
+              "name": "FSI: Institution of Deposit Takers and OFCs",
+              "names": {
+                "en": "FSI: Institution of Deposit Takers and OFCs"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FS2"
+                }
+              ],
+              "id": "FS2",
+              "name": "FSI: Sectoral Financial Statements",
+              "names": {
+                "en": "FSI: Sectoral Financial Statements"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).GFB"
+                }
+              ],
+              "id": "GFB",
+              "name": "GFS: Budgetary Central Govt: Operational Statement, Cash Statement, Balance Sheet",
+              "names": {
+                "en": "GFS: Budgetary Central Govt: Operational Statement, Cash Statement, Balance Sheet"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).GFC"
+                }
+              ],
+              "id": "GFC",
+              "name": "GFS: Consolidated Central Govt",
+              "names": {
+                "en": "GFS: Consolidated Central Govt"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).GFG"
+                }
+              ],
+              "id": "GFG",
+              "name": "GFS: Consolidated General Govt",
+              "names": {
+                "en": "GFS: Consolidated General Govt"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).GYQ"
+                }
+              ],
+              "id": "GYQ",
+              "name": "GFS: Yearkbook Questionnaire",
+              "names": {
+                "en": "GFS: Yearkbook Questionnaire"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FAS"
+                }
+              ],
+              "id": "FAS",
+              "name": "Financial Access Survey",
+              "names": {
+                "en": "Financial Access Survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).1SR"
+                }
+              ],
+              "id": "1SR",
+              "name": "M&B: Central Bank",
+              "names": {
+                "en": "M&B: Central Bank"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).6SR"
+                }
+              ],
+              "id": "6SR",
+              "name": "M&B: Interest Rates and Share Prices",
+              "names": {
+                "en": "M&B: Interest Rates and Share Prices"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).5SR"
+                }
+              ],
+              "id": "5SR",
+              "name": "M&B: Monetary Aggregates",
+              "names": {
+                "en": "M&B: Monetary Aggregates"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).2SR"
+                }
+              ],
+              "id": "2SR",
+              "name": "M&B: Other Depository Corporations",
+              "names": {
+                "en": "M&B: Other Depository Corporations"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).4SR"
+                }
+              ],
+              "id": "4SR",
+              "name": "M&B: Other Financial Corporations",
+              "names": {
+                "en": "M&B: Other Financial Corporations"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).SRE"
+                }
+              ],
+              "id": "SRE",
+              "name": "COFER: Currency Composition of Foreign Exchange Reserves",
+              "names": {
+                "en": "COFER: Currency Composition of Foreign Exchange Reserves"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).01R"
+                }
+              ],
+              "id": "01R",
+              "name": "Exchange Rates and International Reserves",
+              "names": {
+                "en": "Exchange Rates and International Reserves"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).90R"
+                }
+              ],
+              "id": "90R",
+              "name": "RES: National Accounts",
+              "names": {
+                "en": "RES: National Accounts"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).60R"
+                }
+              ],
+              "id": "60R",
+              "name": "RES: Prices, Production, Labor and Trade",
+              "names": {
+                "en": "RES: Prices, Production, Labor and Trade"
+              },
+              "description": "Includes tourism",
+              "descriptions": {
+                "en": "Includes tourism"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).NAG"
+                }
+              ],
+              "id": "NAG",
+              "name": "National Accounts - GDP",
+              "names": {
+                "en": "National Accounts - GDP"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).IND"
+                }
+              ],
+              "id": "IND",
+              "name": "Ind. Of Economic Activity",
+              "names": {
+                "en": "Ind. Of Economic Activity"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FLI"
+                }
+              ],
+              "id": "FLI",
+              "name": "Forward looking Indicators",
+              "names": {
+                "en": "Forward looking Indicators"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).SBS"
+                }
+              ],
+              "id": "SBS",
+              "name": "Accumulation Accounts (Sectoral Balance Sheets)",
+              "names": {
+                "en": "Accumulation Accounts (Sectoral Balance Sheets)"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).EMP"
+                }
+              ],
+              "id": "EMP",
+              "name": "Employment",
+              "names": {
+                "en": "Employment"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).UEM"
+                }
+              ],
+              "id": "UEM",
+              "name": "Unemployment",
+              "names": {
+                "en": "Unemployment"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).WOE"
+                }
+              ],
+              "id": "WOE",
+              "name": "Wages/earnings",
+              "names": {
+                "en": "Wages/earnings"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).CPI"
+                }
+              ],
+              "id": "CPI",
+              "name": "Consumer price indices",
+              "names": {
+                "en": "Consumer price indices"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).PPI"
+                }
+              ],
+              "id": "PPI",
+              "name": "Producer price indices",
+              "names": {
+                "en": "Producer price indices"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).GGO"
+                }
+              ],
+              "id": "GGO",
+              "name": "General Government Operations",
+              "names": {
+                "en": "General Government Operations"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).GGD"
+                }
+              ],
+              "id": "GGD",
+              "name": "General government gross debt",
+              "names": {
+                "en": "General government gross debt"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).CGO"
+                }
+              ],
+              "id": "CGO",
+              "name": "Central government operations",
+              "names": {
+                "en": "Central government operations"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).CGD"
+                }
+              ],
+              "id": "CGD",
+              "name": "Central government debt",
+              "names": {
+                "en": "Central government debt"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).DCS"
+                }
+              ],
+              "id": "DCS",
+              "name": "Depository Corporations Survey",
+              "names": {
+                "en": "Depository Corporations Survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).CBS"
+                }
+              ],
+              "id": "CBS",
+              "name": "Central Bank Survey",
+              "names": {
+                "en": "Central Bank Survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).OFS"
+                }
+              ],
+              "id": "OFS",
+              "name": "Other Financial Corporations (OFC) survey",
+              "names": {
+                "en": "Other Financial Corporations (OFC) survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).INR"
+                }
+              ],
+              "id": "INR",
+              "name": "Interest rates",
+              "names": {
+                "en": "Interest rates"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).DSE"
+                }
+              ],
+              "id": "DSE",
+              "name": "Debt Securities",
+              "names": {
+                "en": "Debt Securities"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).SPI"
+                }
+              ],
+              "id": "SPI",
+              "name": "Share price index",
+              "names": {
+                "en": "Share price index"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).ILV1"
+                }
+              ],
+              "id": "ILV1",
+              "name": "Official reserve assets",
+              "names": {
+                "en": "Official reserve assets"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).ILV2"
+                }
+              ],
+              "id": "ILV2",
+              "name": "Template on International Reserves and Foreign Currency Liquidity",
+              "names": {
+                "en": "Template on International Reserves and Foreign Currency Liquidity"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).MET"
+                }
+              ],
+              "id": "MET",
+              "name": "Merchandise trade",
+              "names": {
+                "en": "Merchandise trade"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).CPS"
+                }
+              ],
+              "id": "CPS",
+              "name": "Coordinated Portfolio Investment Survey",
+              "names": {
+                "en": "Coordinated Portfolio Investment Survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).CDS"
+                }
+              ],
+              "id": "CDS",
+              "name": "Coordinated Direct Investment Survey",
+              "names": {
+                "en": "Coordinated Direct Investment Survey"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).EXD"
+                }
+              ],
+              "id": "EXD",
+              "name": "External debt",
+              "names": {
+                "en": "External debt"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).EXR"
+                }
+              ],
+              "id": "EXR",
+              "name": "Exchange rates",
+              "names": {
+                "en": "Exchange rates"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).COF"
+                }
+              ],
+              "id": "COF",
+              "name": "COFER: Currency Composition of Foreign Exchange Reserves",
+              "names": {
+                "en": "COFER: Currency Composition of Foreign Exchange Reserves"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).POP"
+                }
+              ],
+              "id": "POP",
+              "name": "Population",
+              "names": {
+                "en": "Population"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).LMI"
+                }
+              ],
+              "id": "LMI",
+              "name": "Labor Market Indicators",
+              "names": {
+                "en": "Labor Market Indicators"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FSI"
+                }
+              ],
+              "id": "FSI",
+              "name": "Financial Soundness Indicators",
+              "names": {
+                "en": "Financial Soundness Indicators"
+              },
+              "description": "Financial Soundness Indicators",
+              "descriptions": {
+                "en": "Financial Soundness Indicators"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).CPIH"
+                }
+              ],
+              "id": "CPIH",
+              "name": "Consumer Price Index Harmonized",
+              "names": {
+                "en": "Consumer Price Index Harmonized"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).MSG"
+                }
+              ],
+              "id": "MSG",
+              "name": "Monetary and Financial Statistics Aggregates",
+              "names": {
+                "en": "Monetary and Financial Statistics Aggregates"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).GBD"
+                }
+              ],
+              "id": "GBD",
+              "name": "Budgetary Central Government Gross Debt",
+              "names": {
+                "en": "Budgetary Central Government Gross Debt"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).INF"
+                }
+              ],
+              "id": "INF",
+              "name": "INFER: Instrument Composition of Transactions in Foreign Exchange Reserves",
+              "names": {
+                "en": "INFER: Instrument Composition of Transactions in Foreign Exchange Reserves"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).SOC"
+                }
+              ],
+              "id": "SOC",
+              "name": "Socio-Demographic",
+              "names": {
+                "en": "Socio-Demographic"
+              },
+              "description": "Socio-Demographic",
+              "descriptions": {
+                "en": "Socio-Demographic"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).BCG"
+                }
+              ],
+              "id": "BCG",
+              "name": "Budgetary Central Government",
+              "names": {
+                "en": "Budgetary Central Government"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0)._X"
+                }
+              ],
+              "id": "_X",
+              "name": "Not allocated/unspecified",
+              "names": {
+                "en": "Not allocated/unspecified"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FSI19"
+                }
+              ],
+              "id": "FSI19",
+              "name": "Financial Soundness Indicators (2019)",
+              "names": {
+                "en": "Financial Soundness Indicators (2019)"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FS219"
+                }
+              ],
+              "id": "FS219",
+              "name": "FSI: Sectoral Financial Statements (2019)",
+              "names": {
+                "en": "FSI: Sectoral Financial Statements (2019)"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).ECC"
+                }
+              ],
+              "id": "ECC",
+              "name": "Climate Change",
+              "names": {
+                "en": "Climate Change"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).FXI"
+                }
+              ],
+              "id": "FXI",
+              "name": "Foreign Exchange Intervention",
+              "names": {
+                "en": "Foreign Exchange Intervention"
+              }
+            },
+            {
+              "links": [
+                {
+                  "rel": "self",
+                  "type": "code",
+                  "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+                  "urn": "urn:sdmx:org.sdmx.infomodel.codelist.Code=IMF:CL_DATADOMAIN(1.0).YGG"
+                }
+              ],
+              "id": "YGG",
+              "name": "Gender",
+              "names": {
+                "en": "Gender"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

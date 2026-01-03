@@ -1,0 +1,37 @@
+URL: https://api.imf.org/external/sdmx/2.1/dataflow
+Timestamp: 20260103_032306
+Status: 200
+Headers Sent: {}
+----------------------------------------
+<?xml version='1.0' encoding='UTF-8'?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xml="http://www.w3.org/XML/1998/namespace" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message ../../schemas/SDMXMessage.xsd">
+  <mes:Header>
+    <mes:ID>IDREF9467</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2026-01-03T03:23:06.090023845Z</mes:Prepared>
+    <mes:Sender id="unknown"/>
+  </mes:Header>
+  <mes:Structures>
+    <str:Dataflows>
+      <str:Dataflow urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF.RES:SRD(1.0.0)" agencyID="IMF.RES" id="SRD" version="1.0.0" isFinal="true" isExternalReference="false">
+        <com:Annotations>
+          <com:Annotation id="@SDMX">
+            <com:AnnotationTitle>TIME_PERIOD >=  1973</com:AnnotationTitle>
+            <com:AnnotationType>DEFAULT</com:AnnotationType>
+          </com:Annotation>
+          <com:Annotation id="dataEngineSettings"/>
+          <com:Annotation id="origin"/>
+          <com:Annotation id="DataEngine">
+            <com:AnnotationTitle>timeseries_v2</com:AnnotationTitle>
+          </com:Annotation>
+          <com:Annotation id="isFinal"/>
+          <com:Annotation id="lastUpdatedAt"/>
+        </com:Annotations>
+        <com:Name xml:lang="en">Structural Reform Database (SRD)</com:Name>
+        <com:Description xml:lang="en">The SRD contains data on a wide range of structural policies across different countries. These policies are things that affect how markets function, like labor laws, regulations on businesses, and trade policies.</com:Description>
+        <str:Structure>
+          <Ref agencyID="IMF.RES" id="DSD_SRD" version="1.0.0" package="datastructure" class="DataStructure"/>
+        </str:Structure>
+      </str:Dataflow>
+      <
+...

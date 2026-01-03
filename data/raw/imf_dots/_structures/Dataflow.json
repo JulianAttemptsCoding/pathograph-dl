@@ -1,0 +1,4564 @@
+{
+  "structure": {
+    "dataflows": {
+      "dataflow": [
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:BPM6_BOP_M(2.5.0)"
+            }
+          ],
+          "id": "BPM6_BOP_M",
+          "name": "BPM6_BOP_M dataflow",
+          "names": {
+            "en": "BPM6_BOP_M dataflow"
+          },
+          "version": "2.5.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.5.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:BPM6_BOP_Q(2.5.0)"
+            }
+          ],
+          "id": "BPM6_BOP_Q",
+          "name": "BPM6_BOP_Q dataflow",
+          "names": {
+            "en": "BPM6_BOP_Q dataflow"
+          },
+          "version": "2.5.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.5.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:BPM6_FDI_A(1.13.0)"
+            }
+          ],
+          "id": "BPM6_FDI_A",
+          "name": "BPM6_FDI_A dataflow",
+          "names": {
+            "en": "BPM6_FDI_A dataflow"
+          },
+          "version": "1.13.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=OECD:FDI(1.13.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:BPM6_ITS_A(2.5.0)"
+            }
+          ],
+          "id": "BPM6_ITS_A",
+          "name": "BPM6_ITS_A dataflow",
+          "names": {
+            "en": "BPM6_ITS_A dataflow"
+          },
+          "version": "2.5.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.5.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:ECB_EAQSA_Q(1.1)"
+            }
+          ],
+          "id": "ECB_EAQSA_Q",
+          "name": "ECB_EAQSA_Q",
+          "names": {
+            "en": "ECB_EAQSA_Q"
+          },
+          "version": "1.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.15)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:ECB_QSA_Q(1.2)"
+            }
+          ],
+          "id": "ECB_QSA_Q",
+          "name": "Quarterly Sector Accounts - Source ECB",
+          "names": {
+            "en": "Quarterly Sector Accounts - Source ECB"
+          },
+          "version": "1.2",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.15)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICPN_AP_A(1.1.0)"
+            }
+          ],
+          "id": "HICPN_AP_A",
+          "name": "HICP_AP_A",
+          "names": {
+            "en": "HICP_AP_A"
+          },
+          "version": "1.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:HICPAP(3.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICPN_COW_A(1.1.0)"
+            }
+          ],
+          "id": "HICPN_COW_A",
+          "name": "HICP_COW_A",
+          "names": {
+            "en": "HICP_COW_A"
+          },
+          "description": "HICP Country Weights",
+          "descriptions": {
+            "en": "HICP Country Weights"
+          },
+          "version": "1.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICPN_CT_M(1.1.0)"
+            }
+          ],
+          "id": "HICPN_CT_M",
+          "name": "HICP_CT_M",
+          "names": {
+            "en": "HICP_CT_M"
+          },
+          "description": "HICP Final CT",
+          "descriptions": {
+            "en": "HICP Final CT"
+          },
+          "version": "1.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICPN_FE_M(1.1.0)"
+            }
+          ],
+          "id": "HICPN_FE_M",
+          "name": "HICP_FE_M",
+          "names": {
+            "en": "HICP_FE_M"
+          },
+          "description": "HICP Flash Estimate",
+          "descriptions": {
+            "en": "HICP Flash Estimate"
+          },
+          "version": "1.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICPN_INDEX_M(1.1.0)"
+            }
+          ],
+          "id": "HICPN_INDEX_M",
+          "name": "HICP_INDEX_M",
+          "names": {
+            "en": "HICP_INDEX_M"
+          },
+          "description": "HICP Final",
+          "descriptions": {
+            "en": "HICP Final"
+          },
+          "version": "1.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICPN_WEIGHT_A(1.1.0)"
+            }
+          ],
+          "id": "HICPN_WEIGHT_A",
+          "name": "HICP_WEIGHT_A",
+          "names": {
+            "en": "HICP_WEIGHT_A"
+          },
+          "description": "HICP Item Weight",
+          "descriptions": {
+            "en": "HICP Item Weight"
+          },
+          "version": "1.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICP_AP_A(2.6.0)"
+            }
+          ],
+          "id": "HICP_AP_A",
+          "name": "HICP_AP_A",
+          "names": {
+            "en": "HICP_AP_A"
+          },
+          "version": "2.6.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:HICPAP(2.6.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICP_COW_A(1.7.0)"
+            }
+          ],
+          "id": "HICP_COW_A",
+          "name": "HICP_COW_A",
+          "names": {
+            "en": "HICP_COW_A"
+          },
+          "description": "HICP Country Weights",
+          "descriptions": {
+            "en": "HICP Country Weights"
+          },
+          "version": "1.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(1.7.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICP_CT_M(1.7.0)"
+            }
+          ],
+          "id": "HICP_CT_M",
+          "name": "HICP_CT_M",
+          "names": {
+            "en": "HICP_CT_M"
+          },
+          "description": "HICP Final CT",
+          "descriptions": {
+            "en": "HICP Final CT"
+          },
+          "version": "1.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(1.7.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICP_FE_M(1.7.0)"
+            }
+          ],
+          "id": "HICP_FE_M",
+          "name": "HICP_FE_M",
+          "names": {
+            "en": "HICP_FE_M"
+          },
+          "description": "HICP Flash Estimate",
+          "descriptions": {
+            "en": "HICP Flash Estimate"
+          },
+          "version": "1.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(1.6)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICP_INDEX_M(1.7.0)"
+            }
+          ],
+          "id": "HICP_INDEX_M",
+          "name": "HICP_INDEX_M",
+          "names": {
+            "en": "HICP_INDEX_M"
+          },
+          "description": "HICP Final",
+          "descriptions": {
+            "en": "HICP Final"
+          },
+          "version": "1.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(1.6)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:HICP_WEIGHT_A(1.7.0)"
+            }
+          ],
+          "id": "HICP_WEIGHT_A",
+          "name": "HICP_WEIGHT_A",
+          "names": {
+            "en": "HICP_WEIGHT_A"
+          },
+          "description": "HICP Item Weight",
+          "descriptions": {
+            "en": "HICP Item Weight"
+          },
+          "version": "1.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:CPI(1.6)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_FLSHEMP_Q(1.15)"
+            }
+          ],
+          "id": "NAMAIN_FLSHEMP_Q",
+          "name": "NAMAIN_FLSHEMP_Q",
+          "names": {
+            "en": "NAMAIN_FLSHEMP_Q"
+          },
+          "version": "1.15",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(1.15)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_FLSHGDP_Q(1.15)"
+            }
+          ],
+          "id": "NAMAIN_FLSHGDP_Q",
+          "name": "NAMAIN_FLSHGDP_Q",
+          "names": {
+            "en": "NAMAIN_FLSHGDP_Q"
+          },
+          "version": "1.15",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(1.15)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_IDC_N(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_IDC_N",
+          "name": "NAMAIN_IDC_N",
+          "names": {
+            "en": "NAMAIN_IDC_N"
+          },
+          "description": "Dataflow for International Data Cooperation",
+          "descriptions": {
+            "en": "Dataflow for International Data Cooperation"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0101_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0101_A",
+          "name": "NAMAIN_T0101_A",
+          "names": {
+            "en": "NAMAIN_T0101_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0101_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0101_Q",
+          "name": "NAMAIN_T0101_Q",
+          "names": {
+            "en": "NAMAIN_T0101_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0102_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0102_A",
+          "name": "NAMAIN_T0102_A",
+          "names": {
+            "en": "NAMAIN_T0102_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0102_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0102_Q",
+          "name": "NAMAIN_T0102_Q",
+          "names": {
+            "en": "NAMAIN_T0102_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0103_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0103_A",
+          "name": "NAMAIN_T0103_A",
+          "names": {
+            "en": "NAMAIN_T0103_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0103_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0103_Q",
+          "name": "NAMAIN_T0103_Q",
+          "names": {
+            "en": "NAMAIN_T0103_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0110_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0110_A",
+          "name": "NAMAIN_T0110_A",
+          "names": {
+            "en": "NAMAIN_T0110_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0110_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0110_Q",
+          "name": "NAMAIN_T0110_Q",
+          "names": {
+            "en": "NAMAIN_T0110_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0111_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0111_A",
+          "name": "NAMAIN_T0111_A",
+          "names": {
+            "en": "NAMAIN_T0111_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0111_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0111_Q",
+          "name": "NAMAIN_T0111_Q",
+          "names": {
+            "en": "NAMAIN_T0111_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0117_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0117_A",
+          "name": "NAMAIN_T0117_A",
+          "names": {
+            "en": "NAMAIN_T0117_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0117_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0117_Q",
+          "name": "NAMAIN_T0117_Q",
+          "names": {
+            "en": "NAMAIN_T0117_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0120_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0120_A",
+          "name": "NAMAIN_T0120_A",
+          "names": {
+            "en": "NAMAIN_T0120_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0120_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0120_Q",
+          "name": "NAMAIN_T0120_Q",
+          "names": {
+            "en": "NAMAIN_T0120_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0121_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0121_A",
+          "name": "NAMAIN_T0121_A",
+          "names": {
+            "en": "NAMAIN_T0121_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0121_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0121_Q",
+          "name": "NAMAIN_T0121_Q",
+          "names": {
+            "en": "NAMAIN_T0121_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T01EMP_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T01EMP_A",
+          "name": "NAMAIN_T01EMP_A",
+          "names": {
+            "en": "NAMAIN_T01EMP_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T01EMP_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T01EMP_Q",
+          "name": "NAMAIN_T01EMP_Q",
+          "names": {
+            "en": "NAMAIN_T01EMP_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T01GDP_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T01GDP_A",
+          "name": "NAMAIN_T01GDP_A",
+          "names": {
+            "en": "NAMAIN_T01GDP_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T01GDP_Q(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T01GDP_Q",
+          "name": "NAMAIN_T01GDP_Q",
+          "names": {
+            "en": "NAMAIN_T01GDP_Q"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0301_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0301_A",
+          "name": "NAMAIN_T0301_A",
+          "names": {
+            "en": "NAMAIN_T0301_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0302_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0302_A",
+          "name": "NAMAIN_T0302_A",
+          "names": {
+            "en": "NAMAIN_T0302_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0303_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0303_A",
+          "name": "NAMAIN_T0303_A",
+          "names": {
+            "en": "NAMAIN_T0303_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0500_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T0500_A",
+          "name": "NAMAIN_T0500_A",
+          "names": {
+            "en": "NAMAIN_T0500_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0501_A(1.17.0)"
+            }
+          ],
+          "id": "NAMAIN_T0501_A",
+          "name": "NAMAIN_T0501_A",
+          "names": {
+            "en": "NAMAIN_T0501_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T0502_A(1.17.0)"
+            }
+          ],
+          "id": "NAMAIN_T0502_A",
+          "name": "NAMAIN_T0502_A",
+          "names": {
+            "en": "NAMAIN_T0502_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T2000_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T2000_A",
+          "name": "NAMAIN_T2000_A",
+          "names": {
+            "en": "NAMAIN_T2000_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAMAIN_T2200_A(2.1.0)"
+            }
+          ],
+          "id": "NAMAIN_T2200_A",
+          "name": "NAMAIN_T2200_A",
+          "names": {
+            "en": "NAMAIN_T2200_A"
+          },
+          "version": "2.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(2.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAPENS_T2900_3(1.17.0)"
+            }
+          ],
+          "id": "NAPENS_T2900_3",
+          "name": "NAPENS_T2900_3",
+          "names": {
+            "en": "NAPENS_T2900_3"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_PENS(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAPENS_T2900_A(1.17.0)"
+            }
+          ],
+          "id": "NAPENS_T2900_A",
+          "name": "NAPENS_T2900_A",
+          "names": {
+            "en": "NAPENS_T2900_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_PENS(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAPENS_T2901_3(1.17.0)"
+            }
+          ],
+          "id": "NAPENS_T2901_3",
+          "name": "NAPENS_T2901_3",
+          "names": {
+            "en": "NAPENS_T2901_3"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_PENS(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAPENS_T2901_A(1.17.0)"
+            }
+          ],
+          "id": "NAPENS_T2901_A",
+          "name": "NAPENS_T2901_A",
+          "names": {
+            "en": "NAPENS_T2901_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_PENS(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAPENS_T2902_3(1.17.0)"
+            }
+          ],
+          "id": "NAPENS_T2902_3",
+          "name": "NAPENS_T2902_3",
+          "names": {
+            "en": "NAPENS_T2902_3"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_PENS(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAPENS_T2902_A(1.17.0)"
+            }
+          ],
+          "id": "NAPENS_T2902_A",
+          "name": "NAPENS_T2902_A",
+          "names": {
+            "en": "NAPENS_T2902_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_PENS(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAREG_T1001_A(6.1.0)"
+            }
+          ],
+          "id": "NAREG_T1001_A",
+          "name": "NA Regional Statistics",
+          "names": {
+            "en": "NA Regional Statistics"
+          },
+          "version": "6.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_REG(6.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAREG_T1002_A(6.1.0)"
+            }
+          ],
+          "id": "NAREG_T1002_A",
+          "name": "NA Regional Statistics",
+          "names": {
+            "en": "NA Regional Statistics"
+          },
+          "version": "6.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_REG(6.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAREG_T1200_A(6.1.0)"
+            }
+          ],
+          "id": "NAREG_T1200_A",
+          "name": "NA Regional Statistics",
+          "names": {
+            "en": "NA Regional Statistics"
+          },
+          "version": "6.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_REG(6.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NAREG_T1300_A(6.1.0)"
+            }
+          ],
+          "id": "NAREG_T1300_A",
+          "name": "NA Regional Statistics",
+          "names": {
+            "en": "NA Regional Statistics"
+          },
+          "version": "6.1.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_REG(6.1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_ECB_N(1.1)"
+            }
+          ],
+          "id": "NASEC_ECB_N",
+          "name": "NASEC_ECB_N",
+          "names": {
+            "en": "NASEC_ECB_N"
+          },
+          "version": "1.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.15)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASEC_IDCFINA_A/1.9",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_IDCFINA_A(1.9)"
+            }
+          ],
+          "id": "NASEC_IDCFINA_A",
+          "name": "NASEC_IDCFINA_A",
+          "names": {
+            "en": "NASEC_IDCFINA_A"
+          },
+          "version": "1.9",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.9)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASEC_IDCFINA_Q/1.9",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_IDCFINA_Q(1.9)"
+            }
+          ],
+          "id": "NASEC_IDCFINA_Q",
+          "name": "NASEC_IDCFINA_Q",
+          "names": {
+            "en": "NASEC_IDCFINA_Q"
+          },
+          "version": "1.9",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.9)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASEC_IDCNFSA_A/1.9",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_IDCNFSA_A(1.9)"
+            }
+          ],
+          "id": "NASEC_IDCNFSA_A",
+          "name": "NASEC_IDCNFSA_A",
+          "names": {
+            "en": "NASEC_IDCNFSA_A"
+          },
+          "version": "1.9",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(1.9)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASEC_IDCNFSA_Q/1.9",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_IDCNFSA_Q(1.9)"
+            }
+          ],
+          "id": "NASEC_IDCNFSA_Q",
+          "name": "NASEC_IDCNFSA_Q",
+          "names": {
+            "en": "NASEC_IDCNFSA_Q"
+          },
+          "version": "1.9",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.9)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0610_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0610_A",
+          "name": "NASEC_T0610_A",
+          "names": {
+            "en": "NASEC_T0610_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0611_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0611_A",
+          "name": "NASEC_T0611_A",
+          "names": {
+            "en": "NASEC_T0611_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0612_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0612_A",
+          "name": "NASEC_T0612_A",
+          "names": {
+            "en": "NASEC_T0612_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0620_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0620_A",
+          "name": "NASEC_T0620_A",
+          "names": {
+            "en": "NASEC_T0620_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0621_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0621_A",
+          "name": "NASEC_T0621_A",
+          "names": {
+            "en": "NASEC_T0621_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0622_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0622_A",
+          "name": "NASEC_T0622_A",
+          "names": {
+            "en": "NASEC_T0622_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0625_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0625_A",
+          "name": "NASEC_T0625_A",
+          "names": {
+            "en": "NASEC_T0625_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0710_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0710_A",
+          "name": "NASEC_T0710_A",
+          "names": {
+            "en": "NASEC_T0710_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0720_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0720_A",
+          "name": "NASEC_T0720_A",
+          "names": {
+            "en": "NASEC_T0720_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0725_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0725_A",
+          "name": "NASEC_T0725_A",
+          "names": {
+            "en": "NASEC_T0725_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0800_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0800_A",
+          "name": "NASEC_T0800_A",
+          "names": {
+            "en": "NASEC_T0800_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0801SA_Q(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0801SA_Q",
+          "name": "NASEC_T0801SA_Q",
+          "names": {
+            "en": "NASEC_T0801SA_Q"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T0801_Q(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T0801_Q",
+          "name": "NASEC_T0801_Q",
+          "names": {
+            "en": "NASEC_T0801_Q"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_T2600_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_T2600_A",
+          "name": "NASEC_T2600_A",
+          "names": {
+            "en": "NASEC_T2600_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASEC_TSB720_A(1.17.0)"
+            }
+          ],
+          "id": "NASEC_TSB720_A",
+          "name": "NASEC_TSB720_A",
+          "names": {
+            "en": "NASEC_TSB720_A"
+          },
+          "version": "1.17.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.17.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU2_1516_A(2.7.0)"
+            }
+          ],
+          "id": "NASU2_1516_A",
+          "name": "NASU2_1516_A",
+          "names": {
+            "en": "NASU2_1516_A"
+          },
+          "version": "2.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.7.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU2_16ADD_5(2.7.0)"
+            }
+          ],
+          "id": "NASU2_16ADD_5",
+          "name": "NASU2_16ADD_5",
+          "names": {
+            "en": "NASU2_16ADD_5"
+          },
+          "version": "2.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.7.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU2_1719IN_5(2.7.0)"
+            }
+          ],
+          "id": "NASU2_1719IN_5",
+          "name": "NASU2_1719IN_5",
+          "names": {
+            "en": "NASU2_1719IN_5"
+          },
+          "version": "2.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.7.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU2_1719PR_5(2.7.0)"
+            }
+          ],
+          "id": "NASU2_1719PR_5",
+          "name": "NASU2_1719PR_5",
+          "names": {
+            "en": "NASU2_1719PR_5"
+          },
+          "version": "2.7.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.7.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU2_17IN_5/2.3",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU2_17IN_5(2.3)"
+            }
+          ],
+          "id": "NASU2_17IN_5",
+          "name": "NASU2_17IN_5",
+          "names": {
+            "en": "NASU2_17IN_5"
+          },
+          "version": "2.3",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.3)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU2_17PR_5/2.3",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU2_17PR_5(2.3)"
+            }
+          ],
+          "id": "NASU2_17PR_5",
+          "name": "NASU2_17PR_5",
+          "names": {
+            "en": "NASU2_17PR_5"
+          },
+          "version": "2.3",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.3)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU_1516ADD_5/2.1",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU_1516ADD_5(2.1)"
+            }
+          ],
+          "id": "NASU_1516ADD_5",
+          "name": "NASU_1516ADD_5",
+          "names": {
+            "en": "NASU_1516ADD_5"
+          },
+          "version": "2.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU_1516_A/2.1",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU_1516_A(2.1)"
+            }
+          ],
+          "id": "NASU_1516_A",
+          "name": "NASU_1516_A",
+          "names": {
+            "en": "NASU_1516_A"
+          },
+          "version": "2.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU_163034_A/2.1",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU_163034_A(2.1)"
+            }
+          ],
+          "id": "NASU_163034_A",
+          "name": "NASU_163034_A",
+          "names": {
+            "en": "NASU_163034_A"
+          },
+          "version": "2.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU_16BP_5/2.1",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU_16BP_5(2.1)"
+            }
+          ],
+          "id": "NASU_16BP_5",
+          "name": "NASU_16BP_5",
+          "names": {
+            "en": "NASU_16BP_5"
+          },
+          "version": "2.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU_1719IN_5/2.1",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU_1719IN_5(2.1)"
+            }
+          ],
+          "id": "NASU_1719IN_5",
+          "name": "NASU_1719IN_5",
+          "names": {
+            "en": "NASU_1719IN_5"
+          },
+          "version": "2.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/ESTAT/NASU_1719PR_5/2.1",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:NASU_1719PR_5(2.1)"
+            }
+          ],
+          "id": "NASU_1719PR_5",
+          "name": "NASU_1719PR_5",
+          "names": {
+            "en": "NASU_1719PR_5"
+          },
+          "version": "2.1",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SU(2.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:SEEA_AEA_A(1.6.0)"
+            }
+          ],
+          "id": "SEEA_AEA_A",
+          "name": "Air Emissions Accounts",
+          "names": {
+            "en": "Air Emissions Accounts"
+          },
+          "description": "Air Emissions Accounts",
+          "descriptions": {
+            "en": "Air Emissions Accounts"
+          },
+          "version": "1.6.0",
+          "agencyID": "ESTAT",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:SEEAAIR(1.6.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IAEG-SDGs:DF_SDG_GLC(1.21)"
+            }
+          ],
+          "id": "DF_SDG_GLC",
+          "name": "SDG Country Global Dataflow",
+          "names": {
+            "en": "SDG Country Global Dataflow"
+          },
+          "description": "Reporting and dissemination dataflow for non-harmonized global SDG indicators reported by countries.",
+          "descriptions": {
+            "en": "Reporting and dissemination dataflow for non-harmonized global SDG indicators reported by countries."
+          },
+          "version": "1.21",
+          "agencyID": "IAEG-SDGs",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IAEG-SDGs:SDG(1.21)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IAEG-SDGs:DF_SDG_GLH(1.21)"
+            }
+          ],
+          "id": "DF_SDG_GLH",
+          "name": "SDG Harmonized Global Dataflow",
+          "names": {
+            "en": "SDG Harmonized Global Dataflow"
+          },
+          "description": "Reporting and dissemination dataflow for harmonized global SDG indicators.",
+          "descriptions": {
+            "en": "Reporting and dissemination dataflow for harmonized global SDG indicators."
+          },
+          "version": "1.21",
+          "agencyID": "IAEG-SDGs",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IAEG-SDGs:SDG(1.21)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:01R(1.0)"
+            }
+          ],
+          "id": "01R",
+          "name": "Exchange Rates and International Reserves (01R) for Collection",
+          "names": {
+            "en": "Exchange Rates and International Reserves (01R) for Collection"
+          },
+          "description": "Exchange Rates and International Reserves (01R) for Collection",
+          "descriptions": {
+            "en": "Exchange Rates and International Reserves (01R) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:1DI(1.0)"
+            }
+          ],
+          "id": "1DI",
+          "name": "Coordinated Direct Investment Survey (CDIS) for Collection",
+          "names": {
+            "en": "Coordinated Direct Investment Survey (CDIS) for Collection"
+          },
+          "description": "Coordinated Direct Investment Survey (CDIS) for Collection",
+          "descriptions": {
+            "en": "Coordinated Direct Investment Survey (CDIS) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:1PI(1.0)"
+            }
+          ],
+          "id": "1PI",
+          "name": "Coordinated Portfolio Investment Survey (CPIS) for Collection",
+          "names": {
+            "en": "Coordinated Portfolio Investment Survey (CPIS) for Collection"
+          },
+          "description": "Coordinated Portfolio Investment Survey (CPIS) for Collection",
+          "descriptions": {
+            "en": "Coordinated Portfolio Investment Survey (CPIS) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:1SR(1.0)"
+            }
+          ],
+          "id": "1SR",
+          "name": "M&B: Central Bank (1SR) for Collection",
+          "names": {
+            "en": "M&B: Central Bank (1SR) for Collection"
+          },
+          "description": "M&B: Central Bank (1SR) for Collection",
+          "descriptions": {
+            "en": "M&B: Central Bank (1SR) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:2SR(1.0)"
+            }
+          ],
+          "id": "2SR",
+          "name": "M&B: Other Depository Corporations (2SR) for Collection",
+          "names": {
+            "en": "M&B: Other Depository Corporations (2SR) for Collection"
+          },
+          "description": "M&B: Other Depository Corporations (2SR) for Collection",
+          "descriptions": {
+            "en": "M&B: Other Depository Corporations (2SR) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:4SR(1.0)"
+            }
+          ],
+          "id": "4SR",
+          "name": "M&B: Other Financial Corporations (4SR) for Collection",
+          "names": {
+            "en": "M&B: Other Financial Corporations (4SR) for Collection"
+          },
+          "description": "M&B: Other Financial Corporations (4SR) for Collection",
+          "descriptions": {
+            "en": "M&B: Other Financial Corporations (4SR) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:5SR(1.0)"
+            }
+          ],
+          "id": "5SR",
+          "name": "M&B: Monetary Aggregates (5SR) for Collection",
+          "names": {
+            "en": "M&B: Monetary Aggregates (5SR) for Collection"
+          },
+          "description": "M&B: Monetary Aggregates (5SR) for Collection",
+          "descriptions": {
+            "en": "M&B: Monetary Aggregates (5SR) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:60R(1.0)"
+            }
+          ],
+          "id": "60R",
+          "name": "RES: Prices, Production, Labor and Trade (60R) for Collection",
+          "names": {
+            "en": "RES: Prices, Production, Labor and Trade (60R) for Collection"
+          },
+          "description": "RES: Prices, Production, Labor and Trade (60R) for Collection",
+          "descriptions": {
+            "en": "RES: Prices, Production, Labor and Trade (60R) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:6SR(1.0)"
+            }
+          ],
+          "id": "6SR",
+          "name": "M&B: Interest Rates and Share Prices (6SR) for Collection",
+          "names": {
+            "en": "M&B: Interest Rates and Share Prices (6SR) for Collection"
+          },
+          "description": "M&B: Interest Rates and Share Prices (6SR) for Collection",
+          "descriptions": {
+            "en": "M&B: Interest Rates and Share Prices (6SR) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:90R(1.0)"
+            }
+          ],
+          "id": "90R",
+          "name": "RES: National Accounts (90R) for Collection",
+          "names": {
+            "en": "RES: National Accounts (90R) for Collection"
+          },
+          "description": "RES: National Accounts (90R) for Collection",
+          "descriptions": {
+            "en": "RES: National Accounts (90R) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BCG(1.0)"
+            }
+          ],
+          "id": "BCG",
+          "name": "Budgetary Central Government Operations",
+          "names": {
+            "en": "Budgetary Central Government Operations"
+          },
+          "description": "Government Finance Operations Statement Central Government",
+          "descriptions": {
+            "en": "Government Finance Operations Statement Central Government"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BCGO_ALT_FISCAL(1.0)"
+            }
+          ],
+          "id": "BCGO_ALT_FISCAL",
+          "name": "Budgetary Central Government Operations",
+          "names": {
+            "en": "Budgetary Central Government Operations"
+          },
+          "description": "Government Finance Budgetary Central Government Operations  FISCAL",
+          "descriptions": {
+            "en": "Government Finance Budgetary Central Government Operations  FISCAL"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ALT_FISCAL_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BOP5_COLLECTION(1.0)"
+            }
+          ],
+          "id": "BOP5_COLLECTION",
+          "name": "Balance of Payments (BPM5) for Collection",
+          "names": {
+            "en": "Balance of Payments (BPM5) for Collection"
+          },
+          "description": "Balance of Payments (BPM5) for Collection",
+          "descriptions": {
+            "en": "Balance of Payments (BPM5) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BOP6(1.1)"
+            }
+          ],
+          "id": "BOP6",
+          "name": "Balance of Payments (BPM6) for Collection",
+          "names": {
+            "en": "Balance of Payments (BPM6) for Collection"
+          },
+          "description": "Balance of Payments (BPM6) for Collection",
+          "descriptions": {
+            "en": "Balance of Payments (BPM6) for Collection"
+          },
+          "version": "1.1",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BOP_BPM5(1.0)"
+            }
+          ],
+          "id": "BOP_BPM5",
+          "name": "Balance of Payments -- BPM5",
+          "names": {
+            "en": "Balance of Payments -- BPM5"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BOP_BPM6(1.0)"
+            }
+          ],
+          "id": "BOP_BPM6",
+          "name": "Balance of Payments -- BPM6",
+          "names": {
+            "en": "Balance of Payments -- BPM6"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BOP_GBPM6(2.0)"
+            }
+          ],
+          "id": "BOP_GBPM6",
+          "name": "Balance of Payments _Global use_BOP_BPM6",
+          "names": {
+            "en": "Balance of Payments _Global use_BOP_BPM6"
+          },
+          "version": "2.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BPM6_BOP_Q(1.5)"
+            }
+          ],
+          "id": "BPM6_BOP_Q",
+          "name": "Balance of Payments --BPM6--Global DSD",
+          "names": {
+            "en": "Balance of Payments --BPM6--Global DSD"
+          },
+          "version": "1.5",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(1.5)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:BPM6_RA_M(1.0)"
+            }
+          ],
+          "id": "BPM6_RA_M",
+          "name": "Template on International Reserves and Foreign Currency Liquidity--Global DSD",
+          "names": {
+            "en": "Template on International Reserves and Foreign Currency Liquidity--Global DSD"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(1.2)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CBS(1.0)"
+            }
+          ],
+          "id": "CBS",
+          "name": "Central Bank Survey",
+          "names": {
+            "en": "Central Bank Survey"
+          },
+          "description": "Central Bank Survey",
+          "descriptions": {
+            "en": "Central Bank Survey"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CBS_NSTD(1.0)"
+            }
+          ],
+          "id": "CBS_NSTD",
+          "name": "Central Bank Survey_Non-Standard",
+          "names": {
+            "en": "Central Bank Survey_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGD(1.0)"
+            }
+          ],
+          "id": "CGD",
+          "name": "Central Government debt (CGD)",
+          "names": {
+            "en": "Central Government debt (CGD)"
+          },
+          "description": "Government Finance Central Government debt",
+          "descriptions": {
+            "en": "Government Finance Central Government debt"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGD_ALT_FISCAL(1.0)"
+            }
+          ],
+          "id": "CGD_ALT_FISCAL",
+          "name": "Central Government debt (CGD) FISCAL",
+          "names": {
+            "en": "Central Government debt (CGD) FISCAL"
+          },
+          "description": "Government Finance Central Government debt FISCAL",
+          "descriptions": {
+            "en": "Government Finance Central Government debt FISCAL"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ALT_FISCAL_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGD_GNA(1.5)"
+            }
+          ],
+          "id": "CGD_GNA",
+          "name": "Central Government Debt (CGD) - Global Use NA_SEC DSD V1.5",
+          "names": {
+            "en": "Central Government Debt (CGD) - Global Use NA_SEC DSD V1.5"
+          },
+          "version": "1.5",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.5)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGD_NSTD(1.0)"
+            }
+          ],
+          "id": "CGD_NSTD",
+          "name": "Central Government Debt_Non-Standard",
+          "names": {
+            "en": "Central Government Debt_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGO(1.0)"
+            }
+          ],
+          "id": "CGO",
+          "name": "Central Government Operations (CGO)",
+          "names": {
+            "en": "Central Government Operations (CGO)"
+          },
+          "description": "Government Finance Operations Statement Central Government",
+          "descriptions": {
+            "en": "Government Finance Operations Statement Central Government"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGO_ALT_FISCAL(1.0)"
+            }
+          ],
+          "id": "CGO_ALT_FISCAL",
+          "name": "Central Government operations (CGO) FISCAL",
+          "names": {
+            "en": "Central Government operations (CGO) FISCAL"
+          },
+          "description": "Government Finance Central Government operations FISCAL",
+          "descriptions": {
+            "en": "Government Finance Central Government operations FISCAL"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ALT_FISCAL_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGO_GNA(1.4)"
+            }
+          ],
+          "id": "CGO_GNA",
+          "name": "Central Government operations (CGO) - Global Use NA_SEC DSD V1.4",
+          "names": {
+            "en": "Central Government operations (CGO) - Global Use NA_SEC DSD V1.4"
+          },
+          "version": "1.4",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CGO_NSTD(1.0)"
+            }
+          ],
+          "id": "CGO_NSTD",
+          "name": "Central government operations_Non-Standard",
+          "names": {
+            "en": "Central government operations_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:COF(1.0)"
+            }
+          ],
+          "id": "COF",
+          "name": "COFER: Currency Composition of Foreign Exchange Reserves",
+          "names": {
+            "en": "COFER: Currency Composition of Foreign Exchange Reserves"
+          },
+          "description": "COFER: Currency Composition of Foreign Exchange Reserves",
+          "descriptions": {
+            "en": "COFER: Currency Composition of Foreign Exchange Reserves"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CPI(1.0)"
+            }
+          ],
+          "id": "CPI",
+          "name": "Consumer Price Index",
+          "names": {
+            "en": "Consumer Price Index"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:CPIH(1.0)"
+            }
+          ],
+          "id": "CPIH",
+          "name": "Consumer Price Index Harmonized (CPIH) for collection",
+          "names": {
+            "en": "Consumer Price Index Harmonized (CPIH) for collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:DCS(1.0)"
+            }
+          ],
+          "id": "DCS",
+          "name": "Depository Corporations Survey",
+          "names": {
+            "en": "Depository Corporations Survey"
+          },
+          "description": "Depository Corporations Survey",
+          "descriptions": {
+            "en": "Depository Corporations Survey"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:DCS_NSTD(1.0)"
+            }
+          ],
+          "id": "DCS_NSTD",
+          "name": "Depository Corporations Survey_Non-Standard",
+          "names": {
+            "en": "Depository Corporations Survey_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:DOTS(1.0)"
+            }
+          ],
+          "id": "DOTS",
+          "name": "Direction of Trade Statistics (DOTS) for Collection",
+          "names": {
+            "en": "Direction of Trade Statistics (DOTS) for Collection"
+          },
+          "description": "Direction of Trade Statistics (DOTS) for Collection",
+          "descriptions": {
+            "en": "Direction of Trade Statistics (DOTS) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:DSE(1.0)"
+            }
+          ],
+          "id": "DSE",
+          "name": "Debt Securities",
+          "names": {
+            "en": "Debt Securities"
+          },
+          "description": "Debt Securities",
+          "descriptions": {
+            "en": "Debt Securities"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:DSE_GBPM6(2.0)"
+            }
+          ],
+          "id": "DSE_GBPM6",
+          "name": "Debt Securities - Global Use BPM6 DSD",
+          "names": {
+            "en": "Debt Securities - Global Use BPM6 DSD"
+          },
+          "version": "2.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:DSE_GNA(1.12)"
+            }
+          ],
+          "id": "DSE_GNA",
+          "name": "Debt Securities - Global Use NA_SEC DSD V1.12",
+          "names": {
+            "en": "Debt Securities - Global Use NA_SEC DSD V1.12"
+          },
+          "version": "1.12",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.12)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ECC(1.0)"
+            }
+          ],
+          "id": "ECC",
+          "name": "Climate Change",
+          "names": {
+            "en": "Climate Change"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:EMP(1.0)"
+            }
+          ],
+          "id": "EMP",
+          "name": "Employment",
+          "names": {
+            "en": "Employment"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:EXD(1.0)"
+            }
+          ],
+          "id": "EXD",
+          "name": "External debt",
+          "names": {
+            "en": "External debt"
+          },
+          "description": "External debt",
+          "descriptions": {
+            "en": "External debt"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:EXD_BPM6(1.0)"
+            }
+          ],
+          "id": "EXD_BPM6",
+          "name": "External Debt (EXD_BPM6)",
+          "names": {
+            "en": "External Debt (EXD_BPM6)"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:EXD_GBPM6(2.0)"
+            }
+          ],
+          "id": "EXD_GBPM6",
+          "name": "External Debt (EXD)- Global Use BOP_BPM6",
+          "names": {
+            "en": "External Debt (EXD)- Global Use BOP_BPM6"
+          },
+          "version": "2.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:EXR(1.0)"
+            }
+          ],
+          "id": "EXR",
+          "name": "Exchange rates",
+          "names": {
+            "en": "Exchange rates"
+          },
+          "description": "Exchange rates",
+          "descriptions": {
+            "en": "Exchange rates"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FAS_COLLECTION(1.0)"
+            }
+          ],
+          "id": "FAS_COLLECTION",
+          "name": "Financial Access Survey (FAS) for Collection",
+          "names": {
+            "en": "Financial Access Survey (FAS) for Collection"
+          },
+          "description": "Financial Access Survey (FAS) for Collection",
+          "descriptions": {
+            "en": "Financial Access Survey (FAS) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FLI(1.0)"
+            }
+          ],
+          "id": "FLI",
+          "name": "Forward looking Indicators",
+          "names": {
+            "en": "Forward looking Indicators"
+          },
+          "description": "Forward looking Indicators",
+          "descriptions": {
+            "en": "Forward looking Indicators"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FS1(1.0)"
+            }
+          ],
+          "id": "FS1",
+          "name": "FSI: Institution of Deposit Takers and OFCs (FS1) for Collection",
+          "names": {
+            "en": "FSI: Institution of Deposit Takers and OFCs (FS1) for Collection"
+          },
+          "description": "FSI: Institution of Deposit Takers and OFCs (FS1) for Collection",
+          "descriptions": {
+            "en": "FSI: Institution of Deposit Takers and OFCs (FS1) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FS2(1.0)"
+            }
+          ],
+          "id": "FS2",
+          "name": "FSI: Sectoral Financial Statements (FS2) for Collection",
+          "names": {
+            "en": "FSI: Sectoral Financial Statements (FS2) for Collection"
+          },
+          "description": "FSI: Sectoral Financial Statements (FS2) for Collection",
+          "descriptions": {
+            "en": "FSI: Sectoral Financial Statements (FS2) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FSD(1.0)"
+            }
+          ],
+          "id": "FSD",
+          "name": "FSI: Data Report Form (FSD) for Collection",
+          "names": {
+            "en": "FSI: Data Report Form (FSD) for Collection"
+          },
+          "description": "FSI: Data Report Form (FSD) for Collection",
+          "descriptions": {
+            "en": "FSI: Data Report Form (FSD) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FSD_NSTD(1.0)"
+            }
+          ],
+          "id": "FSD_NSTD",
+          "name": "FSI: Data Report Form_Non-Standard",
+          "names": {
+            "en": "FSI: Data Report Form_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FSI(1.0)"
+            }
+          ],
+          "id": "FSI",
+          "name": "Financial Soundness Indicators",
+          "names": {
+            "en": "Financial Soundness Indicators"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:FXI(1.0)"
+            }
+          ],
+          "id": "FXI",
+          "name": "Foreign Exchange Intervention",
+          "names": {
+            "en": "Foreign Exchange Intervention"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GFB(1.0)"
+            }
+          ],
+          "id": "GFB",
+          "name": "GFS: Budgetary Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFB) for Collection",
+          "names": {
+            "en": "GFS: Budgetary Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFB) for Collection"
+          },
+          "description": "Budgetary Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFB) for Collection",
+          "descriptions": {
+            "en": "Budgetary Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFB) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GFC(1.0)"
+            }
+          ],
+          "id": "GFC",
+          "name": "GFS: Consolidated Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFC) for Collection",
+          "names": {
+            "en": "GFS: Consolidated Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFC) for Collection"
+          },
+          "description": "Consolidated Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFC) for Collection",
+          "descriptions": {
+            "en": "Consolidated Central Govt: Operational Statement, Cash Statement, Balance Sheet (GFC) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GFG(1.0)"
+            }
+          ],
+          "id": "GFG",
+          "name": "GFS: Consolidated General Govt: Operational Statement, Cash Statement, Balance Sheet (GFG) for Collection",
+          "names": {
+            "en": "GFS: Consolidated General Govt: Operational Statement, Cash Statement, Balance Sheet (GFG) for Collection"
+          },
+          "description": "GFS: Consolidated General Govt: Operational Statement, Cash Statement, Balance Sheet (GFG) for Collection",
+          "descriptions": {
+            "en": "GFS: Consolidated General Govt: Operational Statement, Cash Statement, Balance Sheet (GFG) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GGD(1.0)"
+            }
+          ],
+          "id": "GGD",
+          "name": "General Government gross debt (GGD)",
+          "names": {
+            "en": "General Government gross debt (GGD)"
+          },
+          "description": "Government Finance General Government gross debt",
+          "descriptions": {
+            "en": "Government Finance General Government gross debt"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GGD_ALT_FISCAL(1.0)"
+            }
+          ],
+          "id": "GGD_ALT_FISCAL",
+          "name": "General Government debt (GGD) FISCAL",
+          "names": {
+            "en": "General Government debt (GGD) FISCAL"
+          },
+          "description": "Government Finance General Government debt FISCAL",
+          "descriptions": {
+            "en": "Government Finance General Government debt FISCAL"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ALT_FISCAL_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GGD_GNA(1.7)"
+            }
+          ],
+          "id": "GGD_GNA",
+          "name": "General Government debt - Global Use NA_SEC DSD V1.7",
+          "names": {
+            "en": "General Government debt - Global Use NA_SEC DSD V1.7"
+          },
+          "version": "1.7",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.7)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GGO(1.0)"
+            }
+          ],
+          "id": "GGO",
+          "name": "General Government Operations (GGO)",
+          "names": {
+            "en": "General Government Operations (GGO)"
+          },
+          "description": "Government Finance Operations Statement General Government",
+          "descriptions": {
+            "en": "Government Finance Operations Statement General Government"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GGO_ALT_FISCAL(1.0)"
+            }
+          ],
+          "id": "GGO_ALT_FISCAL",
+          "name": "General Government operations (GGO) FISCAL",
+          "names": {
+            "en": "General Government operations (GGO) FISCAL"
+          },
+          "description": "Government Finance General Government operations FISCAL",
+          "descriptions": {
+            "en": "Government Finance General Government operations FISCAL"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ALT_FISCAL_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GGO_GNA(1.5)"
+            }
+          ],
+          "id": "GGO_GNA",
+          "name": "General Government operations (GGO) - Global Use NA_SEC DSD V1.5",
+          "names": {
+            "en": "General Government operations (GGO) - Global Use NA_SEC DSD V1.5"
+          },
+          "version": "1.5",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.5)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:GYQ(1.0)"
+            }
+          ],
+          "id": "GYQ",
+          "name": "GFS: Yearkbook Questionnaire (GYQ) for Collection",
+          "names": {
+            "en": "GFS: Yearkbook Questionnaire (GYQ) for Collection"
+          },
+          "description": "GFS: Yearkbook Questionnaire (GYQ) for Collection",
+          "descriptions": {
+            "en": "GFS: Yearkbook Questionnaire (GYQ) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:IIP5_COLLECTION(1.0)"
+            }
+          ],
+          "id": "IIP5_COLLECTION",
+          "name": "International Investment Position (BPM5) for Collection",
+          "names": {
+            "en": "International Investment Position (BPM5) for Collection"
+          },
+          "description": "International Investment Position (BPM5) for Collection",
+          "descriptions": {
+            "en": "International Investment Position (BPM5) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:IIP6(1.0)"
+            }
+          ],
+          "id": "IIP6",
+          "name": "International Investment Position (BPM6) for Collection",
+          "names": {
+            "en": "International Investment Position (BPM6) for Collection"
+          },
+          "description": "International Investment Position (BPM6) for Collection",
+          "descriptions": {
+            "en": "International Investment Position (BPM6) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:IIP_BPM5(1.0)"
+            }
+          ],
+          "id": "IIP_BPM5",
+          "name": "International Investment Position -- BPM5",
+          "names": {
+            "en": "International Investment Position -- BPM5"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:IIP_BPM6(1.0)"
+            }
+          ],
+          "id": "IIP_BPM6",
+          "name": "International Investment Position -- BPM6",
+          "names": {
+            "en": "International Investment Position -- BPM6"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:IIP_GBPM6(2.0)"
+            }
+          ],
+          "id": "IIP_GBPM6",
+          "name": "International Investment Position (IIP) - Global Use BOP_BPM6",
+          "names": {
+            "en": "International Investment Position (IIP) - Global Use BOP_BPM6"
+          },
+          "version": "2.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ILV1(1.0)"
+            }
+          ],
+          "id": "ILV1",
+          "name": "Official reserve assets",
+          "names": {
+            "en": "Official reserve assets"
+          },
+          "description": "Official reserve assets",
+          "descriptions": {
+            "en": "Official reserve assets"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ILV1_GBPM6(2.0)"
+            }
+          ],
+          "id": "ILV1_GBPM6",
+          "name": "Official Reserve Assets (ILV1)-Global Use BOP_BPM6",
+          "names": {
+            "en": "Official Reserve Assets (ILV1)-Global Use BOP_BPM6"
+          },
+          "version": "2.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ILV2(1.0)"
+            }
+          ],
+          "id": "ILV2",
+          "name": "Template on International Reserves and Foreign Currency Liquidity",
+          "names": {
+            "en": "Template on International Reserves and Foreign Currency Liquidity"
+          },
+          "description": "Template on International Reserves and Foreign Currency Liquidity",
+          "descriptions": {
+            "en": "Template on International Reserves and Foreign Currency Liquidity"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ILV2_GBPM6(2.0)"
+            }
+          ],
+          "id": "ILV2_GBPM6",
+          "name": "Reserves Template (ILV2)-Global Use BPM6",
+          "names": {
+            "en": "Reserves Template (ILV2)-Global Use BPM6"
+          },
+          "version": "2.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(2.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:IND(1.0)"
+            }
+          ],
+          "id": "IND",
+          "name": "Index of Industrial Production",
+          "names": {
+            "en": "Index of Industrial Production"
+          },
+          "description": "Index of Industrial Production",
+          "descriptions": {
+            "en": "Index of Industrial Production"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:IND_NSTD(1.0)"
+            }
+          ],
+          "id": "IND_NSTD",
+          "name": "Index of Industrial Production_Non-Standard",
+          "names": {
+            "en": "Index of Industrial Production_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:INF(1.0)"
+            }
+          ],
+          "id": "INF",
+          "name": "Instrument Composition of Transactions in Foreign Exchange Reserves (INFER) for Collection",
+          "names": {
+            "en": "Instrument Composition of Transactions in Foreign Exchange Reserves (INFER) for Collection"
+          },
+          "description": "Instrument Composition of Transactions in Foreign Exchange Reserves (INFER) for Collection",
+          "descriptions": {
+            "en": "Instrument Composition of Transactions in Foreign Exchange Reserves (INFER) for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:INR(1.0)"
+            }
+          ],
+          "id": "INR",
+          "name": "Interest rates",
+          "names": {
+            "en": "Interest rates"
+          },
+          "description": "Interest rates",
+          "descriptions": {
+            "en": "Interest rates"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:INR_NSTD(1.0)"
+            }
+          ],
+          "id": "INR_NSTD",
+          "name": "Interest rates_Non-Standard",
+          "names": {
+            "en": "Interest rates_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:LMI(1.0)"
+            }
+          ],
+          "id": "LMI",
+          "name": "Labor Market Indicators",
+          "names": {
+            "en": "Labor Market Indicators"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:LMI_NSTD(1.0)"
+            }
+          ],
+          "id": "LMI_NSTD",
+          "name": "Labor Market Indicators_Non-Standard",
+          "names": {
+            "en": "Labor Market Indicators_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:MET(1.0)"
+            }
+          ],
+          "id": "MET",
+          "name": "Merchandise trade",
+          "names": {
+            "en": "Merchandise trade"
+          },
+          "description": "Merchandise trade",
+          "descriptions": {
+            "en": "Merchandise trade"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:MET_NSTD(1.0)"
+            }
+          ],
+          "id": "MET_NSTD",
+          "name": "Merchandise Trade_Non-Standard",
+          "names": {
+            "en": "Merchandise Trade_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:MSG(1.0)"
+            }
+          ],
+          "id": "MSG",
+          "name": "Monetary and Financial Statistics Aggregates",
+          "names": {
+            "en": "Monetary and Financial Statistics Aggregates"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:NAG(1.0)"
+            }
+          ],
+          "id": "NAG",
+          "name": "National Accounts",
+          "names": {
+            "en": "National Accounts"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:NAG_08(1.0)"
+            }
+          ],
+          "id": "NAG_08",
+          "name": "National Accounts -- 08'",
+          "names": {
+            "en": "National Accounts -- 08'"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:NAG_93(1.0)"
+            }
+          ],
+          "id": "NAG_93",
+          "name": "National Accounts -- 93'",
+          "names": {
+            "en": "National Accounts -- 93'"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:NAG_GNA(1.11)"
+            }
+          ],
+          "id": "NAG_GNA",
+          "name": "National Accounts 2008 (NAG08) - Global Use NA_MAIN v1.11",
+          "names": {
+            "en": "National Accounts 2008 (NAG08) - Global Use NA_MAIN v1.11"
+          },
+          "version": "1.11",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(1.11)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:NAG_NSTD(1.0)"
+            }
+          ],
+          "id": "NAG_NSTD",
+          "name": "National Accounts - GDP_Non-Standard",
+          "names": {
+            "en": "National Accounts - GDP_Non-Standard"
+          },
+          "description": "Non-Standard_ISO Codes",
+          "descriptions": {
+            "en": "Non-Standard_ISO Codes"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:NASEC_T0720_Q(1.0)"
+            }
+          ],
+          "id": "NASEC_T0720_Q",
+          "name": "Sectoral Balance Sheets",
+          "names": {
+            "en": "Sectoral Balance Sheets"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.16)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:OFS(1.0)"
+            }
+          ],
+          "id": "OFS",
+          "name": "Other Financial Corporations (OFC) survey",
+          "names": {
+            "en": "Other Financial Corporations (OFC) survey"
+          },
+          "description": "Other Financial Corporations (OFC) survey",
+          "descriptions": {
+            "en": "Other Financial Corporations (OFC) survey"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:OFS_GNA(1.5)"
+            }
+          ],
+          "id": "OFS_GNA",
+          "name": "Other Financial Corporations (OFC) - Global Use NA_SEC v1.5",
+          "names": {
+            "en": "Other Financial Corporations (OFC) - Global Use NA_SEC v1.5"
+          },
+          "version": "1.5",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.5)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:POP(1.0)"
+            }
+          ],
+          "id": "POP",
+          "name": "Population",
+          "names": {
+            "en": "Population"
+          },
+          "description": "Population",
+          "descriptions": {
+            "en": "Population"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:PPI(1.0)"
+            }
+          ],
+          "id": "PPI",
+          "name": "Producer Price Index",
+          "names": {
+            "en": "Producer Price Index"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:RTD(1.0)"
+            }
+          ],
+          "id": "RTD",
+          "name": "Reserves Template for Collection",
+          "names": {
+            "en": "Reserves Template for Collection"
+          },
+          "description": "Reserves Template for Collection",
+          "descriptions": {
+            "en": "Reserves Template for Collection"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:SBS(1.0)"
+            }
+          ],
+          "id": "SBS",
+          "name": "Accumulation Accounts (Sectoral Balance Sheets)",
+          "names": {
+            "en": "Accumulation Accounts (Sectoral Balance Sheets)"
+          },
+          "description": "Accumulation Accounts (Sectoral Balance Sheets)",
+          "descriptions": {
+            "en": "Accumulation Accounts (Sectoral Balance Sheets)"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:SBS_GNA(1.12)"
+            }
+          ],
+          "id": "SBS_GNA",
+          "name": "Sectoral Balance Sheets (SBS) - Global Use NA_SEC v1.12",
+          "names": {
+            "en": "Sectoral Balance Sheets (SBS) - Global Use NA_SEC v1.12"
+          },
+          "description": "Sectoral Balance Sheets (SBS) - Global Use NA_SEC v1.12",
+          "descriptions": {
+            "en": "Sectoral Balance Sheets (SBS) - Global Use NA_SEC v1.12"
+          },
+          "version": "1.12",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_SEC(1.12)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:SOC(1.0)"
+            }
+          ],
+          "id": "SOC",
+          "name": "Socio-Demographic",
+          "names": {
+            "en": "Socio-Demographic"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:SPI(1.0)"
+            }
+          ],
+          "id": "SPI",
+          "name": "Stock Market: Share Price Index",
+          "names": {
+            "en": "Stock Market: Share Price Index"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:UEM(1.0)"
+            }
+          ],
+          "id": "UEM",
+          "name": "Unemployment",
+          "names": {
+            "en": "Unemployment"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:WOE(1.0)"
+            }
+          ],
+          "id": "WOE",
+          "name": "Wages and Earnings",
+          "names": {
+            "en": "Wages and Earnings"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:YGG(1.0)"
+            }
+          ],
+          "id": "YGG",
+          "name": "Gender",
+          "names": {
+            "en": "Gender"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ZZZNL_TEST(1.0)"
+            }
+          ],
+          "id": "ZZZNL_TEST",
+          "name": "ZZZ_TEST_ECOFIN",
+          "names": {
+            "en": "ZZZ_TEST_ECOFIN"
+          },
+          "description": "Netherlands Test Provision Agreement EcoFin DSD",
+          "descriptions": {
+            "en": "Netherlands Test Provision Agreement EcoFin DSD"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:BOP(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IMF:ZZZ_TEST_ECOFIN(1.0)"
+            }
+          ],
+          "id": "ZZZ_TEST_ECOFIN",
+          "name": "Test Dataflow EcoFin DSD",
+          "names": {
+            "en": "Test Dataflow EcoFin DSD"
+          },
+          "version": "1.0",
+          "agencyID": "IMF",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD(1.0)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/SDMX/NAMAIN_IDC_N/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=SDMX:NAMAIN_IDC_N(1.0)"
+            }
+          ],
+          "id": "NAMAIN_IDC_N",
+          "name": "NAMAIN_IDC_N",
+          "names": {
+            "en": "NAMAIN_IDC_N"
+          },
+          "version": "1.0",
+          "agencyID": "SDMX",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:NA_MAIN(1.6)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UIS:EDUCAT_CLASS_A(1.1)"
+            }
+          ],
+          "id": "EDUCAT_CLASS_A",
+          "name": "EDUCAT_CLASS_A",
+          "names": {
+            "en": "EDUCAT_CLASS_A"
+          },
+          "version": "1.1",
+          "agencyID": "UIS",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UIS:UOE_NON_FINANCE(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UIS:EDUCAT_DEM_A(1.1)"
+            }
+          ],
+          "id": "EDUCAT_DEM_A",
+          "name": "EDUCAT_DEM_A",
+          "names": {
+            "en": "EDUCAT_DEM_A"
+          },
+          "version": "1.1",
+          "agencyID": "UIS",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UIS:UOE_NON_FINANCE(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UIS:EDUCAT_ENRL_A(1.1)"
+            }
+          ],
+          "id": "EDUCAT_ENRL_A",
+          "name": "EDUCAT_ENRL_A",
+          "names": {
+            "en": "EDUCAT_ENRL_A"
+          },
+          "description": "EDUCAT_ENRL_A",
+          "descriptions": {
+            "en": "EDUCAT_ENRL_A"
+          },
+          "version": "1.1",
+          "agencyID": "UIS",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UIS:UOE_NON_FINANCE(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UIS:EDUCAT_ENTR_A(1.1)"
+            }
+          ],
+          "id": "EDUCAT_ENTR_A",
+          "name": "EDUCAT_ENTR_A",
+          "names": {
+            "en": "EDUCAT_ENTR_A"
+          },
+          "version": "1.1",
+          "agencyID": "UIS",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UIS:UOE_NON_FINANCE(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UIS:EDUCAT_FINANCE_A(1.1)"
+            }
+          ],
+          "id": "EDUCAT_FINANCE_A",
+          "name": "EDUCAT_FINANCE_A",
+          "names": {
+            "en": "EDUCAT_FINANCE_A"
+          },
+          "version": "1.1",
+          "agencyID": "UIS",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UIS:UOE_FINANCE(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UIS:EDUCAT_GRAD_A(1.1)"
+            }
+          ],
+          "id": "EDUCAT_GRAD_A",
+          "name": "EDUCAT_GRAD_A",
+          "names": {
+            "en": "EDUCAT_GRAD_A"
+          },
+          "version": "1.1",
+          "agencyID": "UIS",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UIS:UOE_NON_FINANCE(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UIS:EDUCAT_PERS_A(1.1)"
+            }
+          ],
+          "id": "EDUCAT_PERS_A",
+          "name": "EDUCAT_PERS_A",
+          "names": {
+            "en": "EDUCAT_PERS_A"
+          },
+          "version": "1.1",
+          "agencyID": "UIS",
+          "isExternalReference": false,
+          "isFinal": false,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UIS:UOE_NON_FINANCE(1.1)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/UNSD/IMTS_A/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UNSD:IMTS_A(1.0)"
+            }
+          ],
+          "id": "IMTS_A",
+          "name": "IMTS Annual",
+          "names": {
+            "en": "IMTS Annual"
+          },
+          "description": "Dataflow for IMTS annual data",
+          "descriptions": {
+            "en": "Dataflow for IMTS annual data"
+          },
+          "version": "1.0",
+          "agencyID": "UNSD",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UNSD:IMTS(1.2)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/UNSD/IMTS_AGGEGATES_A/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UNSD:IMTS_AGGEGATES_A(1.0)"
+            }
+          ],
+          "id": "IMTS_AGGEGATES_A",
+          "name": "IMTS aggregates Annual",
+          "names": {
+            "en": "IMTS aggregates Annual"
+          },
+          "description": "For IMTS annual aggregated data",
+          "descriptions": {
+            "en": "For IMTS annual aggregated data"
+          },
+          "version": "1.0",
+          "agencyID": "UNSD",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UNSD:IMTS_AGGREGATES(1.2)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/UNSD/IMTS_AGGREGATES_A/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UNSD:IMTS_AGGREGATES_A(1.0)"
+            }
+          ],
+          "id": "IMTS_AGGREGATES_A",
+          "name": "IMTS aggregates Annual",
+          "names": {
+            "en": "IMTS aggregates Annual"
+          },
+          "description": "For IMTS annual aggregated data",
+          "descriptions": {
+            "en": "For IMTS annual aggregated data"
+          },
+          "version": "1.0",
+          "agencyID": "UNSD",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UNSD:IMTS_AGGREGATES(1.2)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/UNSD/IMTS_AGGREGATES_M/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UNSD:IMTS_AGGREGATES_M(1.0)"
+            }
+          ],
+          "id": "IMTS_AGGREGATES_M",
+          "name": "IMTS aggregates Monthly",
+          "names": {
+            "en": "IMTS aggregates Monthly"
+          },
+          "description": "For IMTS Monthly aggregated data",
+          "descriptions": {
+            "en": "For IMTS Monthly aggregated data"
+          },
+          "version": "1.0",
+          "agencyID": "UNSD",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UNSD:IMTS_AGGREGATES(1.2)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/UNSD/IMTS_COMPACT_A/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UNSD:IMTS_COMPACT_A(1.0)"
+            }
+          ],
+          "id": "IMTS_COMPACT_A",
+          "name": "IMTS compact Annual",
+          "names": {
+            "en": "IMTS compact Annual"
+          },
+          "description": "For IMTS Annual compact data",
+          "descriptions": {
+            "en": "For IMTS Annual compact data"
+          },
+          "version": "1.0",
+          "agencyID": "UNSD",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UNSD:IMTS_COMPACT(1.2)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/UNSD/IMTS_COMPACT_M/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UNSD:IMTS_COMPACT_M(1.0)"
+            }
+          ],
+          "id": "IMTS_COMPACT_M",
+          "name": "IMTS compact Monthly",
+          "names": {
+            "en": "IMTS compact Monthly"
+          },
+          "description": "For IMTS monthly compact data",
+          "descriptions": {
+            "en": "For IMTS monthly compact data"
+          },
+          "version": "1.0",
+          "agencyID": "UNSD",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UNSD:IMTS_COMPACT(1.2)"
+        },
+        {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://registry.sdmx.org/ws/public/sdmxapi/rest/dataflow/UNSD/IMTS_M/1.0",
+              "type": "dataflow",
+              "uri": "https://json.sdmx.org/1.0/sdmx-json-structure-schema.json",
+              "urn": "urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=UNSD:IMTS_M(1.0)"
+            }
+          ],
+          "id": "IMTS_M",
+          "name": "IMTS Monthly",
+          "names": {
+            "en": "IMTS Monthly"
+          },
+          "description": "For IMTS monthly data",
+          "descriptions": {
+            "en": "For IMTS monthly data"
+          },
+          "version": "1.0",
+          "agencyID": "UNSD",
+          "isExternalReference": false,
+          "isFinal": true,
+          "structure": "urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=UNSD:IMTS(1.2)"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "tensor_shape": [
+    3,
+    194,
+    194,
+    2
+  ],
+  "non_zero_elements": 3456,
+  "sparsity": 0.9846955043043895,
+  "total_value": 1753951633408.0,
+  "negative_values_count": 0,
+  "missing_mask_coverage": 0.015304495695610586,
+  "top_20_flows": [
+    {
+      "month": "2024-02",
+      "reporter": "ARE",
+      "partner": "CHN",
+      "channel": "exports",
+      "value": 999992576.0
+    },
+    {
+      "month": "2024-03",
+      "reporter": "ISR",
+      "partner": "USA",
+      "channel": "imports",
+      "value": 999989760.0
+    },
+    {
+      "month": "2024-03",
+      "reporter": "KNA",
+      "partner": "DEU",
+      "channel": "exports",
+      "value": 999979776.0
+    },
+    {
+      "month": "2024-01",
+      "reporter": "DNK",
+      "partner": "DEU",
+      "channel": "exports",
+      "value": 999431808.0
+    },
+    {
+      "month": "2024-02",
+      "reporter": "KAZ",
+      "partner": "USA",
+      "channel": "exports",
+      "value": 998533056.0
+    },
+    {
+      "month": "2024-02",
+      "reporter": "LBR",
+      "partner": "USA",
+      "channel": "exports",
+      "value": 997959360.0
+    },
+    {
+      "month": "2024-01",
+      "reporter": "CPV",
+      "partner": "USA",
+      "channel": "imports",
+      "value": 997814400.0
+    },
+    {
+      "month": "2024-01",
+      "reporter": "SVN",
+      "partner": "USA",
+      "channel": "exports",
+      "value": 997795136.0
+    },
+    {
+      "month": "2024-03",
+      "reporter": "IRQ",
+      "partner": "DEU",
+      "channel": "imports",
+      "value": 997188288.0
+    },
+    {
+      "month": "2024-02",
+      "reporter": "GAB",
+      "partner": "USA",
+      "channel": "exports",
+      "value": 996745600.0
+    },
+    {
+      "month": "2024-02",
+      "reporter": "BGD",
+      "partner": "DEU",
+      "channel": "exports",
+      "value": 996486208.0
+    },
+    {
+      "month": "2024-01",
+      "reporter": "ITA",
+      "partner": "DEU",
+      "channel": "imports",
+      "value": 996403136.0
+    },
+    {
+      "month": "2024-02",
+      "reporter": "TJK",
+      "partner": "CHN",
+      "channel": "imports",
+      "value": 995811392.0
+    },
+    {
+      "month": "2024-03",
+      "reporter": "SYR",
+      "partner": "CHN",
+      "channel": "exports",
+      "value": 995698368.0
+    },
+    {
+      "month": "2024-03",
+      "reporter": "ITA",
+      "partner": "USA",
+      "channel": "imports",
+      "value": 995630144.0
+    },
+    {
+      "month": "2024-03",
+      "reporter": "ITA",
+      "partner": "DEU",
+      "channel": "exports",
+      "value": 995366848.0
+    },
+    {
+      "month": "2024-01",
+      "reporter": "KEN",
+      "partner": "DEU",
+      "channel": "imports",
+      "value": 995273856.0
+    },
+    {
+      "month": "2024-02",
+      "reporter": "SOM",
+      "partner": "DEU",
+      "channel": "exports",
+      "value": 994718464.0
+    },
+    {
+      "month": "2024-03",
+      "reporter": "MYS",
+      "partner": "DEU",
+      "channel": "imports",
+      "value": 994549376.0
+    },
+    {
+      "month": "2024-02",
+      "reporter": "SYC",
+      "partner": "CHN",
+      "channel": "imports",
+      "value": 994016960.0
+    }
+  ],
+  "channels": [
+    "exports",
+    "imports"
+  ],
+  "time_range": [
+    "2024-01",
+    "2024-03"
+  ]
+}
