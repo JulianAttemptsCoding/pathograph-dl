@@ -1,28 +1,10 @@
-version: 1
+﻿version: 1
 aliases:
-  reporter: 
-    - "Country"
-    - "COUNTRY"
-    - "COUNTRY.NAME"
-    - "Reporter"
-    - "REPORTER"
-    - "REF_AREA"
-    - "REF_AREA.NAME"
-  partner: 
-    - "Counterpart Country"
-    - "COUNTERPART_COUNTRY"
-    - "COUNTERPART_COUNTRY.NAME"
-    - "Partner"
-    - "PARTNER"
-    - "COUNTERPART_AREA"
-  indicator: 
-    - "INDICATOR"
-    - "INDICATOR.ID"
-    - "Indicator"
-    - "SERIES"
-    - "Series"
-  scale_id: 
-    - "SCALE.ID"
-    - "SCALE"
-    - "Scale"
-    - "SCALE_CODE"
+  reporter: ["COUNTRY.ID", "Country", "COUNTRY", "COUNTRY.NAME"]
+  partner: ["COUNTERPART_COUNTRY.ID", "Counterpart Country", "COUNTERPART_COUNTRY", "COUNTERPART_COUNTRY.NAME"]
+  indicator: ["INDICATOR.ID", "INDICATOR", "Indicator", "SERIES", "Series"]
+  scale_id: ["SCALE.ID", "SCALE", "Scale"]
+  frequency: ["FREQUENCY.ID", "FREQUENCY", "Frequency"]
+  unit_id: ["UNIT.ID", "UNIT", "Unit"]
+  trade_flow_id: ["TRADE_FLOW.ID", "TRADE_FLOW"]
+  valuation_id: ["VALUATION.ID", "VALUATION"]

@@ -1,4 +1,4 @@
-version: 1
+﻿version: 1
 expected:
   indicators:
     - XG_FOB_USD
@@ -9,11 +9,19 @@ expected:
     - partner
     - indicator
     - scale_id
+    - frequency
+    - unit_id
+  required_values:
+    frequency: ["M"]
+    unit_id: ["USD"]
   month_column_regexes:
     - '^\d{4}-M\d{2}$'
-    - '^\d{4} M\d{2}$'
-    - '^\d{4}-[A-Z]{3}$'
+  ignore_column_regexes:
+    - '^\d{4}$'
+    - '^\d{4}-Q[1-4]$'
 notes:
-  scaling_rule: 'value_usd = value_csv * (10 ** scale_id)'
-  epoch: '1950-01 => month_index=0'
-  cif_to_fob_markup: 0.06
+  scaling_rule: "value_usd = value_csv * (10 ** scale_id)"
+  epoch: "1950-01 => month_index=0"
+  cif_to_fob:
+    rule: "if MG_FOB_USD missing and MG_CIF_USD present: FOB = CIF/(1+m)"
+    default_m: 0.06
