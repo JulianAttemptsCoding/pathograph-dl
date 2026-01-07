@@ -17,3 +17,31 @@ data/processed/trade/**/*.json
 
 # --- Keep meta artifacts (node_index, rosetta, manifests) ---
 !data/processed/meta/
+# --- Python / tooling ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# --- IDE ---
+.idea/
+.vscode/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Backups ---
+*.bak
+*.bak_*
+*.tmp
+
+# --- Data (DO NOT COMMIT) ---
+data/raw/
+data/processed/trade/
+data/processed/**/logs/
+data/processed/**/qc/
+data/processed/**/reports/
+*.zarr/
