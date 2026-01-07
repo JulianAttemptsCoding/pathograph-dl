@@ -1,0 +1,19 @@
+version: 1
+expected:
+  indicators:
+    - XG_FOB_USD
+    - MG_FOB_USD
+    - MG_CIF_USD
+  required_fields:
+    - reporter
+    - partner
+    - indicator
+    - scale_id
+  month_column_regexes:
+    - '^\d{4}-M\d{2}$'
+    - '^\d{4} M\d{2}$'
+    - '^\d{4}-[A-Z]{3}$'
+notes:
+  scaling_rule: 'value_usd = value_csv * (10 ** scale_id)'
+  epoch: '1950-01 => month_index=0'
+  cif_to_fob_markup: 0.06

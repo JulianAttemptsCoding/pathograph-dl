@@ -1,2 +1,19 @@
 .venv/
 .idea/
+
+# --- Raw / interim data (do not commit) ---
+data/raw/imf_imts/*
+!data/raw/imf_imts/README.txt
+data/raw/faostat/*
+!data/raw/faostat/README.txt
+data/interim/imf_imts/*
+data/interim/faostat/*
+
+# --- Generated tensors / large artifacts ---
+data/processed/trade/imts/*.zarr
+data/processed/trade/faostat/*.zarr
+data/processed/trade/**/*.parquet
+data/processed/trade/**/*.json
+
+# --- Keep meta artifacts (node_index, rosetta, manifests) ---
+!data/processed/meta/
