@@ -60,12 +60,10 @@ def create_synthetic_step1_manifest(temp_dir):
             mask[t, i, i, :] = 0
     
     def _create(name, data, chunks):
-        data = np.asarray(data)
-        try:
-            arr = root.create_dataset(name, shape=data.shape, dtype=data.dtype, chunks=chunks)
-        except Exception:
-            arr = root.create_array(name, shape=data.shape, dtype=data.dtype, chunks=chunks)
-        arr[...] = data
+    	data = np.asarray(data)
+    	arr = root.create_array(name, shape=data.shape, dtype=data.dtype, chunks=chunks)
+    	arr[:] = data
+
     
     _create('trade', trade, (12, 3, 3, 2))
     _create('mask', mask, (12, 3, 3, 2))
