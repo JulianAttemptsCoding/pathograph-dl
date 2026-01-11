@@ -1,0 +1,256 @@
+m49,iso3,name,faostat_code,is_aggregate,in_canonical_194,method
+004,AFG,Afghanistan,2,False,True,pycountry_numeric
+008,ALB,Albania,3,False,True,pycountry_numeric
+012,DZA,Algeria,4,False,True,pycountry_numeric
+024,AGO,Angola,7,False,True,pycountry_numeric
+028,ATG,Antigua and Barbuda,8,False,True,pycountry_numeric
+031,AZE,Azerbaijan,52,False,True,pycountry_numeric
+032,ARG,Argentina,9,False,True,pycountry_numeric
+036,AUS,Australia,10,False,True,pycountry_numeric
+040,AUT,Austria,11,False,True,pycountry_numeric
+044,BHS,Bahamas,12,False,True,pycountry_numeric
+048,BHR,Bahrain,13,False,True,pycountry_numeric
+050,BGD,Bangladesh,16,False,True,pycountry_numeric
+051,ARM,Armenia,1,False,True,pycountry_numeric
+052,BRB,Barbados,14,False,True,pycountry_numeric
+056,BEL,Belgium,255,False,True,pycountry_numeric
+058,,Belgium-Luxembourg,15,False,False,unmatched
+064,BTN,Bhutan,18,False,True,pycountry_numeric
+068,BOL,Bolivia (Plurinational State of),19,False,True,pycountry_numeric
+070,BIH,Bosnia and Herzegovina,80,False,True,pycountry_numeric
+072,BWA,Botswana,20,False,True,pycountry_numeric
+074,BVT,Bouvet Island,31,False,False,pycountry_numeric
+076,BRA,Brazil,21,False,True,pycountry_numeric
+084,BLZ,Belize,23,False,True,pycountry_numeric
+090,SLB,Solomon Islands,25,False,True,pycountry_numeric
+096,BRN,Brunei Darussalam,26,False,True,pycountry_numeric
+100,BGR,Bulgaria,27,False,True,pycountry_numeric
+104,MMR,Myanmar,28,False,True,pycountry_numeric
+108,BDI,Burundi,29,False,True,pycountry_numeric
+112,BLR,Belarus,57,False,True,pycountry_numeric
+116,KHM,Cambodia,115,False,True,pycountry_numeric
+120,CMR,Cameroon,32,False,True,pycountry_numeric
+124,CAN,Canada,33,False,True,pycountry_numeric
+128,,Canton and Enderbury Islands,34,False,False,unmatched
+132,CPV,Cabo Verde,35,False,True,pycountry_numeric
+140,CAF,Central African Republic,37,False,True,pycountry_numeric
+144,LKA,Sri Lanka,38,False,True,pycountry_numeric
+148,TCD,Chad,39,False,True,pycountry_numeric
+152,CHL,Chile,40,False,True,pycountry_numeric
+156,CHN,China; mainland,41,False,True,pycountry_numeric
+158,TWN,China; Taiwan Province of,214,False,True,pycountry_numeric
+170,COL,Colombia,44,False,True,pycountry_numeric
+174,COM,Comoros,45,False,True,pycountry_numeric
+178,COG,Congo,46,False,True,pycountry_numeric
+180,COD,Democratic Republic of the Congo,250,False,True,pycountry_numeric
+184,COK,Cook Islands,47,False,False,pycountry_numeric
+188,CRI,Costa Rica,48,False,True,pycountry_numeric
+191,HRV,Croatia,98,False,True,pycountry_numeric
+192,CUB,Cuba,49,False,True,pycountry_numeric
+196,CYP,Cyprus,50,False,True,pycountry_numeric
+200,,Czechoslovakia,51,False,False,unmatched
+203,CZE,Czechia,167,False,True,pycountry_numeric
+204,BEN,Benin,53,False,True,pycountry_numeric
+208,DNK,Denmark,54,False,True,pycountry_numeric
+212,DMA,Dominica,55,False,True,pycountry_numeric
+214,DOM,Dominican Republic,56,False,True,pycountry_numeric
+218,ECU,Ecuador,58,False,True,pycountry_numeric
+222,SLV,El Salvador,60,False,True,pycountry_numeric
+226,GNQ,Equatorial Guinea,61,False,True,pycountry_numeric
+230,,Ethiopia PDR,62,False,False,unmatched
+231,ETH,Ethiopia,238,False,True,pycountry_numeric
+232,ERI,Eritrea,178,False,True,pycountry_numeric
+233,EST,Estonia,63,False,True,pycountry_numeric
+234,FRO,Faroe Islands,64,False,False,pycountry_numeric
+239,SGS,South Georgia and the South Sandwich Islands,271,False,False,pycountry_numeric
+242,FJI,Fiji,66,False,True,pycountry_numeric
+246,FIN,Finland,67,False,True,pycountry_numeric
+250,FRA,France,68,False,True,pycountry_numeric
+254,GUF,French Guiana,69,False,False,pycountry_numeric
+258,PYF,French Polynesia,70,False,False,pycountry_numeric
+262,DJI,Djibouti,72,False,True,pycountry_numeric
+266,GAB,Gabon,74,False,True,pycountry_numeric
+268,GEO,Georgia,73,False,True,pycountry_numeric
+270,GMB,Gambia,75,False,True,pycountry_numeric
+275,PSE,Palestine,299,False,False,pycountry_numeric
+276,DEU,Germany,79,False,True,pycountry_numeric
+288,GHA,Ghana,81,False,True,pycountry_numeric
+296,KIR,Kiribati,83,False,True,pycountry_numeric
+300,GRC,Greece,84,False,True,pycountry_numeric
+308,GRD,Grenada,86,False,True,pycountry_numeric
+312,GLP,Guadeloupe,87,False,False,pycountry_numeric
+320,GTM,Guatemala,89,False,True,pycountry_numeric
+324,GIN,Guinea,90,False,True,pycountry_numeric
+328,GUY,Guyana,91,False,True,pycountry_numeric
+332,HTI,Haiti,93,False,True,pycountry_numeric
+334,HMD,Heard Island and McDonald Islands,92,False,False,pycountry_numeric
+340,HND,Honduras,95,False,True,pycountry_numeric
+344,HKG,China; Hong Kong SAR,96,False,False,pycountry_numeric
+348,HUN,Hungary,97,False,True,pycountry_numeric
+352,ISL,Iceland,99,False,True,pycountry_numeric
+356,IND,India,100,False,True,pycountry_numeric
+360,IDN,Indonesia,101,False,True,pycountry_numeric
+364,IRN,Iran (Islamic Republic of),102,False,True,pycountry_numeric
+368,IRQ,Iraq,103,False,True,pycountry_numeric
+372,IRL,Ireland,104,False,True,pycountry_numeric
+376,ISR,Israel,105,False,True,pycountry_numeric
+380,ITA,Italy,106,False,True,pycountry_numeric
+384,CIV,Côte d'Ivoire,107,False,True,pycountry_numeric
+388,JAM,Jamaica,109,False,True,pycountry_numeric
+392,JPN,Japan,110,False,True,pycountry_numeric
+396,,Johnston Island,111,False,False,unmatched
+398,KAZ,Kazakhstan,108,False,True,pycountry_numeric
+400,JOR,Jordan,112,False,True,pycountry_numeric
+404,KEN,Kenya,114,False,True,pycountry_numeric
+408,PRK,Democratic People's Republic of Korea,116,False,True,pycountry_numeric
+410,KOR,Republic of Korea,117,False,True,pycountry_numeric
+414,KWT,Kuwait,118,False,True,pycountry_numeric
+417,KGZ,Kyrgyzstan,113,False,True,pycountry_numeric
+418,LAO,Lao People's Democratic Republic,120,False,True,pycountry_numeric
+422,LBN,Lebanon,121,False,True,pycountry_numeric
+426,LSO,Lesotho,122,False,True,pycountry_numeric
+428,LVA,Latvia,119,False,True,pycountry_numeric
+430,LBR,Liberia,123,False,True,pycountry_numeric
+434,LBY,Libya,124,False,True,pycountry_numeric
+440,LTU,Lithuania,126,False,True,pycountry_numeric
+442,LUX,Luxembourg,256,False,True,pycountry_numeric
+446,MAC,China; Macao SAR,128,False,False,pycountry_numeric
+450,MDG,Madagascar,129,False,True,pycountry_numeric
+454,MWI,Malawi,130,False,True,pycountry_numeric
+458,MYS,Malaysia,131,False,True,pycountry_numeric
+462,MDV,Maldives,132,False,True,pycountry_numeric
+466,MLI,Mali,133,False,True,pycountry_numeric
+470,MLT,Malta,134,False,True,pycountry_numeric
+474,MTQ,Martinique,135,False,False,pycountry_numeric
+478,MRT,Mauritania,136,False,True,pycountry_numeric
+480,MUS,Mauritius,137,False,True,pycountry_numeric
+484,MEX,Mexico,138,False,True,pycountry_numeric
+488,UMI,Midway Island,139,False,False,pycountry_name
+492,MCO,Monaco,140,False,True,pycountry_numeric
+496,MNG,Mongolia,141,False,True,pycountry_numeric
+498,MDA,Republic of Moldova,146,False,True,pycountry_numeric
+499,MNE,Montenegro,273,False,True,pycountry_numeric
+504,MAR,Morocco,143,False,True,pycountry_numeric
+508,MOZ,Mozambique,144,False,True,pycountry_numeric
+512,OMN,Oman,221,False,True,pycountry_numeric
+516,NAM,Namibia,147,False,True,pycountry_numeric
+520,NRU,Nauru,148,False,True,pycountry_numeric
+524,NPL,Nepal,149,False,True,pycountry_numeric
+528,NLD,Netherlands (Kingdom of the),150,False,True,pycountry_numeric
+540,NCL,New Caledonia,153,False,False,pycountry_numeric
+548,VUT,Vanuatu,155,False,True,pycountry_numeric
+554,NZL,New Zealand,156,False,True,pycountry_numeric
+558,NIC,Nicaragua,157,False,True,pycountry_numeric
+562,NER,Niger,158,False,True,pycountry_numeric
+566,NGA,Nigeria,159,False,True,pycountry_numeric
+570,NIU,Niue,160,False,False,pycountry_numeric
+578,NOR,Norway,162,False,True,pycountry_numeric
+581,UMI,United States Minor Outlying Islands,232,False,False,pycountry_numeric
+583,FSM,Micronesia (Federated States of),145,False,True,pycountry_numeric
+584,MHL,Marshall Islands,127,False,True,pycountry_numeric
+585,PLW,Palau,180,False,True,pycountry_numeric
+586,PAK,Pakistan,165,False,True,pycountry_numeric
+591,PAN,Panama,166,False,True,pycountry_numeric
+598,PNG,Papua New Guinea,168,False,True,pycountry_numeric
+600,PRY,Paraguay,169,False,True,pycountry_numeric
+604,PER,Peru,170,False,True,pycountry_numeric
+608,PHL,Philippines,171,False,True,pycountry_numeric
+616,POL,Poland,173,False,True,pycountry_numeric
+620,PRT,Portugal,174,False,True,pycountry_numeric
+624,GNB,Guinea-Bissau,175,False,True,pycountry_numeric
+626,TLS,Timor-Leste,176,False,True,pycountry_numeric
+630,PRI,Puerto Rico,177,False,False,pycountry_numeric
+634,QAT,Qatar,179,False,True,pycountry_numeric
+638,REU,Réunion,182,False,False,pycountry_numeric
+642,ROU,Romania,183,False,True,pycountry_numeric
+643,RUS,Russian Federation,185,False,True,pycountry_numeric
+646,RWA,Rwanda,184,False,True,pycountry_numeric
+659,KNA,Saint Kitts and Nevis,188,False,True,pycountry_numeric
+662,LCA,Saint Lucia,189,False,True,pycountry_numeric
+670,VCT,Saint Vincent and the Grenadines,191,False,True,pycountry_numeric
+678,STP,Sao Tome and Principe,193,False,True,pycountry_numeric
+682,SAU,Saudi Arabia,194,False,True,pycountry_numeric
+686,SEN,Senegal,195,False,True,pycountry_numeric
+688,SRB,Serbia,272,False,True,pycountry_numeric
+690,SYC,Seychelles,196,False,True,pycountry_numeric
+694,SLE,Sierra Leone,197,False,True,pycountry_numeric
+702,SGP,Singapore,200,False,True,pycountry_numeric
+703,SVK,Slovakia,199,False,True,pycountry_numeric
+704,VNM,Viet Nam,237,False,True,pycountry_numeric
+705,SVN,Slovenia,198,False,True,pycountry_numeric
+706,SOM,Somalia,201,False,True,pycountry_numeric
+710,ZAF,South Africa,202,False,True,pycountry_numeric
+716,ZWE,Zimbabwe,181,False,True,pycountry_numeric
+724,ESP,Spain,203,False,True,pycountry_numeric
+728,SSD,South Sudan,277,False,True,pycountry_numeric
+729,SDN,Sudan,276,False,True,pycountry_numeric
+736,,Sudan (former),206,False,False,unmatched
+740,SUR,Suriname,207,False,True,pycountry_numeric
+744,SJM,Svalbard and Jan Mayen Islands,260,False,False,pycountry_numeric
+748,SWZ,Eswatini,209,False,True,pycountry_numeric
+752,SWE,Sweden,210,False,True,pycountry_numeric
+756,CHE,Switzerland,211,False,True,pycountry_numeric
+760,SYR,Syrian Arab Republic,212,False,True,pycountry_numeric
+762,TJK,Tajikistan,208,False,True,pycountry_numeric
+764,THA,Thailand,216,False,True,pycountry_numeric
+768,TGO,Togo,217,False,True,pycountry_numeric
+772,TKL,Tokelau,218,False,False,pycountry_numeric
+776,TON,Tonga,219,False,True,pycountry_numeric
+780,TTO,Trinidad and Tobago,220,False,True,pycountry_numeric
+784,ARE,United Arab Emirates,225,False,True,pycountry_numeric
+788,TUN,Tunisia,222,False,True,pycountry_numeric
+792,TUR,Türkiye,223,False,True,pycountry_numeric
+795,TKM,Turkmenistan,213,False,True,pycountry_numeric
+798,TUV,Tuvalu,227,False,True,pycountry_numeric
+800,UGA,Uganda,226,False,True,pycountry_numeric
+804,UKR,Ukraine,230,False,True,pycountry_numeric
+807,MKD,North Macedonia,154,False,True,pycountry_numeric
+810,,USSR,228,False,False,unmatched
+818,EGY,Egypt,59,False,True,pycountry_numeric
+826,GBR,United Kingdom of Great Britain and Northern Ireland,229,False,True,pycountry_numeric
+834,TZA,United Republic of Tanzania,215,False,True,pycountry_numeric
+840,USA,United States of America,231,False,True,pycountry_numeric
+854,BFA,Burkina Faso,233,False,True,pycountry_numeric
+858,URY,Uruguay,234,False,True,pycountry_numeric
+860,UZB,Uzbekistan,235,False,True,pycountry_numeric
+862,VEN,Venezuela (Bolivarian Republic of),236,False,True,pycountry_numeric
+872,UMI,Wake Island,242,False,False,pycountry_name
+882,WSM,Samoa,244,False,True,pycountry_numeric
+887,YEM,Yemen,249,False,True,pycountry_numeric
+890,,Yugoslav SFR,248,False,False,unmatched
+891,,Serbia and Montenegro,186,False,False,unmatched
+894,ZMB,Zambia,251,False,True,pycountry_numeric
+001,,World,5000,True,False,aggregate_or_missing_m49
+002,,Africa,5100,True,False,aggregate_or_missing_m49
+005,,South America,5207,True,False,aggregate_or_missing_m49
+009,,Oceania,5500,True,False,aggregate_or_missing_m49
+011,,Western Africa,5105,True,False,aggregate_or_missing_m49
+013,,Central America,5204,True,False,aggregate_or_missing_m49
+014,,Eastern Africa,5101,True,False,aggregate_or_missing_m49
+015,,Northern Africa,5103,True,False,aggregate_or_missing_m49
+017,,Middle Africa,5102,True,False,aggregate_or_missing_m49
+018,,Southern Africa,5104,True,False,aggregate_or_missing_m49
+019,,Americas,5200,True,False,aggregate_or_missing_m49
+021,,Northern America,5203,True,False,aggregate_or_missing_m49
+029,,Caribbean,5206,True,False,aggregate_or_missing_m49
+030,,Eastern Asia,5302,True,False,aggregate_or_missing_m49
+034,,Southern Asia,5303,True,False,aggregate_or_missing_m49
+035,,South-eastern Asia,5304,True,False,aggregate_or_missing_m49
+039,,Southern Europe,5403,True,False,aggregate_or_missing_m49
+053,,Australia and New Zealand,5501,True,False,aggregate_or_missing_m49
+054,,Melanesia,5502,True,False,aggregate_or_missing_m49
+057,,Micronesia,5503,True,False,aggregate_or_missing_m49
+061,,Polynesia,5504,True,False,aggregate_or_missing_m49
+097,,European Union (27),5707,True,False,aggregate_or_missing_m49
+142,,Asia,5300,True,False,aggregate_or_missing_m49
+143,,Central Asia,5301,True,False,aggregate_or_missing_m49
+145,,Western Asia,5305,True,False,aggregate_or_missing_m49
+150,,Europe,5400,True,False,aggregate_or_missing_m49
+151,,Eastern Europe,5401,True,False,aggregate_or_missing_m49
+154,,Northern Europe,5402,True,False,aggregate_or_missing_m49
+155,,Western Europe,5404,True,False,aggregate_or_missing_m49
+199,,Least Developed Countries (LDCs),5801,True,False,aggregate_or_missing_m49
+432,,Land Locked Developing Countries (LLDCs),5802,True,False,aggregate_or_missing_m49
+722,,Small Island Developing States (SIDS),5803,True,False,aggregate_or_missing_m49
+901,,Low Income Food Deficit Countries (LIFDCs),5815,True,False,aggregate_or_missing_m49
+902,,Net Food Importing Developing Countries (NFIDCs),5817,True,False,aggregate_or_missing_m49

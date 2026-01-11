@@ -1,0 +1,552 @@
+item_code,item_name,group_id,group_name
+1232,Food preparations n.e.c.,OTHER,Other commodities
+236,Soya beans,OTHER,Other commodities
+15,Wheat,WHEAT,Wheat sector (wheat blast proxy)
+1293,Crude organic material n.e.c.,OTHER,Other commodities
+56,Maize (corn),OTHER,Other commodities
+564,Wine,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+870,"Meat of cattle boneless, fresh or chilled",OTHER,Other commodities
+634,"Undenatured ethyl alcohol of an alcoholic strength by volume of less than 80% vol; spirits, liqueurs and other spirituous beverages",OTHER,Other commodities
+257,Palm oil,OTHER,Other commodities
+901,Cheese from whole cow milk,OTHER,Other commodities
+238,Cake of soya beans,OTHER,Other commodities
+22,Pastry,OTHER,Other commodities
+666,Chocolate products nes,OTHER,Other commodities
+828,Cigarettes,OTHER,Other commodities
+30,"Rice, paddy (rice milled equivalent)",OTHER,Other commodities
+656,"Coffee, green",OTHER,Other commodities
+1058,"Meat of chickens, fresh or chilled",OTHER,Other commodities
+31,"Rice, milled",OTHER,Other commodities
+633,Other non-alcoholic caloric beverages,OTHER,Other commodities
+1038,"Meat of pig boneless, fresh or chilled",OTHER,Other commodities
+767,"Cotton lint, ginned",OTHER,Other commodities
+837,Natural rubber in other forms,OTHER,Other commodities
+623,Fruit prepared n.e.c.,OTHER,Other commodities
+164,Refined sugar,OTHER,Other commodities
+1035,"Meat of pig with the bone, fresh or chilled",OTHER,Other commodities
+51,"Beer of barley, malted",OTHER,Other commodities
+843,"Dog or cat food, put up for retail sale",OTHER,Other commodities
+162,Raw cane or beet sugar (centrifugal only),OTHER,Other commodities
+826,Unmanufactured tobacco,OTHER,Other commodities
+168,Sugar confectionery,OTHER,Other commodities
+653,Food wastes,OTHER,Other commodities
+237,Soya bean oil,OTHER,Other commodities
+486,Bananas,BANANA,Banana & plantain (BBTD/TR4 proxy)
+866,Cattle,OTHER,Other commodities
+270,Rape or colza seed,BRASSICA,Brassica sector (clubroot proxy)
+867,"Meat of cattle with the bone, fresh or chilled",OTHER,Other commodities
+897,Whole milk powder,OTHER,Other commodities
+268,"Sunflower-seed oil, crude",OTHER,Other commodities
+388,Tomatoes,OTHER,Other commodities
+657,"Coffee, decaffeinated or roasted",OTHER,Other commodities
+898,Skim milk and whey powder,OTHER,Other commodities
+886,Butter of cow milk,OTHER,Other commodities
+261,Olive oil,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+1061,Poultry meat preparations,OTHER,Other commodities
+472,Vegetables preserved nes (o/t vinegar),OTHER,Other commodities
+44,Barley,OTHER,Other commodities
+661,Cocoa beans,OTHER,Other commodities
+560,Grapes,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+515,Apples,OTHER,Other commodities
+118,"Potatoes, frozen",OTHER,Other commodities
+977,"Meat of sheep, fresh or chilled",OTHER,Other commodities
+667,Tea leaves,OTHER,Other commodities
+271,"Rapeseed or canola oil, crude",BRASSICA,Brassica sector (clubroot proxy)
+109,Infant food,OTHER,Other commodities
+659,Coffee extracts,OTHER,Other commodities
+115,"Food preparations of flour, meal or malt extract",OTHER,Other commodities
+41,Breakfast cereals,OTHER,Other commodities
+473,Vegetables frozen,OTHER,Other commodities
+1276,Industrial monocarboxylic fatty acids; acid oils from refining,OTHER,Other commodities
+831,Other manufactured tobacco and manufactured tobacco substitutes; 'homogenized' or 'reconstituted' tobacco; tobacco extracts and essences,OTHER,Other commodities
+16,Wheat and meslin flour,WHEAT,Wheat sector (wheat blast proxy)
+401,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",OTHER,Other commodities
+882,Raw milk of cattle,OTHER,Other commodities
+664,"Cocoa butter, fat and oil",OTHER,Other commodities
+920,"Hides, wet-salted of cattle",OTHER,Other commodities
+490,Oranges,CITRUS,Citrus (HLB proxy)
+18,"Uncooked pasta, not stuffed or otherwise prepared",OTHER,Other commodities
+495,"Tangerines, mandarins, clementines",CITRUS,Citrus (HLB proxy)
+1041,"Sausages and similar products of meat, offal or blood of pig",OTHER,Other commodities
+116,Potatoes,OTHER,Other commodities
+1275,hydrogenated oils and fats,OTHER,Other commodities
+622,Juice of fruits n.e.c.,OTHER,Other commodities
+753,Essential oils n.e.c.,OTHER,Other commodities
+231,"Almonds, shelled",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+49,"Malt, whether or not roasted",OTHER,Other commodities
+1034,Swine / pigs,OTHER,Other commodities
+987,"Shorn wool, greasy, including fleece-washed shorn wool",OTHER,Other commodities
+1039,"Pig meat, cuts, salted, dried or smoked (bacon and ham)",OTHER,Other commodities
+910,Ice cream and other edible ice,OTHER,Other commodities
+1042,Pig meat preparations,OTHER,Other commodities
+572,Avocados,OTHER,Other commodities
+267,Sunflower seed,OTHER,Other commodities
+391,Paste of tomatoes,OTHER,Other commodities
+235,Prepared nuts,OTHER,Other commodities
+114,Mixes and doughs for the preparation of bakers' wares,OTHER,Other commodities
+176,"Beans, dry",OTHER,Other commodities
+1243,Fat preparations n.e.c.,OTHER,Other commodities
+491,Orange juice,CITRUS,Citrus (HLB proxy)
+1062,"Hen eggs in shell, fresh",OTHER,Other commodities
+463,"Other vegetables, fresh n.e.c.",OTHER,Other commodities
+110,"Communion wafers, empty cachets of a kind suitable for pharmaceutical use, sealing wafers, rice paper and similar products.",OTHER,Other commodities
+403,"Onions and shallots, dry (excluding dehydrated)",OTHER,Other commodities
+868,"Edible offal of cattle, fresh, chilled or frozen",OTHER,Other commodities
+492,"Orange juice, concentrated",CITRUS,Citrus (HLB proxy)
+230,"Cashew nuts, shelled",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+1274,"Animal or vegetable fats and oils and their fractions, chemically modified, except those hydrogenated, inter-esterified, re-esterified or elaidinized; inedible mixtures or preparations of animal or vegetable fats or oils",OTHER,Other commodities
+252,Coconut oil,OTHER,Other commodities
+1096,Horses,OTHER,Other commodities
+900,"Whey, dry",OTHER,Other commodities
+497,Lemons and limes,CITRUS,Citrus (HLB proxy)
+272,Cake of rapeseed,BRASSICA,Brassica sector (clubroot proxy)
+665,Cocoa powder and cake,OTHER,Other commodities
+258,Oil of palm kernel,OTHER,Other commodities
+372,Lettuce and chicory,OTHER,Other commodities
+875,Beef and veal preparations nes,OTHER,Other commodities
+1080,"Meat of turkeys, fresh or chilled",OTHER,Other commodities
+885,"Cream, fresh",OTHER,Other commodities
+521,Pears,OTHER,Other commodities
+397,Cucumbers and gherkins,OTHER,Other commodities
+1036,"Edible offal of pigs, fresh, chilled or frozen",OTHER,Other commodities
+947,"Meat of buffalo, fresh or chilled",OTHER,Other commodities
+544,Strawberries,OTHER,Other commodities
+1057,Chickens,OTHER,Other commodities
+534,Peaches and nectarines,PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+406,Green garlic,OTHER,Other commodities
+662,Cocoa paste not defatted,OTHER,Other commodities
+243,"Groundnuts, shelled",OTHER,Other commodities
+592,Kiwi fruit,OTHER,Other commodities
+262,Olives preserved,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+892,"Yoghurt, with additives",OTHER,Other commodities
+1195,"Skins, furs",OTHER,Other commodities
+654,Brewing or distilling dregs and waste,OTHER,Other commodities
+1242,Margarine and shortening,OTHER,Other commodities
+83,Sorghum,OTHER,Other commodities
+469,"Vegetables, dehydrated",OTHER,Other commodities
+20,Bread,OTHER,Other commodities
+619,"Other fruits, n.e.c.",OTHER,Other commodities
+845,Compound feed n.e.c.,OTHER,Other commodities
+836,Natural rubber in primary forms,OTHER,Other commodities
+846,Gluten feed and meal,OTHER,Other commodities
+201,"Lentils, dry",OTHER,Other commodities
+907,Processed cheese,OTHER,Other commodities
+187,"Peas, dry",OTHER,Other commodities
+471,"Vegetables, pulses and potatoes, preserved by vinegar or acetic acid",OTHER,Other commodities
+1225,Tallow,OTHER,Other commodities
+449,Mushrooms and truffles,OTHER,Other commodities
+571,"Mangoes, guavas and mangosteens",OTHER,Other commodities
+687,"Pepper (Piper spp.), raw",OTHER,Other commodities
+829,Cigars and cheroots,OTHER,Other commodities
+223,"Pistachios, in shell",OTHER,Other commodities
+1182,Natural honey,OTHER,Other commodities
+574,Pineapples,OTHER,Other commodities
+894,"Whole milk, evaporated",OTHER,Other commodities
+233,"Hazelnuts, shelled",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+893,"Buttermilk, curdled and acidified milk",OTHER,Other commodities
+531,Cherries,PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+289,Sesame seed,OTHER,Other commodities
+1173,Meat meal,OTHER,Other commodities
+561,Raisins,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+172,Glucose and dextrose,OTHER,Other commodities
+689,"Chillies and peppers, dry (Capsicum spp., Pimenta spp.), raw",OTHER,Other commodities
+568,Cantaloupes and other melons,OTHER,Other commodities
+651,"Other forage products, n.e.c.",OTHER,Other commodities
+32,"Rice, broken",OTHER,Other commodities
+392,"Tomatoes, peeled (o/t vinegar)",OTHER,Other commodities
+232,"Walnuts, shelled",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+246,Prepared groundnuts,OTHER,Other commodities
+128,"Cassava, dry",CASSAVA,Cassava sector (CMD/CBSD proxy)
+988,"Wool, degreased or carbonized, not carded or combed",OTHER,Other commodities
+269,Cake of sunflower seed,OTHER,Other commodities
+567,Watermelons,OTHER,Other commodities
+451,Canned mushrooms,OTHER,Other commodities
+28,Husked rice,OTHER,Other commodities
+976,Sheep,OTHER,Other commodities
+393,Cauliflowers and broccoli,BRASSICA,Brassica sector (clubroot proxy)
+129,Starch of cassava,CASSAVA,Cassava sector (CMD/CBSD proxy)
+519,"Apple juice, concentrated",OTHER,Other commodities
+358,Cabbages,BRASSICA,Brassica sector (clubroot proxy)
+167,Sugar and syrups n.e.c.,OTHER,Other commodities
+723,"Other stimulant, spice and aromatic crops, n.e.c.",OTHER,Other commodities
+340,"Other oil of vegetable origin, crude n.e.c.",OTHER,Other commodities
+518,Apple juice,OTHER,Other commodities
+575,"Pineapples, otherwise prepared or preserved",OTHER,Other commodities
+234,"Other nuts (excluding wild edible nuts and groundnuts), in shell, n.e.c.",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+343,"Flours and meals of oil seeds or oleaginous fruits, except those of mustard",OTHER,Other commodities
+191,"Chick peas, dry",OTHER,Other commodities
+603,"Other tropical fruits, n.e.c.",OTHER,Other commodities
+620,"Other fruit n.e.c., dried",OTHER,Other commodities
+450,Dried mushrooms,OTHER,Other commodities
+367,Asparagus,OTHER,Other commodities
+426,Carrots and turnips,OTHER,Other commodities
+909,Dairy products n.e.c.,OTHER,Other commodities
+217,"Cashew nuts, in shell",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+517,Cider and other fermented beverages,OTHER,Other commodities
+475,Vegetables preserved (frozen),OTHER,Other commodities
+60,Oil of maize,OTHER,Other commodities
+394,"Pumpkins, squash and gourds",OTHER,Other commodities
+577,Dates,OTHER,Other commodities
+448,"Sweet corn, prepared or preserved",OTHER,Other commodities
+27,Rice,OTHER,Other commodities
+558,Other berries and fruits of the genus vaccinium n.e.c.,OTHER,Other commodities
+173,Lactose,OTHER,Other commodities
+672,"Extracts, essences and concentrates of tea or mate, and preparations with a basis thereof or with a basis of tea or maté",OTHER,Other commodities
+507,Pomelos and grapefruits,CITRUS,Citrus (HLB proxy)
+165,Molasses,OTHER,Other commodities
+552,Blueberries,OTHER,Other commodities
+1164,"Other meat and edible meat offal, salted, in brine, dried or smoked; edible flours and meals of meat or meat offal",OTHER,Other commodities
+562,Grape juice,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+1008,"Hair, carded/combed",OTHER,Other commodities
+58,Flour of maize,OTHER,Other commodities
+75,Oats,OTHER,Other commodities
+17,Bran of wheat,WHEAT,Wheat sector (wheat blast proxy)
+221,"Almonds, in shell",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+222,"Walnuts, in shell",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+266,Oil of castor beans,OTHER,Other commodities
+259,Cake of palm kernel,OTHER,Other commodities
+547,Raspberries,OTHER,Other commodities
+889,"Whole milk, condensed",OTHER,Other commodities
+999,"Raw hides and skins of sheep or lambs, with wool",OTHER,Other commodities
+536,Plums and sloes,PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+1169,"Other live animals non food, n.e.c.",OTHER,Other commodities
+333,Linseed,OTHER,Other commodities
+702,"Nutmeg, mace, cardamoms, raw",OTHER,Other commodities
+711,"Anise, badian, coriander, cumin, caraway, fennel and juniper berries, raw",OTHER,Other commodities
+166,Other fructose and syrup,OTHER,Other commodities
+1037,Fat of pigs,OTHER,Other commodities
+888,Skim milk of cows,OTHER,Other commodities
+720,"Ginger, raw",OTHER,Other commodities
+652,Vegetable products for feed n.e.c.,OTHER,Other commodities
+625,"Fruit, nuts, peel, sugar preserved",OTHER,Other commodities
+414,"Other beans, green",OTHER,Other commodities
+460,"Vegetable products, fresh or dry n.e.c.",OTHER,Other commodities
+1063,"Eggs, liquid",OTHER,Other commodities
+773,"Flax, processed but not spun",OTHER,Other commodities
+250,"Coconuts, desiccated",OTHER,Other commodities
+117,"Flour, meal, powder, flakes, granules and pellets of potatoes",OTHER,Other commodities
+474,Other vegetables provisionally preserved,OTHER,Other commodities
+565,Vermouth and other wine of fresh grapes flavoured with plats or aromatic substances,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+113,Cereal preparations,OTHER,Other commodities
+537,"Plums, dried",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+76,"Oats, rolled",OTHER,Other commodities
+1097,"Horse meat, fresh or chilled",OTHER,Other commodities
+1069,"Meat of ducks, fresh or chilled",OTHER,Other commodities
+677,Hop cones,OTHER,Other commodities
+339,"Other oil seeds, n.e.c.",OTHER,Other commodities
+169,Beet pulp,OTHER,Other commodities
+769,Cotton waste,OTHER,Other commodities
+1163,"Game meat, fresh, chilled or frozen",OTHER,Other commodities
+887,Ghee from cow milk,OTHER,Other commodities
+554,Cranberries,OTHER,Other commodities
+489,Plantains and cooking bananas,BANANA,Banana & plantain (BBTD/TR4 proxy)
+239,Soya sauce,OTHER,Other commodities
+693,"Cinnamon and cinnamon-tree flowers, raw",OTHER,Other commodities
+399,Eggplants (aubergines),OTHER,Other commodities
+1186,Raw silk (not thrown),OTHER,Other commodities
+1043,"Pig fat, rendered",OTHER,Other commodities
+692,"Vanilla, raw",OTHER,Other commodities
+1059,"Edible offals and liver of chickens and guinea fowl, fresh, chilled or frozen",OTHER,Other commodities
+274,Oil of olive residues,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+244,Groundnut oil,OTHER,Other commodities
+526,Apricots,PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+580,"Juice of pineapples, concentrated",OTHER,Other commodities
+50,Malt extract,OTHER,Other commodities
+447,"Sweet corn, frozen",OTHER,Other commodities
+220,"Chestnuts, in shell",OTHER,Other commodities
+181,"Broad beans and horse beans, dry",OTHER,Other commodities
+71,Rye,OTHER,Other commodities
+226,Areca nuts,OTHER,Other commodities
+641,"Forage and silage, alfalfa",OTHER,Other commodities
+111,Flour of cereals n.e.c.,OTHER,Other commodities
+527,"Apricots, dried",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+928,"Skins, wet-salted of calves",OTHER,Other commodities
+626,"Homogenized cooked fruit, prepared",OTHER,Other commodities
+341,"Cake, oilseeds nes",OTHER,Other commodities
+329,Cotton seed,OTHER,Other commodities
+768,"Cotton, carded or combed",OTHER,Other commodities
+160,"Refined cane or beet sugar, in solid form, containing added flavouring or colouring matter; maple sugar and maple syrup",OTHER,Other commodities
+862,Lucerne (alfalfa) meal and pellets,OTHER,Other commodities
+122,Sweet potatoes,OTHER,Other commodities
+29,"Rice, milled (husked)",OTHER,Other commodities
+242,"Groundnuts, excluding shelled",OTHER,Other commodities
+576,Pineapple juice,OTHER,Other commodities
+1064,"Eggs, dried",OTHER,Other commodities
+570,"Figs, dried",OTHER,Other commodities
+249,"Coconuts, in shell",OTHER,Other commodities
+698,"Cloves (whole stems), raw",OTHER,Other commodities
+1079,Turkeys,OTHER,Other commodities
+587,Persimmons,OTHER,Other commodities
+295,Flour of mustard seed,OTHER,Other commodities
+407,Leeks and other alliaceous vegetables,OTHER,Other commodities
+624,Flour of fruits,OTHER,Other commodities
+247,Peanut butter,OTHER,Other commodities
+850,Feed supplements,OTHER,Other commodities
+1091,"Eggs from other birds in shell, fresh, n.e.c.",OTHER,Other commodities
+1168,Animal oils and fats n.e.c.,OTHER,Other commodities
+635,"Cereal straw, husks, unprepared, ground, pressed, or in the form of pellets",OTHER,Other commodities
+1172,Meat prepared n.e.c.,OTHER,Other commodities
+417,"Peas, green",OTHER,Other commodities
+334,Oil of linseed,OTHER,Other commodities
+514,"Citrus juice, concentrated n.e.c.",CITRUS,Citrus (HLB proxy)
+1017,"Meat of goat, fresh or chilled",OTHER,Other commodities
+292,Mustard seed,BRASSICA,Brassica sector (clubroot proxy)
+373,Spinach,OTHER,Other commodities
+211,Other pulses n.e.c.,OTHER,Other commodities
+628,"Pulp, waste of fruit for feed",OTHER,Other commodities
+874,"Sausages and similar products of meat, offal or blood of beef and veal",OTHER,Other commodities
+984,"Cheese from milk of sheep, fresh or processed",OTHER,Other commodities
+872,"Bovine meat, salted, dried or smoked",OTHER,Other commodities
+59,Bran of maize,OTHER,Other commodities
+1216,"Other raw skins of other animals, preserved",OTHER,Other commodities
+513,Juice of citrus fruit n.e.c.,CITRUS,Citrus (HLB proxy)
+402,"Onions and shallots, green",OTHER,Other commodities
+663,Cocoa husks and shells,OTHER,Other commodities
+600,Papayas,OTHER,Other commodities
+1022,Butter of goat milk,OTHER,Other commodities
+229,"Brazil nuts, shelled",PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+1141,"Meat of rabbits and hares, fresh or chilled",OTHER,Other commodities
+994,Wool grease and lanolin,OTHER,Other commodities
+1166,"Other meat of mammals, fresh or chilled",OTHER,Other commodities
+1218,"Fine animal hair, n.e.c.",OTHER,Other commodities
+873,"Extracts and juices of meat, fish, crustaceans, molluscs or other aquatic invertebrates",OTHER,Other commodities
+821,"Other fibre crops, raw, n.e.c.",OTHER,Other commodities
+1073,"Meat of geese, fresh or chilled",OTHER,Other commodities
+290,Oil of sesame seed,OTHER,Other commodities
+112,Bran of cereals n.e.c.,OTHER,Other commodities
+997,"Skins, dry-salted of sheep",OTHER,Other commodities
+510,"Grapefruit juice, concentrated",CITRUS,Citrus (HLB proxy)
+998,"Skins, sheep nes",OTHER,Other commodities
+921,"Hides, cattle, dry salted",OTHER,Other commodities
+1241,Liquid margarine,OTHER,Other commodities
+1103,"Hides, horse, wet salted",OTHER,Other commodities
+296,Poppy seed,OTHER,Other commodities
+331,Cottonseed oil,OTHER,Other commodities
+878,Liver preparations,OTHER,Other commodities
+841,"Feed, compound, poultry",OTHER,Other commodities
+813,"Coir, raw",OTHER,Other commodities
+1296,"Vegetable waxes (other than triglycerides), whether or not refined or coloured",OTHER,Other commodities
+890,"Whey, condensed",OTHER,Other commodities
+891,Yoghurt,OTHER,Other commodities
+671,Maté leaves,OTHER,Other commodities
+1009,"Wool, hair waste",OTHER,Other commodities
+978,"Edible offal of sheep, fresh, chilled or frozen",OTHER,Other commodities
+253,Cake of copra,OTHER,Other commodities
+499,"Lemon juice, concentrated",CITRUS,Citrus (HLB proxy)
+92,Quinoa,OTHER,Other commodities
+1066,"Poultry fat, rendered",OTHER,Other commodities
+97,Triticale,OTHER,Other commodities
+509,Grapefruit juice,CITRUS,Citrus (HLB proxy)
+563,Must of grape,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+332,Cake of cottonseed,OTHER,Other commodities
+79,Millet,OTHER,Other commodities
+101,Canary seed,OTHER,Other commodities
+770,Cotton linters,OTHER,Other commodities
+857,"Hay, non-leguminous",OTHER,Other commodities
+299,Melonseed,OTHER,Other commodities
+39,Rice-fermented beverages,OTHER,Other commodities
+899,"Buttermilk, dry",OTHER,Other commodities
+136,Taro,OTHER,Other commodities
+108,Cereals n.e.c.,OTHER,Other commodities
+149,"Edible roots and tubers with high starch or inulin content, n.e.c., fresh",OTHER,Other commodities
+57,Germ of maize,OTHER,Other commodities
+1016,Goats,OTHER,Other commodities
+852,"Feed, other concentrates nes",OTHER,Other commodities
+446,Green corn (maize),OTHER,Other commodities
+197,"Pigeon peas, dry",OTHER,Other commodities
+877,Homogenized meat preparations,OTHER,Other commodities
+1075,"Edible offals and liver of ducks, fresh, chilled or frozen",OTHER,Other commodities
+1277,Residues of fatty substances,OTHER,Other commodities
+38,Flour of rice,OTHER,Other commodities
+774,"Flax, tow and waste",OTHER,Other commodities
+869,"Cattle fat, unrendered",OTHER,Other commodities
+213,Bran of pulses,OTHER,Other commodities
+905,Whey cheese,OTHER,Other commodities
+420,"Broad beans and horse beans, green",OTHER,Other commodities
+1183,Beeswax,OTHER,Other commodities
+281,"Safflower-seed oil, crude",OTHER,Other commodities
+225,"Hazelnuts, in shell",OTHER,Other commodities
+1187,Silk waste,OTHER,Other commodities
+335,Cake of linseed,OTHER,Other commodities
+1217,Leather used & waste,OTHER,Other commodities
+1126,Camels,OTHER,Other commodities
+212,Flour of pulses,OTHER,Other commodities
+61,Cake of maize,OTHER,Other commodities
+569,Figs,OTHER,Other commodities
+89,Buckwheat,OTHER,Other commodities
+1081,"Edible offals and liver of turkey, fresh, chilled or frozen",OTHER,Other commodities
+1215,"Hides nes, dry salted",OTHER,Other commodities
+1259,"Feed, food waste preparations",OTHER,Other commodities
+476,Homogenized vegetable preparations,OTHER,Other commodities
+1060,Fatty liver preparations,OTHER,Other commodities
+1046,"Skins, pig, dry salted",OTHER,Other commodities
+512,"Other citrus fruit, n.e.c.",CITRUS,Citrus (HLB proxy)
+1030,"Hair, goat, fine",OTHER,Other commodities
+1068,Ducks,OTHER,Other commodities
+127,Tapioca of cassava,CASSAVA,Cassava sector (CMD/CBSD proxy)
+251,Copra,OTHER,Other commodities
+137,Yams,OTHER,Other commodities
+366,Artichokes,OTHER,Other commodities
+896,"Skim milk, condensed",OTHER,Other commodities
+1171,"Other live animals, n.e.c.",OTHER,Other commodities
+170,Bagasse,OTHER,Other commodities
+260,Olives,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+245,Cake of groundnuts,OTHER,Other commodities
+125,"Cassava, fresh",CASSAVA,Cassava sector (CMD/CBSD proxy)
+530,Sour cherries,PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+780,"Jute, raw or retted",OTHER,Other commodities
+1221,Lard stearine and lard oil,OTHER,Other commodities
+840,"Feed, compound, cattle",OTHER,Other commodities
+1045,"Skins, pig, wet salted",OTHER,Other commodities
+658,Coffee substitutes,OTHER,Other commodities
+126,Flour of cassava,CASSAVA,Cassava sector (CMD/CBSD proxy)
+390,Tomato juice,OTHER,Other commodities
+461,Locust beans (carobs),OTHER,Other commodities
+946,Buffalo,OTHER,Other commodities
+1074,"Edible offals and liver of geese, fresh, chilled or frozen",OTHER,Other commodities
+498,Juice of lemon,CITRUS,Citrus (HLB proxy)
+466,Other vegetable juices,OTHER,Other commodities
+903,"Whey, fresh",OTHER,Other commodities
+156,Sugar cane,OTHER,Other commodities
+789,"Sisal, raw",OTHER,Other commodities
+660,Coffee husks and skins,OTHER,Other commodities
+737,Oil of citronella,OTHER,Other commodities
+104,Flour of mixed grain,OTHER,Other commodities
+157,Sugar beet,OTHER,Other commodities
+550,Currants,OTHER,Other commodities
+72,Flour of rye,OTHER,Other commodities
+280,Safflower seed,OTHER,Other commodities
+175,Isoglucose,OTHER,Other commodities
+195,"Cow peas, dry",OTHER,Other commodities
+210,Lupins,OTHER,Other commodities
+809,"Abaca, manila hemp, raw",OTHER,Other commodities
+256,Palm kernels,OTHER,Other commodities
+263,Karite nuts (sheanuts),OTHER,Other commodities
+1181,Bees,OTHER,Other commodities
+150,Flour of roots and tubers n.e.c.,OTHER,Other commodities
+336,Hempseed,OTHER,Other commodities
+1027,"Skins, goat, dry salted",OTHER,Other commodities
+216,"Brazil nuts, in shell",OTHER,Other commodities
+1140,Rabbits and hares,OTHER,Other commodities
+240,Soya paste,OTHER,Other commodities
+293,"Mustard seed oil, crude",OTHER,Other commodities
+1222,Degras,OTHER,Other commodities
+1002,"Skins, karakul",OTHER,Other commodities
+523,Quinces,OTHER,Other commodities
+36,Oil of rice bran,OTHER,Other commodities
+777,"True hemp, raw or retted",OTHER,Other commodities
+19,Germ of wheat,WHEAT,Wheat sector (wheat blast proxy)
+276,Oil of tung nuts,OTHER,Other commodities
+430,Okra,OTHER,Other commodities
+771,"Flax, raw or retted",OTHER,Other commodities
+135,Yautia,OTHER,Other commodities
+604,"Other tropical fruit, dried",OTHER,Other commodities
+35,Bran of rice,OTHER,Other commodities
+1214,"Hides, wet salted nes",OTHER,Other commodities
+423,String beans,OTHER,Other commodities
+1089,"Meat of pigeons and other birds n.e.c., fresh, chilled or frozen",OTHER,Other commodities
+278,Jojoba oil,OTHER,Other commodities
+103,Mixed grain,OTHER,Other commodities
+929,"Skins, calve, dry salted",OTHER,Other commodities
+265,Castor oil seeds,OTHER,Other commodities
+1065,Fat of poultry,OTHER,Other commodities
+842,"Feed, compound, pigs",OTHER,Other commodities
+754,"Pyrethrum, dried flowers",OTHER,Other commodities
+839,"Balata, gutta-percha, guayule, chicle and similar natural gums in primary forms or in plates, sheets or strip",OTHER,Other commodities
+1083,Other birds,OTHER,Other commodities
+788,"Ramie, raw or retted",OTHER,Other commodities
+1167,"Offals n.e.c. (excluding mammals), fresh, chilled or frozen",OTHER,Other commodities
+859,"Hay for forage, from other crops n.e.c.",OTHER,Other commodities
+121,Tapioca of potatoes,OTHER,Other commodities
+1219,"Hair, coarse nes",OTHER,Other commodities
+46,"Barley, pearled",OTHER,Other commodities
+755,Pyrethrum extract,OTHER,Other commodities
+1185,Silk-worm cocoons suitable for reeling,OTHER,Other commodities
+21,Bulgur,OTHER,Other commodities
+1100,"Hair, horse",OTHER,Other commodities
+541,Other stone fruits,PRUNUS,Prunus/stone fruit sector (PPV + Xylella proxy)
+1098,"Edible offals of horses and other equines, fresh, chilled or frozen",OTHER,Other commodities
+922,"Hides, cattle nes",OTHER,Other commodities
+45,Pot barley,OTHER,Other commodities
+273,Olive residues,OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+930,"Skins, calve nes",OTHER,Other commodities
+459,Chicory roots,OTHER,Other commodities
+48,Barley flour and grits,OTHER,Other commodities
+1026,"Skins, wet-salted of goats",OTHER,Other commodities
+748,"Peppermint, spearmint",OTHER,Other commodities
+1295,Spermaceti,OTHER,Other commodities
+1110,Mules and hinnies,OTHER,Other commodities
+647,Beets for fodder,OTHER,Other commodities
+1007,"Wool, shoddy",OTHER,Other commodities
+161,Other sugar crops n.e.c.,OTHER,Other commodities
+37,Cake of rice bran,OTHER,Other commodities
+895,"Skim milk, evaporated",OTHER,Other commodities
+584,Mango pulp,OTHER,Other commodities
+583,Juice of mango,OTHER,Other commodities
+105,Bran of mixed grain,OTHER,Other commodities
+1107,Asses,OTHER,Other commodities
+1072,Geese,OTHER,Other commodities
+904,Cheese from skimmed cow milk,OTHER,Other commodities
+566,"Grapes, marc",OLIVE_GRAPE,Olive + grape sector (Xylella proxy)
+1146,"Skins, rabbit",OTHER,Other commodities
+996,"Skins, wet-salted of sheep",OTHER,Other commodities
+549,Gooseberries,OTHER,Other commodities
+1127,"Meat of camels, fresh or chilled",OTHER,Other commodities
+636,"Forage and silage, maize",OTHER,Other commodities
+224,Kola nuts,OTHER,Other commodities
+496,Juice of tangerine,CITRUS,Citrus (HLB proxy)
+77,Bran of oats,OTHER,Other commodities
+854,Feed additives,OTHER,Other commodities
+958,"Hides, wet-salted of buffalo",OTHER,Other commodities
+1047,"Skins, pig nes",OTHER,Other commodities
+151,"Edible roots and tubers with high starch or inulin content, n.e.c., dry",OTHER,Other commodities
+47,Bran of barley,OTHER,Other commodities
+1031,Coarse goat hair,OTHER,Other commodities
+1105,"Hides, horse nes",OTHER,Other commodities
+948,"Edible offal of buffalo, fresh, chilled or frozen",OTHER,Other commodities
+291,Cake of sesame seed,OTHER,Other commodities
+782,"Kenaf, and other textile bast fibres, raw or retted",OTHER,Other commodities
+203,"Bambara beans, dry",OTHER,Other commodities
+294,Cake of mustard seed,BRASSICA,Brassica sector (clubroot proxy)
+1028,"Skins, goat nes",OTHER,Other commodities
+163,"Cane sugar, non-centrifugal",OTHER,Other commodities
+1157,Other camelids,OTHER,Other commodities
+858,"Hay for forage, from legumes",OTHER,Other commodities
+655,Vegetables and roots fodder,OTHER,Other commodities
+465,"Other vegetables and pulses, preserved other than by vinegar, acetic acid or sugar, n.e.c.",OTHER,Other commodities
+853,Vitamins,OTHER,Other commodities
+84,Flour of sorghum,OTHER,Other commodities
+94,Fonio,OTHER,Other commodities
+80,Flour of millet,OTHER,Other commodities
+983,Butter and ghee of sheep milk,OTHER,Other commodities
+1021,"Cheese from milk of goats, fresh or processed",OTHER,Other commodities
+979,"Sheep fat, unrendered",OTHER,Other commodities
+959,"Hides, dry-salted of buffalo",OTHER,Other commodities
+1040,"Pig, butcher fat",OTHER,Other commodities
+85,Bran of sorghum,OTHER,Other commodities
+919,Raw hides and skins of cattle,OTHER,Other commodities
+313,Oil of kapok,OTHER,Other commodities
+871,"Cattle, butcher fat",OTHER,Other commodities
+73,Bran of rye,OTHER,Other commodities
+1104,"Hides, dry-salted of horses",OTHER,Other commodities
+311,Kapokseed in shell,OTHER,Other commodities
+314,Cake of kapok,OTHER,Other commodities
+264,Butter of karite nuts,OTHER,Other commodities
+282,Cake of safflowerseed,OTHER,Other commodities
+1150,Other rodents,OTHER,Other commodities
+649,Swedes for fodder,BRASSICA,Brassica sector (clubroot proxy)
+120,Potato offals,OTHER,Other commodities
+630,Cane tops,OTHER,Other commodities
+1213,"Other raw skins of other animals, fresh",OTHER,Other commodities
+953,Ghee from buffalo milk,OTHER,Other commodities
+591,Cashewapple,OTHER,Other commodities
+81,Bran of millet,OTHER,Other commodities
+1108,"Meat of asses, fresh or chilled",OTHER,Other commodities
+205,Vetches,OTHER,Other commodities
+297,Oil of poppy seed,OTHER,Other commodities
+646,"Turnips, for forage",BRASSICA,Brassica sector (clubroot proxy)
+275,Tung nuts,OTHER,Other commodities
+90,Flour of buckwheat,OTHER,Other commodities
+1018,"Edible offal of goat, fresh, chilled or frozen",OTHER,Other commodities
+1129,Fat of camels,OTHER,Other commodities
+778,"Kapok fibre, raw",OTHER,Other commodities
