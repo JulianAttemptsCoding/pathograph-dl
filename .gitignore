@@ -45,3 +45,11 @@ data/processed/**/logs/
 data/processed/**/qc/
 data/processed/**/reports/
 *.zarr/
+
+# Local scratch / outputs
+reports/
+docs/reports/
+scripts/
+fix_indent*.py
+fix_faostat_step2_wide_indent.py
+
