@@ -1,0 +1,23 @@
+version: 1.0
+trade_step4:
+  inputs:
+    base_zarr: data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr
+    risk_zarr: data/processed/trade/faostat_step2/trade_risk_tensor.zarr
+    scaler_json: data/processed/trade/trade_step3_scaler.json
+  windowing:
+    lookback_months: 24
+    horizon_months: 1
+  splits:
+    train: {t_min: 0, t_max: 815}
+    val:   {t_min: 816, t_max: 851}
+    test:  {t_min: 852, t_max: 907}
+  transforms:
+    apply_log1p: true
+    standardize: true
+  dataloader:
+    batch_size: 1
+    num_workers: 0
+    pin_memory: false
+    persistent_workers: false
+    prefetch_factor: 2
+    drop_last_train: true
