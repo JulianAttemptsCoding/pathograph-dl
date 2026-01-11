@@ -56,3 +56,15 @@ fix_faostat_step2_wide_indent.py
 
 # Trade Step 3 derived scaler
 data/processed/trade/trade_step3_scaler.json
+
+
+# Local diagnostics / verification artifacts
+verification_failure*.log
+trade_step2_repro_logs/
+trade_step2_env_versions.txt
+trade_step2_failure_diagnosis_report.*
+trade_step2_help.txt
+
+# Local implementation reports (keep local unless you want them in docs/)
+trade_step4_implementation_report.md
+trade_step4_readiness_report.md
