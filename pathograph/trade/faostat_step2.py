@@ -1061,7 +1061,9 @@ def compute_corridor_year_weights(
     iso3_to_id: Dict[str, int],
     group_order: List[str],
     N: int,
-    K: int
+    K: int,
+    year_min: Optional[int] = None,
+    year_max: Optional[int] = None
 ) -> Tuple[np.ndarray, np.ndarray, Dict]:
     """
     Compute corridor-year commodity/risk-group shares W[y,i,j,k].
@@ -1072,6 +1074,8 @@ def compute_corridor_year_weights(
         group_order: Sorted list of group_ids
         N: Number of nodes (194)
         K: Number of groups
+        year_min: Optional start year (inclusive). If None, derived from data.
+        year_max: Optional end year (inclusive). If None, derived from data.
     
     Returns:
         (W, weight_mask, stats)
@@ -1080,13 +1084,16 @@ def compute_corridor_year_weights(
         - stats: Dict with computation statistics
     """
     # Determine year range
-    year_min = df['year'].min()
-    year_max = df['year'].max()
-    Y = int(year_max - YEAR_EPOCH + 1)
+    if year_min is None:
+        year_min = int(df['year'].min())
+    if year_max is None:
+        year_max = int(df['year'].max())
+        
+    Y = int(year_max - year_min + 1)
     
     logging.info(f"Computing corridor-year weights:")
     logging.info(f"  FAOSTAT calendar years: {year_min}..{year_max}")
-    logging.info(f"  Weights year index (1950-based): {year_min - YEAR_EPOCH}..{year_max - YEAR_EPOCH} (Y={Y})")
+    logging.info(f"  Weights year index: 0..{Y-1} (Y={Y})")
     logging.info(f"  Nodes: N={N}, Groups: K={K}")
     
     # Initialize arrays
@@ -1100,7 +1107,7 @@ def compute_corridor_year_weights(
     # Aggregate volumes V[y,i,j,k]
     logging.info("  Aggregating values (vectorized)...")
     
-    y_vals = df['year'].astype(int).values - YEAR_EPOCH
+    y_vals = df['year'].astype(int).values - year_min
     i_vals = df['reporter_iso3'].map(iso3_to_id).fillna(-1).astype(np.int32).values
     j_vals = df['partner_iso3'].map(iso3_to_id).fillna(-1).astype(np.int32).values
     k_vals = df['group_id'].map(group_to_k).fillna(-1).astype(np.int32).values
@@ -1343,9 +1350,9 @@ def apply_lag_and_generate_pseudoflows(
     # Process each month
     for t in range(T):
         stats["months_processed"] += 1
-        calendar_year = YEAR_EPOCH + (t // 12)
+        calendar_year = month_years[t]
         weight_year = calendar_year - lag
-        y_w = weight_year - YEAR_EPOCH
+        y_w = weight_year - weight_year_min
         
         # Check if weight index is in range
         if y_w < 0 or y_w >= W.shape[0]:

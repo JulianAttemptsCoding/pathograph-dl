@@ -87,16 +87,22 @@ def mode_emit_groups_template(args):
     os.makedirs('reports', exist_ok=True)
 
     try:
-        # Load Step1 manifest to get node_index_path
-        with open(args.step1_manifest, 'r', encoding='utf-8') as f:
-            step1 = json.load(f)
-        if 'inputs' in step1 and 'node_index' in step1['inputs']:
-            node_index_path = step1['inputs']['node_index'].get('path')
-        else:
-            node_index_path = step1.get('node_index_path')
 
+        # Load Step1 manifest to get node_index_path
+        if args.step1_manifest:
+            with open(args.step1_manifest, 'r', encoding='utf-8') as f:
+                step1 = json.load(f)
+            if 'inputs' in step1 and 'node_index' in step1['inputs']:
+                node_index_path = step1['inputs']['node_index'].get('path')
+            else:
+                node_index_path = step1.get('node_index_path')
+        elif args.node_index:
+            node_index_path = args.node_index
+        else:
+            raise ValueError("--step1-manifest OR --node-index is required")
+            
         if not node_index_path:
-            raise ValueError('step1 manifest missing node_index_path')
+            raise ValueError('Could not determine node_index_path from inputs')
 
         node_df = pd.read_csv(node_index_path)
         iso3_set = set(node_df['iso3'].astype(str).str.upper().str.strip().tolist())

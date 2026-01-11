@@ -103,25 +103,44 @@ def create_synthetic_step1_manifest(temp_dir):
 
 
 def create_synthetic_faostat_csv(temp_dir):
-    """Create a minimal synthetic FAOSTAT CSV."""
+    """Create a minimal synthetic FAOSTAT CSV (Wide Format for Template Scanner compatibility)."""
     faostat_path = Path(temp_dir) / 'faostat.csv'
     
+    # M49 Mapping
+    iso3_to_m49 = {'USA': '840', 'CAN': '124', 'MEX': '484'}
+    
     # Create synthetic data for 2019-2020, 3 countries, 3 items
+    # Pivot logic: keys are (Reporter, Partner, Item Code)
+    data = {}
+    
+    for reporter in ['USA', 'CAN', 'MEX']:
+        for partner in ['USA', 'CAN', 'MEX']:
+            if reporter == partner:
+                continue
+            for item_code in [15, 27, 44]:
+                key = (reporter, partner, item_code)
+                # Random values for 2019, 2020
+                data[key] = {
+                    'Y2019': np.random.rand() * 1000.0,
+                    'Y2020': np.random.rand() * 1000.0
+                }
+    
     rows = []
-    for year in [2019, 2020]:
-        for reporter in ['USA', 'CAN', 'MEX']:
-            for partner in ['USA', 'CAN', 'MEX']:
-                if reporter == partner:
-                    continue
-                for item_code in [15, 27, 44]:
-                    rows.append({
-                        'Reporter': reporter,
-                        'Partner': partner,
-                        'Year': year,
-                        'Item Code': item_code,
-                        'Value': np.random.rand() * 1000.0,
-                        'Element': 'Export Value'
-                    })
+    for (rep, part, item), vals in data.items():
+        row = {
+            'Reporter Country Code': iso3_to_m49[rep],  # Dummy FAO code
+            'Reporter Country Code (M49)': iso3_to_m49[rep],
+            'Partner Country Code': iso3_to_m49[part],  # Dummy FAO code
+            'Partner Country Code (M49)': iso3_to_m49[part],
+            'Item Code': item,
+            'Item': f"Item {item}",
+            'Element': 'Export Value',
+            'Unit': 'USD',
+            'Y2019': vals['Y2019'],
+            'Y2020': vals['Y2020'],
+            'Flag': ''
+        }
+        rows.append(row)
     
     df = pd.DataFrame(rows)
     df.to_csv(faostat_path, index=False)
