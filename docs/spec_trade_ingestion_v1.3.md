@@ -48,6 +48,7 @@ Build a monthly bilateral trade edge tensor for a 194-node country graph (UNGA v
 - **Path:** `data/processed/trade/faostat_step2/trade_risk_tensor.zarr`
 - **Keys:**
   - `trade_risk`: `[T, N, N, K, 2]` (float32). K=8 Commodity Groups.
+    - **Channels:** `[Exports, Imports]` (same as Step 1).
   - `observed_mask`: `[T, N, N, K, 2]` (uint8).
     - **Code 1:** Observed.
     - **Code 0:** Missing.
@@ -118,10 +119,10 @@ Production settings in `config/trade_step7.yaml`:
 | **Metrics Only** | `python tools/trade_step7_export_metrics.py --run-dir runs/...` | Re-computes metrics from checkpoint |
 
 ### Metrics Schema
-Metrics are exported with detailed breakdowns to account for data quality issues (mirror statistics).
+Metrics are exported with detailed breakdowns to account for data quality issues (estimation/coverage statistics).
 - **Channels:** Exports (0) vs Imports (1)
 - **Quality Split:** Imported values are split by `is_estimated` flag from Step 1.
-  - `imports_estimated`: FOB report missing; value derived from CIF report ($V_{FOB} = V_{CIF} / 1.1$).
+  - `imports_estimated`: FOB report missing; value derived from CIF report ($V_{FOB} = V_{CIF} / (1 + m)$). (m=0.06 in Step 1 manifest).
   - `imports_observed`: Direct FOB report from the importer.
 
 **JSON Schema:**
