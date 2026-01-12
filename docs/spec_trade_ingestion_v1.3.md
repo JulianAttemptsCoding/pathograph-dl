@@ -16,10 +16,14 @@ Build a monthly bilateral trade edge tensor for a 194-node country graph (UNGA v
 - **Everything must be deterministic and reproducible** via fixed seeds and versioned artifacts
 
 ## Time Axis Convention
-- **Epoch:** 1950-01
+- **Epoch:** 1950-01 (t=0)
+- **Tensor Span:** `1950-M01` to `2025-M08` (T=908)
+  - *Note:* FAOSTAT weights (Step 2) are available from 1986 to 2024. Pre-1986 risk data may be sparse or unweighted.
 - **Month Index Formula:** `month_index = 12*(YYYY-1950) + (MM-1)`
-- **Stored Fields:** `month_index:int32`, `month_id:'YYYY-MM':string`
-- **Range:** 1986-01 (t=432) to present (e.g. 2024=t~900)
+- **Stored Fields:** 
+  - `month_index:int32`
+  - `month_id:string`: Format `YYYY-M##` (e.g., `1950-M01`, `2024-M12`).
+
 
 ## Node Axis Convention
 - **N:** 194 nodes (UNGA voters + Taiwan)
@@ -37,7 +41,7 @@ Build a monthly bilateral trade edge tensor for a 194-node country graph (UNGA v
   - `mask`: `[T, N, N, 2]` (uint8).
     - **Code 1 (and non-zero):** Valid/Observed.
     - **Code 0:** Missing/Null/Noise.
-  - `is_estimated`: `[T, N, N, 2]` (uint8). 1 if mirror-filled or estimated.
+  - `is_estimated`: `[T, N, N, 2]` (uint8). 1 if estimated (derived from CIF).
   - `time_index`: `[T]` (int32).
 
 ### Step 2: Risk Trade (FAOSTAT)
@@ -117,8 +121,8 @@ Production settings in `config/trade_step7.yaml`:
 Metrics are exported with detailed breakdowns to account for data quality issues (mirror statistics).
 - **Channels:** Exports (0) vs Imports (1)
 - **Quality Split:** Imported values are split by `is_estimated` flag from Step 1.
-  - `imports_estimated`: Original data was missing/null, filled via mirror exports.
-  - `imports_observed`: Original data was reported by the importer.
+  - `imports_estimated`: FOB report missing; value derived from CIF report ($V_{FOB} = V_{CIF} / 1.1$).
+  - `imports_observed`: Direct FOB report from the importer.
 
 **JSON Schema:**
 ```json
