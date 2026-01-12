@@ -12,10 +12,17 @@ except ImportError:
     BaseClass = torch.nn.Module # Fallback to avoid NameError
 
 class TradeBaselinePL(BaseClass):
-    def __init__(self):
+    def __init__(self, lr: float = 1e-3, weight_decay: float = 0.0, **kwargs):
         super().__init__()
+        self.lr = lr
+        self.weight_decay = weight_decay
         if not HAS_PL:
             print("Warning: pytorch_lightning not found. TradeBaselinePL acts as simple nn.Module.")
+        else:
+            try:
+                self.save_hyperparameters(ignore=["kwargs"])
+            except Exception:
+                self.save_hyperparameters()
         self.model = PersistenceBaseline()
         
     def forward(self, x):
@@ -64,4 +71,47 @@ class TradeBaselinePL(BaseClass):
         return total_loss
 
     def configure_optimizers(self):
-        return None
+        lr = float(getattr(self.hparams, "lr", self.lr)) if HAS_PL else self.lr
+        wd = float(getattr(self.hparams, "weight_decay", self.weight_decay)) if HAS_PL else self.weight_decay
+        return torch.optim.Adam(self.parameters(), lr=lr, weight_decay=wd)
+
+    def validation_step(self, batch: Dict[str, torch.Tensor], batch_idx: int) -> torch.Tensor:
+        # 1) Forward pass
+        preds = self.model(batch)
+
+        # 2) Compute loss (same structure as training_step but with val_* logs)
+        total_loss = torch.tensor(0.0, device=self.device)
+        valid_losses = 0
+
+        # Base loss
+        if "y_base" in batch and "y_base_pred" in preds:
+            target = batch["y_base"]
+            mask = batch.get("y_base_mask", torch.ones_like(target))
+            pred = preds["y_base_pred"]
+            l = masked_mse(pred, target, mask)
+            if HAS_PL:
+                self.log("val_loss_base", l, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+            total_loss = total_loss + l
+            valid_losses += 1
+
+        # Risk loss
+        if "y_risk" in batch and "y_risk_pred" in preds:
+            target = batch["y_risk"]
+            mask = batch.get("y_risk_mask", torch.ones_like(target))
+            pred = preds["y_risk_pred"]
+            l = masked_mse(pred, target, mask)
+            if HAS_PL:
+                self.log("val_loss_risk", l, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+            total_loss = total_loss + l
+            valid_losses += 1
+
+        if valid_losses == 0:
+            # Avoid checkpoint monitor crash: always emit val_loss
+            z = torch.tensor(0.0, device=self.device)
+            if HAS_PL:
+                self.log("val_loss", z, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+            return z
+
+        if HAS_PL:
+            self.log("val_loss", total_loss, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+        return total_loss

@@ -1,0 +1,80 @@
+seed: 1337
+
+dataset:
+  base_zarr_path: "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr"
+  risk_zarr_path: "data/processed/trade/faostat_step2/trade_risk_tensor.zarr"
+  lookback: 24
+  horizon: 1
+  split: "train"
+  split_train: [0, 815]
+  split_val: [816, 851]
+  split_test: [852, 907]
+  apply_log1p: true
+  standardize: true
+  scaler_json_path: "data/processed/trade/trade_step3_scaler.json"
+  return_mode: "separate"
+  return_targets: true
+  target_kind: "base"
+  include_target_masks: true
+  require_target_observed: true
+  min_target_observed: 1
+  require_target_observed_kind: null
+  valid_t_cache_dir: null
+
+datamodule:
+  # Paths and Core TradeDatasetConfig fields
+  base_zarr_path: "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr"
+  risk_zarr_path: "data/processed/trade/faostat_step2/trade_risk_tensor.zarr"
+  scaler_json_path: "data/processed/trade/trade_step3_scaler.json"
+  lookback: 24
+  horizon: 1
+  split_train: [0, 815]
+  split_val: [816, 851]
+  split_test: [852, 907]
+  apply_log1p: true
+  standardize: true
+  
+  # Target Config
+  return_targets: true
+  target_kind: "base"
+  include_target_masks: true
+  require_target_observed: true
+  min_target_observed: 1
+  require_target_observed_kind: null
+  valid_t_cache_dir: null
+
+  # Loader Config
+  batch_size: 1
+  num_workers: 0
+  pin_memory: false
+  persistent_workers: false
+  prefetch_factor: 2
+  drop_last_train: true
+
+model:
+  lr: 0.001
+  weight_decay: 0.0
+
+trainer:
+  max_epochs: 10
+  accelerator: "auto"
+  devices: 1
+  precision: 32
+  log_every_n_steps: 1
+  deterministic: true
+
+logging:
+  out_dir: "runs/trade_step6"
+  logger: "tensorboard"
+  name: "baseline"
+
+checkpoint:
+  monitor: "val_loss"
+  mode: "min"
+  save_top_k: 1
+  save_last: true
+  save_on_train_epoch_end: false
+
+run:
+  do_test: true
+  fast_dev_run: false
