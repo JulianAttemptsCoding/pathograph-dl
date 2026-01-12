@@ -68,3 +68,5 @@ trade_step2_help.txt
 # Local implementation reports (keep local unless you want them in docs/)
 trade_step4_implementation_report.md
 trade_step4_readiness_report.md
+
+debug_log.txt
