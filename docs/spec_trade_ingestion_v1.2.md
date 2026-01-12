@@ -1,5 +1,9 @@
 # PathoGraph-DL Trade Ingestion Specification v1.2
 
+> [!CAUTION]
+> This specification is superseded by **v1.3**. Please refer to `docs/spec_trade_ingestion_v1.3.md` for the latest contract, especially regarding Step 7 Baseline Bundle.
+
+
 ## Project Goal
 Build a monthly bilateral trade edge tensor for a 194-node country graph (UNGA voters + Taiwan), then use it as an edge modality in an MM-ST-GNN.
 

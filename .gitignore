@@ -79,3 +79,15 @@ trade_step6_*_report.md
 trade_step6_*_summary.json
 trade_step6_*_inventory*.json
 trade_step6_zarr_inventory.json
+
+# Step 7 scratch outputs (root level)
+/REPORT.md
+/REPORT.json
+/artifact_inventory.json
+/step7_inspect.log
+/step7_verification_metrics.json
+/trade_step7_requirements_report.md
+/trade_step7_requirements_report.json
+
+# Step 7 scratch tools (deferred for deletion)
+tools/_scratch/

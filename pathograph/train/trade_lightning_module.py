@@ -115,3 +115,40 @@ class TradeBaselinePL(BaseClass):
         if HAS_PL:
             self.log("val_loss", total_loss, on_step=False, on_epoch=True, prog_bar=True, logger=True)
         return total_loss
+
+    def test_step(self, batch: Dict[str, torch.Tensor], batch_idx: int) -> torch.Tensor:
+        # Reuse validation_step logic but log with test_* prefix
+        preds = self.model(batch)
+
+        total_loss = torch.tensor(0.0, device=self.device)
+        valid_losses = 0
+
+        if "y_base" in batch and "y_base_pred" in preds:
+            target = batch["y_base"]
+            mask = batch.get("y_base_mask", torch.ones_like(target))
+            pred = preds["y_base_pred"]
+            l = masked_mse(pred, target, mask)
+            if HAS_PL:
+                self.log("test_loss_base", l, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+            total_loss = total_loss + l
+            valid_losses += 1
+
+        if "y_risk" in batch and "y_risk_pred" in preds:
+            target = batch["y_risk"]
+            mask = batch.get("y_risk_mask", torch.ones_like(target))
+            pred = preds["y_risk_pred"]
+            l = masked_mse(pred, target, mask)
+            if HAS_PL:
+                self.log("test_loss_risk", l, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+            total_loss = total_loss + l
+            valid_losses += 1
+
+        if valid_losses == 0:
+            z = torch.tensor(0.0, device=self.device)
+            if HAS_PL:
+                self.log("test_loss", z, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+            return z
+
+        if HAS_PL:
+            self.log("test_loss", total_loss, on_step=False, on_epoch=True, prog_bar=True, logger=True)
+        return total_loss
