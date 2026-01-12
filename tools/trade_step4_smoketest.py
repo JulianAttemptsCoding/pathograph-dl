@@ -1,6 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import asdict
+import sys
+from pathlib import Path
+
+# Ensure repo root is on path for imports
+REPO_ROOT = str(Path(__file__).resolve().parent.parent)
+sys.path.insert(0, REPO_ROOT)
 
 
 def _load_yaml(path: str) -> dict:

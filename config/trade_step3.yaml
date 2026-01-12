@@ -15,5 +15,13 @@ trade_step3:
     apply_log1p: true
     standardize: true
     standardize_scope: train_only_observed_only
+  targets:
+    return_targets: false         # Default: do not return y (backward compat)
+    target_kind: base             # or risk, or both
+    include_target_masks: true
+    # Valid-index filtering (for supervised Step5 training)
+    require_target_observed: true
+    min_target_observed: 1
+    require_target_observed_kind: both  # Ensure both base and risk have observed cells
   outputs:
     scaler_json: data/processed/trade/trade_step3_scaler.json

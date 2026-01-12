@@ -32,6 +32,18 @@ class TradeDatasetConfig:
     standardize: bool = True
     scaler_json_path: Optional[str] = None
     return_mode: Literal["separate", "concat"] = "separate"
+    
+    # Target config
+    return_targets: bool = False
+    target_kind: Literal["base", "risk", "both"] = "base"
+    include_target_masks: bool = True
+    # Future-proofing: implicit "target_transform" is assumed "same_as_inputs" for now.
+    
+    # Valid-index filtering (gated by return_targets)
+    require_target_observed: bool = False
+    min_target_observed: int = 1
+    require_target_observed_kind: Optional[Literal["base", "risk", "both"]] = None
+    valid_t_cache_dir: Optional[str] = None
 
 
 def _month_of_year_from_t(t: int) -> int:
@@ -79,9 +91,108 @@ class TradeDatasetZarr:
                 raise ValueError("standardize=True requires scaler_json_path")
             with open(cfg.scaler_json_path, "r", encoding="utf-8") as f:
                 self._scaler = json.load(f)
+        
+        # Valid-index filtering (only when return_targets AND require_target_observed)
+        self._valid_t: Optional[np.ndarray] = None
+        self._filtering_enabled = cfg.return_targets and cfg.require_target_observed
+        
+        if self._filtering_enabled:
+            self._valid_t = self._build_valid_t()
+            if len(self._valid_t) == 0:
+                raise ValueError(
+                    f"No valid time indices found after filtering. "
+                    f"Split {cfg.split}, t_start={self.t_start}, t_end={self.t_end}, "
+                    f"require_kind={cfg.require_target_observed_kind or cfg.target_kind}, "
+                    f"min={cfg.min_target_observed}"
+                )
+    
+    def _build_valid_t(self) -> np.ndarray:
+        """Build array of valid time indices where target masks meet threshold."""
+        import hashlib
+        from pathlib import Path
+        
+        cfg = self.cfg
+        require_kind = cfg.require_target_observed_kind or cfg.target_kind
+        min_obs = cfg.min_target_observed
+        H = cfg.horizon
+        
+        # Cache key components
+        cache_key_parts = [
+            cfg.split,
+            str(self.t_start),
+            str(self.t_end),
+            str(cfg.lookback),
+            str(H),
+            require_kind,
+            str(min_obs),
+            cfg.base_zarr_path,
+            cfg.risk_zarr_path,
+        ]
+        cache_key = hashlib.md5("_".join(cache_key_parts).encode()).hexdigest()[:12]
+        
+        # Try loading from cache
+        if cfg.valid_t_cache_dir:
+            cache_dir = Path(cfg.valid_t_cache_dir)
+            cache_path = cache_dir / f"valid_t_{cache_key}.npy"
+            if cache_path.exists():
+                return np.load(cache_path)
+        
+        # Scan and filter
+        valid_t_list = []
+        for t in range(self.t_start, self.t_end + 1):
+            t_y = t + H
+            
+            # Check base target mask
+            base_ok = True
+            if require_kind in ("base", "both"):
+                base_m = self.h.base_mask[t_y]
+                base_count = int(np.count_nonzero(base_m != 0))
+                base_ok = base_count >= min_obs
+            
+            # Check risk target mask
+            risk_ok = True
+            if require_kind in ("risk", "both"):
+                risk_m = self.h.risk_mask[t_y]
+                risk_count = int(np.count_nonzero(risk_m != 0))
+                risk_ok = risk_count >= min_obs
+            
+            if base_ok and risk_ok:
+                valid_t_list.append(t)
+        
+        valid_t = np.array(valid_t_list, dtype=np.int32)
+        
+        # Save to cache if configured
+        if cfg.valid_t_cache_dir:
+            cache_dir = Path(cfg.valid_t_cache_dir)
+            cache_dir.mkdir(parents=True, exist_ok=True)
+            cache_path = cache_dir / f"valid_t_{cache_key}.npy"
+            np.save(cache_path, valid_t)
+        
+        return valid_t
 
     def __len__(self) -> int:
+        if self._filtering_enabled:
+            return len(self._valid_t)
         return int(self.t_end - self.t_start + 1)
+    
+    @property
+    def valid_t_len(self) -> int:
+        """Number of valid time indices after filtering (0 if disabled)."""
+        return len(self._valid_t) if self._valid_t is not None else 0
+    
+    @property
+    def first_valid_t(self) -> Optional[int]:
+        """First valid time index (None if no filtering or empty)."""
+        if self._valid_t is not None and len(self._valid_t) > 0:
+            return int(self._valid_t[0])
+        return None
+    
+    @property
+    def last_valid_t(self) -> Optional[int]:
+        """Last valid time index (None if no filtering or empty)."""
+        if self._valid_t is not None and len(self._valid_t) > 0:
+            return int(self._valid_t[-1])
+        return None
 
     def _apply_transforms(self, x: np.ndarray, mean: np.ndarray, std: np.ndarray, mask: Optional[np.ndarray] = None) -> np.ndarray:
         # x is float32; mean/std are 1D per-feature
@@ -93,30 +204,49 @@ class TradeDatasetZarr:
         return x
 
     def __getitem__(self, idx: int) -> Dict[str, np.ndarray]:
-        t = self.t_start + idx
+        if self._filtering_enabled:
+            t = int(self._valid_t[idx])
+        else:
+            t = self.t_start + idx
         L = self.cfg.lookback
         H = self.cfg.horizon
 
         t0 = t - (L - 1)
         t1 = t + 1  # slice end exclusive
         t_y = t + H
+        
+        # Safety check for t_y (should be covered by t_end logic but good simply to assert)
+        if t_y >= self.h.T:
+             raise IndexError(f"Target index t_y={t_y} out of bounds (T={self.h.T})")
 
         # Load base window
         base_trade = self.h.base_trade[t0:t1, :, :, :]            # (L,N,N,2)
-        base_mask = self.h.base_mask[t0:t1, :, :, :].astype(np.uint8)
-        base_est = self.h.base_is_estimated[t0:t1, :, :, :].astype(np.uint8)
+        
+        # Base mask is categorical codes (0=valid, 1=null, 2=missing, ...).
+        # AUDIT FIX: Real data shows Code 1 contains 99% of trade (2.7T vs 34B). 
+        # So Code 1 (and non-zero) is Observed. Code 0 is Missing/Null.
+        base_mask_codes = self.h.base_mask[t0:t1, :, :].astype(np.uint8) # (L,N,N)
+        base_mask = (base_mask_codes != 0).astype(np.uint8)
+        
+        base_est = self.h.base_is_estimated[t0:t1, :, :].astype(np.uint8)
 
         # Load risk window
         risk_trade = self.h.risk_trade[t0:t1, :, :, :, :]         # (L,N,N,K,2)
-        risk_mask = self.h.risk_mask[t0:t1, :, :, :, :].astype(np.uint8)
-        risk_est = self.h.risk_is_estimated[t0:t1, :, :, :, :].astype(np.uint8)
+        # Risk mask is "observed_mask" (1=observed, 0=missing) already.
+        risk_mask = self.h.risk_mask[t0:t1, :, :, :].astype(np.uint8) # (L,N,N,K)
+        risk_est = self.h.risk_is_estimated[t0:t1, :, :, :].astype(np.uint8)
 
         # Target time feature (month-of-year) for t_y
         m = _month_of_year_from_t(t_y)
         sin_m, cos_m = _sin_cos_month(m)
         time_feat = np.array([sin_m, cos_m], dtype=np.float32)
 
-        # Apply transforms using scaler if requested
+        # Prepare Scaler
+        base_mean = None
+        base_std = None
+        risk_mean = None
+        risk_std = None
+        
         if self.cfg.standardize:
             sc = self._scaler
             base_mean = np.array(sc["base"]["mean"], dtype=np.float32)  # (2,)
@@ -124,6 +254,8 @@ class TradeDatasetZarr:
             risk_mean = np.array(sc["risk"]["mean"], dtype=np.float32)  # (K*2,)
             risk_std = np.array(sc["risk"]["std"], dtype=np.float32)
 
+        # Apply Transforms to Inputs
+        if self.cfg.standardize:
             base_trade = self._apply_transforms(base_trade, base_mean, base_std)
             risk_flat = risk_trade.reshape((L, self.h.N, self.h.N, self.h.K * 2))
             risk_flat = self._apply_transforms(risk_flat, risk_mean, risk_std)
@@ -132,9 +264,50 @@ class TradeDatasetZarr:
             if self.cfg.apply_log1p:
                 base_trade = np.log1p(np.maximum(base_trade, 0.0))
                 risk_trade = np.log1p(np.maximum(risk_trade, 0.0))
+        
+        # Prepare targets if requested
+        targets = {}
+        if self.cfg.return_targets:
+            # We treat targets exactly like inputs: same transforms.
+            # Base Target
+            if self.cfg.target_kind in ("base", "both"):
+                y_base = self.h.base_trade[t_y, :, :, :]    # (N,N,2)
+                y_base_m_codes = self.h.base_mask[t_y, :, :].astype(np.uint8) # (N,N)
+                y_base_m = (y_base_m_codes != 0).astype(np.uint8)
+                
+                y_base_e = self.h.base_is_estimated[t_y, :, :].astype(np.uint8)
+                
+                if self.cfg.standardize:
+                    y_base = self._apply_transforms(y_base, base_mean, base_std)
+                elif self.cfg.apply_log1p:
+                    y_base = np.log1p(np.maximum(y_base, 0.0))
+                
+                targets["y_base"] = y_base.astype(np.float32)
+                if self.cfg.include_target_masks:
+                    targets["y_base_mask"] = y_base_m
+                    targets["y_base_is_estimated"] = y_base_e
+
+            # Risk Target
+            if self.cfg.target_kind in ("risk", "both"):
+                y_risk = self.h.risk_trade[t_y, :, :, :, :] # (N,N,K,2)
+                y_risk_m = self.h.risk_mask[t_y, :, :, :].astype(np.uint8) # (N,N,K)
+                y_risk_e = self.h.risk_is_estimated[t_y, :, :, :].astype(np.uint8)
+                
+                if self.cfg.standardize:
+                    # Flatten K*2
+                    y_risk_flat = y_risk.reshape((self.h.N, self.h.N, self.h.K * 2))
+                    y_risk_flat = self._apply_transforms(y_risk_flat, risk_mean, risk_std)
+                    y_risk = y_risk_flat.reshape((self.h.N, self.h.N, self.h.K, 2))
+                elif self.cfg.apply_log1p:
+                    y_risk = np.log1p(np.maximum(y_risk, 0.0))
+                
+                targets["y_risk"] = y_risk.astype(np.float32)
+                if self.cfg.include_target_masks:
+                    targets["y_risk_mask"] = y_risk_m
+                    targets["y_risk_is_estimated"] = y_risk_e
 
         if self.cfg.return_mode == "separate":
-            return {
+            ret = {
                 "t": np.int32(t),
                 "t_y": np.int32(t_y),
                 "time_feat": time_feat,                 # (2,)
@@ -145,6 +318,9 @@ class TradeDatasetZarr:
                 "risk_mask": risk_mask,
                 "risk_is_estimated": risk_est,
             }
+            if self.cfg.return_targets:
+                ret.update(targets)
+            return ret
 
         # concat mode: flatten risk (K,2)->(K*2) and concatenate features along last dim
         L_, N = L, self.h.N
@@ -165,9 +341,17 @@ class TradeDatasetZarr:
             risk_e.astype(np.float32),
         ], axis=-1).astype(np.float32)
 
-        return {
+        ret = {
             "t": np.int32(t),
             "t_y": np.int32(t_y),
             "time_feat": time_feat,
             "edge_feat": feat,   # (L,N,N, 2 + 16 + 2 + 16 + 2 + 16 = 54)
         }
+        # In concat mode, we likely still return targets as separate keys because "predicting output" 
+        # is usually distinct from "graph input".
+        if self.cfg.return_targets:
+            # We won't concat targets into edge_feat (that would be weird for future prediction), 
+            # so we just add them as separate tensors.
+            ret.update(targets)
+            
+        return ret

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
+from typing import Literal, Optional
 
 from torch.utils.data import DataLoader
 
@@ -31,6 +31,17 @@ class TradeDataModuleConfig:
     persistent_workers: bool = False
     prefetch_factor: int = 2
     drop_last_train: bool = True
+    
+    # Target config
+    return_targets: bool = False
+    target_kind: Literal["base", "risk", "both"] = "base"
+    include_target_masks: bool = True
+    
+    # Valid-index filtering
+    require_target_observed: bool = False
+    min_target_observed: int = 1
+    require_target_observed_kind: Optional[Literal["base", "risk", "both"]] = None
+    valid_t_cache_dir: Optional[str] = None
 
 
 class TradeDataModule:
@@ -60,6 +71,13 @@ class TradeDataModule:
             standardize=c.standardize,
             scaler_json_path=c.scaler_json_path,
             return_mode="separate",
+            return_targets=c.return_targets,
+            target_kind=c.target_kind,
+            include_target_masks=c.include_target_masks,
+            require_target_observed=c.require_target_observed,
+            min_target_observed=c.min_target_observed,
+            require_target_observed_kind=c.require_target_observed_kind,
+            valid_t_cache_dir=c.valid_t_cache_dir,
         )
         self._train = TradeDatasetZarr(TradeDatasetConfig(**base, split="train"))
         self._val = TradeDatasetZarr(TradeDatasetConfig(**base, split="val"))
