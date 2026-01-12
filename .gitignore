@@ -73,3 +73,9 @@ debug_log.txt
 
 # Lightning / training outputs
 runs/
+
+# Local step reports / inventories (generated)
+trade_step6_*_report.md
+trade_step6_*_summary.json
+trade_step6_*_inventory*.json
+trade_step6_zarr_inventory.json
