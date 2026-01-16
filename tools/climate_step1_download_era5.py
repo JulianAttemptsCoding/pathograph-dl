@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
+import zipfile
 from pathlib import Path
 from datetime import datetime
 
@@ -53,6 +55,10 @@ def main() -> None:
     man_dir = Path(paths["manifests_dir"])
     raw_dir.mkdir(parents=True, exist_ok=True)
     man_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Temp dir for downloads/extractions
+    tmp_dir = raw_dir / "_tmp_download"
+    tmp_dir.mkdir(parents=True, exist_ok=True)
 
     y_start = int(clim["years"]["start"])
     y_end = int(clim["years"]["end"])
@@ -98,17 +104,27 @@ def main() -> None:
             "format": fmt,
         }
 
+        # Check existing and valid
         if out_path.exists():
-            sha = _sha256(out_path)
-            prev = existing_by_year.get(year)
-            if prev and prev.get("sha256") == sha:
-                print(f"[SKIP] {year} exists and hash matches manifest: {out_path}")
-                continue
-            print(f"[WARN] {year} exists but hash differs or not in manifest; keeping file and updating manifest.")
+            # If it's a zip, it's invalid (previous run failed to clean up or user download)
+            if zipfile.is_zipfile(out_path):
+                print(f"[WARN] {year} Output file is a ZIP, forcing re-download: {out_path}")
+                out_path.unlink()
+            else:
+                sha = _sha256(out_path)
+                prev = existing_by_year.get(year)
+                if prev and prev.get("sha256") == sha:
+                    print(f"[SKIP] {year} exists and hash matches manifest: {out_path}")
+                    continue
+                print(f"[WARN] {year} exists but hash differs or not in manifest; keeping file and updating manifest.")
 
-        print(f"[DOWNLOAD] {year} -> {out_path}")
+        print(f"[DOWNLOAD] {year} -> tmp")
+        
+        # Download to temp file
+        raw_tmp_path = tmp_dir / f"download_{year}.tmp"
+        
         try:
-            c.retrieve(dataset_id, request, str(out_path))
+            c.retrieve(dataset_id, request, str(raw_tmp_path))
         except Exception as e:
             err_str = str(e).lower()
             if "required licences not accepted" in err_str:
@@ -121,15 +137,84 @@ def main() -> None:
             else:
                 raise e
 
+        # Handle ZIP or NetCDF
+        was_zip = False
+        archive_sha = None
+        
+        if zipfile.is_zipfile(raw_tmp_path):
+            was_zip = True
+            print(f"[INFO] {year} Detected ZIP archive.")
+            archive_sha = _sha256(raw_tmp_path)
+            
+            with zipfile.ZipFile(raw_tmp_path) as z:
+                names = z.namelist()
+                nc_members = [n for n in names if n.lower().endswith(".nc")]
+                
+                if not nc_members:
+                    print(f"[ERROR] ZIP contains no .nc files. Members: {names[:50]}")
+                    raise RuntimeError(f"ZIP contains no .nc files. See logs.")
+                
+                print(f"[INFO] Found {len(nc_members)} NetCDF members in ZIP: {nc_members}")
+                
+                extracted_files = []
+                for mem in nc_members:
+                    z.extract(mem, path=tmp_dir)
+                    extracted_files.append(tmp_dir / mem)
+                
+                if len(extracted_files) == 1:
+                    print(f"[INFO] Single member, moving to {out_path}...")
+                    if out_path.exists():
+                        out_path.unlink()
+                    shutil.move(str(extracted_files[0]), str(out_path))
+                else:
+                    # Merge multiple members
+                    print(f"[INFO] Merging {len(extracted_files)} files into {out_path}...")
+                    try:
+                        import xarray as xr
+                    except ImportError:
+                        raise SystemExit("Missing xarray for ZIP merging. Install xarray.")
+                        
+                    # Load all and merge
+                    dsets = []
+                    try:
+                        for f in extracted_files:
+                            ds = xr.open_dataset(f)
+                            dsets.append(ds)
+                        
+                        # Merge (compat='override' might be needed if coords differ slightly, but for ERA5 usually exact)
+                        merged = xr.merge(dsets, join='outer', compat='no_conflicts')
+                        merged.to_netcdf(out_path)
+                        print(f"[INFO] Merge complete.")
+                    finally:
+                        for ds in dsets:
+                            ds.close()
+
+            # Cleanup temp zip
+            raw_tmp_path.unlink()
+            
+        else:
+            # Not a zip, just move it
+            print(f"[INFO] {year} Downloaded direct NetCDF.")
+            if out_path.exists():
+                out_path.unlink()
+            shutil.move(str(raw_tmp_path), str(out_path))
+
+        # Final SHA
         sha = _sha256(out_path)
+        print(f"[OK] {year} -> {out_path} (SHA: {sha[:8]}...)")
+        
         entry = {
             "year": year,
             "path": str(out_path).replace("\\", "/"),
             "bytes": out_path.stat().st_size,
             "sha256": sha,
+            "was_zip": was_zip,
             "request": request,
             "created_at": datetime.utcnow().isoformat(timespec="seconds") + "Z",
         }
+        if archive_sha:
+            entry["archive_sha256"] = archive_sha
+            
         existing_by_year[year] = entry
 
         # Rewrite manifest deterministically sorted by year
@@ -138,6 +223,12 @@ def main() -> None:
         with tmp.open("w", encoding="utf-8") as f:
             json.dump(manifest, f, indent=2, sort_keys=False)
         os.replace(tmp, manifest_path)
+
+    # Cleanup temp dir
+    try:
+        shutil.rmtree(tmp_dir)
+    except:
+        pass
 
     print(f"[OK] Wrote manifest: {manifest_path}")
 

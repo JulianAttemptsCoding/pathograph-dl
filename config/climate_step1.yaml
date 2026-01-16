@@ -1,0 +1,67 @@
+climate:
+  dataset_id: reanalysis-era5-single-levels-monthly-means
+  product_type: monthly_averaged_reanalysis
+  format: netcdf
+
+  variables:
+    - 10m_u_component_of_wind
+    - 10m_v_component_of_wind
+    - 2m_dewpoint_temperature
+    - 2m_temperature
+    - surface_pressure
+    - mean_sea_level_pressure
+    - total_precipitation
+
+  request_defaults:
+    months: ["01","02","03","04","05","06","07","08","09","10","11","12"]
+    time: ["00:00"]  # CDS monthly means commonly uses 00:00
+
+  years:
+    start: 1950
+    end: 2025
+    month_end: 8  # derived from time_index_master.npy max=907 => 2025-08
+
+paths:
+  time_index_master: data/processed/meta/time_index_master.npy
+  node_index: data/processed/meta/node_index.csv
+  node_geometry: data/processed/meta/node_geometry.gpkg
+
+  raw_netcdf_dir: data/raw/era5_monthly_netcdf
+  processed_country_month_dir: data/processed/climate/country_month/source=ERA5
+  processed_tensor_zarr: data/processed/climate/climate_tensor.zarr
+  manifests_dir: data/processed/climate/manifests
+
+processing:
+  crs_epsg: 4326
+
+  expver_policy:
+    enabled: true
+    prefer_value: 1
+    fallback: max_numeric
+    stop_on_ambiguous: true
+
+  unit_rules:
+    temperature_expected_any_of: ["K","kelvin","Kelvin"]
+    pressure_expected_any_of: ["Pa","pascal","pascals"]
+    tp_accepted:
+      - kind: depth
+        units_any_of: ["m","meter","metre","meters","metres"]
+        formula: "mm = m * 1000"
+      - kind: rate
+        units_contains_any_of: ["s-1","sec-1"]
+        formula: "mm = rate * seconds_in_month * 1000"
+    stop_on_unknown_units: true
+
+  feature_order_locked:
+    - t2m_mean_c
+    - d2m_mean_c
+    - sp_mean_pa
+    - msl_mean_pa
+    - u10_mean
+    - v10_mean
+    - wind10_speed_mean
+    - rh_mean
+    - vpd_mean_kpa
+    - tp_mean_mm_month
+
+  chunk_time: 24

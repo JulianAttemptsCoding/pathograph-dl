@@ -143,5 +143,9 @@ data/
 
 ## Next Steps
 1. Run smoke test with single year: `--years 2024:2024`
-2. After smoke test passes, run full pipeline: `--years all`
-3. After Step 3 completes, re-run tensor contract test to validate output
+2. **Verify Parquet output:**
+   ```powershell
+   conda run -n pathograph-pre python -c "import pandas as pd; df=pd.read_parquet('data/processed/climate/country_month/source=ERA5/year=2024/country_month_2024.parquet'); need={'node_id','iso3','year','month','month_index'}; missing=sorted(list(need - set(map(str, df.columns)))); print('ROWS', len(df)); print('MISSING', missing); assert not missing; exp=194*12; print('EXPECT', exp); assert len(df)==exp"
+   ```
+3. After smoke test passes, run full pipeline: `--years all`
+4. After Step 3 completes, re-run tensor contract test to validate output

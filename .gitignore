@@ -48,6 +48,12 @@ data/processed/**/qc/
 data/processed/**/reports/
 *.zarr/
 
+# Climate raw + processed artifacts
+data/raw/era5_monthly_netcdf/**/*.nc
+data/raw/era5_monthly_netcdf/**/*.zip
+data/raw/era5_monthly_netcdf/**/_tmp_download/**
+data/processed/climate/**
+
 # Local scratch / outputs
 reports/
 docs/reports/
