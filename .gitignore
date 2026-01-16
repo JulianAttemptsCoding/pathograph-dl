@@ -148,3 +148,7 @@ docs/cds_credentials_check.json
 # --- Local helper scratch scripts (underscore = not part of pipeline) ---
 tools/_qc_zarr_inventory.py
 tools/_build_preprocessing_readiness_report.py
+
+docs/climate_step4_and_acceptance_verifier_summary.md
+docs/time_window_from_trade.json
+docs/verify_changes_env_imports.json

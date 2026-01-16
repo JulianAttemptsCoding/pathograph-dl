@@ -22,26 +22,30 @@ def test_meta_spatial_matrices_border_vs_point_touch():
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp_path = Path(tmpdir)
         
-        # Create 4 polygons:
+        # Create 4 polygons with gap between upper and lower rows:
         # ┌───────┬───────┐
-        # │   0   │   1   │  <- 0 and 1 share a vertical border
-        # ├───────┼───────┤
-        # │   2   ·   3   │  <- 2 and 3 touch at point (1,1) only (no shared edge)
+        # │   0   │   1   │  <- 0 and 1 at y=[2,3], share vertical border at x=1
+        # └───────┴───────┘
+        #        gap
+        # ┌───────·───────┐
+        # │   2   ·   3   │  <- 2 at y=[0,1], 3 is triangle touching 2 at (1,1) only
         # └───────┴───────┘
         #
-        # Polygon 0: [0, 1] x [1, 2]
-        # Polygon 1: [1, 2] x [1, 2]
-        # Polygon 2: [0, 1] x [0, 1]
+        # Polygon 0: [0,1] x [2,3] (upper left)
+        # Polygon 1: [1,2] x [2,3] (upper right)
+        # Polygon 2: [0,1] x [0,1] (lower left)
         # Polygon 3: Triangle with vertex at (1,1), touches Poly 2 at that point only
         #
-        # Note: 0-1 share edge from (1,1) to (1,2)
-        #       2-3 touch only at point (1,1) - no edge sharing
+        # Expected adjacencies:
+        #   0-1: share edge at x=1, y=[2,3] -> adjacency=1
+        #   2-3: touch only at point (1,1) -> adjacency=0
+        #   All other pairs: no contact -> adjacency=0
         
         polygons = [
-            Polygon([(0, 1), (1, 1), (1, 2), (0, 2), (0, 1)]),  # 0: left upper
-            Polygon([(1, 1), (2, 1), (2, 2), (1, 2), (1, 1)]),  # 1: right upper
-            Polygon([(0, 0), (1, 0), (1, 1), (0, 1), (0, 0)]),  # 2: left lower
-            Polygon([(1, 1), (2, 0.2), (2, 0.8)]),  # 3: triangle, point-touches poly 2 at (1,1)
+            Polygon([(0, 2), (1, 2), (1, 3), (0, 3), (0, 2)]),  # 0: upper left (shifted up)
+            Polygon([(1, 2), (2, 2), (2, 3), (1, 3), (1, 2)]),  # 1: upper right (shifted up)
+            Polygon([(0, 0), (1, 0), (1, 1), (0, 1), (0, 0)]),  # 2: lower left
+            Polygon([(1, 1), (2, 0.2), (2, 0.8)]),              # 3: triangle, point-touches poly 2 at (1,1)
         ]
         
         # Create GeoDataFrame
