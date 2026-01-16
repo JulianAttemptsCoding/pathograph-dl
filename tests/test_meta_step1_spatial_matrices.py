@@ -26,22 +26,22 @@ def test_meta_spatial_matrices_border_vs_point_touch():
         # ┌───────┬───────┐
         # │   0   │   1   │  <- 0 and 1 share a vertical border
         # ├───────┼───────┤
-        # │   2   ·   3   │  <- 2 and 3 touch at center point only (no shared edge)
+        # │   2   ·   3   │  <- 2 and 3 touch at point (1,1) only (no shared edge)
         # └───────┴───────┘
         #
         # Polygon 0: [0, 1] x [1, 2]
         # Polygon 1: [1, 2] x [1, 2]
         # Polygon 2: [0, 1] x [0, 1]
-        # Polygon 3: [1, 2] x [0, 1]
+        # Polygon 3: Triangle with vertex at (1,1), touches Poly 2 at that point only
         #
         # Note: 0-1 share edge from (1,1) to (1,2)
-        #       2-3 touch only at point (1,1)
+        #       2-3 touch only at point (1,1) - no edge sharing
         
         polygons = [
             Polygon([(0, 1), (1, 1), (1, 2), (0, 2), (0, 1)]),  # 0: left upper
             Polygon([(1, 1), (2, 1), (2, 2), (1, 2), (1, 1)]),  # 1: right upper
             Polygon([(0, 0), (1, 0), (1, 1), (0, 1), (0, 0)]),  # 2: left lower
-            Polygon([(1, 0), (2, 0), (2, 1), (1, 1), (1, 0)]),  # 3: right lower
+            Polygon([(1, 1), (2, 0.2), (2, 0.8)]),  # 3: triangle, point-touches poly 2 at (1,1)
         ]
         
         # Create GeoDataFrame
