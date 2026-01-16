@@ -1,0 +1,108 @@
+{
+    "report_name": "climate_step1_to_step3_implementation",
+    "generated_at": "2026-01-15T21:10:00-08:00",
+    "environment": {
+        "python_command": "conda run -n pathograph-pre python",
+        "python_version": "3.11.14",
+        "python_executable": "C:\\Users\\bubga.JULIAN-LAPTOPE2\\miniforge3\\envs\\pathograph-pre\\python.exe"
+    },
+    "prerequisites": {
+        "cds_licence_url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=download#manage-licences",
+        "pyarrow_install_command": "conda install -n pathograph-pre -c conda-forge pyarrow -y"
+    },
+    "files_created": [
+        "config/climate_step1.yaml",
+        "tools/climate_step1_download_era5.py",
+        "tools/climate_step2_aggregate_country_month.py",
+        "tools/climate_step3_tensorize.py",
+        "tests/test_climate_config_schema.py",
+        "tests/test_climate_tensor_contract.py"
+    ],
+    "cli_commands": {
+        "step1_download_single_year": "conda run -n pathograph-pre python tools/climate_step1_download_era5.py --config config/climate_step1.yaml --years 2024:2024",
+        "step1_download_all": "conda run -n pathograph-pre python tools/climate_step1_download_era5.py --config config/climate_step1.yaml --years all",
+        "step2_aggregate_single_year": "conda run -n pathograph-pre python tools/climate_step2_aggregate_country_month.py --config config/climate_step1.yaml --years 2024:2024",
+        "step2_aggregate_all": "conda run -n pathograph-pre python tools/climate_step2_aggregate_country_month.py --config config/climate_step1.yaml --years all",
+        "step3_tensorize": "conda run -n pathograph-pre python tools/climate_step3_tensorize.py --config config/climate_step1.yaml",
+        "test_config": "conda run -n pathograph-pre python -m pytest -q tests/test_climate_config_schema.py",
+        "test_tensor": "conda run -n pathograph-pre python -m pytest -q tests/test_climate_tensor_contract.py"
+    },
+    "locked_spec": {
+        "dataset_id": "reanalysis-era5-single-levels-monthly-means",
+        "variables": 7,
+        "features": 10,
+        "year_range": [
+            1950,
+            2025
+        ],
+        "month_end": 8,
+        "T": 908,
+        "N": 194,
+        "F": 10
+    },
+    "output_paths": {
+        "raw_netcdf_dir": "data/raw/era5_monthly_netcdf",
+        "processed_parquet_dir": "data/processed/climate/country_month/source=ERA5",
+        "processed_zarr": "data/processed/climate/climate_tensor.zarr",
+        "manifests_dir": "data/processed/climate/manifests"
+    },
+    "zarr_schema": {
+        "climate": {
+            "shape": [
+                908,
+                194,
+                10
+            ],
+            "dtype": "float32",
+            "chunks": [
+                24,
+                194,
+                10
+            ]
+        },
+        "mask": {
+            "shape": [
+                908,
+                194,
+                10
+            ],
+            "dtype": "uint8",
+            "chunks": [
+                24,
+                194,
+                10
+            ]
+        },
+        "time_index": {
+            "shape": [
+                908
+            ],
+            "dtype": "int32"
+        },
+        "feature_names": {
+            "shape": [
+                10
+            ],
+            "dtype": "U32"
+        }
+    },
+    "feature_order": [
+        "t2m_mean_c",
+        "d2m_mean_c",
+        "sp_mean_pa",
+        "msl_mean_pa",
+        "u10_mean",
+        "v10_mean",
+        "wind10_speed_mean",
+        "rh_mean",
+        "vpd_mean_kpa",
+        "tp_mean_mm_month"
+    ],
+    "verification": {
+        "test_climate_config_schema": "PASSED",
+        "test_climate_tensor_contract": "PASSED (skipped: no output yet)",
+        "step1_cli_help": "OK",
+        "step2_cli_help": "OK",
+        "step3_cli_help": "OK"
+    }
+}
