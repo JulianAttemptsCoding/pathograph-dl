@@ -141,6 +141,48 @@ data/
 | Step 2 CLI `--help` | ✅ OK |
 | Step 3 CLI `--help` | ✅ OK |
 
+### Step 4: Compute Anomalies (1991-2020 Baseline)
+```powershell
+conda run -n pathograph-pre python tools/climate_step4_compute_anomalies.py --config config/climate_step4.yaml
+```
+
+**Output:** `data/processed/climate/climate_step4/climate_anomalies.zarr` with arrays:
+- `anomaly`, `zscore`, `mask`, `time_index`
+- `climo_mean`, `climo_std`, `climo_count` (climatology arrays: shape [12, 194, F])
+
+**QC Report:** `data/processed/climate/climate_step4/qc_anomalies.json`
+
+### Step 4 Tests
+```powershell
+conda run -n pathograph-pre python -m pytest -q tests/test_climate_step4_anomalies.py
+```
+
+## Preprocessing Acceptance Verifier
+
+After completing all preprocessing steps (Trade, Climate, Pathogen, Meta), verify alignment:
+
+```powershell
+conda run -n pathograph-pre python tools/verify_preprocessing_complete.py --mode fast
+```
+
+**Checks:**
+- All required Zarr groups exist
+- N = 194 on all node axes
+- All time_index arrays exactly equal time_index_master.npy
+- Trade base: (T, 194, 194, 2)
+- Trade risk: (T, 194, 194, K, 2)
+- Climate tensor: (T, 194, F)
+- Climate anomalies: (T, 194, F)
+- Pathogen status: (T, 194, P)
+- Meta spatial: distance_km.npy (194, 194), adjacency_border.npy (194, 194) [optional]
+
+**Output:** `data/processed/preprocessing_acceptance_report.json` and `.txt`
+
+**Test:**
+```powershell
+conda run -n pathograph-pre python -m pytest -q tests/test_verify_preprocessing_complete.py
+```
+
 ## Next Steps
 1. Run smoke test with single year: `--years 2024:2024`
 2. **Verify Parquet output:**
@@ -148,4 +190,5 @@ data/
    conda run -n pathograph-pre python -c "import pandas as pd; df=pd.read_parquet('data/processed/climate/country_month/source=ERA5/year=2024/country_month_2024.parquet'); need={'node_id','iso3','year','month','month_index'}; missing=sorted(list(need - set(map(str, df.columns)))); print('ROWS', len(df)); print('MISSING', missing); assert not missing; exp=194*12; print('EXPECT', exp); assert len(df)==exp"
    ```
 3. After smoke test passes, run full pipeline: `--years all`
-4. After Step 3 completes, re-run tensor contract test to validate output
+4. After Step 3 completes, run Step 4 for anomalies
+5. Run preprocessing acceptance verifier to validate all artifacts

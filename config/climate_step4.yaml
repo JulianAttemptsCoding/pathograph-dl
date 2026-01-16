@@ -1,0 +1,27 @@
+# Climate Step 4: Compute Anomalies (relative to 1991-2020 climatology)
+
+baseline:
+  year_start: 1991
+  year_end: 2020
+
+compute_zscore: true
+
+paths:
+  time_index_master: data/processed/meta/time_index_master.npy
+  climate_tensor_zarr: data/processed/climate/climate_tensor.zarr
+  output_dir: data/processed/climate/climate_step4
+  output_zarr: climate_anomalies.zarr
+
+arrays:
+  anomaly: anomaly
+  zscore: zscore
+  mask: mask
+  time_index: time_index
+  climatology_mean: climo_mean
+  climatology_std: climo_std
+  climatology_count: climo_count
+
+chunking:
+  time: 24
+  nodes: 194
+  # features: use full F dimension
