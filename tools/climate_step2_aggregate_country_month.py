@@ -246,6 +246,15 @@ def main() -> None:
     y_end = int(clim["years"]["end"])
     years = _parse_years_arg(args.years, y_start, y_end)
 
+    # Load time_index_master to define valid month_index range
+    ti_master_path = Path(paths["time_index_master"])
+    if not ti_master_path.exists():
+         raise SystemExit(f"Missing time_index_master: {ti_master_path}")
+    ti_master = np.load(ti_master_path)
+    TMIN = int(ti_master.min())
+    TMAX = int(ti_master.max())
+    print(f"[INFO] time_index_master loaded. Valid month_index range: [{TMIN}, {TMAX}]")
+
     # Variable aliases in ERA5 NetCDF
     VAR_MAP = {
         "2m_temperature": "t2m",
@@ -486,6 +495,18 @@ def main() -> None:
             rows.append(df)
 
         out_df = pd.concat(rows, ignore_index=True)
+
+        # Clip to valid time range
+        count_before = len(out_df)
+        out_df = out_df[(out_df["month_index"] >= TMIN) & (out_df["month_index"] <= TMAX)].copy()
+        count_after = len(out_df)
+        if count_before != count_after:
+             print(f"[CLIP] year={year} before={count_before} after={count_after} tmin={TMIN} tmax={TMAX}")
+
+        # Invariant check
+        if len(out_df) > 0:
+             assert out_df["month_index"].between(TMIN, TMAX).all(), f"Clipping failed for year={year}"
+
         out_df.to_parquet(out_parquet, index=False)
 
         # Write per-year manifest
