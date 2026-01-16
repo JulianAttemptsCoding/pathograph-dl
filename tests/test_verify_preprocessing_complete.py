@@ -42,11 +42,11 @@ def test_verify_preprocessing_complete_all_pass():
         g_tb.create_array("is_estimated", data=np.zeros((T, N, N, 2), dtype=np.uint8), chunks=(10, N, N, 2))
         g_tb.create_array("time_index", data=time_index, chunks=(T,))
         
-        # Trade risk
+        # Trade risk (canonical FAOSTAT schema)
         trade_risk_path = tmp_path / "trade_risk.zarr"
         g_tr = zarr.open_group(str(trade_risk_path), mode="w")
-        g_tr.create_array("risk", data=np.zeros((T, N, N, K, 2), dtype=np.float32), chunks=(10, N, N, K, 2))
-        g_tr.create_array("mask", data=np.zeros((T, N, N, K, 2), dtype=np.uint8), chunks=(10, N, N, K, 2))
+        g_tr.create_array("trade_risk", data=np.zeros((T, N, N, K, 2), dtype=np.float32), chunks=(10, N, N, K, 2))
+        g_tr.create_array("observed_mask", data=np.zeros((T, N, N, K, 2), dtype=np.uint8), chunks=(10, N, N, K, 2))
         g_tr.create_array("is_estimated", data=np.zeros((T, N, N, K, 2), dtype=np.uint8), chunks=(10, N, N, K, 2))
         g_tr.create_array("time_index", data=time_index, chunks=(T,))
         
@@ -111,6 +111,7 @@ def test_verify_preprocessing_complete_all_pass():
             pytest.fail(f"Verifier failed with exit code {result.returncode}")
         
         assert "PASS" in result.stdout, "Expected PASS in output"
+        assert "Selected arrays: risk=trade_risk, mask=observed_mask" in result.stdout, "Expected canonical array names in output"
         
         # Check that reports were created
         report_json = Path("data/processed/preprocessing_acceptance_report.json")
@@ -230,3 +231,195 @@ def test_verify_preprocessing_wrong_shape():
         assert "FAIL" in result.stderr, f"Expected failure message, got: {result.stderr}"
         
         print("[OK] Wrong shape test passed")
+
+
+def test_verify_preprocessing_legacy_risk_names():
+    """Test that verifier accepts legacy 'risk'/'mask' names via alias fallback."""
+    
+    try:
+        import zarr  # type: ignore
+    except ImportError:
+        pytest.skip("zarr not available")
+    
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmp_path = Path(tmpdir)
+        
+        T = 50
+        N = 194
+        K = 3
+        F_climate = 10
+        P = 8
+        
+        time_index = np.arange(T, dtype=np.int32)
+        
+        ti_master_path = tmp_path / "time_index_master.npy"
+        np.save(ti_master_path, time_index)
+        
+        # Trade base
+        trade_base_path = tmp_path / "trade_base.zarr"
+        g_tb = zarr.open_group(str(trade_base_path), mode="w")
+        g_tb.create_array("trade", data=np.zeros((T, N, N, 2), dtype=np.float32))
+        g_tb.create_array("mask", data=np.zeros((T, N, N, 2), dtype=np.uint8))
+        g_tb.create_array("is_estimated", data=np.zeros((T, N, N, 2), dtype=np.uint8))
+        g_tb.create_array("time_index", data=time_index)
+        
+        # Trade risk with LEGACY names (risk/mask instead of trade_risk/observed_mask)
+        trade_risk_path = tmp_path / "trade_risk.zarr"
+        g_tr = zarr.open_group(str(trade_risk_path), mode="w")
+        g_tr.create_array("risk", data=np.zeros((T, N, N, K, 2), dtype=np.float32))
+        g_tr.create_array("mask", data=np.zeros((T, N, N, K, 2), dtype=np.uint8))
+        g_tr.create_array("is_estimated", data=np.zeros((T, N, N, K, 2), dtype=np.uint8))
+        g_tr.create_array("time_index", data=time_index)
+        
+        # Climate tensor
+        climate_path = tmp_path / "climate.zarr"
+        g_c = zarr.open_group(str(climate_path), mode="w")
+        g_c.create_array("climate", data=np.zeros((T, N, F_climate), dtype=np.float32))
+        g_c.create_array("mask", data=np.zeros((T, N, F_climate), dtype=np.uint8))
+        g_c.create_array("time_index", data=time_index)
+        g_c.create_array("feature_names", data=np.array([f"feat_{i}" for i in range(F_climate)], dtype="U32"))
+        
+        # Climate anomalies
+        climate_anoms_path = tmp_path / "climate_anoms.zarr"
+        g_ca = zarr.open_group(str(climate_anoms_path), mode="w")
+        g_ca.create_array("anomaly", data=np.zeros((T, N, F_climate), dtype=np.float32))
+        g_ca.create_array("zscore", data=np.zeros((T, N, F_climate), dtype=np.float32))
+        g_ca.create_array("mask", data=np.ones((T, N, F_climate), dtype=np.uint8))
+        g_ca.create_array("time_index", data=time_index)
+        
+        # Pathogen
+        pathogen_path = tmp_path / "pathogen.zarr"
+        g_p = zarr.open_group(str(pathogen_path), mode="w")
+        g_p.create_array("status", data=np.zeros((T, N, P), dtype=np.float32))
+        g_p.create_array("mask", data=np.zeros((T, N, P), dtype=np.uint8))
+        g_p.create_array("time_index", data=time_index)
+        
+        # Meta dir (empty, but exists)
+        meta_dir = tmp_path / "meta"
+        meta_dir.mkdir()
+        
+        script_path = Path("tools/verify_preprocessing_complete.py")
+        if not script_path.exists():
+            pytest.skip(f"Script not found: {script_path}")
+        
+        result = subprocess.run(
+            [
+                sys.executable, str(script_path),
+                "--time-index-master", str(ti_master_path),
+                "--trade-base-zarr", str(trade_base_path),
+                "--trade-risk-zarr", str(trade_risk_path),
+                "--climate-zarr", str(climate_path),
+                "--climate-anoms-zarr", str(climate_anoms_path),
+                "--pathogen-zarr", str(pathogen_path),
+                "--meta-dir", str(meta_dir),
+                "--mode", "fast",
+            ],
+            capture_output=True,
+            text=True,
+        )
+        
+        if result.returncode != 0:
+            print(f"STDOUT: {result.stdout}")
+            print(f"STDERR: {result.stderr}")
+            pytest.fail(f"Verifier failed with exit code {result.returncode}")
+        
+        # Should pass and show legacy names selected
+        assert "PASS" in result.stdout, "Expected PASS in output"
+        assert "Selected arrays: risk=risk, mask=mask" in result.stdout, "Expected legacy array names in output"
+        
+        print("[OK] Legacy alias fallback test passed")
+
+
+def test_verify_preprocessing_require_meta_fails():
+    """Test that --require-meta fails when meta matrices missing."""
+    
+    try:
+        import zarr  # type: ignore
+    except ImportError:
+        pytest.skip("zarr not available")
+    
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmp_path = Path(tmpdir)
+        
+        T = 50
+        N = 194
+        K = 3
+        F_climate = 10
+        P = 8
+        
+        time_index = np.arange(T, dtype=np.int32)
+        
+        ti_master_path = tmp_path / "time_index_master.npy"
+        np.save(ti_master_path, time_index)
+        
+        # Trade base
+        trade_base_path = tmp_path / "trade_base.zarr"
+        g_tb = zarr.open_group(str(trade_base_path), mode="w")
+        g_tb.create_array("trade", data=np.zeros((T, N, N, 2), dtype=np.float32))
+        g_tb.create_array("mask", data=np.zeros((T, N, N, 2), dtype=np.uint8))
+        g_tb.create_array("is_estimated", data=np.zeros((T, N, N, 2), dtype=np.uint8))
+        g_tb.create_array("time_index", data=time_index)
+        
+        # Trade risk with canonical names
+        trade_risk_path = tmp_path / "trade_risk.zarr"
+        g_tr = zarr.open_group(str(trade_risk_path), mode="w")
+        g_tr.create_array("trade_risk", data=np.zeros((T, N, N, K, 2), dtype=np.float32))
+        g_tr.create_array("observed_mask", data=np.zeros((T, N, N, K, 2), dtype=np.uint8))
+        g_tr.create_array("is_estimated", data=np.zeros((T, N, N, K, 2), dtype=np.uint8))
+        g_tr.create_array("time_index", data=time_index)
+        
+        # Climate tensor
+        climate_path = tmp_path / "climate.zarr"
+        g_c = zarr.open_group(str(climate_path), mode="w")
+        g_c.create_array("climate", data=np.zeros((T, N, F_climate), dtype=np.float32))
+        g_c.create_array("mask", data=np.zeros((T, N, F_climate), dtype=np.uint8))
+        g_c.create_array("time_index", data=time_index)
+        g_c.create_array("feature_names", data=np.array([f"feat_{i}" for i in range(F_climate)], dtype="U32"))
+        
+        # Climate anomalies
+        climate_anoms_path = tmp_path / "climate_anoms.zarr"
+        g_ca = zarr.open_group(str(climate_anoms_path), mode="w")
+        g_ca.create_array("anomaly", data=np.zeros((T, N, F_climate), dtype=np.float32))
+        g_ca.create_array("zscore", data=np.zeros((T, N, F_climate), dtype=np.float32))
+        g_ca.create_array("mask", data=np.ones((T, N, F_climate), dtype=np.uint8))
+        g_ca.create_array("time_index", data=time_index)
+        
+        # Pathogen
+        pathogen_path = tmp_path / "pathogen.zarr"
+        g_p = zarr.open_group(str(pathogen_path), mode="w")
+        g_p.create_array("status", data=np.zeros((T, N, P), dtype=np.float32))
+        g_p.create_array("mask", data=np.zeros((T, N, P), dtype=np.uint8))
+        g_p.create_array("time_index", data=time_index)
+        
+        # Meta dir exists but NO distance/adjacency matrices
+        meta_dir = tmp_path / "meta"
+        meta_dir.mkdir()
+        
+        script_path = Path("tools/verify_preprocessing_complete.py")
+        if not script_path.exists():
+            pytest.skip(f"Script not found: {script_path}")
+        
+        # Run with --require-meta (should fail)
+        result = subprocess.run(
+            [
+                sys.executable, str(script_path),
+                "--time-index-master", str(ti_master_path),
+                "--trade-base-zarr", str(trade_base_path),
+                "--trade-risk-zarr", str(trade_risk_path),
+                "--climate-zarr", str(climate_path),
+                "--climate-anoms-zarr", str(climate_anoms_path),
+                "--pathogen-zarr", str(pathogen_path),
+                "--meta-dir", str(meta_dir),
+                "--mode", "fast",
+                "--require-meta",  # STRICT MODE
+            ],
+            capture_output=True,
+            text=True,
+        )
+        
+        # Should fail with nonzero exit code
+        assert result.returncode != 0, "Expected verifier to fail when --require-meta is set and meta matrices missing"
+        assert "FAIL" in result.stderr or "required" in result.stderr, \
+            f"Expected failure message about required meta matrices, got: {result.stderr}"
+        
+        print("[OK] Require-meta strict mode test passed")

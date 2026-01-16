@@ -55,6 +55,15 @@ def check_zarr_group(path: Path, name: str, required_arrays: list[str]) -> objec
     return g
 
 
+def resolve_array_name(group: object, candidates: list[str], label: str, zarr_path: Path) -> str:
+    """Try candidate names in order; fail if none exist."""
+    for name in candidates:
+        if name in group:
+            return name
+    available = list(group.keys())
+    fail(f"{label}: none of {candidates} found in {zarr_path} (available: {available})")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--time-index-master", default="data/processed/meta/time_index_master.npy")
@@ -65,6 +74,7 @@ def main() -> None:
     ap.add_argument("--pathogen-zarr", default="data/processed/pathogen/status_tensor.zarr")
     ap.add_argument("--meta-dir", default="data/processed/meta")
     ap.add_argument("--mode", choices=["fast", "full"], default="fast")
+    ap.add_argument("--require-meta", action="store_true", help="Fail if distance/adjacency matrices are missing (default: skip)")
     args = ap.parse_args()
     
     print("[Preprocessing Acceptance Verifier]")
@@ -132,16 +142,57 @@ def main() -> None:
     # Check TRADE risk
     print("[TRADE RISK]")
     trade_risk_path = Path(args.trade_risk_zarr)
-    g_trade_risk = check_zarr_group(
-        trade_risk_path,
-        "Trade risk tensor",
-        ["risk", "mask", "time_index", "is_estimated"]
-    )
     
-    trade_risk_arr = g_trade_risk["risk"]
-    trade_risk_shape = trade_risk_arr.shape
+    # Import zarr for manual group opening
+    try:
+        import zarr  # type: ignore
+    except Exception as e:
+        fail(f"Missing zarr library: {e}")
+    
+    if not trade_risk_path.exists():
+        fail(f"Trade risk tensor not found: {trade_risk_path}")
+    
+    try:
+        g_trade_risk = zarr.open_group(str(trade_risk_path), mode="r")
+    except Exception as e:
+        fail(f"Trade risk tensor is not a valid Zarr group: {trade_risk_path} - {e}")
+    
+    # Resolve array names with aliases (prefer canonical FAOSTAT schema)
+    risk_key = resolve_array_name(g_trade_risk, ["trade_risk", "risk_trade", "risk"], "Trade risk data", trade_risk_path)
+    mask_key = resolve_array_name(g_trade_risk, ["observed_mask", "mask"], "Trade risk mask", trade_risk_path)
+    
+    # Require hard keys
+    if "is_estimated" not in g_trade_risk:
+        fail(f"Trade risk missing 'is_estimated' array: {trade_risk_path}")
+    if "time_index" not in g_trade_risk:
+        fail(f"Trade risk missing 'time_index' array: {trade_risk_path}")
+    
+    print(f"[OK] Trade risk tensor: {trade_risk_path}")
+    print(f"  Selected arrays: risk={risk_key}, mask={mask_key}")
+    
+    # Get arrays
+    trade_risk_arr = g_trade_risk[risk_key]
+    trade_risk_mask = g_trade_risk[mask_key]
+    trade_risk_is_est = g_trade_risk["is_estimated"]
     trade_risk_ti = np.asarray(g_trade_risk["time_index"][:]).astype(np.int32)
     
+    # Validate dtypes
+    if str(trade_risk_arr.dtype) not in ("float32", "<f4"):
+        fail(f"Trade risk array dtype {trade_risk_arr.dtype} is not float32")
+    if str(trade_risk_mask.dtype) not in ("uint8", "ubyte", "|u1", "bool"):
+        fail(f"Trade risk mask dtype {trade_risk_mask.dtype} is not uint8/bool")
+    if str(trade_risk_is_est.dtype) not in ("uint8", "ubyte", "|u1", "bool"):
+        fail(f"Trade risk is_estimated dtype {trade_risk_is_est.dtype} is not uint8/bool")
+    
+    trade_risk_shape = trade_risk_arr.shape
+    
+    # Validate shapes match
+    if trade_risk_mask.shape != trade_risk_shape:
+        fail(f"Trade risk mask shape {trade_risk_mask.shape} != risk shape {trade_risk_shape}")
+    if trade_risk_is_est.shape != trade_risk_shape:
+        fail(f"Trade risk is_estimated shape {trade_risk_is_est.shape} != risk shape {trade_risk_shape}")
+    
+    # Validate 5D shape
     if len(trade_risk_shape) != 5:
         fail(f"Trade risk shape {trade_risk_shape} is not 5D")
     
@@ -158,6 +209,7 @@ def main() -> None:
     
     print(f"  Shape: {trade_risk_shape}")
     print(f"  K (risk products) = {K_risk}")
+    print(f"  dtype: risk={trade_risk_arr.dtype}, mask={trade_risk_mask.dtype}")
     print(f"  time_index matches master: OK")
     
     results["checks"]["trade_risk"] = {
@@ -165,6 +217,12 @@ def main() -> None:
         "shape": list(trade_risk_shape),
         "K": int(K_risk),
         "time_match": True,
+        "arrays": {
+            "risk": risk_key,
+            "mask": mask_key,
+            "is_estimated": "is_estimated",
+            "time_index": "time_index"
+        }
     }
     print()
     
@@ -241,11 +299,32 @@ def main() -> None:
     # Check PATHOGEN
     print("[PATHOGEN STATUS]")
     pathogen_path = Path(args.pathogen_zarr)
-    g_pathogen = check_zarr_group(
-        pathogen_path,
-        "Pathogen status tensor",
-        ["status", "mask", "time_index"]
-    )
+    
+    # Import zarr
+    try:
+        import zarr  # type: ignore
+    except Exception as e:
+        fail(f"Missing zarr library: {e}")
+    
+    if not pathogen_path.exists():
+        fail(f"Pathogen status tensor not found: {pathogen_path}")
+    
+    try:
+        g_pathogen = zarr.open_group(str(pathogen_path), mode="r")
+    except Exception as e:
+        fail(f"Pathogen status tensor is not a valid Zarr group: {pathogen_path} - {e}")
+    
+    # Resolve mask name (pathogen uses 'status_mask' canonically, 'mask' as fallback)
+    pathogen_mask_key = resolve_array_name(g_pathogen, ["status_mask", "mask"], "Pathogen mask", pathogen_path)
+    
+    # Require hard keys
+    if "status" not in g_pathogen:
+        fail(f"Pathogen missing 'status' array: {pathogen_path}")
+    if "time_index" not in g_pathogen:
+        fail(f"Pathogen missing 'time_index' array: {pathogen_path}")
+    
+    print(f"[OK] Pathogen status tensor: {pathogen_path}")
+    print(f"  Selected mask: {pathogen_mask_key}")
     
     pathogen_arr = g_pathogen["status"]
     pathogen_shape = pathogen_arr.shape
@@ -281,6 +360,9 @@ def main() -> None:
     adjacency_path = meta_dir / "adjacency_border.npy"
     
     spatial_ok = True
+    distance_present = False
+    adjacency_present = False
+    
     if distance_path.exists():
         dist = np.load(distance_path)
         if dist.shape != (N, N):
@@ -295,7 +377,10 @@ def main() -> None:
             "path": str(distance_path).replace("\\", "/"),
             "shape": list(dist.shape),
         }
+        distance_present = True
     else:
+        if args.require_meta:
+            fail(f"Meta matrices required (--require-meta) but distance_km.npy not found: {distance_path}")
         print(f"[SKIP] Distance matrix not found (optional): {distance_path}")
         spatial_ok = False
     
@@ -310,9 +395,25 @@ def main() -> None:
             "path": str(adjacency_path).replace("\\", "/"),
             "shape": list(adj.shape),
         }
+        adjacency_present = True
     else:
+        if args.require_meta:
+            fail(f"Meta matrices required (--require-meta) but adjacency_border.npy not found: {adjacency_path}")
         print(f"[SKIP] Adjacency matrix not found (optional): {adjacency_path}")
         spatial_ok = False
+    
+    # Record meta spatial status
+    if "meta_spatial" not in results["checks"]:
+        results["checks"]["meta_spatial"] = {}
+    results["checks"]["meta_spatial"]["require_meta"] = args.require_meta
+    results["checks"]["meta_spatial"]["distance"] = {
+        "present": distance_present,
+        "path": str(distance_path).replace("\\", "/")
+    }
+    results["checks"]["meta_spatial"]["adjacency"] = {
+        "present": adjacency_present,
+        "path": str(adjacency_path).replace("\\", "/")
+    }
     
     print()
     
