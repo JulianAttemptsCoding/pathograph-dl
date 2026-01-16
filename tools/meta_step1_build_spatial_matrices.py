@@ -51,12 +51,23 @@ def haversine_vectorized(lon1: np.ndarray, lat1: np.ndarray, lon2: np.ndarray, l
     return R * c
 
 
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--gpkg", default="data/processed/meta/node_geometry.gpkg")
     ap.add_argument("--out-dir", default="data/processed/meta")
     ap.add_argument("--layer", default=None, help="GeoPackage layer name (auto-detect if None)")
-    ap.add_argument("--require-node-ids", type=bool, default=True, help="Require node_id 0..193")
+    ap.add_argument("--require-node-ids", type=str2bool, default=True, help="Require node_id 0..193")
     ap.add_argument("--adjacency-mode", choices=["border"], default="border")
     ap.add_argument("--touch-eps-m", type=float, default=1.0, help="Min boundary intersection length (m) for adjacency")
     args = ap.parse_args()
