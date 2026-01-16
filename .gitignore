@@ -17,6 +17,8 @@ data/processed/trade/**/*.json
 
 # --- Keep meta artifacts (node_index, rosetta, manifests) ---
 !data/processed/meta/
+data/processed/meta/time_index_master.npy
+data/processed/meta/node_geometry.gpkg
 # --- Python / tooling ---
 __pycache__/
 *.py[cod]
