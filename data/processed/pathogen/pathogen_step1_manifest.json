@@ -1,0 +1,154 @@
+{
+  "generated_at": "2026-01-15T18:16:03",
+  "python_version": "3.11.14",
+  "inputs": {
+    "node_index_used": "data\\processed\\trade\\imf_imts_step1\\node_index.csv",
+    "time_index_master": "data\\processed\\meta\\time_index_master.npy",
+    "pathogen_files": [
+      "data\\raw\\pathogen_curated\\BBTD_curated_long.csv",
+      "data\\raw\\pathogen_curated\\Cassava_curated_long.csv",
+      "data\\raw\\pathogen_curated\\CitrusGreening_curated_long.csv",
+      "data\\raw\\pathogen_curated\\Clubroot_curated_long.csv",
+      "data\\raw\\pathogen_curated\\PPV_curated_long.csv",
+      "data\\raw\\pathogen_curated\\TR4_curated_long.csv",
+      "data\\raw\\pathogen_curated\\WheatBlast_curated_long.csv",
+      "data\\raw\\pathogen_curated\\XylellaFastidiosa_curated_long.csv"
+    ]
+  },
+  "output": {
+    "zarr": "data\\processed\\pathogen\\status_tensor.zarr",
+    "arrays": {
+      "status": {
+        "shape": [
+          908,
+          194,
+          8
+        ],
+        "dtype": "uint8"
+      },
+      "status_mask": {
+        "shape": [
+          908,
+          194,
+          8
+        ],
+        "dtype": "uint8"
+      },
+      "evidence": {
+        "shape": [
+          908,
+          194,
+          8
+        ],
+        "dtype": "uint8"
+      },
+      "evidence_mask": {
+        "shape": [
+          908,
+          194,
+          8
+        ],
+        "dtype": "uint8"
+      },
+      "time_index": {
+        "shape": [
+          908
+        ],
+        "dtype": "int32"
+      },
+      "pathogen_names": {
+        "shape": [
+          8
+        ],
+        "dtype": "U17"
+      }
+    }
+  },
+  "qc": {
+    "events_per_pathogen": {
+      "BBTD": 19,
+      "Cassava": 10,
+      "CitrusGreening": 5,
+      "Clubroot": 3,
+      "PPV": 9,
+      "TR4": 19,
+      "WheatBlast": 10,
+      "XylellaFastidiosa": 12
+    },
+    "monotone_forward_fill": true,
+    "per_file_stats": [
+      {
+        "file": "data\\raw\\pathogen_curated\\BBTD_curated_long.csv",
+        "rows_in_file": 19,
+        "rows_kept": 19,
+        "date_min": "1958-01-01",
+        "date_max": "2020-01-01",
+        "unique_iso3": 19,
+        "unique_pathogen": 1
+      },
+      {
+        "file": "data\\raw\\pathogen_curated\\Cassava_curated_long.csv",
+        "rows_in_file": 10,
+        "rows_kept": 10,
+        "date_min": "1978-01-01",
+        "date_max": "2022-01-01",
+        "unique_iso3": 9,
+        "unique_pathogen": 1
+      },
+      {
+        "file": "data\\raw\\pathogen_curated\\CitrusGreening_curated_long.csv",
+        "rows_in_file": 5,
+        "rows_kept": 5,
+        "date_min": "1951-01-01",
+        "date_max": "2009-01-01",
+        "unique_iso3": 5,
+        "unique_pathogen": 1
+      },
+      {
+        "file": "data\\raw\\pathogen_curated\\Clubroot_curated_long.csv",
+        "rows_in_file": 3,
+        "rows_kept": 3,
+        "date_min": "2003-01-01",
+        "date_max": "2017-01-01",
+        "unique_iso3": 3,
+        "unique_pathogen": 1
+      },
+      {
+        "file": "data\\raw\\pathogen_curated\\PPV_curated_long.csv",
+        "rows_in_file": 9,
+        "rows_kept": 9,
+        "date_min": "1956-01-01",
+        "date_max": "2017-01-01",
+        "unique_iso3": 9,
+        "unique_pathogen": 1
+      },
+      {
+        "file": "data\\raw\\pathogen_curated\\TR4_curated_long.csv",
+        "rows_in_file": 19,
+        "rows_kept": 19,
+        "date_min": "1967-01-01",
+        "date_max": "2023-01-01",
+        "unique_iso3": 19,
+        "unique_pathogen": 1
+      },
+      {
+        "file": "data\\raw\\pathogen_curated\\WheatBlast_curated_long.csv",
+        "rows_in_file": 10,
+        "rows_kept": 10,
+        "date_min": "1985-01-01",
+        "date_max": "2018-01-01",
+        "unique_iso3": 10,
+        "unique_pathogen": 1
+      },
+      {
+        "file": "data\\raw\\pathogen_curated\\XylellaFastidiosa_curated_long.csv",
+        "rows_in_file": 12,
+        "rows_kept": 12,
+        "date_min": "1987-01-01",
+        "date_max": "2018-01-01",
+        "unique_iso3": 12,
+        "unique_pathogen": 1
+      }
+    ]
+  }
+}

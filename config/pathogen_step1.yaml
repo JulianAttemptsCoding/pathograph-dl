@@ -1,0 +1,24 @@
+input_dir: data/raw/pathogen_curated
+input_glob: "*_curated_long.csv"
+node_index_candidates:
+  - data/processed/trade/imf_imts_step1/node_index.csv
+  - data/processed/meta/node_index.csv
+time_index_master: data/processed/meta/time_index_master.npy
+output_zarr: data/processed/pathogen/status_tensor.zarr
+manifest_out: data/processed/pathogen/pathogen_step1_manifest.json
+qc_report_out: docs/pathogen_step1_qc_report.md
+trace_samples_out: docs/_logs/pathogen_step1_trace_samples.csv
+# Fixed, canonical pathogen channel order
+pathogens:
+  - BBTD
+  - Cassava
+  - CitrusGreening
+  - Clubroot
+  - PPV
+  - TR4
+  - WheatBlast
+  - XylellaFastidiosa
+# Interpretation: each row is evidence of presence at that month.
+# status is monotone: once presence is observed, it stays 1 for all future months.
+monotone_forward_fill: true
+trace_samples_max: 50

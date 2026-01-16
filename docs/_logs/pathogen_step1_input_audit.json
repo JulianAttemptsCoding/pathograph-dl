@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-01-15T18:15:59.414990",
+  "python_version": "3.11.14 | packaged by conda-forge | (main, Oct 22 2025, 22:35:28) [MSC v.1944 64 bit (AMD64)]",
+  "checks": [
+    {
+      "check": "Python Version",
+      "status": "INFO",
+      "value": "3.11.14 | packaged by conda-forge | (main, Oct 22 2025, 22:35:28) [MSC v.1944 64 bit (AMD64)]"
+    },
+    {
+      "check": "node_index validation",
+      "status": "PASS",
+      "path": "data\\processed\\trade\\imf_imts_step1\\node_index.csv",
+      "rows": 194,
+      "unique_node_id": true,
+      "unique_iso3": true,
+      "columns": [
+        "node_id",
+        "iso3",
+        "iso2",
+        "name"
+      ]
+    },
+    {
+      "check": "time_index_master validation",
+      "status": "PASS",
+      "shape": [
+        908
+      ],
+      "min": 0,
+      "max": 907
+    },
+    {
+      "check": "Pathogen file count",
+      "status": "PASS",
+      "count": 8,
+      "files": [
+        "BBTD_curated_long.csv",
+        "Cassava_curated_long.csv",
+        "CitrusGreening_curated_long.csv",
+        "Clubroot_curated_long.csv",
+        "PPV_curated_long.csv",
+        "TR4_curated_long.csv",
+        "WheatBlast_curated_long.csv",
+        "XylellaFastidiosa_curated_long.csv"
+      ]
+    },
+    {
+      "check": "File validation: BBTD_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 19
+    },
+    {
+      "check": "File validation: Cassava_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 10
+    },
+    {
+      "check": "File validation: CitrusGreening_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 5
+    },
+    {
+      "check": "File validation: Clubroot_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 3
+    },
+    {
+      "check": "File validation: PPV_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 9
+    },
+    {
+      "check": "File validation: TR4_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 19
+    },
+    {
+      "check": "File validation: WheatBlast_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 10
+    },
+    {
+      "check": "File validation: XylellaFastidiosa_curated_long.csv",
+      "status": "PASS",
+      "missing_cols": [],
+      "unparseable_dates": 0,
+      "rows": 12
+    }
+  ]
+}

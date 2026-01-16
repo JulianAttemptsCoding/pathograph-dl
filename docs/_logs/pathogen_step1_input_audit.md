@@ -1,0 +1,50 @@
+# Pathogen Step 1 Input Audit
+Timestamp: 2026-01-15T18:15:59.414990
+
+- **Python Version**: INFO
+  - value: 3.11.14 | packaged by conda-forge | (main, Oct 22 2025, 22:35:28) [MSC v.1944 64 bit (AMD64)]
+- **node_index validation**: PASS
+  - path: data\processed\trade\imf_imts_step1\node_index.csv
+  - rows: 194
+  - unique_node_id: True
+  - unique_iso3: True
+  - columns: ['node_id', 'iso3', 'iso2', 'name']
+- **time_index_master validation**: PASS
+  - shape: [908]
+  - min: 0
+  - max: 907
+- **Pathogen file count**: PASS
+  - count: 8
+  - files: ['BBTD_curated_long.csv', 'Cassava_curated_long.csv', 'CitrusGreening_curated_long.csv', 'Clubroot_curated_long.csv', 'PPV_curated_long.csv', 'TR4_curated_long.csv', 'WheatBlast_curated_long.csv', 'XylellaFastidiosa_curated_long.csv']
+- **File validation: BBTD_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 19
+- **File validation: Cassava_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 10
+- **File validation: CitrusGreening_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 5
+- **File validation: Clubroot_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 3
+- **File validation: PPV_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 9
+- **File validation: TR4_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 19
+- **File validation: WheatBlast_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 10
+- **File validation: XylellaFastidiosa_curated_long.csv**: PASS
+  - missing_cols: []
+  - unparseable_dates: 0
+  - rows: 12
