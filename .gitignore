@@ -61,6 +61,8 @@ data/processed/climate/**
 !data/raw/imf_imts/
 !data/raw/faostat/
 !data/processed/
+# Specific ignores under data/processed (re-enabled after broad unignore)
+data/processed/trade/
 !data/processed/meta/
 
 # Local scratch / outputs
