@@ -54,6 +54,15 @@ data/raw/era5_monthly_netcdf/**/*.zip
 data/raw/era5_monthly_netcdf/**/_tmp_download/**
 data/processed/climate/**
 
+
+# Explicitly unignore data root directories to allow exceptions below
+!data/
+!data/raw/
+!data/raw/imf_imts/
+!data/raw/faostat/
+!data/processed/
+!data/processed/meta/
+
 # Local scratch / outputs
 reports/
 docs/reports/
