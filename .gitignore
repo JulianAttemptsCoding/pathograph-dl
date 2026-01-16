@@ -110,3 +110,41 @@ trade_step6_zarr_inventory.json
 
 # Step 7 scratch tools (deferred for deletion)
 tools/_scratch/
+
+# --- Spatial meta outputs (generated; do not commit) ---
+data/processed/meta/distance_km.npy
+data/processed/meta/adjacency_border.npy
+data/processed/meta/spatial_meta_qc.json
+
+# --- Acceptance verifier outputs (generated) ---
+data/processed/preprocessing_acceptance_report.json
+data/processed/preprocessing_acceptance_report.txt
+
+# --- Raw local drops (do not commit) ---
+data/raw/pathogen_curated/
+data/raw/shapes/
+
+# --- Local scratch outputs in repo root (do not commit) ---
+/distance_km.npy
+/adjacency_border.npy
+/spatial_meta_qc.json
+/csv_search_results.txt
+/new_files.txt
+/output.txt
+/test_out.txt
+/error_log.txt
+/logs/
+
+# --- Generated docs snapshots (keep curated docs/specs only) ---
+docs/_logs/
+docs/*report*.md
+docs/*report*.json
+docs/*inventory*.json
+docs/*checks*.json
+docs/*_audit*.json
+docs/_utf8_write_test.txt
+docs/cds_credentials_check.json
+
+# --- Local helper scratch scripts (underscore = not part of pipeline) ---
+tools/_qc_zarr_inventory.py
+tools/_build_preprocessing_readiness_report.py
