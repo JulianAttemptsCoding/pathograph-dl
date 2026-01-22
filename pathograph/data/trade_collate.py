@@ -54,6 +54,24 @@ def trade_collate_separate(batch: List[Dict[str, np.ndarray]]) -> Dict[str, "obj
         "risk_mask": risk_mask,
         "risk_is_estimated": risk_est,
     }
+    
+    # Handle Climate inputs if present
+    if "climate" in batch[0]:
+        climate = torch.stack([_as_torch(b["climate"]).to(torch.float32) for b in batch], dim=0)  # (B, L, N, F)
+        data["climate"] = climate
+    
+    if "climate_anoms" in batch[0]:
+        climate_anoms = torch.stack([_as_torch(b["climate_anoms"]).to(torch.float32) for b in batch], dim=0)  # (B, L, N, F)
+        data["climate_anoms"] = climate_anoms
+    
+    # Handle Meta matrices if present (not batched - same for all samples)
+    if "distance_km" in batch[0]:
+        distance_km = _as_torch(batch[0]["distance_km"]).to(torch.float32)  # (N, N)
+        data["distance_km"] = distance_km
+    
+    if "adjacency_border" in batch[0]:
+        adjacency_border = _as_torch(batch[0]["adjacency_border"]).to(torch.float32)  # (N, N)
+        data["adjacency_border"] = adjacency_border
 
     # Handle Targets if present
     # Base targets
@@ -83,5 +101,15 @@ def trade_collate_separate(batch: List[Dict[str, np.ndarray]]) -> Dict[str, "obj
         
         if "y_risk_is_estimated" in batch[0]:
             data["y_risk_is_estimated"] = torch.stack([_as_torch(b["y_risk_is_estimated"]).to(torch.uint8) for b in batch], dim=0)
+    
+    # Pathogen Status Targets (y_next + y_mask)
+    if "y_next" in batch[0]:
+        y_next = torch.stack([_as_torch(b["y_next"]).to(torch.float32) for b in batch], dim=0)  # (B, N, P)
+        if "y_mask" in batch[0]:
+            y_mask = torch.stack([_as_torch(b["y_mask"]).to(torch.uint8) for b in batch], dim=0)
+            # Zero-out masked positions for safety
+            y_next = y_next * y_mask.to(torch.float32)
+            data["y_mask"] = y_mask
+        data["y_next"] = y_next
 
     return data

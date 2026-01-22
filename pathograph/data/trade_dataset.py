@@ -35,14 +35,27 @@ class TradeDatasetConfig:
     
     # Target config
     return_targets: bool = False
-    target_kind: Literal["base", "risk", "both"] = "base"
+    target_kind: Literal["base", "risk", "both", "status"] = "base"
     include_target_masks: bool = True
     # Future-proofing: implicit "target_transform" is assumed "same_as_inputs" for now.
+    
+    # Pathogen status target (only used when target_kind="status")
+    pathogen_zarr_path: Optional[str] = None
+    
+    # Climate multimodal inputs
+    climate_zarr_path: Optional[str] = None
+    climate_array_key: str = "climate"
+    climate_anoms_zarr_path: Optional[str] = None
+    climate_anoms_array_key: str = "anomaly"  # or "anomalies" depending on preprocessing
+    
+    # Meta matrices (distance, adjacency)
+    meta_distance_path: Optional[str] = None
+    meta_adjacency_path: Optional[str] = None
     
     # Valid-index filtering (gated by return_targets)
     require_target_observed: bool = False
     min_target_observed: int = 1
-    require_target_observed_kind: Optional[Literal["base", "risk", "both"]] = None
+    require_target_observed_kind: Optional[Literal["base", "risk", "both", "status"]] = None
     valid_t_cache_dir: Optional[str] = None
 
 
@@ -70,6 +83,49 @@ class TradeDatasetZarr:
     def __init__(self, cfg: TradeDatasetConfig):
         self.cfg = cfg
         self.h = open_trade_zarr(cfg.base_zarr_path, cfg.risk_zarr_path)
+        
+        # Load pathogen status if target_kind is "status"
+        self.pathogen_h = None
+        if cfg.target_kind == "status":
+            if not cfg.pathogen_zarr_path:
+                raise ValueError('target_kind="status" requires pathogen_zarr_path')
+            from .pathogen_zarr import open_pathogen_zarr
+            self.pathogen_h = open_pathogen_zarr(cfg.pathogen_zarr_path)
+            # Validate time alignment
+            if self.pathogen_h.T != self.h.T:
+                raise ValueError(
+                    f"Pathogen T={self.pathogen_h.T} does not match trade T={self.h.T}"
+                )
+        
+        # Load climate tensors (optional for multimodal)
+        self.climate_h = None
+        self.climate_anoms_h = None
+        if cfg.climate_zarr_path:
+            from .climate_zarr import open_climate_zarr
+            self.climate_h = open_climate_zarr(cfg.climate_zarr_path, cfg.climate_array_key)
+            if self.climate_h.T != self.h.T:
+                raise ValueError(
+                    f"Climate T={self.climate_h.T} does not match trade T={self.h.T}"
+                )
+        
+        if cfg.climate_anoms_zarr_path:
+            from .climate_zarr import open_climate_zarr
+            self.climate_anoms_h = open_climate_zarr(cfg.climate_anoms_zarr_path, cfg.climate_anoms_array_key)
+            if self.climate_anoms_h.T != self.h.T:
+                raise ValueError(
+                    f"Climate anomalies T={self.climate_anoms_h.T} does not match trade T={self.h.T}"
+                )
+        
+        # Load meta matrices (optional for multimodal)
+        self.distance_km = None
+        self.adjacency_border = None
+        if cfg.meta_distance_path and cfg.meta_adjacency_path:
+            from .climate_zarr import load_meta_matrices
+            self.distance_km, self.adjacency_border = load_meta_matrices(
+                cfg.meta_distance_path,
+                cfg.meta_adjacency_path,
+                expected_N=self.h.N
+            )
 
         # choose split
         split_map = {
@@ -156,7 +212,16 @@ class TradeDatasetZarr:
                 risk_count = int(np.count_nonzero(risk_m != 0))
                 risk_ok = risk_count >= min_obs
             
-            if base_ok and risk_ok:
+            # Check status target mask
+            status_ok = True
+            if require_kind == "status":
+                if self.pathogen_h is None:
+                    raise ValueError("pathogen_h not loaded but require_kind is status")
+                status_m = self.pathogen_h.status_mask[t_y]
+                status_count = int(np.count_nonzero(status_m != 0))
+                status_ok = status_count >= min_obs
+            
+            if base_ok and risk_ok and status_ok:
                 valid_t_list.append(t)
         
         valid_t = np.array(valid_t_list, dtype=np.int32)
@@ -305,6 +370,21 @@ class TradeDatasetZarr:
                 if self.cfg.include_target_masks:
                     targets["y_risk_mask"] = y_risk_m
                     targets["y_risk_is_estimated"] = y_risk_e
+            
+            # Status Target (Pathogen)
+            if self.cfg.target_kind == "status":
+                if self.pathogen_h is None:
+                    raise ValueError("pathogen_h not loaded but target_kind is status")
+                
+                # Load pathogen status at t_y: (N, P)
+                y_status = self.pathogen_h.status[t_y, :, :]  # (N, P) = (194, 8)
+                y_status_m = self.pathogen_h.status_mask[t_y, :, :].astype(np.uint8)  # (N, P)
+                
+                # Pathogen status is categorical (0/1 or codes), no log/standardization
+                # Convert to float32 for model
+                targets["y_next"] = y_status.astype(np.float32)
+                if self.cfg.include_target_masks:
+                    targets["y_mask"] = y_status_m
 
         if self.cfg.return_mode == "separate":
             ret = {
@@ -318,6 +398,23 @@ class TradeDatasetZarr:
                 "risk_mask": risk_mask,
                 "risk_is_estimated": risk_est,
             }
+            
+            # Add climate inputs if loaded
+            if self.climate_h is not None:
+                climate_window = self.climate_h.climate[t0:t1, :, :]  # (L, N, F)
+                ret["climate"] = climate_window.astype(np.float32)
+            
+            if self.climate_anoms_h is not None:
+                anoms_window = self.climate_anoms_h.climate[t0:t1, :, :]  # (L, N, F)
+                ret["climate_anoms"] = anoms_window.astype(np.float32)
+            
+            # Add meta matrices if loaded (not time-dependent)
+            if self.distance_km is not None:
+                ret["distance_km"] = self.distance_km
+            
+            if self.adjacency_border is not None:
+                ret["adjacency_border"] = self.adjacency_border
+            
             if self.cfg.return_targets:
                 ret.update(targets)
             return ret

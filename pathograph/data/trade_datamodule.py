@@ -34,13 +34,26 @@ class TradeDataModuleConfig:
     
     # Target config
     return_targets: bool = False
-    target_kind: Literal["base", "risk", "both"] = "base"
+    target_kind: Literal["base", "risk", "both", "status"] = "base"
     include_target_masks: bool = True
+    
+    # Pathogen status target (only used when target_kind="status")
+    pathogen_zarr_path: Optional[str] = None
+    
+    # Climate multimodal inputs
+    climate_zarr_path: Optional[str] = None
+    climate_array_key: str = "climate"
+    climate_anoms_zarr_path: Optional[str] = None
+    climate_anoms_array_key: str = "anomaly"
+    
+    # Meta matrices
+    meta_distance_path: Optional[str] = None
+    meta_adjacency_path: Optional[str] = None
     
     # Valid-index filtering
     require_target_observed: bool = False
     min_target_observed: int = 1
-    require_target_observed_kind: Optional[Literal["base", "risk", "both"]] = None
+    require_target_observed_kind: Optional[Literal["base", "risk", "both", "status"]] = None
     valid_t_cache_dir: Optional[str] = None
 
 
@@ -74,6 +87,13 @@ class TradeDataModule:
             return_targets=c.return_targets,
             target_kind=c.target_kind,
             include_target_masks=c.include_target_masks,
+            pathogen_zarr_path=c.pathogen_zarr_path,
+            climate_zarr_path=c.climate_zarr_path,
+            climate_array_key=c.climate_array_key,
+            climate_anoms_zarr_path=c.climate_anoms_zarr_path,
+            climate_anoms_array_key=c.climate_anoms_array_key,
+            meta_distance_path=c.meta_distance_path,
+            meta_adjacency_path=c.meta_adjacency_path,
             require_target_observed=c.require_target_observed,
             min_target_observed=c.min_target_observed,
             require_target_observed_kind=c.require_target_observed_kind,
