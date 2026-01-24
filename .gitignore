@@ -163,3 +163,6 @@ docs/audits/pytest_train_summary.json
 
 # ---- Generated one-off audit helpers ----
 tools/_audit_*.py
+
+# one-off local helper
+tools/capture_pytest_train.py
