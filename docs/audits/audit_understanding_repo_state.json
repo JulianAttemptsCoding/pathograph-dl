@@ -1,0 +1,34 @@
+{
+  "branch": "master",
+  "head_oneline": "1a5efaf ST-MM-GNN Layer A prereqs: time alignment + multimodal batch contract + pytest fix",
+  "working_tree_porcelain": [
+    " M docs/audits/prereq_verification_stmm_stepA_final.md",
+    "?? docs/audits/audit_git_state.txt",
+    "?? docs/audits/audit_pytest_collect.txt",
+    "?? docs/audits/audit_pytest_run_capture.txt",
+    "?? docs/audits/audit_pytest_run_summary.json",
+    "?? docs/audits/pytest_train_capture.txt",
+    "?? docs/audits/pytest_train_summary.json",
+    "?? tools/_audit_run_pytest_capture.py",
+    "?? tools/_audit_write_snapshot.py",
+    "?? tools/capture_pytest_train.py",
+    "?? tools/r03_verify_artifacts.py",
+    "?? tools/r03b_discover_climate.py",
+    "?? tools/r03c_verify_contracts.py",
+    "?? tools/r04_verify_datamodule.py"
+  ],
+  "pytest_run_summary": {
+    "cmd": "C:\\Users\\bubga.JULIAN-LAPTOPE2\\miniforge3\\envs\\pathograph-train\\python.exe -m pytest -q",
+    "returncode": 0,
+    "summary_line": "64 passed, 4 skipped, 5 warnings in 313.89s (0:05:13)",
+    "stdout_len": 2084,
+    "stderr_len": 0
+  },
+  "has_prereq_report": true,
+  "evidence_files": {
+    "audit_pytest_run_capture": "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\docs\\audits\\audit_pytest_run_capture.txt",
+    "audit_pytest_run_summary": "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\docs\\audits\\audit_pytest_run_summary.json",
+    "audit_pytest_collect": "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\docs\\audits\\audit_pytest_collect.txt",
+    "prereq_report": "C:\\Users\\bubga.JULIAN-LAPTOPE2\\PycharmProjects\\PathoGraph-DL\\docs\\audits\\prereq_verification_stmm_stepA_final.md"
+  }
+}

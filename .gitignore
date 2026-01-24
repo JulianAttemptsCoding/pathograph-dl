@@ -152,3 +152,14 @@ tools/_build_preprocessing_readiness_report.py
 docs/climate_step4_and_acceptance_verifier_summary.md
 docs/time_window_from_trade.json
 docs/verify_changes_env_imports.json
+
+
+# ---- Audit artifacts (keep curated reports, ignore raw captures) ----
+docs/audits/audit_*.txt
+docs/audits/audit_*_capture.txt
+docs/audits/audit_*_summary.json
+docs/audits/pytest_train_capture.txt
+docs/audits/pytest_train_summary.json
+
+# ---- Generated one-off audit helpers ----
+tools/_audit_*.py

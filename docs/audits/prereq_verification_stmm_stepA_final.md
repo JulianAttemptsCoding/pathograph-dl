@@ -1,9 +1,9 @@
-# ST-MM-GNN Layer A MVP: Final Prerequisites Audit
+﻿# ST-MM-GNN Layer A MVP: Final Prerequisites Audit
 
 **Date:** 2026-01-21  
 **Repo:** PathoGraph-DL  
 **Branch:** master  
-**Commit:** d2e6ee2  
+**Commit:** 1a5efaf
 **Python:** 3.11.14 (pathograph-train)  
 **Pytorch:** 2.9.1+cpu  
 **Pytorch Lightning:** 2.6.0  
@@ -17,9 +17,9 @@ All hard gates for ST-MM-GNN Layer A MVP prerequisites have **PASSED**:
 
 | Gate | Status | Evidence |
 |------|--------|----------|
-| **G1: Time Alignment** | ✅ **PASS** | `t_y = t + horizon` verified via unit test; horizon=1 → `t_y = t + 1` |
-| **G2: Multimodal Batch Contract** | ✅ **PASS** | All modalities present: trade+risk+climate+anoms+meta with correct shapes |
-| **G3: Pytest Green** | ✅ **PASS** | 64 passed, 4 skipped, exit code 0 |
+| **G1: Time Alignment** | âœ… **PASS** | `t_y = t + horizon` verified via unit test; horizon=1 â†’ `t_y = t + 1` |
+| **G2: Multimodal Batch Contract** | âœ… **PASS** | All modalities present: trade+risk+climate+anoms+meta with correct shapes |
+| **G3: Pytest Green** | âœ… **PASS** | 64 passed, 4 skipped, exit code 0 |
 
 **Prerequisites are MET. ST-MM-GNN Layer A MVP implementation may proceed.**
 
@@ -55,7 +55,7 @@ t_y = t + H          # Target time, where H=horizon (default 1)
 - Target is at `t+1`, which is the **next month** after the window ends
 - For lookback=24, horizon=1: window `[t-23...t]` predicts `t+1`
 
-**Result:** ✅ PASS - Time alignment proven via runtime assertions
+**Result:** âœ… PASS - Time alignment proven via runtime assertions
 
 ---
 
@@ -74,31 +74,31 @@ t_y = t + H          # Target time, where H=horizon (default 1)
 **Evidence from verification script:**
 ```
 [REQUIRED KEYS CHECK]
-  base_trade                ✓ PRESENT
-  risk_trade                ✓ PRESENT
-  climate                   ✓ PRESENT
-  climate_anoms             ✓ PRESENT
-  distance_km               ✓ PRESENT
-  adjacency_border          ✓ PRESENT
-  y_next                    ✓ PRESENT
-  y_mask                    ✓ PRESENT
-  t                         ✓ PRESENT
-  t_y                       ✓ PRESENT
+  base_trade                âœ“ PRESENT
+  risk_trade                âœ“ PRESENT
+  climate                   âœ“ PRESENT
+  climate_anoms             âœ“ PRESENT
+  distance_km               âœ“ PRESENT
+  adjacency_border          âœ“ PRESENT
+  y_next                    âœ“ PRESENT
+  y_mask                    âœ“ PRESENT
+  t                         âœ“ PRESENT
+  t_y                       âœ“ PRESENT
 
 [SHAPE VERIFICATION]
-  base_trade          expected=(1, 24, 194, 194, 2)        actual=(1, 24, 194, 194, 2)        ✓
-  risk_trade          expected=(1, 24, 194, 194, 8, 2)     actual=(1, 24, 194, 194, 8, 2)     ✓
-  climate             expected=(1, 24, 194, 10)            actual=(1, 24, 194, 10)            ✓
-  climate_anoms       expected=(1, 24, 194, 10)            actual=(1, 24, 194, 10)            ✓
-  distance_km         expected=(194, 194)                  actual=(194, 194)                  ✓
-  adjacency_border    expected=(194, 194)                  actual=(194, 194)                  ✓
-  y_next              expected=(1, 194, 8)                 actual=(1, 194, 8)                 ✓
-  y_mask              expected=(1, 194, 8)                 actual=(1, 194, 8)                 ✓
+  base_trade          expected=(1, 24, 194, 194, 2)        actual=(1, 24, 194, 194, 2)        âœ“
+  risk_trade          expected=(1, 24, 194, 194, 8, 2)     actual=(1, 24, 194, 194, 8, 2)     âœ“
+  climate             expected=(1, 24, 194, 10)            actual=(1, 24, 194, 10)            âœ“
+  climate_anoms       expected=(1, 24, 194, 10)            actual=(1, 24, 194, 10)            âœ“
+  distance_km         expected=(194, 194)                  actual=(194, 194)                  âœ“
+  adjacency_border    expected=(194, 194)                  actual=(194, 194)                  âœ“
+  y_next              expected=(1, 194, 8)                 actual=(1, 194, 8)                 âœ“
+  y_mask              expected=(1, 194, 8)                 actual=(1, 194, 8)                 âœ“
 
 [TARGET MASK CHECK]
-  y_mask nonzero: 1 (must be > 0) ✓
+  y_mask nonzero: 1 (must be > 0) âœ“
 
-[✓ ALL CHECKS PASSED]
+[âœ“ ALL CHECKS PASSED]
 ```
 
 **Artifact Paths (from config/stmm_stepA.yaml):**
@@ -108,7 +108,7 @@ t_y = t + H          # Target time, where H=horizon (default 1)
 - Adjacency matrix: `data/processed/meta/adjacency_border.npy`
 - Pathogen status: `data/processed/pathogen/status_tensor.zarr`
 
-**Result:** ✅ PASS - All modalities present with correct shapes
+**Result:** âœ… PASS - All modalities present with correct shapes
 
 ---
 
@@ -130,7 +130,11 @@ Exit code: 0
    - Core packages (numpy, pandas, zarr) verified present
 2-4. Other pre-existing conditional skips
 
-**Result:** ✅ PASS - All tests pass or skip as intended, exit code 0
+**Evidence Artifacts:**
+- Captured output: `docs/audits/pytest_train_capture.txt`
+- Summary JSON: `docs/audits/pytest_train_summary.json`
+
+**Result:** âœ… PASS - All tests pass or skip as intended, exit code 0
 
 ---
 
@@ -190,10 +194,10 @@ Exit code: 0
 
 | Requirement | Status | Evidence |
 |-------------|--------|----------|
-| **Targets are pathogen monthly status (forward-filled)** | ✅ | Loaded from `status_tensor.zarr`, shape (908, 194, 8) |
-| **Targets shaped (B,194,8) with mask (B,194,8)** | ✅ | Verified in G2: `y_next (1,194,8)`, `y_mask (1,194,8)` |
-| **Equal pathogen weighting (unweighted mean over P=8)** | ✅ | Implementation-ready; loss will compute mean over P dimension |
-| **No Hawkes/event kernel** | ✅ | Status tensor is forward-filled categorical, not event-based |
+| **Targets are pathogen monthly status (forward-filled)** | âœ… | Loaded from `status_tensor.zarr`, shape (908, 194, 8) |
+| **Targets shaped (B,194,8) with mask (B,194,8)** | âœ… | Verified in G2: `y_next (1,194,8)`, `y_mask (1,194,8)` |
+| **Equal pathogen weighting (unweighted mean over P=8)** | âœ… | Implementation-ready; loss will compute mean over P dimension |
+| **No Hawkes/event kernel** | âœ… | Status tensor is forward-filled categorical, not event-based |
 
 ---
 
@@ -254,32 +258,32 @@ Exit code: 0
 
 With all three gates passed, the ST-MM-GNN Layer A MVP implementation may proceed:
 
-1. ✅ **Implement Graph WaveNet-style dilated TCN backbone**
+1. âœ… **Implement Graph WaveNet-style dilated TCN backbone**
    - Receptive field must cover L=24 input window
    - Suggested: 4 layers @ dilation=[1,2,4,8] with kernel=2
 
-2. ✅ **Implement directed diffusion mechanism**
+2. âœ… **Implement directed diffusion mechanism**
    - Random walk on trade graphs (base + risk representations)
    - Suggested: 2-hop forward + 2-hop backward diffusion
 
-3. ✅ **Implement adaptive adjacency learning**
+3. âœ… **Implement adaptive adjacency learning**
    - Top-k sparse learned adjacency (k~10-20)
    - Initialized from distance_km or adjacency_border
 
-4. ✅ **Implement FiLM conditioning from climate/anomalies**
+4. âœ… **Implement FiLM conditioning from climate/anomalies**
    - Linear projection of climate features to (gamma, beta) per layer
    - Apply affine transform to spatial node embeddings
 
-5. ✅ **Implement pathogen status prediction head**
+5. âœ… **Implement pathogen status prediction head**
    - Multi-head classifier (8 independent heads for 8 pathogens)
    - Equal weighting: loss = mean over P=8 heads
    - Masked loss over observed cells only
 
-6. ✅ **Implement training loop with validation**
+6. âœ… **Implement training loop with validation**
    - Monitor: masked accuracy, masked F1, masked loss
    - Checkpoint: best val_loss (save_on_train_epoch_end=False)
 
-7. ✅ **Verify split logic and temporal leakage safeguards**
+7. âœ… **Verify split logic and temporal leakage safeguards**
    - Temporal split ensures no future information leakage
    - Train-only scaling verified (scaler.json built from train split only)
 
@@ -357,8 +361,8 @@ Exit code: 0
 
 **All ST-MM-GNN Layer A MVP prerequisites are MET.**
 
-- ✅ G1: Time alignment proven (`t_y = t + 1`)
-- ✅ G2: Multimodal batch contract verified (all modalities present with correct shapes)
-- ✅ G3: Pytest green (64 passed, 4 skipped, exit 0)
+- âœ… G1: Time alignment proven (`t_y = t + 1`)
+- âœ… G2: Multimodal batch contract verified (all modalities present with correct shapes)
+- âœ… G3: Pytest green (64 passed, 4 skipped, exit 0)
 
 Implementation may proceed with confidence that the data pipeline emits the correct multimodal inputs and pathogen status targets as required by the architecture.
