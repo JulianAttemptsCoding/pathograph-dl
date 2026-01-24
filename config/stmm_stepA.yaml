@@ -1,4 +1,4 @@
-seed: 1337
+﻿seed: 1337
 
 dataset:
   base_zarr_path: "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr"
@@ -32,7 +32,7 @@ datamodule:
   climate_zarr_path: "data/processed/climate/climate_tensor.zarr"
   climate_array_key: "climate"
   climate_anoms_zarr_path: "data/processed/climate/climate_step4/climate_anomalies.zarr"
-  climate_anoms_array_key: "anomaly"
+  climate_anoms_array_key: anomaly
   
   # Meta matrices
   meta_distance_path: "data/processed/meta/distance_km.npy"
