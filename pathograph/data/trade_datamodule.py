@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Literal, Optional
 
 from torch.utils.data import DataLoader
+import pytorch_lightning as pl
 
 from .trade_collate import trade_collate_separate
 from .trade_dataset import TradeDatasetConfig, TradeDatasetZarr, TradeSplit
@@ -57,7 +58,16 @@ class TradeDataModuleConfig:
     valid_t_cache_dir: Optional[str] = None
 
 
-class TradeDataModule:
+    def __post_init__(self):
+        # Harden config against raw list inputs (common with simple YAML parsers)
+        for name in ["split_train", "split_val", "split_test"]:
+            val = getattr(self, name)
+            if isinstance(val, (list, tuple)):
+                # Use object.__setattr__ because frozen=True
+                object.__setattr__(self, name, TradeSplit(*val))
+
+
+class TradeDataModule(pl.LightningDataModule):
     """Training-time wrapper for the trade dataset.
 
     This is intentionally implemented without requiring Lightning.
@@ -65,12 +75,13 @@ class TradeDataModule:
     """
 
     def __init__(self, cfg: TradeDataModuleConfig):
+        super().__init__()
         self.cfg = cfg
         self._train = None
         self._val = None
         self._test = None
 
-    def setup(self) -> None:
+    def setup(self, stage: Optional[str] = None) -> None:
         c = self.cfg
         base = dict(
             base_zarr_path=c.base_zarr_path,

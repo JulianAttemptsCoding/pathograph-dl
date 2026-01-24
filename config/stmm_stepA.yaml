@@ -65,6 +65,18 @@ datamodule:
   drop_last_train: true
 
 model:
+  residual_channels: 32
+  dilation_channels: 32
+  skip_channels: 64
+  end_channels: 128
+  kernel_size: 2
+  dilations: [1, 2, 4, 8, 16]
+  diffusion_K: 2
+  dropout: 0.1
+  num_pathogens: 8
+  num_nodes: 194
+
+optim:
   lr: 0.001
   weight_decay: 0.0
 

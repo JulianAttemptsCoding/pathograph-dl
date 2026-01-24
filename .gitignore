@@ -166,3 +166,16 @@ tools/_audit_*.py
 
 # one-off local helper
 tools/capture_pytest_train.py
+
+# local reports / scratch
+prereq_shapes_report.txt
+
+# run artifacts
+runs/
+*.log
+test_output.txt
+smoke_test.log
+
+# python caches
+__pycache__/
+.pytest_cache/
