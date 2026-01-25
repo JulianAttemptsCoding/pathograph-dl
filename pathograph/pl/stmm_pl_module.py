@@ -31,35 +31,38 @@ class STMMPLModule(pl.LightningModule):
         mask: torch.Tensor,
     ) -> torch.Tensor:
         """
-        Compute masked binary cross-entropy with logits.
-        
-        Args:
-            logits: (B, N, P) predicted logits
-            targets: (B, N, P) ground truth (0/1)
-            mask: (B, N, P) binary mask (1=observed, 0=missing)
-        
-        Returns:
-            loss: scalar tensor
+        Blueprint-required loss:
+        1) masked BCE per element
+        2) per pathogen p: mean over observed (B,N)
+        3) average these means equally across pathogens with any observations
+
+        Shapes: logits/targets/mask are (B, N, P)
         """
-        # Compute per-element loss
-        loss = F.binary_cross_entropy_with_logits(logits, targets, reduction='none')
-        
+        # Per-element loss
+        loss = F.binary_cross_entropy_with_logits(logits, targets, reduction="none")
+
+        # Ensure mask is float for safe multiplication/sums
+        mask_f = mask.to(dtype=loss.dtype)
+
         # Apply mask
-        loss = loss * mask
-        
-        # Aggregate
-        mask_sum = mask.sum()
-        
-        # Guard for empty mask (autograd-safe, device-safe)
-        if mask_sum == 0:
-            # Anchor to a trainable parameter to ensure requires_grad=True and correct device/dtype
-            p0 = next(self.parameters())
-            return p0.sum() * 0.0
-        
-        # Normalize by number of observed elements
-        loss = loss.sum() / mask_sum
-        
-        return loss
+        loss = loss * mask_f
+
+        # Per-pathogen sums over (B,N)
+        loss_sum_p = loss.sum(dim=(0, 1))       # (P,)
+        mask_sum_p = mask_f.sum(dim=(0, 1))     # (P,)
+
+        valid = mask_sum_p > 0
+
+        # Empty-mask guard: keep autograd connected to logits
+        if not torch.any(valid):
+            return logits.sum() * 0.0
+
+        mean_p = torch.zeros_like(loss_sum_p)
+        mean_p[valid] = loss_sum_p[valid] / mask_sum_p[valid]
+
+        # Equal weighting across pathogens (macro over pathogens with observations)
+        return mean_p[valid].mean()
+
     
     def _masked_accuracy(
         self,
