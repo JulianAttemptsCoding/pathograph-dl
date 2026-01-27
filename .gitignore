@@ -179,3 +179,11 @@ smoke_test.log
 # python caches
 __pycache__/
 .pytest_cache/
+# local debug artifacts (PathoGraph)
+step2_*.txt
+stmm_diag*.txt
+tp_*.txt
+tp_*.json
+tools/_tmp_*.py
+tools/_tmp_*.ps1
+tools/_diagnose_all.ps1

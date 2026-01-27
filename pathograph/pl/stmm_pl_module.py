@@ -53,9 +53,14 @@ class STMMPLModule(pl.LightningModule):
 
         valid = mask_sum_p > 0
 
-        # Empty-mask guard: keep autograd connected to logits
+        # Empty-mask guard: raise explicit error instead of silent NaN
         if not torch.any(valid):
-            return logits.sum() * 0.0
+            raise RuntimeError(
+                f"[STMM Loss] All {len(mask_sum_p)} pathogens have zero observed labels in batch! "
+                f"mask_sum_p={mask_sum_p.tolist()}. "
+                f"This indicates dataset filtering failed or batch construction is broken. "
+                f"Check: require_target_observed should be True in config."
+            )
 
         mean_p = torch.zeros_like(loss_sum_p)
         mean_p[valid] = loss_sum_p[valid] / mask_sum_p[valid]

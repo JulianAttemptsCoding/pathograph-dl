@@ -275,13 +275,18 @@ class STMMGraphWaveNet(nn.Module):
         # Convert to float
         A = adjacency.float()
         
+        # Add self-loops to handle isolated nodes (prevents NaN in normalization)
+        N = A.shape[0]
+        A = A + torch.eye(N, device=A.device, dtype=A.dtype)
+        
         # Row-normalize A -> A_rw
-        row_sum = A.sum(dim=1, keepdim=True).clamp_min(1e-8)
+        row_sum = A.sum(dim=1, keepdim=True)
+        # Now all rows have at least 1 (from self-loop), so no need for clamp
         A_rw = A / row_sum
         
         # Row-normalize A.T -> A_rw_T (compute separately, don't just transpose)
         A_T = A.T
-        row_sum_T = A_T.sum(dim=1, keepdim=True).clamp_min(1e-8)
+        row_sum_T = A_T.sum(dim=1, keepdim=True)
         A_rw_T = A_T / row_sum_T
         
         return [A_rw, A_rw_T]
@@ -299,6 +304,10 @@ class STMMGraphWaveNet(nn.Module):
         """
         # Build node features: (B, L, N, F) where F=46
         node_features = self._build_node_features(batch)
+        
+        # Sanitize NaN inputs (replace with 0) - handles corrupt climate data
+        if torch.isnan(node_features).any():
+            node_features = torch.nan_to_num(node_features, nan=0.0)
         
         # Transpose to (B, F, N, L) for conv2d
         x = node_features.permute(0, 3, 2, 1)  # (B, 46, N, L)

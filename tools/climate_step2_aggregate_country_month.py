@@ -124,40 +124,66 @@ def _es_hpa(T_c: np.ndarray) -> np.ndarray:
 
 def _deduplicate_by_expver(ds, time_name: str):
     """Handles cases where expver is concatenated along time dimension."""
+    print(f"[DEBUG] _deduplicate_by_expver called with time_name={time_name}")
+    
     if "expver" not in ds.coords or time_name not in ds.coords:
+        print(f"[DEBUG] Early return: expver or {time_name} not in coords")
         return ds
-        
-    # Check if time dimension is effectively duplicated
-    times = ds[time_name].values
-    if len(times) <= 12:
-        return ds
-
+    
     # If expver is a dimension, we don't need this (xarray handles it via sel)
     # But if expver is a coordinate along time (flattened), we must filter.
     if "expver" in ds.dims:
+        print(f"[DEBUG] expver is a dimension, returning unchanged")
         return ds
 
-    # Logic: Group by month, prefer expver='1' or numeric '1'
-    expvers = ds["expver"].values
-    
-    # normalize expver to score (1=high, 5=medium, others=low)
-    def _score(e):
-        s = str(e).strip()
-        if s == '1' or s == '0001': return 10
-        if s == '5' or s == '0005': return 5
-        return 0
-
+    # Check if time is duplicated (expver flattened along time)
     import pandas as pd
-    df = pd.DataFrame({"t": times, "e": expvers, "i": range(len(times))})
-    df["m"] = pd.to_datetime(df["t"]).dt.to_period("M")
-    df["score"] = df["e"].apply(_score)
+    times = ds[time_name].values
+    df_times = pd.DataFrame({"t": times, "i": range(len(times))})
+    df_times["month_period"] = pd.to_datetime(df_times["t"]).dt.to_period("M")
+    dup_months = df_times["month_period"].duplicated(keep=False)
     
-    # Pick best score per month
-    df = df.sort_values(["m", "score"], ascending=[True, False])
-    df = df.drop_duplicates("m", keep="first")
+    if not dup_months.any():
+        # No duplication, nothing to do
+        print(f"[DEBUG] No duplicated months found (len(times)={len(times)})")
+        return ds
+    
+    print(f"[INFO] Detected {dup_months.sum()} duplicated timesteps due to expver flattening.")
+    
+    # Logic: For each duplicated month, check which timestep has valid tp data
+    # (tp has opposite NaN pattern from other variables in 1950 data)
+    
+    # Get tp variable to check NaN content
+    if 'tp' in ds.data_vars:
+        tp_var = ds['tp']
+    elif 'total_precipitation' in ds.data_vars:
+        tp_var = ds['total_precipitation']
+    else:
+        # If no tp, fall back to first occurrence
+        print(f"[WARN] No tp variable found for NaN check, using first occurrence")
+        df = pd.DataFrame({"t": times, "i": range(len(times))})
+        df["m"] = pd.to_datetime(df["t"]).dt.to_period("M")
+        df = df.drop_duplicates("m", keep="first")
+        df = df.sort_values("i")
+        print(f"[INFO] Deduplicating time: reduced {len(times)} -> {len(df)} steps.")
+        return ds.isel({time_name: df["i"].tolist()})
+    
+    # For each month, find which duplicate has less NaN in tp
+    df = pd.DataFrame({"t": times, "i": range(len(times))})
+    df["m"] = pd.to_datetime(df["t"]).dt.to_period("M")
+    
+    # Compute NaN fraction for each timestep's tp
+    df["tp_nan_frac"] = [float(np.isnan(tp_var.isel({time_name: i}).values).mean()) 
+                          for i in range(len(times))]
+    
+    # For each month, keep the timestep with LOWEST tp NaN fraction
+    df = df.sort_values(["m", "tp_nan_frac", "i"], ascending=[True, True, True])
+    df = df.drop_duplicates("m", keep="first")  # First = lowest NaN frac
     df = df.sort_values("i")
     
     print(f"[INFO] Deduplicating time/expver: reduced {len(times)} -> {len(df)} steps.")
+    print(f"[DEBUG] Kept indices: {df['i'].tolist()}")
+    print(f"[DEBUG] Selected based on tp NaN content (kept timesteps with less NaN)")
     return ds.isel({time_name: df["i"].tolist()})
 
 def main() -> None:
@@ -266,7 +292,8 @@ def main() -> None:
         "total_precipitation": "tp",
     }
 
-    for year in years:
+    for i, year in enumerate(years):
+        print(f"[YEAR] Processing {year} ({i+1}/{len(years)})...", flush=True)
         nc_path = raw_dir / f"era5_sl_monthly_{year}.nc"
         if not nc_path.exists():
             raise SystemExit(f"Missing NetCDF for year={year}: {nc_path}")
@@ -275,7 +302,7 @@ def main() -> None:
         if zipfile.is_zipfile(nc_path):
             raise RuntimeError(f"INPUT_IS_ZIP: expected NetCDF. Re-run Step 1 after ZIP-extraction fix. Path={nc_path}")
 
-        print(f"[OPEN] {nc_path}")
+        print(f"[OPEN] {nc_path}", flush=True)
         # Explicit engine selection
         ds = xr.open_dataset(nc_path, engine="netcdf4")
 
@@ -283,8 +310,10 @@ def main() -> None:
         lon_name = _coord_name(ds, ["longitude", "lon"])
         time_name = _coord_name(ds, ["time", "valid_time"])
         
-        # Deduplicate duplicated expver/time
-        ds = _deduplicate_by_expver(ds, time_name)
+        # NOTE: We skip dataset-level deduplication because tp and other variables
+        # have OPPOSITE NaN patterns in expver-duplicated data (tp valid at odd indices,
+        # others valid at even indices). Instead, we'll handle per-variable below.
+        # ds = _deduplicate_by_expver(ds, time_name)  # DISABLED
 
         # Prepare per-variable DataArrays (expver selection + lon normalize + lat descending)
         da_dict = {}
@@ -298,6 +327,33 @@ def main() -> None:
             else:
                 raise SystemExit(f"NetCDF missing variable '{v_long}'/'{v_short}'. Found: {list(ds.data_vars)}")
 
+            # Per-variable deduplication: if expver is flattened along time, select valid timesteps
+            if "expver" in da.coords and "expver" not in da.dims:
+                # Check for duplicated months
+                times_var = da[time_name].values
+                if len(times_var) > 12:  # Likely duplicated
+                    df_var = pd.DataFrame({"t": times_var, "i": range(len(times_var))})
+                    df_var["m"] = pd.to_datetime(df_var["t"]).dt.to_period("M")
+                    
+                    if df_var["m"].duplicated().any():
+                        # Optimization: Load the full time slice for this variable ONCE to avoid repeated IO in loop
+                        # subset size for 1 year is approx 24 * 721 * 1440 * 4 bytes ~= 100MB -> safe to load
+                        subset_da = da.isel({time_name: range(len(times_var))}).load()
+                        
+                        # Compute NaN fraction vectorized (mean over lat/lon dims 1 and 2)
+                        # subset_da.values is (T, Lat, Lon)
+                        nan_counts = np.isnan(subset_da.values).mean(axis=(1, 2))
+                        df_var["nan_frac"] = nan_counts
+                        
+                        # Keep timestep with lowest NaN fraction per month
+                        df_var = df_var.sort_values(["m", "nan_frac", "i"])
+                        df_var = df_var.drop_duplicates("m", keep="first")
+                        df_var = df_var.sort_values("i")
+                        
+                        # Select those timesteps
+                        da = da.isel({time_name: df_var["i"].tolist()})
+                        print(f"[INFO] {v_short}: deduplicated {len(times_var)} -> {len(df_var)} timesteps", flush=True)
+            
             da = _select_expver(da, proc["expver_policy"])
             da = _normalize_lon(da, lon_name)
             da = _ensure_lat_desc(da, lat_name)

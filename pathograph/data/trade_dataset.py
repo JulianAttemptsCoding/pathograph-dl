@@ -161,6 +161,15 @@ class TradeDatasetZarr:
                     f"require_kind={cfg.require_target_observed_kind or cfg.target_kind}, "
                     f"min={cfg.min_target_observed}"
                 )
+            # Log filtering status
+            total_range = self.t_end - self.t_start + 1
+            print(f"[TradeDataset {cfg.split}] Filtering enabled: "
+                  f"valid_t={len(self._valid_t)}/{total_range}, "
+                  f"first_t={int(self._valid_t[0])}, last_t={int(self._valid_t[-1])}")
+        else:
+            total_range = self.t_end - self.t_start + 1
+            print(f"[TradeDataset {cfg.split}] Filtering DISABLED: "
+                  f"using all {total_range} indices in range")
     
     def _build_valid_t(self) -> np.ndarray:
         """Build array of valid time indices where target masks meet threshold."""
