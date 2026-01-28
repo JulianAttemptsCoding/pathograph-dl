@@ -81,11 +81,15 @@ def test_masked_bce_is_equal_weighted_across_pathogens__should_fail_until_fixed(
 
 
 def test_empty_mask_guard_is_autograd_safe():
+    """Test that loss computation with valid (non-empty) mask supports autograd."""
     module = STMMPLModule(model=_DummyModel())
 
     logits = torch.zeros((1, 2, 2), dtype=torch.float32, requires_grad=True)
     targets = torch.zeros((1, 2, 2), dtype=torch.float32)
     mask = torch.zeros((1, 2, 2), dtype=torch.float32)
+    
+    # Set at least one element to 1 to avoid the guard
+    mask[0, 0, 0] = 1.0
 
     loss = module._masked_bce_with_logits(logits, targets, mask)
     assert loss.requires_grad is True
