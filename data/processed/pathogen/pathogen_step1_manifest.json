@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-15T18:16:03",
+  "generated_at": "2026-01-28T00:21:48",
   "python_version": "3.11.14",
   "inputs": {
     "node_index_used": "data\\processed\\trade\\imf_imts_step1\\node_index.csv",
@@ -75,7 +75,6 @@
       "WheatBlast": 10,
       "XylellaFastidiosa": 12
     },
-    "monotone_forward_fill": true,
     "per_file_stats": [
       {
         "file": "data\\raw\\pathogen_curated\\BBTD_curated_long.csv",
@@ -149,6 +148,8 @@
         "unique_iso3": 12,
         "unique_pathogen": 1
       }
-    ]
+    ],
+    "label_definition": "cumulative_presence",
+    "label_rule": "status[t]=1 iff evidence[t_prior]==1 for any t_prior <= t (monotone forward-fill)"
   }
 }

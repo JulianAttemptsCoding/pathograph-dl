@@ -40,6 +40,10 @@ class PersistenceBaseline(pl.LightningModule):
         self.test_auprc = nn.ModuleList([
             BinaryAveragePrecision() for _ in range(num_pathogens)
         ])
+        
+        # Accumulators
+        self.val_pos_total = 0
+        self.test_pos_total = 0
     
     def _predict_persistence(self, batch: Dict[str, torch.Tensor]) -> torch.Tensor:
         """
@@ -188,65 +192,103 @@ class PersistenceBaseline(pl.LightningModule):
         correct = (predictions == targets)[mask_bool].float()
         return correct.mean()
     
+        return loss
+
+    def on_validation_epoch_start(self):
+        self.val_pos_total = 0
+
     def validation_step(self, batch: Dict[str, torch.Tensor], batch_idx: int):
         """Validation step using TradeDataset batch format."""
-        preds = self._predict_persistence(batch)
-        targets = batch['y_next']  # (N, P)
-        mask = batch['y_mask']  # (N, P)
-        
-        # Compute loss
-        loss = self._masked_bce(preds, targets, mask)
-        self.log('val_loss', loss, prog_bar=True, on_step=False, on_epoch=True)
-        
-        # Compute accuracy
-        acc = self._masked_accuracy(preds, targets, mask)
-        self.log('val_acc', acc, prog_bar=True, on_step=False, on_epoch=True)
-        
-        # Update AUROC/AUPRC (use predictions as "probabilities")
-        for p in range(self.num_pathogens):
-            probs_p = preds[:, p]  # (N,)
-            targets_p = targets[:, p]  # (N,)
-            mask_p = mask[:, p]  # (N,)
+        try:
+            preds = self._predict_persistence(batch)
+            targets = batch['y_next']  # (N, P)
+            mask = batch['y_mask']  # (N, P)
             
-            observed = mask_p > 0.5
-            if observed.sum() > 0:
-                self.val_auroc[p].update(probs_p[observed], targets_p[observed].long())
-                self.val_auprc[p].update(probs_p[observed], targets_p[observed].long())
-        
-        return loss
+            # Compute loss
+            loss = self._masked_bce(preds, targets, mask)
+            self.log('val_loss', loss, prog_bar=True, on_step=False, on_epoch=True)
+            
+            # Compute accuracy
+            acc = self._masked_accuracy(preds, targets, mask)
+            self.log('val_acc', acc, prog_bar=True, on_step=False, on_epoch=True)
+            
+            # Update total positives (assuming N, P format or B, N, P?)
+            # _predict_persistence handles B,L,N,P input but returns N,P or B,N,P
+            # We need to handle potential batch dim
+            observed = mask > 0.5
+            positives = (targets > 0.5) & observed
+            if not hasattr(self, 'val_pos_total'): self.val_pos_total = 0
+            self.val_pos_total += positives.sum().item()
+            
+            # Update AUROC/AUPRC (use predictions as "probabilities")
+            for p in range(self.num_pathogens):
+                # Try to handle both (B,N,P) and (N,P)
+                if preds.ndim == 3:
+                     probs_p = preds[:, :, p].flatten()
+                     targets_p = targets[:, :, p].flatten()
+                     mask_p = mask[:, :, p].flatten()
+                else:
+                     probs_p = preds[:, p]
+                     targets_p = targets[:, p]
+                     mask_p = mask[:, p]
+                
+                observed_p = mask_p > 0.5
+                if observed_p.sum() > 0:
+                    self.val_auroc[p].update(probs_p[observed_p], targets_p[observed_p].long())
+                    self.val_auprc[p].update(probs_p[observed_p], targets_p[observed_p].long())
+            
+            return loss
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            raise e
     
     def on_validation_epoch_end(self):
         """Compute and log macro-averaged metrics."""
         auroc_scores = []
         auprc_scores = []
+        valid_pathogens = 0
+        excluded_pathogens = 0
         
         for p in range(self.num_pathogens):
+            auroc_p = float('nan')
+            auprc_p = float('nan')
             try:
-                auroc_p = self.val_auroc[p].compute()
-                auprc_p = self.val_auprc[p].compute()
-                
-                if not torch.isnan(auroc_p):
-                    auroc_scores.append(auroc_p)
-                if not torch.isnan(auprc_p):
-                    auprc_scores.append(auprc_p)
-                
-                self.log(f'val_auroc_p{p}', auroc_p, on_epoch=True)
-                self.log(f'val_auprc_p{p}', auprc_p, on_epoch=True)
-                
+                auroc_val = self.val_auroc[p].compute()
+                auprc_val = self.val_auprc[p].compute()
+                if torch.isfinite(auroc_val) and torch.isfinite(auprc_val):
+                    auroc_p = auroc_val
+                    auprc_p = auprc_val
             except Exception:
                 pass
+            
+            if not torch.isnan(torch.tensor(auroc_p)) and not torch.isnan(torch.tensor(auprc_p)):
+                auroc_scores.append(auroc_p)
+                auprc_scores.append(auprc_p)
+                valid_pathogens += 1
+            else:
+                excluded_pathogens += 1
+                
+            self.log(f'val_auroc_p{p}', auroc_p, on_epoch=True)
+            self.log(f'val_auprc_p{p}', auprc_p, on_epoch=True)
             
             self.val_auroc[p].reset()
             self.val_auprc[p].reset()
         
         if len(auroc_scores) > 0:
-            macro_auroc = torch.stack(auroc_scores).mean()
+            macro_auroc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auroc_scores]).mean()
             self.log('val_auroc_macro', macro_auroc, prog_bar=True, on_epoch=True)
         
         if len(auprc_scores) > 0:
-            macro_auprc = torch.stack(auprc_scores).mean()
+            macro_auprc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auprc_scores]).mean()
             self.log('val_auprc_macro', macro_auprc, prog_bar=True, on_epoch=True)
-    
+            
+        self.log('val_pos_total', float(self.val_pos_total), on_epoch=True)
+        self.log('macro_valid_pathogens', float(valid_pathogens), on_epoch=True)
+
+    def on_test_epoch_start(self):
+        self.test_pos_total = 0
+
     def test_step(self, batch: Dict[str, torch.Tensor], batch_idx: int):
         """Test step using TradeDataset batch format."""
         preds = self._predict_persistence(batch)
@@ -261,16 +303,27 @@ class PersistenceBaseline(pl.LightningModule):
         acc = self._masked_accuracy(preds, targets, mask)
         self.log('test_acc', acc, on_step=False, on_epoch=True)
         
+        # Update counts
+        observed = mask > 0.5
+        positives = (targets > 0.5) & observed
+        self.test_pos_total += positives.sum().item()
+        
         # Update AUROC/AUPRC
         for p in range(self.num_pathogens):
-            probs_p = preds[:, p]  # (N,)
-            targets_p = targets[:, p]  # (N,)
-            mask_p = mask[:, p]  # (N,)
-            
-            observed = mask_p > 0.5
-            if observed.sum() > 0:
-                self.test_auroc[p].update(probs_p[observed], targets_p[observed].long())
-                self.test_auprc[p].update(probs_p[observed], targets_p[observed].long())
+            # Try to handle both (B,N,P) and (N,P)
+            if preds.ndim == 3:
+                 probs_p = preds[:, :, p].flatten()
+                 targets_p = targets[:, :, p].flatten()
+                 mask_p = mask[:, :, p].flatten()
+            else:
+                 probs_p = preds[:, p]
+                 targets_p = targets[:, p]
+                 mask_p = mask[:, p]
+
+            observed_p = mask_p > 0.5
+            if observed_p.sum() > 0:
+                self.test_auroc[p].update(probs_p[observed_p], targets_p[observed_p].long())
+                self.test_auprc[p].update(probs_p[observed_p], targets_p[observed_p].long())
         
         return loss
     
@@ -278,33 +331,44 @@ class PersistenceBaseline(pl.LightningModule):
         """Compute and log macro-averaged test metrics."""
         auroc_scores = []
         auprc_scores = []
+        valid_pathogens = 0
+        excluded_pathogens = 0
         
         for p in range(self.num_pathogens):
+            auroc_p = float('nan')
+            auprc_p = float('nan')
             try:
-                auroc_p = self.test_auroc[p].compute()
-                auprc_p = self.test_auprc[p].compute()
-                
-                if not torch.isnan(auroc_p):
-                    auroc_scores.append(auroc_p)
-                if not torch.isnan(auprc_p):
-                    auprc_scores.append(auprc_p)
-                
-                self.log(f'test_auroc_p{p}', auroc_p, on_epoch=True)
-                self.log(f'test_auprc_p{p}', auprc_p, on_epoch=True)
-                
+                auroc_val = self.test_auroc[p].compute()
+                auprc_val = self.test_auprc[p].compute()
+                if torch.isfinite(auroc_val) and torch.isfinite(auprc_val):
+                    auroc_p = auroc_val
+                    auprc_p = auprc_val
             except Exception:
                 pass
+            
+            if not torch.isnan(torch.tensor(auroc_p)) and not torch.isnan(torch.tensor(auprc_p)):
+                auroc_scores.append(auroc_p)
+                auprc_scores.append(auprc_p)
+                valid_pathogens += 1
+            else:
+                excluded_pathogens += 1
+                
+            self.log(f'test_auroc_p{p}', auroc_p, on_epoch=True)
+            self.log(f'test_auprc_p{p}', auprc_p, on_epoch=True)
             
             self.test_auroc[p].reset()
             self.test_auprc[p].reset()
         
         if len(auroc_scores) > 0:
-            macro_auroc = torch.stack(auroc_scores).mean()
+            macro_auroc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auroc_scores]).mean()
             self.log('test_auroc_macro', macro_auroc, on_epoch=True)
         
         if len(auprc_scores) > 0:
-            macro_auprc = torch.stack(auprc_scores).mean()
+            macro_auprc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auprc_scores]).mean()
             self.log('test_auprc_macro', macro_auprc, on_epoch=True)
+
+        self.log('test_pos_total', float(self.test_pos_total), on_epoch=True)
+        self.log('macro_valid_pathogens', float(valid_pathogens), on_epoch=True)
     
     def configure_optimizers(self):
         """No optimizer needed for persistence baseline."""

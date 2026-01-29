@@ -1,0 +1,152 @@
+{
+  "train": [
+    {
+      "pathogen": 0,
+      "positives": 16,
+      "observed": 158304,
+      "prevalence": 0.00010107135637760258
+    },
+    {
+      "pathogen": 1,
+      "positives": 8,
+      "observed": 158304,
+      "prevalence": 5.053567818880129e-05
+    },
+    {
+      "pathogen": 2,
+      "positives": 5,
+      "observed": 158304,
+      "prevalence": 3.158479886800081e-05
+    },
+    {
+      "pathogen": 3,
+      "positives": 3,
+      "observed": 158304,
+      "prevalence": 1.8950879320800486e-05
+    },
+    {
+      "pathogen": 4,
+      "positives": 9,
+      "observed": 158304,
+      "prevalence": 5.685263796240146e-05
+    },
+    {
+      "pathogen": 5,
+      "positives": 16,
+      "observed": 158304,
+      "prevalence": 0.00010107135637760258
+    },
+    {
+      "pathogen": 6,
+      "positives": 9,
+      "observed": 158304,
+      "prevalence": 5.685263796240146e-05
+    },
+    {
+      "pathogen": 7,
+      "positives": 9,
+      "observed": 158304,
+      "prevalence": 5.685263796240146e-05
+    }
+  ],
+  "val": [
+    {
+      "pathogen": 0,
+      "positives": 3,
+      "observed": 6984,
+      "prevalence": 0.000429553264604811
+    },
+    {
+      "pathogen": 1,
+      "positives": 1,
+      "observed": 6984,
+      "prevalence": 0.000143184421534937
+    },
+    {
+      "pathogen": 2,
+      "positives": 0,
+      "observed": 6984,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 3,
+      "positives": 0,
+      "observed": 6984,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 4,
+      "positives": 0,
+      "observed": 6984,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 5,
+      "positives": 1,
+      "observed": 6984,
+      "prevalence": 0.000143184421534937
+    },
+    {
+      "pathogen": 6,
+      "positives": 1,
+      "observed": 6984,
+      "prevalence": 0.000143184421534937
+    },
+    {
+      "pathogen": 7,
+      "positives": 3,
+      "observed": 6984,
+      "prevalence": 0.000429553264604811
+    }
+  ],
+  "test": [
+    {
+      "pathogen": 0,
+      "positives": 0,
+      "observed": 10864,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 1,
+      "positives": 1,
+      "observed": 10864,
+      "prevalence": 9.204712812960235e-05
+    },
+    {
+      "pathogen": 2,
+      "positives": 0,
+      "observed": 10864,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 3,
+      "positives": 0,
+      "observed": 10864,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 4,
+      "positives": 0,
+      "observed": 10864,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 5,
+      "positives": 2,
+      "observed": 10864,
+      "prevalence": 0.0001840942562592047
+    },
+    {
+      "pathogen": 6,
+      "positives": 0,
+      "observed": 10864,
+      "prevalence": 0.0
+    },
+    {
+      "pathogen": 7,
+      "positives": 0,
+      "observed": 10864,
+      "prevalence": 0.0
+    }
+  ]
+}
