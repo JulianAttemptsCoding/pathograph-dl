@@ -174,27 +174,19 @@ def main() -> int:
     # Combine for trace + QC
     df_all = pd.concat(parsed_rows, ignore_index=True) if parsed_rows else pd.DataFrame(columns=['iso3','date','pathogen','value','month_index'])
 
-    # --- Enforce label policy: forward-filled monthly presence (monotone under mask) ---
-    # status: (T,N,P) values in {0,1}
-    # status_mask: (T,N,P) values in {0,1}
-
-    # Ensure binary uint8
-    status = (evidence > 0).astype("uint8")
-    status_mask = np.ones_like(evidence, dtype='uint8') # Fully observed assumption for now
-
-    # Only allow observed entries to contribute to presence
-    status_obs = (status * status_mask).astype("uint8")
-
-    # Forward-fill presence over time (monotone nondecreasing)
-    status_ff = np.maximum.accumulate(status_obs, axis=0).astype("uint8")
-
-    # Keep unobserved entries at 0 (mask carries the “unknownness”)
-    # (With full mask, status == status_ff)
-    status = np.where(status_mask == 1, status_ff, 0).astype("uint8")
-
-    # Optional hard assertion (leave enabled during debug)
-    if np.any(np.diff(status.astype("int8"), axis=0) < 0):
-        raise RuntimeError("Label policy violation after forward-fill: found 1->0 transition.")
+    # Monotone status (cumulative max over time) + mask
+    # Event-based labels: new detection only
+    # status[t] = 1 iff evidence[t]==1 and evidence[t-1]==0
+    status = np.zeros_like(evidence, dtype=np.uint8)
+    status_mask = evidence_mask.copy()
+    
+    status[0] = evidence[0]
+    for t in range(1, evidence.shape[0]):
+        # Cast to signed int to handle negative diffs (1 -> 0 transition) safely
+        current = evidence[t].astype(np.int16)
+        prev = evidence[t-1].astype(np.int16)
+        diff = current - prev
+        status[t] = np.clip(diff, 0, 1).astype(np.uint8)
 
     # Output handling
     if out_zarr.exists():
@@ -293,8 +285,7 @@ def main() -> int:
             'events_per_pathogen': events_per_pathogen,
             'per_file_stats': per_file_stats,
             'label_definition': 'event_based',
-            'label_definition': 'cumulative_presence',
-            'label_rule': 'status[t]=1 iff evidence[t_prior]==1 for any t_prior <= t (monotone forward-fill)'
+            'label_rule': 'status[t]=1 iff evidence[t]==1 and evidence[t-1]==0'
         }
     }
 

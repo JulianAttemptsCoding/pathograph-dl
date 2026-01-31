@@ -44,7 +44,9 @@ def test_stmm_masked_loss_sparse():
 
 
 def test_stmm_masked_loss_empty_mask_guard():
-    """Test that empty mask guard returns zero without crashing."""
+    """Test that empty mask guard raises RuntimeError."""
+    import pytest
+    
     torch.manual_seed(42)
     
     B, N, P = 2, 4, 8
@@ -58,15 +60,15 @@ def test_stmm_masked_loss_empty_mask_guard():
     model = torch.nn.Linear(1, 1)
     pl_module = STMMPLModule(model, lr=0.001)
     
-    # Compute loss
-    loss = pl_module._masked_bce_with_logits(logits, targets, mask)
+    # Compute loss - should raise
+    with pytest.raises(RuntimeError) as excinfo:
+        loss = pl_module._masked_bce_with_logits(logits, targets, mask)
     
-    # Assertions
-    assert torch.isfinite(loss), "Loss should be finite even with empty mask"
-    assert loss.item() == 0.0, f"Loss should be 0.0 for empty mask: {loss.item()}"
-    assert loss.requires_grad, "Loss should have requires_grad=True"
+    # Check error message contains expected text
+    assert '[STMM Loss] All' in str(excinfo.value)
+    assert 'zero observed labels' in str(excinfo.value)
     
-    print(f"✓ Empty mask guard test passed: loss = {loss.item()}")
+    print("✓ Empty mask guard test passed: correctly raises RuntimeError")
 
 
 if __name__ == '__main__':
