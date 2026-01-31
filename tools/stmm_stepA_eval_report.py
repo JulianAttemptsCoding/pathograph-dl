@@ -59,14 +59,14 @@ def eval_model_on_split(model, dataloader, device, max_batches=None, desc="Eval"
                          for k, v in batch.items()}
             
             # Forward
-            if hasattr(model, 'forward'):
-                logits = model(batch_dev)
-            else:
+            if isinstance(model, PersistenceBaseline):
                 # Persistence baseline returns probs directly
                 probs = model._predict_persistence(batch_dev)
                 logits = torch.logit(torch.clamp(probs, 1e-7, 1-1e-7))
-            
-            probs = torch.sigmoid(logits)
+            else:
+                # STMM model returns logits
+                logits = model(batch_dev)
+                probs = torch.sigmoid(logits)
             
             # Store CPU tensors
             probs_batches.append(probs.detach().cpu())
