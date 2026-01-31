@@ -10,8 +10,7 @@ import pytorch_lightning as pl
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torchmetrics import MetricCollection
-from torchmetrics.classification import BinaryAUROC, BinaryAveragePrecision
+from pathograph.metrics import per_pathogen_metrics, macro_nanmean
 
 
 class STMMPLModule(pl.LightningModule):
@@ -27,25 +26,15 @@ class STMMPLModule(pl.LightningModule):
         # Save hyperparameters
         self.save_hyperparameters(ignore=['model'])
         
-        # Per-pathogen AUROC and AUPRC for validation
-        self.val_auroc = nn.ModuleList([
-            BinaryAUROC() for _ in range(num_pathogens)
-        ])
-        self.val_auprc = nn.ModuleList([
-            BinaryAveragePrecision() for _ in range(num_pathogens)
-        ])
+        # Epoch-level accumulators for validation and test
+        # These will store detached CPU tensors and be computed at epoch end
+        self.val_probs_batches = []
+        self.val_targets_batches = []
+        self.val_mask_batches = []
         
-        # Per-pathogen AUROC and AUPRC for test
-        self.test_auroc = nn.ModuleList([
-            BinaryAUROC() for _ in range(num_pathogens)
-        ])
-        self.test_auprc = nn.ModuleList([
-            BinaryAveragePrecision() for _ in range(num_pathogens)
-        ])
-        
-        # Accumulators for counts
-        self.val_pos_total = 0
-        self.test_pos_total = 0
+        self.test_probs_batches = []
+        self.test_targets_batches = []
+        self.test_mask_batches = []
         
     def _masked_bce_with_logits(
         self,
@@ -152,8 +141,10 @@ class STMMPLModule(pl.LightningModule):
         return loss
     
     def on_validation_epoch_start(self):
-        """Reset counters."""
-        self.val_pos_total = 0
+        """Clear epoch accumulators."""
+        self.val_probs_batches = []
+        self.val_targets_batches = []
+        self.val_mask_batches = []
         
     def validation_step(self, batch: Dict[str, torch.Tensor], batch_idx: int) -> torch.Tensor:
         """Validation step with AUROC and AUPRC."""
@@ -174,88 +165,70 @@ class STMMPLModule(pl.LightningModule):
         acc = self._masked_accuracy(logits, batch['y_next'], batch['y_mask'])
         self.log('val_acc', acc, prog_bar=True, on_step=False, on_epoch=True)
         
-        # Update per-pathogen AUROC and AUPRC with masked samples
+        # Accumulate epoch data for metric computation
         probs = torch.sigmoid(logits)  # (B, N, P)
         targets = batch['y_next']      # (B, N, P)
         mask = batch['y_mask']         # (B, N, P)
         
-        # Update total positives count
-        observed = mask > 0.5
-        positives = (targets > 0.5) & observed
-        self.val_pos_total += positives.sum().item()
-        
-        for p in range(self.num_pathogens):
-            # Extract pathogen p
-            probs_p = probs[:, :, p].flatten()      # (B*N,)
-            targets_p = targets[:, :, p].flatten()  # (B*N,)
-            mask_p = mask[:, :, p].flatten()        # (B*N,)
-            
-            # Filter to observed samples only
-            observed_p = mask_p > 0.5
-            if observed_p.sum() > 0:
-                self.val_auroc[p].update(probs_p[observed_p], targets_p[observed_p].long())
-                self.val_auprc[p].update(probs_p[observed_p], targets_p[observed_p].long())
+        # Store detached CPU tensors
+        self.val_probs_batches.append(probs.detach().cpu())
+        self.val_targets_batches.append(targets.detach().cpu())
+        self.val_mask_batches.append(mask.detach().cpu())
         
         return loss
     
     def on_validation_epoch_end(self):
-        """Compute and log macro-averaged AUROC and AUPRC."""
-        auroc_scores = []
-        auprc_scores = []
-        valid_pathogens = 0
-        excluded_pathogens = 0
+        """Compute and log epoch-level metrics using accumulated data."""
+        if len(self.val_probs_batches) == 0:
+            return  # No validation data
         
+        # Concatenate all batches
+        probs_all = torch.cat(self.val_probs_batches, dim=0)  # (B_total, N, P)
+        targets_all = torch.cat(self.val_targets_batches, dim=0)
+        mask_all = torch.cat(self.val_mask_batches, dim=0)
+        
+        # Compute per-pathogen metrics using new library
+        import numpy as np
+        result = per_pathogen_metrics(probs_all, targets_all, mask_all)
+        
+        # Extract metrics
+        auroc_array = result['auroc']  # (P,) numpy array
+        auprc_array = result['auprc']
+        valid_array = result['valid']
+        pos_array = result['pos']
+        neg_array = result['neg']
+        
+        # Log per-pathogen metrics
         for p in range(self.num_pathogens):
-            auroc_p = float('nan')
-            auprc_p = float('nan')
-            
-            try:
-                # Compute might fail if 0 samples or degenerate (all 0 or all 1)
-                # TorchMetrics usually raises ValueError or returns 0/1 depending on config
-                # We enforce NaN for degeneracy
-                auroc_val = self.val_auroc[p].compute()
-                auprc_val = self.val_auprc[p].compute()
-                
-                # Check for validity (finite)
-                if torch.isfinite(auroc_val) and torch.isfinite(auprc_val):
-                    auroc_p = auroc_val
-                    auprc_p = auprc_val
-            except (ValueError, RuntimeError):
-                # Degenerate case (e.g. no positive samples)
-                pass
-            
-            # Only include if valid (not NaN)
-            if not torch.isnan(torch.tensor(auroc_p)) and not torch.isnan(torch.tensor(auprc_p)):
-                auroc_scores.append(auroc_p)
-                auprc_scores.append(auprc_p)
-                valid_pathogens += 1
-            else:
-                excluded_pathogens += 1
-            
-            # Log per-pathogen metrics (can be NaN)
-            self.log(f'val_auroc_p{p}', auroc_p, on_epoch=True)
-            self.log(f'val_auprc_p{p}', auprc_p, on_epoch=True)
-            
-            # Reset for next epoch
-            self.val_auroc[p].reset()
-            self.val_auprc[p].reset()
+            self.log(f'val_auroc_p{p}', float(auroc_array[p]), on_epoch=True)
+            self.log(f'val_auprc_p{p}', float(auprc_array[p]), on_epoch=True)
+            self.log(f'val_valid_p{p}', float(valid_array[p]), on_epoch=True)
+            self.log(f'val_pos_p{p}', float(pos_array[p]), on_epoch=True)
+            self.log(f'val_neg_p{p}', float(neg_array[p]), on_epoch=True)
         
-        # Macro average across pathogens
-        if len(auroc_scores) > 0:
-            macro_auroc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auroc_scores]).mean()
-            self.log('val_auroc_macro', macro_auroc, prog_bar=True, on_epoch=True)
+        # Compute macro metrics (NaN-excluding)
+        macro_auroc, n_auroc = macro_nanmean(auroc_array)
+        macro_auprc, n_auprc = macro_nanmean(auprc_array)
         
-        if len(auprc_scores) > 0:
-            macro_auprc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auprc_scores]).mean()
-            self.log('val_auprc_macro', macro_auprc, prog_bar=True, on_epoch=True)
-            
-        # Log counts
-        self.log('val_pos_total', float(self.val_pos_total), on_epoch=True)
-        self.log('macro_valid_pathogens', float(valid_pathogens), on_epoch=True)
+        self.log('val_auroc_macro', float(macro_auroc), prog_bar=True, on_epoch=True)
+        self.log('val_auprc_macro', float(macro_auprc), prog_bar=True, on_epoch=True)
+        self.log('val_n_valid_auroc', float(n_auroc), on_epoch=True)
+        self.log('val_n_valid_auprc', float(n_auprc), on_epoch=True)
+        
+        # Log totals
+        self.log('val_pos_total', float(pos_array.sum()), on_epoch=True)
+        self.log('val_valid_total', float(valid_array.sum()), on_epoch=True)
+        
+        # Clear accumulators
+        self.val_probs_batches = []
+        self.val_targets_batches = []
+        self.val_mask_batches = []
     
     def on_test_epoch_start(self):
-        """Reset counters."""
-        self.test_pos_total = 0
+        """Clear epoch accumulators."""
+        self.test_probs_batches = []
+        self.test_targets_batches = []
+        self.test_mask_batches = []
 
     def test_step(self, batch: Dict[str, torch.Tensor], batch_idx: int) -> torch.Tensor:
         """Test step with AUROC and AUPRC."""
@@ -276,79 +249,64 @@ class STMMPLModule(pl.LightningModule):
         acc = self._masked_accuracy(logits, batch['y_next'], batch['y_mask'])
         self.log('test_acc', acc, on_step=False, on_epoch=True)
         
-        # Update per-pathogen AUROC and AUPRC with masked samples
+        # Accumulate epoch data for metric computation
         probs = torch.sigmoid(logits)  # (B, N, P)
         targets = batch['y_next']      # (B, N, P)
         mask = batch['y_mask']         # (B, N, P)
         
-        # Update total positives count
-        observed = mask > 0.5
-        positives = (targets > 0.5) & observed
-        self.test_pos_total += positives.sum().item()
-        
-        for p in range(self.num_pathogens):
-            # Extract pathogen p
-            probs_p = probs[:, :, p].flatten()      # (B*N,)
-            targets_p = targets[:, :, p].flatten()  # (B*N,)
-            mask_p = mask[:, :, p].flatten()        # (B*N,)
-            
-            # Filter to observed samples only
-            observed_p = mask_p > 0.5
-            if observed_p.sum() > 0:
-                self.test_auroc[p].update(probs_p[observed_p], targets_p[observed_p].long())
-                self.test_auprc[p].update(probs_p[observed_p], targets_p[observed_p].long())
+        # Store detached CPU tensors
+        self.test_probs_batches.append(probs.detach().cpu())
+        self.test_targets_batches.append(targets.detach().cpu())
+        self.test_mask_batches.append(mask.detach().cpu())
         
         return loss
     
     def on_test_epoch_end(self):
-        """Compute and log macro-averaged AUROC and AUPRC for test."""
-        auroc_scores = []
-        auprc_scores = []
-        valid_pathogens = 0
-        excluded_pathogens = 0
+        """Compute and log epoch-level test metrics using accumulated data."""
+        if len(self.test_probs_batches) == 0:
+            return  # No test data
         
+        # Concatenate all batches
+        probs_all = torch.cat(self.test_probs_batches, dim=0)  # (B_total, N, P)
+        targets_all = torch.cat(self.test_targets_batches, dim=0)
+        mask_all = torch.cat(self.test_mask_batches, dim=0)
+        
+        # Compute per-pathogen metrics using new library
+        import numpy as np
+        result = per_pathogen_metrics(probs_all, targets_all, mask_all)
+        
+        # Extract metrics
+        auroc_array = result['auroc']  # (P,) numpy array
+        auprc_array = result['auprc']
+        valid_array = result['valid']
+        pos_array = result['pos']
+        neg_array = result['neg']
+        
+        # Log per-pathogen metrics
         for p in range(self.num_pathogens):
-            auroc_p = float('nan')
-            auprc_p = float('nan')
-            
-            try:
-                auroc_val = self.test_auroc[p].compute()
-                auprc_val = self.test_auprc[p].compute()
-                
-                if torch.isfinite(auroc_val) and torch.isfinite(auprc_val):
-                    auroc_p = auroc_val
-                    auprc_p = auprc_val
-            except (ValueError, RuntimeError):
-                pass
-            
-            # Only include if valid (not NaN)
-            if not torch.isnan(torch.tensor(auroc_p)) and not torch.isnan(torch.tensor(auprc_p)):
-                auroc_scores.append(auroc_p)
-                auprc_scores.append(auprc_p)
-                valid_pathogens += 1
-            else:
-                excluded_pathogens += 1
-            
-            # Log per-pathogen metrics
-            self.log(f'test_auroc_p{p}', auroc_p, on_epoch=True)
-            self.log(f'test_auprc_p{p}', auprc_p, on_epoch=True)
-            
-            # Reset after test
-            self.test_auroc[p].reset()
-            self.test_auprc[p].reset()
+            self.log(f'test_auroc_p{p}', float(auroc_array[p]), on_epoch=True)
+            self.log(f'test_auprc_p{p}', float(auprc_array[p]), on_epoch=True)
+            self.log(f'test_valid_p{p}', float(valid_array[p]), on_epoch=True)
+            self.log(f'test_pos_p{p}', float(pos_array[p]), on_epoch=True)
+            self.log(f'test_neg_p{p}', float(neg_array[p]), on_epoch=True)
         
-        # Macro average across pathogens
-        if len(auroc_scores) > 0:
-            macro_auroc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auroc_scores]).mean()
-            self.log('test_auroc_macro', macro_auroc, on_epoch=True)
+        # Compute macro metrics (NaN-excluding)
+        macro_auroc, n_auroc = macro_nanmean(auroc_array)
+        macro_auprc, n_auprc = macro_nanmean(auprc_array)
         
-        if len(auprc_scores) > 0:
-            macro_auprc = torch.stack([x if isinstance(x, torch.Tensor) else torch.tensor(x) for x in auprc_scores]).mean()
-            self.log('test_auprc_macro', macro_auprc, on_epoch=True)
-            
-        # Log counts
-        self.log('test_pos_total', float(self.test_pos_total), on_epoch=True)
-        self.log('macro_valid_pathogens', float(valid_pathogens), on_epoch=True)
+        self.log('test_auroc_macro', float(macro_auroc), on_epoch=True)
+        self.log('test_auprc_macro', float(macro_auprc), on_epoch=True)
+        self.log('test_n_valid_auroc', float(n_auroc), on_epoch=True)
+        self.log('test_n_valid_auprc', float(n_auprc), on_epoch=True)
+        
+        # Log totals
+        self.log('test_pos_total', float(pos_array.sum()), on_epoch=True)
+        self.log('test_valid_total', float(valid_array.sum()), on_epoch=True)
+        
+        # Clear accumulators
+        self.test_probs_batches = []
+        self.test_targets_batches = []
+        self.test_mask_batches = []
 
     
     def configure_optimizers(self) -> torch.optim.Optimizer:
