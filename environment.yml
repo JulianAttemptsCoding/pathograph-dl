@@ -1,0 +1,23 @@
+name: pathograph-train
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pyyaml
+  - pandas
+  - scipy
+  - scikit-learn
+  - fsspec
+  - gcsfs
+  - zarr
+  - numcodecs
+  - pytest
+  - pytorch::pytorch
+  - pytorch::pytorch-lightning
+  - pytorch::torchmetrics
+  - pip:
+      - python-json-logger>=2.0.0
