@@ -190,4 +190,20 @@ tools/_diagnose_all.ps1
 
 data/processed/
 runs/
+.pytest_cache/# Python build / cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
 .pytest_cache/
+
+# Local runs / data
+runs/
+data/processed/
+
+# Recovery scratch
+.recovery_v2/
+.recovery_v2_pkgs.txt
