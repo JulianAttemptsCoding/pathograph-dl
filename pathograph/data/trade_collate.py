@@ -112,4 +112,12 @@ def trade_collate_separate(batch: List[Dict[str, np.ndarray]]) -> Dict[str, "obj
             data["y_mask"] = y_mask
         data["y_next"] = y_next
 
+    if "y_incident" in batch[0]:
+        y_incident = torch.stack([_as_torch(b["y_incident"]).to(torch.float32) for b in batch], dim=0)
+        if "y_incident_mask" in batch[0]:
+            y_incident_mask = torch.stack([_as_torch(b["y_incident_mask"]).to(torch.uint8) for b in batch], dim=0)
+            y_incident = y_incident * y_incident_mask.to(torch.float32)
+            data["y_incident_mask"] = y_incident_mask
+        data["y_incident"] = y_incident
+
     return data

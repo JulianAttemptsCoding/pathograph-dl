@@ -36,6 +36,7 @@ class TradeDataModuleConfig:
     # Target config
     return_targets: bool = False
     target_kind: Literal["base", "risk", "both", "status"] = "base"
+    label_mode: Literal["status", "incident"] = "status"
     include_target_masks: bool = True
     
     # Pathogen status target (only used when target_kind="status")
@@ -97,6 +98,7 @@ class TradeDataModule(pl.LightningDataModule):
             return_mode="separate",
             return_targets=c.return_targets,
             target_kind=c.target_kind,
+            label_mode=c.label_mode,
             include_target_masks=c.include_target_masks,
             pathogen_zarr_path=c.pathogen_zarr_path,
             climate_zarr_path=c.climate_zarr_path,

@@ -36,6 +36,7 @@ class TradeDatasetConfig:
     # Target config
     return_targets: bool = False
     target_kind: Literal["base", "risk", "both", "status"] = "base"
+    label_mode: Literal["status", "incident"] = "status"
     include_target_masks: bool = True
     # Future-proofing: implicit "target_transform" is assumed "same_as_inputs" for now.
     
@@ -227,6 +228,9 @@ class TradeDatasetZarr:
                 if self.pathogen_h is None:
                     raise ValueError("pathogen_h not loaded but require_kind is status")
                 status_m = self.pathogen_h.status_mask[t_y]
+                if cfg.label_mode == "incident":
+                    prev_m = self.pathogen_h.status_mask[t]
+                    status_m = status_m & prev_m
                 status_count = int(np.count_nonzero(status_m != 0))
                 status_ok = status_count >= min_obs
             
@@ -394,6 +398,19 @@ class TradeDatasetZarr:
                 targets["y_next"] = y_status.astype(np.float32)
                 if self.cfg.include_target_masks:
                     targets["y_mask"] = y_status_m
+                
+                # Incident mode specific targets
+                if self.cfg.label_mode == "incident":
+                    prev = self.pathogen_h.status[t, :, :] 
+                    future = y_status
+                    y_incident = ((future == 1) & (prev == 0)).astype(np.float32)
+                    
+                    prev_m = self.pathogen_h.status_mask[t, :, :].astype(np.uint8)
+                    mask_incident = y_status_m & prev_m
+                    
+                    targets["y_incident"] = y_incident
+                    if self.cfg.include_target_masks:
+                        targets["y_incident_mask"] = mask_incident
 
         if self.cfg.return_mode == "separate":
             ret = {
