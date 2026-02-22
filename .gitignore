@@ -187,3 +187,7 @@ tp_*.json
 tools/_tmp_*.py
 tools/_tmp_*.ps1
 tools/_diagnose_all.ps1
+
+data/processed/
+runs/
+.pytest_cache/
