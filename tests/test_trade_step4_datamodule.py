@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import numpy as np
+from conftest import require_local_zarr, TRADE_BASE_ZARR, TRADE_RISK_ZARR
 
 
 def test_trade_step4_datamodule_shapes():
+    require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
     try:
         import torch  # noqa: F401
     except Exception:

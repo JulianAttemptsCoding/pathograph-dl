@@ -7,7 +7,7 @@ import os
 import shutil
 import zipfile
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, UTC
 
 def _sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -210,7 +210,7 @@ def main() -> None:
             "sha256": sha,
             "was_zip": was_zip,
             "request": request,
-            "created_at": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+            "created_at": datetime.now(UTC).isoformat(timespec="seconds") + "Z",
         }
         if archive_sha:
             entry["archive_sha256"] = archive_sha

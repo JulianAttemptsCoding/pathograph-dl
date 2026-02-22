@@ -11,7 +11,7 @@ import hashlib
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, UTC
 from pathlib import Path
 
 import numpy as np
@@ -328,7 +328,7 @@ def main() -> None:
             "year_end": baseline_end,
         },
         "compute_zscore": compute_zscore,
-        "created_at": datetime.utcnow().isoformat(timespec="seconds") + "Z",
+        "created_at": datetime.now(UTC).isoformat(timespec="seconds") + "Z",
     }
     
     manifest_path = output_dir / "manifest_anomalies.json"

@@ -10,7 +10,7 @@ import hashlib
 import json
 import sys
 from dataclasses import asdict, dataclass
-from datetime import datetime
+from datetime import datetime, UTC
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -106,7 +106,7 @@ def verify_artifacts(
     import zarr
 
     errors: List[str] = []
-    timestamp = datetime.utcnow().isoformat() + "Z"
+    timestamp = datetime.now(UTC).isoformat() + "Z"
 
     # Inspect Zarr groups
     try:

@@ -6,10 +6,12 @@ This test would have failed before the fix (when losses were NaN) and must pass 
 import subprocess
 import re
 from pathlib import Path
+from conftest import require_local_zarr, TRADE_BASE_ZARR, TRADE_RISK_ZARR
 
 
 def test_fast_dev_run_produces_finite_losses():
     """Run STMM fast-dev-run and assert losses are finite (not NaN/Inf)."""
+    require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
     # Ensure we're running from repo root
     repo_root = Path(__file__).parent.parent
     config_path = repo_root / "config" / "stmm_stepA.yaml"

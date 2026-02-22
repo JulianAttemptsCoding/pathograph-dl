@@ -102,7 +102,7 @@ def main():
     root.attrs['months'] = months
     root.attrs['channels'] = channels
     root.attrs['node_count'] = N
-    root.attrs['created_at'] = datetime.datetime.utcnow().isoformat()
+    root.attrs['created_at'] = datetime.datetime.now(datetime.UTC).isoformat()
     
     # 5. QC Report
     non_zeros = int(np.count_nonzero(tensor))

@@ -7,7 +7,7 @@ import math
 import os
 import zipfile
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, UTC
 
 import numpy as np
 import pandas as pd
@@ -576,7 +576,7 @@ def main() -> None:
             "rows": int(len(out_df)),
             "fallback_centroid_count": int(fallback_count),
             "units_seen": units_seen,
-            "created_at": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+            "created_at": datetime.now(UTC).isoformat(timespec="seconds") + "Z"
         }
         man_path = man_dir / f"era5_country_month_manifest_{year}.json"
         tmp = man_path.with_suffix(".json.tmp")

@@ -6,7 +6,7 @@ import json
 import os
 from glob import glob
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, UTC
 
 import numpy as np
 import pandas as pd
@@ -149,7 +149,7 @@ def main() -> None:
         },
         "parquet_files_count": len(files),
         "filled_cells": int(filled_cells),
-        "created_at": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+        "created_at": datetime.now(UTC).isoformat(timespec="seconds") + "Z"
     }
 
     man_path = man_dir / "climate_step3_tensor_manifest.json"

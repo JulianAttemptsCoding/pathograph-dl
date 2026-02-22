@@ -13,7 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime
+from datetime import datetime, UTC
 from pathlib import Path
 
 import numpy as np
@@ -432,7 +432,7 @@ def main() -> None:
     report_json = Path("data/processed/preprocessing_acceptance_report.json")
     report_txt = Path("data/processed/preprocessing_acceptance_report.txt")
     
-    results["created_at"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    results["created_at"] = datetime.now(UTC).isoformat(timespec="seconds") + "Z"
     
     with report_json.open("w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)

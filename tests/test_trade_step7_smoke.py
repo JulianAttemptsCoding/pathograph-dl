@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from conftest import require_local_zarr, TRADE_BASE_ZARR, TRADE_RISK_ZARR
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -40,6 +41,7 @@ class TestStep7VerifyArtifacts:
     
     def test_verify_artifacts_runs(self, setup_teardown):
         """Verify artifacts script runs and produces output."""
+        require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
         output_path = TEMP_RUN_DIR / "artifact_verification.json"
         TEMP_RUN_DIR.mkdir(parents=True, exist_ok=True)
         
@@ -68,6 +70,7 @@ class TestStep7VerifyArtifacts:
 
     def test_verify_artifacts_detects_shapes(self, setup_teardown):
         """Verify that shape information is extracted correctly."""
+        require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
         output_path = TEMP_RUN_DIR / "artifact_verification_shapes.json"
         
         result = subprocess.run(
@@ -107,6 +110,7 @@ class TestStep7SmokeRun:
     
     def test_smoke_run_completes(self, setup_teardown):
         """Test that smoke run completes and produces outputs."""
+        require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
         run_dir = TEMP_RUN_DIR / "smoke_run"
         
         result = subprocess.run(
@@ -134,6 +138,7 @@ class TestStep7SmokeRun:
     
     def test_smoke_run_produces_checkpoint(self, setup_teardown):
         """Test that smoke run produces at least one checkpoint."""
+        require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
         run_dir = TEMP_RUN_DIR / "smoke_run_ckpt"
         
         result = subprocess.run(

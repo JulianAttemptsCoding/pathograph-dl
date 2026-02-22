@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from pathograph.data.trade_datamodule import TradeDataModule, TradeDataModuleConfig
 from pathograph.data.trade_dataset import TradeSplit
+from conftest import require_local_zarr, TRADE_BASE_ZARR, TRADE_RISK_ZARR
 
 
 def convert_splits(cfg_dict):
@@ -43,6 +44,7 @@ def test_time_alignment_and_target_shapes():
     3. y_mask.shape == (B, 194, 8)
     4. y_mask has at least one positive value (non-empty targets)
     """
+    require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
     cfg_path = Path("config/stmm_stepA.yaml")
     assert cfg_path.exists(), f"Missing {cfg_path}"
     

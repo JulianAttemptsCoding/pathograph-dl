@@ -18,7 +18,7 @@ import os
 import shutil
 import subprocess
 import sys
-from datetime import datetime
+from datetime import datetime, UTC
 from pathlib import Path
 from typing import List, Optional
 
@@ -63,7 +63,7 @@ def get_env_info() -> dict:
     """Get Python, PyTorch, and CUDA version info."""
     info = {
         "python": sys.version,
-        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "timestamp": datetime.now(UTC).isoformat() + "Z",
     }
     try:
         import torch

@@ -10,11 +10,13 @@ import sys
 from pathlib import Path
 
 import pytest
+from conftest import require_local_zarr, TRADE_BASE_ZARR, TRADE_RISK_ZARR
 
 
 @pytest.mark.slow
 def test_stmm_stepA_fast_dev_run_smoke():
     """Test that training entrypoint runs without error."""
+    require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
     # Run the training script with fast-dev-run
     result = subprocess.run(
         [

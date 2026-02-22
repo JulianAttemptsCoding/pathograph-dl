@@ -139,7 +139,7 @@ def main():
             
             # Simplified mock payload
             mock_data = {
-                "header": {"id": "MOCK", "test": True, "prepared": datetime.datetime.utcnow().isoformat()},
+                "header": {"id": "MOCK", "test": True, "prepared": datetime.datetime.now(datetime.UTC).isoformat()},
                 "dataSets": [{
                     "action": "Information",
                     "series": {}
@@ -207,7 +207,7 @@ def main():
 
     # 4. Write manifest
     manifest = {
-        "created_at_utc": datetime.datetime.utcnow().isoformat() + "Z",
+        "created_at_utc": datetime.datetime.now(datetime.UTC).isoformat() + "Z",
         "params": vars(args),
         "dimension_order": ordered_ids,
         "downloads": manifest_entries

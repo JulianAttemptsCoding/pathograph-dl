@@ -28,7 +28,7 @@ def sha256_str(s: str) -> str:
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
 
 def log_request(log_dir: Path, endpoint_name: str, tag: str, url: str, code: int, headers_sent: dict, response_body: str):
-    ts = datetime.datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    ts = datetime.datetime.now(datetime.UTC).strftime("%Y%m%d_%H%M%S")
     h = sha256_str(url)[:8]
     fname = f"{endpoint_name}_{tag}_{ts}_{h}.txt"
     with open(log_dir / fname, "w", encoding="utf-8") as f:

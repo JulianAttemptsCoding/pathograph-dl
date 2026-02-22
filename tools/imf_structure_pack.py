@@ -431,7 +431,7 @@ def main():
 
     # Step 6: write pack manifest
     manifest = {
-        "created_at_utc": datetime.datetime.utcnow().isoformat() + "Z",
+        "created_at_utc": datetime.datetime.now(datetime.UTC).isoformat() + "Z",
         "base_url": base,
         "dots_flow_id": dots_flow_id,
         "dsd_id_used": dsd_id_used,

@@ -3,9 +3,11 @@ import os
 import numpy as np
 
 from pathograph.data.trade_dataset import TradeDatasetConfig, TradeDatasetZarr
+from conftest import require_local_zarr, TRADE_BASE_ZARR, TRADE_RISK_ZARR
 
 
 def test_trade_step3_dataset_shapes_and_alignment():
+    require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
     base = "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr"
     risk = "data/processed/trade/faostat_step2/trade_risk_tensor.zarr"
     scaler = "data/processed/trade/trade_step3_scaler.json"
@@ -40,6 +42,7 @@ def test_trade_step3_dataset_shapes_and_alignment():
 
 
 def test_trade_step3_concat_mode_feature_dim():
+    require_local_zarr(TRADE_BASE_ZARR, TRADE_RISK_ZARR)
     base = "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr"
     risk = "data/processed/trade/faostat_step2/trade_risk_tensor.zarr"
     scaler = "data/processed/trade/trade_step3_scaler.json"
