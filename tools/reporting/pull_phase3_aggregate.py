@@ -6,6 +6,9 @@ from pathlib import Path
 
 
 def sh(cmd: list[str]) -> str:
+    import platform
+    if platform.system() == "Windows" and cmd[0] == "gcloud":
+        cmd[0] = "gcloud.cmd"
     return subprocess.check_output(cmd, text=True, stderr=subprocess.STDOUT)
 
 

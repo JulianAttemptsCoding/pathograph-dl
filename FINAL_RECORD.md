@@ -10,22 +10,22 @@
 
 ## Freeze Record (Adaptive Champion)
 
-- **package**: `gs://pathograph-057a2273fe-data/packages/pathograph_adaptive_calib_20260221.tar.gz` — ❌ TODO_NOT_FOUND
-- **config**: `gs://pathograph-057a2273fe-data/configs/stmm_stepA_adaptive.yaml` — ❌ TODO_NOT_FOUND
-- **best_ckpt**: `gs://pathograph-057a2273fe-data/runs/stepA/phase2/adaptive_s1338/epoch=8-step=7128-val_auroc_macro=0.9771.ckpt` — ❌ TODO_NOT_FOUND
-- **phase2_run_prefix**: `gs://pathograph-057a2273fe-data/runs/stepA/phase2/adaptive_s1338` — ❌ TODO_NOT_FOUND
+- **package**: `gs://pathograph-057a2273fe-data/packages/pathograph_adaptive_calib_20260221.tar.gz` — ✅ OK
+- **config**: `gs://pathograph-057a2273fe-data/configs/stmm_stepA_adaptive.yaml` — ✅ OK
+- **best_ckpt**: `gs://pathograph-057a2273fe-data/runs/stepA/phase2/adaptive_s1338/epoch=8-step=7128-val_auroc_macro=0.9771.ckpt` — ✅ OK
+- **phase2_run_prefix**: `gs://pathograph-057a2273fe-data/runs/stepA/phase2/adaptive_s1338` — ✅ OK
 
 ## Phase 3 Aggregate (GCS)
 
-- Aggregate prefix: `gs://pathograph-057a2273fe-data/runs/stepA/phase3/_aggregate` — ❌ TODO_NOT_FOUND
+- Aggregate prefix: `gs://pathograph-057a2273fe-data/runs/stepA/phase3/_aggregate` — ✅ OK
 - Reports prefix:   `gs://pathograph-057a2273fe-data/runs/stepA/phase3/_reports` — ❌ TODO_NOT_FOUND
 
 ### Headline Test Metrics (Phase 3 Calibrated Summary)
 
-- `test_auroc_macro`: TODO (not found in aggregate CSV)
-- `test_auprc_macro`: TODO (not found in aggregate CSV)
-- `test_brier_macro`: TODO (not found in aggregate CSV)
-- `test_ece_macro`: TODO (not found in aggregate CSV)
+- `test_auroc_macro`: mean=0.9604  std=0.0099  min=0.9528  max=0.9717
+- `test_auprc_macro`: mean=0.7849  std=0.0579  min=0.7128  max=0.8563
+- `test_brier_macro`: mean=0.0214  std=0.0033  min=0.0179  max=0.0244
+- `test_ece_macro`: mean=0.0197  std=0.0036  min=0.0157  max=0.0244
 
 ## Notes
 
