@@ -207,3 +207,19 @@ data/processed/
 # Recovery scratch
 .recovery_v2/
 .recovery_v2_pkgs.txt
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Local runs / data
+runs/
+data/processed/
+
+# Recovery scratch
+.recovery_v2/
+.recovery_v2_pkgs.txt
