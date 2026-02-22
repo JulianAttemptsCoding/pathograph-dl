@@ -1,0 +1,48 @@
+---
+# Incident Overfit Pilot Record
+# Frozen at: 2026-02-22
+
+metadata:
+  experiment: incident_overfit_pilot
+  created: "2026-02-22"
+  git_commit: 763e4c9654b24c7dd035e4615209118bff65ddbd
+  branch: feature/incident-overfit-vertex
+  intent: >
+    Run a single seed (1337) of the baseline family in incident mode for up to 200 epochs
+    with early stopping explicitly disabled. The goal is to study overfit divergence
+    longitudinally, observing when the training loss separates from validation loss.
+
+# ─────────────────────────────────────────────────────
+# Artifacts
+# ─────────────────────────────────────────────────────
+artifacts:
+  # To be filled after GCS upload of the tar.gz payload
+  package_uri: gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222.tar.gz
+  config_uri: gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit.yaml
+  dataset_prefix: gs://pathograph-057a2273fe-data/datasets/stepA/v1
+  output_prefix: gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337
+
+# ─────────────────────────────────────────────────────
+# Overfit Target Rules
+# ─────────────────────────────────────────────────────
+overfit_stop_rule:
+  - "Train signal: train_loss decreases OR train metric increases steadily."
+  - "Val signal: val_loss increases for >= 3 consecutive epochs OR exceeds best val_loss by >= 1-2% for >= 3 epochs."
+  - "Action: Stop manually in the Vertex UI when divergence is stable. Do NOT use test metrics for stopping decisions."
+
+# ─────────────────────────────────────────────────────
+# Evaluation Rules (Post-Training)
+# ─────────────────────────────────────────────────────
+post_train_eval_rule:
+  - "Select 3 specific checkpoints from the GCS output prefix:"
+  - "  a) best val_loss (epoch X)"
+  - "  b) last recorded epoch before manual stop (epoch Y)"
+  - "  c) a clearly overfit epoch midway between best and last (epoch Z)"
+  - "Run a separate Vertex eval job on each of these 3 chosen checkpoints ONLY after the training job is finished."
+  - "Compare test metrics across epochs to document precisely how overfitting degraded rare-event recall/precision."
+
+# ─────────────────────────────────────────────────────
+# Rare Event Metrics Baseline
+# ─────────────────────────────────────────────────────
+rare_event_metric_baseline:
+  - "Random AUPRC baseline ≈ prevalence = test_pos_total / test_valid_total (or equivalent logged keys from metrics.csv)."
