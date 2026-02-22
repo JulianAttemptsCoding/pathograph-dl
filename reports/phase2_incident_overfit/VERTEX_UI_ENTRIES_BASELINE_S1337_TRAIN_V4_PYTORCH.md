@@ -1,6 +1,6 @@
-# Vertex UI Entry: Incident Overfit Pilot (v3 - PyTorch Fix)
+# Vertex UI Entry: Incident Overfit Pilot (v4 - Arguments Fix)
 
-**Model Name:** `stepA_phase2_incident_overfit_baseline_s1337_train_v3_pytorch`
+**Model Name:** `stepA_phase2_incident_overfit_baseline_s1337_train_v4_pytorch`
 
 If you are using the UI to submit the job, **you must explicitly avoid the TensorFlow container**. 
 
@@ -16,7 +16,7 @@ Choose **Pre-built container**:
 
 ### 2. Package Settings
 **Python module:** `pathograph.vertex.stepA_entry`
-**Package URI:** `gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v3.tar.gz`
+**Package URI:** `gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v4.tar.gz`
 
 ### 3. Arguments
 (Add these one by one using the "Add Argument" button)
@@ -37,6 +37,6 @@ Instead of clicking through the UI, you can deterministically launch the correct
 gcloud ai custom-jobs create `
   --region=us-central1 `
   --project=727252250786 `
-  --display-name=stepA_phase2_incident_overfit_baseline_s1337_train_v3_pytorch `
-  --config=vertex_specs/incident_overfit/stepA_overfit_baseline_s1337_train_v3_pytorch.json
+  --display-name=stepA_phase2_incident_overfit_baseline_s1337_train_v4_pytorch `
+  --config=vertex_specs/incident_overfit/stepA_overfit_baseline_s1337_train_v4_pytorch.json
 ```
