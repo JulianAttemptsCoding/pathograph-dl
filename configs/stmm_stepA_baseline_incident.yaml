@@ -85,14 +85,14 @@ logging:
   logger: tensorboard
   name: baseline_incident
 checkpoint:
-  monitor: val_auprc_macro
-  mode: max
+  monitor: val_loss
+  mode: min
   save_top_k: 3
   save_last: true
   save_on_train_epoch_end: false
 early_stopping:
-  monitor: val_auprc_macro
-  mode: max
+  monitor: val_loss
+  mode: min
   patience: 12
   min_delta: 0.0005
 run:
