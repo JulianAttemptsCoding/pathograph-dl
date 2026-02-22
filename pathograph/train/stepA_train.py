@@ -14,7 +14,8 @@ def main(argv=None):
     try:
         sys.argv = ["stmm_stepA_train"] + argv
         if hasattr(impl, "main"):
-            return impl.main()
+            rc = impl.main()
+            return 0 if rc is None else int(rc)
         # Fallback: if tools module doesn't expose main(), execute module-level entrypoint
         if hasattr(impl, "__dict__") and "__name__" in impl.__dict__:
             return 0

@@ -29,6 +29,12 @@ def main():
     parser.add_argument('--fast-dev-run', action='store_true', help='Run minimal dev loop')
     parser.add_argument('--seed', type=int, default=None, help='Random seed')
     parser.add_argument('--run_dir', type=str, default=None, help='Override run directory')
+    parser.add_argument(
+        '--output_dir',
+        type=str,
+        default=None,
+        help='Deprecated alias for --run_dir (kept for backward compatibility)',
+    )
     parser.add_argument('--max_epochs', type=int, default=None, help='Override max epochs')
     parser.add_argument('--early_stop_metric', type=str, default=None, help='Early stopping metric')
     args = parser.parse_args()
@@ -44,9 +50,15 @@ def main():
     torch.manual_seed(seed)
     pl.seed_everything(seed, workers=True)
     
+    # Backward compatibility: prefer --run_dir; fall back to legacy --output_dir.
+    if args.run_dir and args.output_dir and args.run_dir != args.output_dir:
+        parser.error('--run_dir and --output_dir were both provided with different values')
+
+    effective_run_dir = args.run_dir or args.output_dir
+
     # Create run directory
-    if args.run_dir:
-        run_dir = Path(args.run_dir)
+    if effective_run_dir:
+        run_dir = Path(effective_run_dir)
     else:
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         run_dir = Path('runs') / 'stmm_stepA' / timestamp
@@ -116,7 +128,8 @@ def main():
     trainer.fit(pl_module, datamodule=dm)
     
     print(f"Training complete. Logs/checkpoints saved to: {run_dir}")
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

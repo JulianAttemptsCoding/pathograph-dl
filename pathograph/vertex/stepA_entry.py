@@ -143,7 +143,7 @@ def main(argv: list[str] | None = None) -> int:
     
     train_argv = [
         '--config', str(config_local),
-        '--output_dir', str(output_dir),
+        '--run_dir', str(output_dir),
     ]
     
     if args.fast_dev_run:
