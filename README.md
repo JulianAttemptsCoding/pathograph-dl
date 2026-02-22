@@ -15,6 +15,13 @@ pytest -q
 python -m build --sdist
 ```
 
+## Quick Start: Staging Data
+
+To stage the required v1 datasets locally from GCS (`gs://pathograph-057a2273fe-data/datasets/stepA/v1`):
+
+```powershell
+.\tools\stage_stepA_v1_from_gcs.ps1
+```
 ## Project Structure
 
 | Directory | Purpose |
