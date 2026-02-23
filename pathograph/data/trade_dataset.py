@@ -58,6 +58,7 @@ class TradeDatasetConfig:
     min_target_observed: int = 1
     require_target_observed_kind: Optional[Literal["base", "risk", "both", "status"]] = None
     valid_t_cache_dir: Optional[str] = None
+    debug_guard: bool = False
 
 
 def _month_of_year_from_t(t: int) -> int:
@@ -333,15 +334,15 @@ class TradeDatasetZarr:
             risk_std = np.array(sc["risk"]["std"], dtype=np.float32)
 
         # Apply Transforms to Inputs
-        if self.cfg.apply_log1p:
-            base_trade = np.log1p(np.maximum(base_trade, 0.0))
-            risk_trade = np.log1p(np.maximum(risk_trade, 0.0))
-            
         if self.cfg.standardize:
             base_trade = self._apply_transforms(base_trade, base_mean, base_std)
             risk_flat = risk_trade.reshape((L, self.h.N, self.h.N, self.h.K * 2))
             risk_flat = self._apply_transforms(risk_flat, risk_mean, risk_std)
             risk_trade = risk_flat.reshape((L, self.h.N, self.h.N, self.h.K, 2))
+        else:
+            if self.cfg.apply_log1p:
+                base_trade = np.log1p(np.maximum(base_trade, 0.0))
+                risk_trade = np.log1p(np.maximum(risk_trade, 0.0))
         
         # Prepare targets if requested
         targets = {}
@@ -446,6 +447,16 @@ class TradeDatasetZarr:
                 
             for k, v in ret.items():
                 if isinstance(v, np.ndarray) and np.issubdtype(v.dtype, np.floating):
+                    # Runtime explicit guards requested by user
+                    if self.cfg.debug_guard:
+                        if not np.isfinite(v).all():
+                            raise ValueError(f"FATAL: Non-finite values detected in batch key {k} at t={t}")
+                        vmax = np.abs(v).max()
+                        if vmax > 1e4:
+                            raise ValueError(f"FATAL: Scale explosion detected in batch key {k}. "
+                                             f"Max abs value {vmax} > 1e4 at t={t}. "
+                                             f"Config: standardize={self.cfg.standardize}, apply_log1p={self.cfg.apply_log1p}")
+                                         
                     ret[k] = np.nan_to_num(v, nan=0.0, posinf=0.0, neginf=0.0)
                     
             return ret
@@ -484,6 +495,16 @@ class TradeDatasetZarr:
             
         for k, v in ret.items():
             if isinstance(v, np.ndarray) and np.issubdtype(v.dtype, np.floating):
+                # Runtime explicit guards requested by user
+                if self.cfg.debug_guard:
+                    if not np.isfinite(v).all():
+                        raise ValueError(f"FATAL: Non-finite values detected in batch key {k} at t={t}")
+                    vmax = np.abs(v).max()
+                    if vmax > 1e4:
+                        raise ValueError(f"FATAL: Scale explosion detected in batch key {k}. "
+                                         f"Max abs value {vmax} > 1e4 at t={t}. "
+                                         f"Config: standardize={self.cfg.standardize}, apply_log1p={self.cfg.apply_log1p}")
+                
                 ret[k] = np.nan_to_num(v, nan=0.0, posinf=0.0, neginf=0.0)
             
         return ret
