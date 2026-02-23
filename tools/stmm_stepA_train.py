@@ -77,7 +77,9 @@ def main():
     
     # Instantiate Model
     print("Instantiating Model...")
-    model = STMMGraphWaveNet(**cfg['model'])
+    model_kwargs = cfg.get('model', {}).copy()
+    model_kwargs.pop('use_adaptive_adj', None)
+    model = STMMGraphWaveNet(**model_kwargs)
     
     # Instantiate Lightning Module
     print("Instantiating Lightning Module...")

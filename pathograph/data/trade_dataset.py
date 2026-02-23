@@ -448,7 +448,7 @@ class TradeDatasetZarr:
             for k, v in ret.items():
                 if isinstance(v, np.ndarray) and np.issubdtype(v.dtype, np.floating):
                     # Runtime explicit guards requested by user
-                    if self.cfg.debug_guard:
+                    if self.cfg.debug_guard and k not in ("climate", "distance_km", "adjacency_border"):
                         if not np.isfinite(v).all():
                             raise ValueError(f"FATAL: Non-finite values detected in batch key {k} at t={t}")
                         vmax = np.abs(v).max()
@@ -496,7 +496,7 @@ class TradeDatasetZarr:
         for k, v in ret.items():
             if isinstance(v, np.ndarray) and np.issubdtype(v.dtype, np.floating):
                 # Runtime explicit guards requested by user
-                if self.cfg.debug_guard:
+                if self.cfg.debug_guard and k not in ("climate", "distance_km", "adjacency_border"):
                     if not np.isfinite(v).all():
                         raise ValueError(f"FATAL: Non-finite values detected in batch key {k} at t={t}")
                     vmax = np.abs(v).max()

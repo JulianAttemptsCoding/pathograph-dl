@@ -57,6 +57,7 @@ class TradeDataModuleConfig:
     min_target_observed: int = 1
     require_target_observed_kind: Optional[Literal["base", "risk", "both", "status"]] = None
     valid_t_cache_dir: Optional[str] = None
+    debug_guard: bool = False
 
 
     def __post_init__(self):
@@ -111,6 +112,7 @@ class TradeDataModule(pl.LightningDataModule):
             min_target_observed=c.min_target_observed,
             require_target_observed_kind=c.require_target_observed_kind,
             valid_t_cache_dir=c.valid_t_cache_dir,
+            debug_guard=c.debug_guard,
         )
         self._train = TradeDatasetZarr(TradeDatasetConfig(**base, split="train"))
         self._val = TradeDatasetZarr(TradeDatasetConfig(**base, split="val"))
