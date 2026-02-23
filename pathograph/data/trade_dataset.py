@@ -443,6 +443,11 @@ class TradeDatasetZarr:
             
             if self.cfg.return_targets:
                 ret.update(targets)
+                
+            for k, v in ret.items():
+                if isinstance(v, np.ndarray) and np.issubdtype(v.dtype, np.floating):
+                    ret[k] = np.nan_to_num(v, nan=0.0, posinf=0.0, neginf=0.0)
+                    
             return ret
 
         # concat mode: flatten risk (K,2)->(K*2) and concatenate features along last dim
@@ -476,5 +481,9 @@ class TradeDatasetZarr:
             # We won't concat targets into edge_feat (that would be weird for future prediction), 
             # so we just add them as separate tensors.
             ret.update(targets)
+            
+        for k, v in ret.items():
+            if isinstance(v, np.ndarray) and np.issubdtype(v.dtype, np.floating):
+                ret[k] = np.nan_to_num(v, nan=0.0, posinf=0.0, neginf=0.0)
             
         return ret
