@@ -333,15 +333,15 @@ class TradeDatasetZarr:
             risk_std = np.array(sc["risk"]["std"], dtype=np.float32)
 
         # Apply Transforms to Inputs
+        if self.cfg.apply_log1p:
+            base_trade = np.log1p(np.maximum(base_trade, 0.0))
+            risk_trade = np.log1p(np.maximum(risk_trade, 0.0))
+            
         if self.cfg.standardize:
             base_trade = self._apply_transforms(base_trade, base_mean, base_std)
             risk_flat = risk_trade.reshape((L, self.h.N, self.h.N, self.h.K * 2))
             risk_flat = self._apply_transforms(risk_flat, risk_mean, risk_std)
             risk_trade = risk_flat.reshape((L, self.h.N, self.h.N, self.h.K, 2))
-        else:
-            if self.cfg.apply_log1p:
-                base_trade = np.log1p(np.maximum(base_trade, 0.0))
-                risk_trade = np.log1p(np.maximum(risk_trade, 0.0))
         
         # Prepare targets if requested
         targets = {}

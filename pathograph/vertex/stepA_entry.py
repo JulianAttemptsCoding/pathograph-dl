@@ -136,11 +136,6 @@ def main(argv: list[str] | None = None) -> int:
     
     # Run training
     print("\n[4/4] Starting training...")
-    print(f"Config: {config_local}")
-    print(f"Output: {output_dir}")
-    
-    from pathograph.train.stepA_train import main as stepA_main
-    
     train_argv = [
         '--config', str(config_local),
         '--run_dir', str(output_dir),
@@ -156,11 +151,15 @@ def main(argv: list[str] | None = None) -> int:
     if args.seed is not None:
         train_argv.extend(['--seed', str(args.seed)])
         print(f"[GATE] seed override: {args.seed}", file=sys.stderr)
+
+    train_cmd = [sys.executable, "-m", "tools.stmm_stepA_train"] + train_argv
+    print(f"Executing actual training script via subprocess: {' '.join(train_cmd)}")
     
     try:
-        rc = stepA_main(train_argv)
-        if rc != 0:
-            raise RuntimeError(f"Training failed with exit code {rc}")
+        # Use subprocess directly to avoid poisoning sys.argv for Lightning DDP
+        result = subprocess.run(train_cmd)
+        if result.returncode != 0:
+            raise RuntimeError(f"Training failed with exit code {result.returncode}")
     except Exception as e:
         import traceback
         traceback.print_exc(file=sys.stderr)
