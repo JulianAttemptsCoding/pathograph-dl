@@ -9,7 +9,7 @@ requires-python = ">=3.9"
 dependencies = [
   "numpy",
   "pyyaml",
-  "zarr",
+  "zarr>=3.0.0",
   "torchmetrics",
   "lightning",
   "fsspec",
