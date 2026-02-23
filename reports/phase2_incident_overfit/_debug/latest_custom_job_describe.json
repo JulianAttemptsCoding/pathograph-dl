@@ -1,0 +1,47 @@
+{
+  "createTime": "2026-02-22T23:11:53.871962Z",
+  "displayName": "stepA_phase2_incident_overfit_baseline_s1337_train_v4_pytorch-custom-job",
+  "endTime": "2026-02-22T23:19:22Z",
+  "error": {
+    "code": 3,
+    "message": "The replica workerpool0-0 exited with a non-zero status of 1. Termination reason: Error. \nTraceback (most recent call last):\n  [...]\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/train/stepA_train.py\", line 17, in main\n    rc = impl.main()\n  File \"/root/.local/lib/python3.10/site-packages/tools/stmm_stepA_train.py\", line 128, in main\n    trainer.fit(pl_module, datamodule=dm)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py\", line 584, in fit\n    call._call_and_handle_interrupt(\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py\", line 49, in _call_and_handle_interrupt\n    return trainer_fn(*args, **kwargs)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py\", line 630, in _fit_impl\n    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py\", line 1039, in _run\n    call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py\", line 108, in _call_setup_hook\n    _call_lightning_datamodule_hook(trainer, \"setup\", stage=fn)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py\", line 199, in _call_lightning_datamodule_hook\n    return fn(*args, **kwargs)\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/data/trade_datamodule.py\", line 115, in setup\n    self._train = TradeDatasetZarr(TradeDatasetConfig(**base, split=\"train\"))\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/data/trade_dataset.py\", line 86, in __init__\n    self.h = open_trade_zarr(cfg.base_zarr_path, cfg.risk_zarr_path)\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/data/trade_zarr.py\", line 42, in open_trade_zarr\n    base = zarr.open(base_zarr_path, mode=\"r\")\n  File \"/root/.local/lib/python3.10/site-packages/zarr/convenience.py\", line 137, in open\n    raise PathNotFoundError(path)\nzarr.errors.PathNotFoundError: nothing found at path ''\n\nTo find out more about why your job exited please check the logs: https://console.cloud.google.com/logs/viewer?project=727252250786&resource=ml_job%2Fjob_id%2F3051299712318570496&advancedFilter=resource.type%3D%22ml_job%22%0Aresource.labels.job_id%3D%223051299712318570496%22"
+  },
+  "jobSpec": {
+    "baseOutputDirectory": {
+      "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337/model/"
+    },
+    "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+    "workerPoolSpecs": [
+      {
+        "diskSpec": {
+          "bootDiskSizeGb": 200,
+          "bootDiskType": "pd-ssd"
+        },
+        "machineSpec": {
+          "acceleratorCount": 1,
+          "acceleratorType": "NVIDIA_TESLA_T4",
+          "machineType": "n1-standard-8"
+        },
+        "pythonPackageSpec": {
+          "args": [
+            "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit.yaml",
+            "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+            "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337",
+            "--stage_to_local=1",
+            "--seed=1337"
+          ],
+          "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+          "packageUris": [
+            "gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v4.tar.gz"
+          ],
+          "pythonModule": "pathograph.vertex.stepA_entry"
+        },
+        "replicaCount": "1"
+      }
+    ]
+  },
+  "name": "projects/727252250786/locations/us-central1/customJobs/3051299712318570496",
+  "startTime": "2026-02-22T23:14:51Z",
+  "state": "JOB_STATE_FAILED",
+  "updateTime": "2026-02-22T23:19:27.392926Z"
+}

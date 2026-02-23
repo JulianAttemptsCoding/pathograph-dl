@@ -1,0 +1,441 @@
+[
+  {
+    "createTime": "2026-02-22T23:11:53.871962Z",
+    "displayName": "stepA_phase2_incident_overfit_baseline_s1337_train_v4_pytorch-custom-job",
+    "endTime": "2026-02-22T23:19:22Z",
+    "error": {
+      "code": 3,
+      "message": "The replica workerpool0-0 exited with a non-zero status of 1. Termination reason: Error. \nTraceback (most recent call last):\n  [...]\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/train/stepA_train.py\", line 17, in main\n    rc = impl.main()\n  File \"/root/.local/lib/python3.10/site-packages/tools/stmm_stepA_train.py\", line 128, in main\n    trainer.fit(pl_module, datamodule=dm)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py\", line 584, in fit\n    call._call_and_handle_interrupt(\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py\", line 49, in _call_and_handle_interrupt\n    return trainer_fn(*args, **kwargs)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py\", line 630, in _fit_impl\n    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py\", line 1039, in _run\n    call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py\", line 108, in _call_setup_hook\n    _call_lightning_datamodule_hook(trainer, \"setup\", stage=fn)\n  File \"/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py\", line 199, in _call_lightning_datamodule_hook\n    return fn(*args, **kwargs)\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/data/trade_datamodule.py\", line 115, in setup\n    self._train = TradeDatasetZarr(TradeDatasetConfig(**base, split=\"train\"))\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/data/trade_dataset.py\", line 86, in __init__\n    self.h = open_trade_zarr(cfg.base_zarr_path, cfg.risk_zarr_path)\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/data/trade_zarr.py\", line 42, in open_trade_zarr\n    base = zarr.open(base_zarr_path, mode=\"r\")\n  File \"/root/.local/lib/python3.10/site-packages/zarr/convenience.py\", line 137, in open\n    raise PathNotFoundError(path)\nzarr.errors.PathNotFoundError: nothing found at path ''\n\nTo find out more about why your job exited please check the logs: https://console.cloud.google.com/logs/viewer?project=727252250786&resource=ml_job%2Fjob_id%2F3051299712318570496&advancedFilter=resource.type%3D%22ml_job%22%0Aresource.labels.job_id%3D%223051299712318570496%22"
+    },
+    "jobSpec": {
+      "baseOutputDirectory": {
+        "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337/model/"
+      },
+      "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 200,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337",
+              "--stage_to_local=1",
+              "--seed=1337"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v4.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/3051299712318570496",
+    "startTime": "2026-02-22T23:14:51Z",
+    "state": "JOB_STATE_FAILED",
+    "updateTime": "2026-02-22T23:19:27.392926Z"
+  },
+  {
+    "createTime": "2026-02-22T22:38:18.710948Z",
+    "displayName": "stepA_phase2_incident_overfit_baseline_s1337_train_v3_pytorch-custom-job",
+    "endTime": "2026-02-22T22:45:29Z",
+    "error": {
+      "code": 3,
+      "message": "The replica workerpool0-0 exited with a non-zero status of 2. Termination reason: Error. To find out more about why your job exited please check the logs: https://console.cloud.google.com/logs/viewer?project=727252250786&resource=ml_job%2Fjob_id%2F9035369756256894976&advancedFilter=resource.type%3D%22ml_job%22%0Aresource.labels.job_id%3D%229035369756256894976%22"
+    },
+    "jobSpec": {
+      "baseOutputDirectory": {
+        "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337/model/"
+      },
+      "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 200,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337",
+              "--stage_to_local=1",
+              "--seed=1337"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v3.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/9035369756256894976",
+    "startTime": "2026-02-22T22:40:58Z",
+    "state": "JOB_STATE_FAILED",
+    "updateTime": "2026-02-22T22:45:30.842676Z"
+  },
+  {
+    "createTime": "2026-02-22T22:17:31.084308Z",
+    "displayName": "stepA_phase2_incident_overfit_baseline_s1337_train_v3-custom-job",
+    "endTime": "2026-02-22T22:21:54Z",
+    "error": {
+      "code": 3,
+      "message": "The replica workerpool0-0 exited with a non-zero status of 1. Termination reason: Error. To find out more about why your job exited please check the logs: https://console.cloud.google.com/logs/viewer?project=727252250786&resource=ml_job%2Fjob_id%2F874565756484845568&advancedFilter=resource.type%3D%22ml_job%22%0Aresource.labels.job_id%3D%22874565756484845568%22"
+    },
+    "jobSpec": {
+      "baseOutputDirectory": {
+        "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337/model/"
+      },
+      "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 200,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337",
+              "--stage_to_local=1",
+              "--seed=1337"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/tf-gpu.2-1:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v3.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/874565756484845568",
+    "startTime": "2026-02-22T22:20:54Z",
+    "state": "JOB_STATE_FAILED",
+    "updateTime": "2026-02-22T22:21:56.266630Z"
+  },
+  {
+    "createTime": "2026-02-22T21:43:36.267730Z",
+    "displayName": "stepA_phase2_incident_overfit_baseline_s1337_train_v2-custom-job",
+    "endTime": "2026-02-22T21:50:28Z",
+    "error": {
+      "code": 3,
+      "message": "The replica workerpool0-0 exited with a non-zero status of 1. Termination reason: Error. \nTraceback (most recent call last):\n  File \"/opt/python/3.10/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/opt/python/3.10/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/vertex/stepA_entry.py\", line 182, in <module>\n    raise SystemExit(main())\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/vertex/stepA_entry.py\", line 161, in main\n    rc = stepA_main(train_argv)\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/train/stepA_train.py\", line 5, in main\n    from pathograph.train.train_stmm import main as _main\nModuleNotFoundError: No module named 'pathograph.train.train_stmm'\n\nTo find out more about why your job exited please check the logs: https://console.cloud.google.com/logs/viewer?project=727252250786&resource=ml_job%2Fjob_id%2F1546657632125714432&advancedFilter=resource.type%3D%22ml_job%22%0Aresource.labels.job_id%3D%221546657632125714432%22"
+    },
+    "jobSpec": {
+      "baseOutputDirectory": {
+        "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337/model/"
+      },
+      "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 200,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337",
+              "--stage_to_local=1",
+              "--seed=1337"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v2.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/1546657632125714432",
+    "startTime": "2026-02-22T21:46:27Z",
+    "state": "JOB_STATE_FAILED",
+    "updateTime": "2026-02-22T21:50:29.519834Z"
+  },
+  {
+    "createTime": "2026-02-22T21:09:01.504915Z",
+    "displayName": "stepA_phase2_incident_overfit_baseline_s1337_train-custom-job",
+    "endTime": "2026-02-22T21:17:12Z",
+    "error": {
+      "code": 3,
+      "message": "The replica workerpool0-0 exited with a non-zero status of 1. Termination reason: Error. \nTraceback (most recent call last):\n  File \"/opt/python/3.10/lib/python3.10/runpy.py\", line 196, in _run_module_as_main\n    return _run_code(code, main_globals, None,\n  File \"/opt/python/3.10/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/vertex/stepA_entry.py\", line 182, in <module>\n    raise SystemExit(main())\n  File \"/root/.local/lib/python3.10/site-packages/pathograph/vertex/stepA_entry.py\", line 142, in main\n    from pathograph.train.stepA_train import main as stepA_main\nModuleNotFoundError: No module named 'pathograph.train.stepA_train'\n\nTo find out more about why your job exited please check the logs: https://console.cloud.google.com/logs/viewer?project=727252250786&resource=ml_job%2Fjob_id%2F3918616474540834816&advancedFilter=resource.type%3D%22ml_job%22%0Aresource.labels.job_id%3D%223918616474540834816%22"
+    },
+    "jobSpec": {
+      "baseOutputDirectory": {
+        "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337/model/"
+      },
+      "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 200,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337",
+              "--stage_to_local=1",
+              "--seed=1337"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/3918616474540834816",
+    "startTime": "2026-02-22T21:12:39Z",
+    "state": "JOB_STATE_FAILED",
+    "updateTime": "2026-02-22T21:17:22.164126Z"
+  },
+  {
+    "createTime": "2026-02-22T10:56:45.936690Z",
+    "displayName": "stepA_phase2_incident_baseline_s1337_eval-custom-job",
+    "endTime": "2026-02-22T10:57:56.351173Z",
+    "error": {
+      "code": 1,
+      "message": "CANCELED"
+    },
+    "jobSpec": {
+      "baseOutputDirectory": {
+        "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident/baseline_incident_s1337/eval_vertex/model/"
+      },
+      "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 200,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident/stmm_stepA_baseline_incident.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+              "--ckpt_gcs=<PASTE_CKPT_URI_FROM_GCS>",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident/baseline_incident_s1337/eval_vertex",
+              "--stage_to_local=1",
+              "--seed=1337"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_incident_20260222.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_eval_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/2579411311909666816",
+    "startTime": "2026-02-22T10:56:49.049769Z",
+    "state": "JOB_STATE_CANCELLED",
+    "updateTime": "2026-02-22T10:57:56.351173Z"
+  },
+  {
+    "createTime": "2026-02-21T09:01:25.927213Z",
+    "displayName": "stepA-eval-vertex-cal-v2-adaptive-s1344",
+    "endTime": "2026-02-21T09:07:33Z",
+    "jobSpec": {
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 100,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1344/config.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1_zarr2",
+              "--ckpt_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1344/epoch=8-step=7128-val_auroc_macro=0.9642.ckpt",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1344/eval_vertex_cal_v2",
+              "--stage_to_local=1"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_adaptive_calib_20260221.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_eval_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/3485228573290135552",
+    "startTime": "2026-02-21T09:04:32Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-02-21T09:07:38.737655Z"
+  },
+  {
+    "createTime": "2026-02-21T09:01:23.665027Z",
+    "displayName": "stepA-eval-vertex-cal-v2-adaptive-s1343",
+    "endTime": "2026-02-21T09:07:16Z",
+    "jobSpec": {
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 100,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1343/config.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1_zarr2",
+              "--ckpt_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1343/epoch=7-step=6336-val_auroc_macro=0.9807.ckpt",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1343/eval_vertex_cal_v2",
+              "--stage_to_local=1"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_adaptive_calib_20260221.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_eval_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/4908366055539212288",
+    "startTime": "2026-02-21T09:04:15Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-02-21T09:07:52.943505Z"
+  },
+  {
+    "createTime": "2026-02-21T09:01:21.398457Z",
+    "displayName": "stepA-eval-vertex-cal-v2-adaptive-s1342",
+    "endTime": "2026-02-21T09:07:21Z",
+    "jobSpec": {
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 100,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1342/config.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1_zarr2",
+              "--ckpt_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1342/epoch=8-step=7128-val_auroc_macro=0.9797.ckpt",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1342/eval_vertex_cal_v2",
+              "--stage_to_local=1"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_adaptive_calib_20260221.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_eval_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/3147458601237348352",
+    "startTime": "2026-02-21T09:04:20Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-02-21T09:15:20.973054Z"
+  },
+  {
+    "createTime": "2026-02-21T09:01:19.056949Z",
+    "displayName": "stepA-eval-vertex-cal-v2-adaptive-s1341",
+    "endTime": "2026-02-21T09:07:58Z",
+    "jobSpec": {
+      "workerPoolSpecs": [
+        {
+          "diskSpec": {
+            "bootDiskSizeGb": 100,
+            "bootDiskType": "pd-ssd"
+          },
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_TESLA_T4",
+            "machineType": "n1-standard-8"
+          },
+          "pythonPackageSpec": {
+            "args": [
+              "--config_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1341/config.yaml",
+              "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1_zarr2",
+              "--ckpt_gcs=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1341/epoch=6-step=5544-val_auroc_macro=0.9673.ckpt",
+              "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase3/adaptive_s1341/eval_vertex_cal_v2",
+              "--stage_to_local=1"
+            ],
+            "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+            "packageUris": [
+              "gs://pathograph-057a2273fe-data/packages/pathograph_adaptive_calib_20260221.tar.gz"
+            ],
+            "pythonModule": "pathograph.vertex.stepA_eval_entry"
+          },
+          "replicaCount": "1"
+        }
+      ]
+    },
+    "name": "projects/727252250786/locations/us-central1/customJobs/6752590102947430400",
+    "startTime": "2026-02-21T09:04:27Z",
+    "state": "JOB_STATE_SUCCEEDED",
+    "updateTime": "2026-02-21T09:08:08.894941Z"
+  }
+]

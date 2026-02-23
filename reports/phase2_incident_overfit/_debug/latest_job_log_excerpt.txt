@@ -1,0 +1,229 @@
+Job failed.
+Finished tearing down training program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The replica workerpool0-0 exited with a non-zero status of 1. Termination reason: Error. 
+Traceback (most recent call last):
+  [...]
+  File "/root/.local/lib/python3.10/site-packages/pathograph/train/stepA_train.py", line 17, in main
+    rc = impl.main()
+  File "/root/.local/lib/python3.10/site-packages/tools/stmm_stepA_train.py", line 128, in main
+    trainer.fit(pl_module, datamodule=dm)
+  File "/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1039, in _run
+    call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment
+  File "/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 108, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/root/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 199, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "/root/.local/lib/python3.10/site-packages/pathograph/data/trade_datamodule.py", line 115, in setup
+    self._train = TradeDatasetZarr(TradeDatasetConfig(**base, split="train"))
+  File "/root/.local/lib/python3.10/site-packages/pathograph/data/trade_dataset.py", line 86, in __init__
+    self.h = open_trade_zarr(cfg.base_zarr_path, cfg.risk_zarr_path)
+  File "/root/.local/lib/python3.10/site-packages/pathograph/data/trade_zarr.py", line 42, in open_trade_zarr
+    base = zarr.open(base_zarr_path, mode="r")
+  File "/root/.local/lib/python3.10/site-packages/zarr/convenience.py", line 137, in open
+    raise PathNotFoundError(path)
+zarr.errors.PathNotFoundError: nothing found at path ''
+
+To find out more about why your job exited please check the logs: https://console.cloud.google.com/logs/viewer?project=727252250786&resource=ml_job%2Fjob_id%2F3051299712318570496&advancedFilter=resource.type%3D%22ml_job%22%0Aresource.labels.job_id%3D%223051299712318570496%22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

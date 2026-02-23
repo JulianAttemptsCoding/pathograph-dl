@@ -1,0 +1,10 @@
+{
+  "dataset.base_zarr_path": "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr",
+  "dataset.risk_zarr_path": "data/processed/trade/faostat_step2/trade_risk_tensor.zarr",
+  "datamodule.base_zarr_path": "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr",
+  "datamodule.risk_zarr_path": "data/processed/trade/faostat_step2/trade_risk_tensor.zarr",
+  "merge_dm_over_dataset.base_zarr_path": "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr",
+  "merge_dataset_over_dm.base_zarr_path": "data/processed/trade/imf_imts_step1/trade_fob_tensor.zarr",
+  "merge_dm_over_dataset.risk_zarr_path": "data/processed/trade/faostat_step2/trade_risk_tensor.zarr",
+  "merge_dataset_over_dm.risk_zarr_path": "data/processed/trade/faostat_step2/trade_risk_tensor.zarr"
+}

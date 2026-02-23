@@ -39,6 +39,13 @@ class TradeZarrHandles:
 
 
 def open_trade_zarr(base_zarr_path: str, risk_zarr_path: str) -> TradeZarrHandles:
+    import os
+    print(f"[DEBUG] open_trade_zarr: base={base_zarr_path!r}, risk={risk_zarr_path!r}")
+    if not base_zarr_path: raise ValueError("base_zarr_path is empty")
+    if not risk_zarr_path: raise ValueError("risk_zarr_path is empty")
+    if not os.path.exists(base_zarr_path): raise ValueError(f"base_zarr_path does not exist on disk: {base_zarr_path}")
+    if not os.path.exists(risk_zarr_path): raise ValueError(f"risk_zarr_path does not exist on disk: {risk_zarr_path}")
+
     base = zarr.open(base_zarr_path, mode="r")
     risk = zarr.open(risk_zarr_path, mode="r")
 

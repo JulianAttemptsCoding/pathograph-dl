@@ -1,0 +1,37 @@
+{
+    "displayName": "stepA_phase2_incident_overfit_baseline_s1337_train_v4b_pytorch",
+    "jobSpec": {
+        "workerPoolSpecs": [
+            {
+                "machineSpec": {
+                    "machineType": "n1-standard-8",
+                    "acceleratorType": "NVIDIA_TESLA_T4",
+                    "acceleratorCount": 1
+                },
+                "replicaCount": 1,
+                "diskSpec": {
+                    "bootDiskType": "pd-ssd",
+                    "bootDiskSizeGb": 200
+                },
+                "pythonPackageSpec": {
+                    "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+                    "packageUris": [
+                        "gs://pathograph-057a2273fe-data/packages/pathograph_incident_overfit_20260222_v4.tar.gz"
+                    ],
+                    "pythonModule": "pathograph.vertex.stepA_entry",
+                    "args": [
+                        "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_overfit/stmm_stepA_baseline_incident_overfit_v2.yaml",
+                        "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+                        "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337_v4b",
+                        "--stage_to_local=1",
+                        "--seed=1337"
+                    ]
+                }
+            }
+        ],
+        "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+        "baseOutputDirectory": {
+            "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_overfit/baseline_incident_s1337_v4b/model/"
+        }
+    }
+}
