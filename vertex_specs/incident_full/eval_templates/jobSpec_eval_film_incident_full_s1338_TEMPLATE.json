@@ -1,0 +1,35 @@
+{
+  "workerPoolSpecs": [
+    {
+      "machineSpec": {
+        "machineType": "n1-standard-8",
+        "acceleratorType": "NVIDIA_TESLA_T4",
+        "acceleratorCount": 1
+      },
+      "replicaCount": 1,
+      "diskSpec": {
+        "bootDiskType": "pd-ssd",
+        "bootDiskSizeGb": 200
+      },
+      "pythonPackageSpec": {
+        "executorImageUri": "us-docker.pkg.dev/vertex-ai/training/pytorch-gpu.2-4.py310:latest",
+        "packageUris": [
+          "gs://pathograph-057a2273fe-data/packages/pathograph_incident_full_20260222_v1.tar.gz"
+        ],
+        "pythonModule": "pathograph.vertex.stepA_eval_entry",
+        "args": [
+          "--config_gcs=gs://pathograph-057a2273fe-data/configs/incident_full/stmm_stepA_film_incident.yaml",
+          "--data_gcs_prefix=gs://pathograph-057a2273fe-data/datasets/stepA/v1",
+          "--ckpt_gcs=<FILL_ME_CKPT_URI>",
+          "--output_gcs_prefix=gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_full/film_incident_full_s1338/eval_vertex",
+          "--stage_to_local=1",
+          "--seed=1338"
+        ]
+      }
+    }
+  ],
+  "serviceAccount": "hellotherestarwar@pathograph-dl.iam.gserviceaccount.com",
+  "baseOutputDirectory": {
+    "outputUriPrefix": "gs://pathograph-057a2273fe-data/runs/stepA/phase2_incident_full/film_incident_full_s1338/eval_vertex/model/"
+  }
+}
