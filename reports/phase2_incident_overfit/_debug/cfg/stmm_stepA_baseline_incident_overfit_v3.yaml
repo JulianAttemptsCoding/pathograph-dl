@@ -1,0 +1,109 @@
+"\xEF\xBB\xBFseed": 1337
+dataset:
+  base_zarr_path: data/processed/trade/trade_tensor_pilot_v2.zarr
+  risk_zarr_path: data/processed/trade/faostat_step2/trade_risk_tensor_v2.zarr
+  pathogen_zarr_path: data/processed/pathogen/status_tensor.zarr
+  lookback: 24
+  horizon: 1
+  split: train
+  split_train:
+  - 0
+  - 815
+  split_val:
+  - 816
+  - 851
+  split_test:
+  - 852
+  - 907
+  apply_log1p: true
+  standardize: true
+  scaler_json_path: data/processed/trade/trade_step3_scaler.json
+  return_mode: separate
+  return_targets: true
+  target_kind: status
+  label_mode: incident
+  include_target_masks: true
+  require_target_observed: true
+  min_target_observed: 1
+  require_target_observed_kind: status
+  valid_t_cache_dir: null
+datamodule:
+  base_zarr_path: data/processed/trade/trade_tensor_pilot_v2.zarr
+  risk_zarr_path: data/processed/trade/faostat_step2/trade_risk_tensor_v2.zarr
+  pathogen_zarr_path: data/processed/pathogen/status_tensor.zarr
+  climate_zarr_path: data/processed/climate/climate_tensor.zarr
+  climate_array_key: climate
+  climate_anoms_zarr_path: data/processed/climate/climate_step4/climate_anomalies.zarr
+  climate_anoms_array_key: anomaly
+  meta_distance_path: data/processed/meta/distance_km.npy
+  meta_adjacency_path: data/processed/meta/adjacency_border.npy
+  scaler_json_path: data/processed/trade/trade_step3_scaler.json
+  lookback: 24
+  horizon: 1
+  split_train:
+  - 0
+  - 815
+  split_val:
+  - 816
+  - 851
+  split_test:
+  - 852
+  - 907
+  apply_log1p: true
+  standardize: true
+  return_targets: true
+  target_kind: status
+  label_mode: incident
+  include_target_masks: true
+  require_target_observed: true
+  min_target_observed: 1
+  require_target_observed_kind: status
+  valid_t_cache_dir: null
+  batch_size: 1
+  num_workers: 0
+  pin_memory: false
+  persistent_workers: false
+  prefetch_factor: 2
+  drop_last_train: true
+model:
+  residual_channels: 32
+  dilation_channels: 32
+  skip_channels: 64
+  end_channels: 128
+  kernel_size: 2
+  dilations:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  diffusion_K: 2
+  dropout: 0.1
+  num_pathogens: 8
+  num_nodes: 194
+optim:
+  lr: 0.001
+  weight_decay: 0.0
+  label_mode: incident
+  pos_weight: null
+trainer:
+  max_epochs: 200
+  accelerator: auto
+  devices: 1
+  precision: 32
+  log_every_n_steps: 1
+  deterministic: true
+logging:
+  out_dir: runs/stmm_stepA
+  logger: tensorboard
+  name: baseline_incident_overfit
+checkpoint:
+  monitor: val_loss
+  mode: min
+  save_last: true
+  every_n_epochs: 1
+  save_top_k: -1
+  save_on_train_epoch_end: false
+run:
+  do_test: false
+  fast_dev_run: false
