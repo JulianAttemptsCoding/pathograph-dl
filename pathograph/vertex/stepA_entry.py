@@ -92,8 +92,18 @@ def main(argv: list[str] | None = None) -> int:
     
     config_dir = work_dir / 'config'
     data_dir = work_dir / 'data' / 'processed'
-    output_dir = work_dir / 'runs' / 'stepA'
-    
+
+    # Derive a unique local run_dir from the GCS output prefix so that two jobs
+    # running on the same VM (e.g. during fast iteration) never collide.
+    # Pattern: /tmp/work/runs/stepA/<last2_path_components>_s<seed>
+    # e.g. gs://.../phase4_hpo_v1/adaptive/trial_00_r3  ->  adaptive_trial_00_r3_s1340
+    _gcs_parts = [p for p in args.output_gcs_prefix.rstrip('/').split('/') if p]
+    _run_slug = '_'.join(_gcs_parts[-2:]) if len(_gcs_parts) >= 2 else (_gcs_parts[-1] if _gcs_parts else 'run')
+    _seed_str = str(args.seed) if args.seed is not None else 'noseed'
+    _run_slug = f"{_run_slug}_s{_seed_str}"
+    output_dir = work_dir / 'runs' / 'stepA' / _run_slug
+    print(f"[GATE] run_dir_local={output_dir}")
+
     config_dir.mkdir(parents=True, exist_ok=True)
     output_dir.mkdir(parents=True, exist_ok=True)
     

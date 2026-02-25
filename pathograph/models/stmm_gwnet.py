@@ -147,6 +147,13 @@ class STMMGraphWaveNet(nn.Module):
     1. Node feature construction from trade/climate inputs
     2. Dilated TCN blocks with graph diffusion
     3. Output head for pathogen logits
+
+    Feature flags (Phase 4 HPO):
+      use_adaptive_adj  – learn a node-embedding similarity adjacency (MTGNN-style)
+      adaptive_emb_dim  – embedding dimension for adaptive adj (ignored if flag is off)
+      adaptive_top_k    – keep only top-k neighbours per row (ignored if flag is off)
+      use_film          – apply FiLM (Feature-wise Linear Modulation) to the input
+                          projection output, conditioned on a per-node learned bias/scale
     """
     
     def __init__(
@@ -161,6 +168,11 @@ class STMMGraphWaveNet(nn.Module):
         dropout: float = 0.1,
         num_pathogens: int = 8,
         num_nodes: int = 194,
+        # --- Phase 4 feature flags ---
+        use_adaptive_adj: bool = False,
+        adaptive_emb_dim: int = 10,
+        adaptive_top_k: int = 20,
+        use_film: bool = False,
     ):
         super().__init__()
         
@@ -170,7 +182,16 @@ class STMMGraphWaveNet(nn.Module):
         self.residual_channels = residual_channels
         self.num_pathogens = num_pathogens
         self.num_nodes = num_nodes
-        
+        self.use_adaptive_adj = use_adaptive_adj
+        self.adaptive_top_k = adaptive_top_k
+        self.use_film = use_film
+
+        print(
+            f"[GATE] model_flags: use_adaptive_adj={use_adaptive_adj}, "
+            f"adaptive_emb_dim={adaptive_emb_dim}, adaptive_top_k={adaptive_top_k}, "
+            f"use_film={use_film}"
+        )
+
         # Node feature dimensions:
         # base_trade: 4 (outflow_exports, outflow_imports, inflow_exports, inflow_imports)
         # risk_trade: 32 (risk_outflow_flat, risk_inflow_flat)
@@ -180,7 +201,30 @@ class STMMGraphWaveNet(nn.Module):
         
         # Input projection
         self.input_proj = nn.Conv2d(node_feature_dim, residual_channels, kernel_size=1)
-        
+
+        # --- Adaptive adjacency (MTGNN-style learnable embeddings) ---
+        if use_adaptive_adj:
+            self._adaptive_emb_dim = adaptive_emb_dim
+            # Two embedding tables: E1 @ E2.T -> tanh -> top-k -> row-normalise
+            self.node_emb1 = nn.Embedding(num_nodes, adaptive_emb_dim)
+            self.node_emb2 = nn.Embedding(num_nodes, adaptive_emb_dim)
+            nn.init.xavier_uniform_(self.node_emb1.weight)
+            nn.init.xavier_uniform_(self.node_emb2.weight)
+        else:
+            self.node_emb1 = None
+            self.node_emb2 = None
+
+        # --- FiLM conditioning (per-node learned scale + shift on input proj output) ---
+        if use_film:
+            # gamma (scale) and beta (shift) per node, broadcast over T
+            self.film_gamma = nn.Embedding(num_nodes, residual_channels)
+            self.film_beta  = nn.Embedding(num_nodes, residual_channels)
+            nn.init.ones_(self.film_gamma.weight)
+            nn.init.zeros_(self.film_beta.weight)
+        else:
+            self.film_gamma = None
+            self.film_beta  = None
+
         # Static graph supports (will be set in forward pass)
         self.supports: Optional[List[torch.Tensor]] = None
         
@@ -206,6 +250,31 @@ class STMMGraphWaveNet(nn.Module):
         self.end_conv1 = nn.Conv2d(skip_channels, end_channels, kernel_size=1)
         self.end_conv2 = nn.Conv2d(end_channels, num_pathogens, kernel_size=1)
         
+    def _build_adaptive_adj(self, device: torch.device) -> torch.Tensor:
+        """Compute learnable adaptive adjacency (MTGNN-style).
+
+        Returns:
+            A_adaptive: (N, N) row-normalised float tensor on *device*
+        """
+        idx = torch.arange(self.num_nodes, device=device)
+        e1 = self.node_emb1(idx)   # (N, E)
+        e2 = self.node_emb2(idx)   # (N, E)
+        A = torch.tanh(e1 @ e2.T)  # (N, N) in [-1, 1]
+
+        # Top-k sparsification: keep only the top-k values per row
+        k = min(self.adaptive_top_k, self.num_nodes)
+        topk_vals, topk_idx = torch.topk(A, k, dim=1)
+        # Build sparse mask
+        mask = torch.zeros_like(A)
+        mask.scatter_(1, topk_idx, 1.0)
+        A = A * mask
+
+        # ReLU to remove negatives, then row-normalise
+        A = torch.relu(A)
+        row_sum = A.sum(dim=1, keepdim=True).clamp(min=1e-6)
+        A = A / row_sum
+        return A
+
     def _build_node_features(self, batch: Dict[str, torch.Tensor]) -> torch.Tensor:
         """
         Construct per-node features from edge tensors (trade) and node tensors (climate).
@@ -314,7 +383,17 @@ class STMMGraphWaveNet(nn.Module):
         
         # Input projection
         x = self.input_proj(x)  # (B, residual_channels, N, L)
-        
+
+        # --- FiLM conditioning (per-node learned scale + shift) ---
+        if self.use_film:
+            idx = torch.arange(self.num_nodes, device=x.device)
+            gamma = self.film_gamma(idx)  # (N, C)
+            beta  = self.film_beta(idx)   # (N, C)
+            # Reshape to (1, C, N, 1) for broadcast over (B, C, N, L)
+            gamma = gamma.T.unsqueeze(0).unsqueeze(-1)  # (1, C, N, 1)
+            beta  = beta.T.unsqueeze(0).unsqueeze(-1)   # (1, C, N, 1)
+            x = gamma * x + beta
+
         # Build static supports if not already done
         if self.supports is None:
             adjacency = batch['adjacency_border']  # (N, N)
@@ -328,7 +407,20 @@ class STMMGraphWaveNet(nn.Module):
                     supports=self.supports,
                     diffusion_K=2,
                 ).to(x.device)
-        
+
+        # --- Adaptive adjacency: inject as extra diffusion support ---
+        if self.use_adaptive_adj:
+            A_adap = self._build_adaptive_adj(x.device)  # (N, N)
+            # Temporarily augment each graph_conv's support list for this forward pass
+            for gc in self.graph_convs:
+                if gc is not None and A_adap not in gc.supports:
+                    gc.supports = self.supports + [A_adap]
+        else:
+            # Restore static-only supports (in case a previous forward added adaptive)
+            for gc in self.graph_convs:
+                if gc is not None:
+                    gc.supports = self.supports
+
         # Accumulate skip connections
         skip_sum = 0
         

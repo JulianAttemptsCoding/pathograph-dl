@@ -6,12 +6,14 @@ Usage:
 """
 
 import argparse
-import os
+import inspect
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Any, Callable, Dict
 
 import pytorch_lightning as pl
+from pytorch_lightning.loggers import CSVLogger
 import torch
 import yaml
 
@@ -21,6 +23,49 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from pathograph.data.trade_datamodule import TradeDataModule, TradeDataModuleConfig
 from pathograph.models.stmm_gwnet import STMMGraphWaveNet
 from pathograph.pl.stmm_pl_module import STMMPLModule
+
+
+def filter_kwargs(callable_obj: Callable, kwargs_dict: Dict[str, Any]) -> Dict[str, Any]:
+    """Return a copy of kwargs_dict containing only keys accepted by callable_obj.
+
+    Uses inspect.signature so it works for plain functions, classmethods, and
+    __init__ methods (the 'self' parameter is automatically excluded).
+
+    Phase 4 policy: if ANY keys are dropped, raises RuntimeError immediately.
+    This is intentional — feature kwargs must be accepted by the model signature.
+    """
+    try:
+        sig = inspect.signature(callable_obj)
+        allowed = {
+            name
+            for name, param in sig.parameters.items()
+            if name != "self"
+            and param.kind
+            not in (
+                inspect.Parameter.VAR_POSITIONAL,
+                inspect.Parameter.VAR_KEYWORD,
+            )
+        }
+        has_var_keyword = any(
+            p.kind == inspect.Parameter.VAR_KEYWORD
+            for p in sig.parameters.values()
+        )
+        if has_var_keyword:
+            return dict(kwargs_dict)
+    except (ValueError, TypeError):
+        return dict(kwargs_dict)
+
+    dropped = sorted(set(kwargs_dict) - allowed)
+    if dropped:
+        msg = (
+            f"[filter_kwargs] FATAL: {len(dropped)} unsupported kwarg(s) for "
+            f"{callable_obj.__name__}: {dropped}  "
+            f"(model accepts {len(allowed)} param(s): {sorted(allowed)})"
+        )
+        print(msg, file=sys.stderr)
+        print(msg)
+        raise RuntimeError(msg)
+    return {k: v for k, v in kwargs_dict.items() if k in allowed}
 
 
 def main():
@@ -77,8 +122,8 @@ def main():
     
     # Instantiate Model
     print("Instantiating Model...")
-    model_kwargs = cfg.get('model', {}).copy()
-    model_kwargs.pop('use_adaptive_adj', None)
+    model_kwargs_raw = cfg.get('model', {}).copy()
+    model_kwargs = filter_kwargs(STMMGraphWaveNet, model_kwargs_raw)
     model = STMMGraphWaveNet(**model_kwargs)
     
     # Instantiate Lightning Module
@@ -104,8 +149,13 @@ def main():
         **checkpoint_cfg
     )
     callbacks.append(checkpoint_callback)
-    
-    if args.early_stop_metric:
+
+    # Early stopping from config (ignore early_stop_metric CLI for now; use config)
+    early_stop_cfg = cfg.get('early_stopping', {})
+    if early_stop_cfg:
+        early_stop = pl.callbacks.EarlyStopping(**early_stop_cfg)
+        callbacks.append(early_stop)
+    elif args.early_stop_metric:
         print(f"Adding EarlyStopping on {args.early_stop_metric}")
         early_stop = pl.callbacks.EarlyStopping(
             monitor=args.early_stop_metric,
@@ -119,12 +169,18 @@ def main():
         trainer_cfg['fast_dev_run'] = True
     
     print("Creating Trainer...")
-    # Remove callbacks from cfg if present to avoid dupe or conflict if we pass list
-    if 'callbacks' in trainer_cfg:
-        del trainer_cfg['callbacks']
-        
-    trainer = pl.Trainer(callbacks=callbacks, **trainer_cfg)
-    
+    # Remove callbacks/logger keys from cfg to avoid duplication
+    for _key in ('callbacks', 'logger'):
+        trainer_cfg.pop(_key, None)
+
+    # --- Phase 4: force CSVLogger only; TensorBoard/TensorBoardX is disabled ---
+    # This prevents tensorboardX import crashes on Vertex AI containers that
+    # do not have tensorboard properly installed.
+    csv_logger = CSVLogger(save_dir=str(run_dir), name="csv_logs", version=0)
+    print(f"[GATE] logger=CSVLogger only (tensorboard disabled), save_dir={run_dir}/csv_logs")
+
+    trainer = pl.Trainer(callbacks=callbacks, logger=csv_logger, **trainer_cfg)
+
     # Train
     print("Starting training...")
     trainer.fit(pl_module, datamodule=dm)
