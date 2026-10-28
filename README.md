@@ -22,9 +22,24 @@ TR4, wheat blast and *Xylella fastidiosa*.
 **Headline test metrics** (macro over pathogens, calibrated, across the Phase 3 runs; from
 [`FINAL_RECORD.md`](FINAL_RECORD.md)):
 
-| AUROC | AUPRC | Brier | ECE |
-|---|---|---|---|
-| **0.960** ± 0.010 | 0.785 ± 0.058 | 0.021 ± 0.003 | 0.020 ± 0.004 |
+| | AUROC | AUPRC | Brier | ECE |
+|---|---|---|---|---|
+| ST-MM-GNN (champion) | 0.960 ± 0.010 | 0.785 ± 0.058 | 0.021 ± 0.003 | 0.020 ± 0.004 |
+| **Persistence** (repeat last observed status) | **0.9999** | **0.9998** | 0.00002 | — |
+
+> **Honest result: on this test split, the model does not beat persistence.** Status is forward-filled
+> (once reported, a pathogen stays present), and the scored test windows (target months 2023-01 → 2025-08,
+> 32 months × 194 countries × 8 pathogens) contain **one** new onset. Almost every label equals the previous
+> month's, so AUROC on status measures memory, not forecasting. That is also why the model's high score
+> looked impressive. Across the whole dataset there are 74 onsets in train, 3 in validation and 3 in
+> test, and they land in January, which suggests yearly reporting.
+> Reproduce: `python tools/persistence_test_eval.py --pathogen_zarr <status_tensor.zarr>`; the output is
+> saved in [`docs/persistence_test_eval.json`](docs/persistence_test_eval.json).
+>
+> **What a fair version needs:** score only (country, pathogen) pairs that aren't yet positive (onset
+> prediction), and evaluate per onset event (e.g. "did the model rank the next onset country in its top
+> k?") with a split that holds out enough onsets to measure. With 3 test onsets, the current data can't
+> support a confident claim either way.
 
 ### Verify without the data (~1 minute)
 
@@ -46,14 +61,11 @@ forward/loss smoke runs of the model.
 
 ### Honest limitations
 
-- **The data isn't in git.** The processed tensors (zarr) live in a GCS bucket, so a reviewer can run the
-  tests but can't retrain or re-score without bucket access.
-- **Persistence is the baseline that matters.** Status is forward-filled: once a pathogen is reported in a
-  country, it stays 1. A "predict last month's status" model therefore already scores well on AUROC. The
-  baseline is implemented in [`pathograph/baselines/persistence.py`](pathograph/baselines/persistence.py),
-  but its score on the Phase 3 test split isn't recorded here. Until it is, 0.960 should be read as an
-  upper bound on the value the model adds. A stricter target would be new-onset prediction, scoring only
-  (country, pathogen) pairs not yet positive.
+- **The data isn't in git.** The processed tensors (zarr) lived in a GCS bucket that is no longer
+  funded. A reviewer can run the tests, but can't retrain or re-score without a copy of the data.
+- **The target is the main weakness, not the architecture.** The forward-filled status target with very
+  few onsets makes persistence nearly perfect (see above). The pipeline, metrics and calibration code are
+  reusable for an onset target. The current headline number shouldn't be read as forecasting skill.
 
 ## Quick Start
 
