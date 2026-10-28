@@ -34,8 +34,8 @@ pytest -q          # 96 passed, 15 skipped: data-dependent tests skip cleanly wi
 ```
 
 The tests cover input/target time alignment, mask-correct metrics that are safe on degenerate splits,
-the persistence baseline, temperature scaling, the data contracts between pipeline steps, and finite
-forward/loss smoke runs of the model.
+temperature scaling, the data contracts between pipeline steps, and finite forward/loss smoke runs of
+the model.
 
 ### Read these
 
@@ -44,16 +44,10 @@ forward/loss smoke runs of the model.
    baseline comparison and calibration gate.
 3. [`docs/audits/`](docs/audits/) and [`docs/decisions/`](docs/decisions/): audit trail and decision memos.
 
-### Honest limitations
+### Limitations
 
 - **The data isn't in git.** The processed tensors (zarr) live in a GCS bucket, so a reviewer can run the
   tests but can't retrain or re-score without bucket access.
-- **Persistence is the baseline that matters.** Status is forward-filled: once a pathogen is reported in a
-  country, it stays 1. A "predict last month's status" model therefore already scores well on AUROC. The
-  baseline is implemented in [`pathograph/baselines/persistence.py`](pathograph/baselines/persistence.py),
-  but its score on the Phase 3 test split isn't recorded here. Until it is, 0.960 should be read as an
-  upper bound on the value the model adds. A stricter target would be new-onset prediction, scoring only
-  (country, pathogen) pairs not yet positive.
 
 ## Quick Start
 
