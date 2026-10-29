@@ -12,7 +12,7 @@ TR4, wheat blast and *Xylella fastidiosa*.
 
 | | |
 |---|---|
-| **Model** | Graph WaveNet–style ([`pathograph/models/stmm_gwnet.py`](pathograph/models/stmm_gwnet.py)): gated dilated causal TCN blocks (dilations 1–16) interleaved with **diffusion graph convolutions** (K=2) over static country graphs (border adjacency, distance) plus a **learned adaptive adjacency** (10-d node embeddings, top-20 edges) |
+| **Model** | Graph WaveNet–style ([`pathograph/models/stmm_gwnet_adaptive.py`](pathograph/models/stmm_gwnet_adaptive.py); the static-graph-only variant is [`stmm_gwnet.py`](pathograph/models/stmm_gwnet.py)): gated dilated causal TCN blocks (dilations 1–16) interleaved with **diffusion graph convolutions** (K=2) over static country graphs (border adjacency, distance) plus a **learned adaptive adjacency** (10-d node embeddings, top-20 edges) |
 | **Inputs per country-month** | 46 features: 4 IMF trade-flow channels, 32 FAOSTAT pathogen-risk-weighted trade channels, 10 climate anomalies |
 | **Target** | monthly presence status per (country, pathogen), forward-filled once first reported |
 | **Splits** | chronological on a monthly index from 1950-01: train ≤ 2017-12, validation 2018–2020, **test 2021-01 → 2025-08** ([`configs/stmm_stepA_adaptive.yaml`](configs/stmm_stepA_adaptive.yaml)) |
@@ -25,6 +25,15 @@ TR4, wheat blast and *Xylella fastidiosa*.
 | AUROC | AUPRC | Brier | ECE |
 |---|---|---|---|
 | **0.960** ± 0.010 | 0.785 ± 0.058 | 0.021 ± 0.003 | 0.020 ± 0.004 |
+
+**Where the model code came from.** `stmm_gwnet_adaptive.py` (the reported model, selected by `use_adaptive_adj: true` in
+[`configs/stmm_stepA_adaptive.yaml`](configs/stmm_stepA_adaptive.yaml)) and `pathograph/train/stepA_train.py` were never committed
+during the project. I recovered them unchanged from the `pathograph-0.1.5` source package that the Vertex AI jobs ran (built
+2026-02-21) and added them in October 2026. A **FiLM** variant (per-country learned scale and shift on the input projection)
+was tried as an ablation on branch `run/incident-full-matrix`
+([init](https://github.com/JulianAttemptsCoding/pathograph-dl/blob/0ecd4aa58d254200599e0a786284b51972b26e11/pathograph/models/stmm_gwnet.py#L217-L226),
+[forward](https://github.com/JulianAttemptsCoding/pathograph-dl/blob/0ecd4aa58d254200599e0a786284b51972b26e11/pathograph/models/stmm_gwnet.py#L387-L395)).
+It is **not** part of the reported model.
 
 ### Verify without the data (~1 minute)
 
