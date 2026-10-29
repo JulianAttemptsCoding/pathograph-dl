@@ -29,11 +29,13 @@ TR4, wheat blast and *Xylella fastidiosa*.
 **Where the model code came from.** `stmm_gwnet_adaptive.py` (the reported model, selected by `use_adaptive_adj: true` in
 [`configs/stmm_stepA_adaptive.yaml`](configs/stmm_stepA_adaptive.yaml)) and `pathograph/train/stepA_train.py` were never committed
 during the project. I recovered them unchanged from the `pathograph-0.1.5` source package that the Vertex AI jobs ran (built
-2026-02-21) and added them in October 2026. A **FiLM** variant (per-country learned scale and shift on the input projection)
-was tried as an ablation on branch `run/incident-full-matrix`
-([init](https://github.com/JulianAttemptsCoding/pathograph-dl/blob/0ecd4aa58d254200599e0a786284b51972b26e11/pathograph/models/stmm_gwnet.py#L217-L226),
-[forward](https://github.com/JulianAttemptsCoding/pathograph-dl/blob/0ecd4aa58d254200599e0a786284b51972b26e11/pathograph/models/stmm_gwnet.py#L387-L395)).
-It is **not** part of the reported model.
+2026-02-21) and added them in October 2026. A **FiLM** variant, [`pathograph/models/stmm_gwnet_film.py`](pathograph/models/stmm_gwnet_film.py), adds per-country
+learned scale and shift on the input projection (`use_film`, lines 236–245 and 407–415) and can combine it with the adaptive
+adjacency. It was built for the later incident experiments (`label_mode: incident`, predicting new outbreaks instead of status;
+[`configs/stmm_stepA_film_incident.yaml`](configs/stmm_stepA_film_incident.yaml),
+[`configs/stmm_stepA_adaptive_film_incident.yaml`](configs/stmm_stepA_adaptive_film_incident.yaml)). It is my latest local
+version, which also has an MC-dropout option. An earlier committed copy is on branch `run/incident-full-matrix`, but it fails when FiLM and the adaptive
+adjacency are both on. FiLM is **not** part of the reported model, and no FiLM results are in this repo.
 
 ### Verify without the data (~1 minute)
 
