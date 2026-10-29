@@ -35,7 +35,7 @@ adjacency. It was built for the later incident experiments (`label_mode: inciden
 [`configs/stmm_stepA_film_incident.yaml`](configs/stmm_stepA_film_incident.yaml),
 [`configs/stmm_stepA_adaptive_film_incident.yaml`](configs/stmm_stepA_adaptive_film_incident.yaml)). It is my latest local
 version, which also has an MC-dropout option. An earlier committed copy is on branch `run/incident-full-matrix`, but it fails when FiLM and the adaptive
-adjacency are both on. FiLM is **not** part of the reported model, and no FiLM results are in this repo.
+adjacency are both on.
 
 ### Verify without the data (~1 minute)
 
